@@ -3,18 +3,28 @@ import { Aside } from '@/components/Aside'
 import '../styles/App.css'
 import { Main } from '@/components/main'
 
+
 function App() {
   
 
   return (
   
-      <div className=' p-2 pb-0 h-screen bg-black text-[#b3b3b3] flex flex-col'>
-      <div className='flex flex-1 gap-2'>
+      <div className=' sm:p-2 pb-0 h-screen flex flex-col'>
+      <div className='flex sm:flex-1 sm:flex-row flex-col-reverse gap-2 relative'>
         <Aside />
         <Main  />
       </div>
-     <footer className='bg-black border-zinc-700 p-6 py-10'>
-        footer
+      <footer className='sm:bg-[#050505] border-zinc-700 p-6  fixed w-full bottom-0'>
+        <div>
+          <div className='border border-solid p-4 rounded-xl'>
+            reprodutor
+          </div>
+          <nav className='sm:hidden block pt-6'>
+          Nav
+        </nav>
+        </div>
+        
+        
       </footer>
     </div> 
     

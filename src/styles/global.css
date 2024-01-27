@@ -1,0 +1,12 @@
+body{
+  background-color: #050505;
+  color:#b3b3b3;
+  font-family: 'Inter', sans-serif;
+}
+.backgroundMobile{
+background: rgb(18,18,18);
+background: -moz-linear-gradient(335deg, rgba(18,18,18,1) 78%, rgba(24,9,119,1) 93%);
+background: -webkit-linear-gradient(335deg, rgba(18,18,18,1) 78%, rgba(24,9,119,1) 93%);
+background: linear-gradient(335deg, rgba(18,18,18,1) 78%, rgba(24,9,119,1) 93%);
+filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#121212",endColorstr="#180977",GradientType=1);
+}
