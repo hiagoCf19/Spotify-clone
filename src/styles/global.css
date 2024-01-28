@@ -1,14 +1,33 @@
-body{
+body {
   background-color: #050505;
-  color:#b3b3b3;
-  font-family: 'Inter', sans-serif;
+  color: #b3b3b3;
+  font-family: "Inter", sans-serif;
+  font-weight: 300;
 }
-.backgroundMobile{
-background: rgb(18,18,18);
-background: -moz-linear-gradient(335deg, rgba(18,18,18,1) 78%, rgba(24,9,119,1) 93%);
-background: -webkit-linear-gradient(335deg, rgba(18,18,18,1) 78%, rgba(24,9,119,1) 93%);
-background: linear-gradient(335deg, rgba(18,18,18,1) 78%, rgba(24,9,119,1) 93%);
-filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#121212",endColorstr="#180977",GradientType=1);
+.backgroundMobile {
+  background: rgb(18, 18, 18);
+  background: -moz-linear-gradient(
+    335deg,
+    rgba(18, 18, 18, 1) 78%,
+    rgba(24, 9, 119, 1) 93%
+  );
+  background: -webkit-linear-gradient(
+    335deg,
+    rgba(18, 18, 18, 1) 78%,
+    rgba(24, 9, 119, 1) 93%
+  );
+  background: linear-gradient(
+    335deg,
+    rgba(18, 18, 18, 1) 78%,
+    rgba(24, 9, 119, 1) 93%
+  );
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#121212",endColorstr="#180977",GradientType=1);
+}
+.glass {
+  background: rgba(0, 0, 0, 0.823);
+
+  backdrop-filter: blur(0.6px);
+  -webkit-backdrop-filter: blur(1.5px);
 }
 ::-webkit-scrollbar {
   width: 6px;
@@ -16,6 +35,5 @@ filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#121212",endCo
 
 ::-webkit-scrollbar-thumb {
   background-color: #f4f4f41c;
-	border-radius: 100px;
+  border-radius: 100px;
 }
- 

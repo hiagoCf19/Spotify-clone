@@ -21,7 +21,7 @@ export const Main = () => {
       <p>Conteudo principal</p>
       <p>Conteudo principal</p>
       <p>Conteudo principal</p>
-       <p>Conteudo principal</p>
+      <p>Conteudo principal</p>
       <p>Conteudo principal</p><p>Conteudo principal</p>
       <p>Conteudo principal</p><p>Conteudo principal</p>
       <p>Conteudo principal</p><p>Conteudo principal</p>
@@ -41,7 +41,7 @@ export const Main = () => {
       <p>Conteudo principal</p>
       <p>Conteudo principal</p>
       <p>Conteudo principal</p>
-       <p>Conteudo principal</p>
+      <p>Conteudo principal</p>
       <p>Conteudo principal</p><p>Conteudo principal</p>
       <p>Conteudo principal</p><p>Conteudo principal</p>
       <p>Conteudo principal</p><p>Conteudo principal</p>
