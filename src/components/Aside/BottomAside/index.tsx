@@ -8,7 +8,7 @@ import { Table } from "./Table";
 
 export const BottomAside = () => {
   return (
-    <section className=" h-[75vh] bg-[#141414] p-6 rounded-[6px]">
+    <section className=" h-[75vh] bg-[#141414] overflow-hidden overflow-y-scroll p-6 rounded-[6px]">
       <div className="  font-medium flex flex-col gap-5 h-max ">
         {/* sua biblioteca */}
         <HeaderBottomAside />

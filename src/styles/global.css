@@ -7,27 +7,48 @@ body {
 .backgroundMobile {
   background: rgb(18, 18, 18);
   background: -moz-linear-gradient(
-    335deg,
-    rgba(18, 18, 18, 1) 78%,
-    rgba(24, 9, 119, 1) 93%
+    357deg,
+    rgba(18, 18, 18, 1) 62%,
+    rgba(66, 46, 194, 0.7455357142857143) 100%
   );
   background: -webkit-linear-gradient(
-    335deg,
-    rgba(18, 18, 18, 1) 78%,
-    rgba(24, 9, 119, 1) 93%
+    357deg,
+    rgba(18, 18, 18, 1) 62%,
+    rgba(66, 46, 194, 0.7455357142857143) 100%
   );
   background: linear-gradient(
-    335deg,
-    rgba(18, 18, 18, 1) 78%,
-    rgba(24, 9, 119, 1) 93%
+    357deg,
+    rgba(18, 18, 18, 1) 62%,
+    rgba(66, 46, 194, 0.7455357142857143) 100%
   );
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#121212",endColorstr="#180977",GradientType=1);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#121212",endColorstr="#422ec2",GradientType=1);
 }
 .glass {
   background: rgba(0, 0, 0, 0.823);
 
   backdrop-filter: blur(0.6px);
   -webkit-backdrop-filter: blur(1.5px);
+}
+.glassCircle {
+  background: rgba(0, 0, 0, 0.35);
+  backdrop-filter: blur(7.5px);
+  -webkit-backdrop-filter: blur(7.5px);
+}
+.glassCircleStrong {
+  background: rgba(0, 0, 0, 0.565);
+
+  backdrop-filter: blur(7.5px);
+  -webkit-backdrop-filter: blur(7.5px);
+}
+.glassCard {
+  background: rgba(255, 255, 255, 0.065);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+}
+.glassCard :hover {
+  background: rgba(255, 255, 255, 0.085);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
 }
 ::-webkit-scrollbar {
   width: 6px;

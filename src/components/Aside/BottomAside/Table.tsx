@@ -5,7 +5,7 @@ export const Table = () => {
   const pls = playlists
   return (
     <div className="flex flex-col ">
-      {pls.map((playlist, i) => (
+      {pls.slice(0, 7).map((playlist, i) => (
         <div key={i} className="flex gap-3 hover:bg-[#181818] rounded border-solid py-2 cursor-pointer px-2 mx-[-10px]">
           {'image' in playlist ? <img src={playlist.image} alt={playlist.classe} className=" w-12 rounded-[4px]" /> : <div className="w-12 h-12 flex items-center justify-center bg-[#272727] rounded">
             <Music />
