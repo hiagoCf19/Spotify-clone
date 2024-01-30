@@ -1,4 +1,4 @@
-interface Pl {
+export interface Pl {
   name: string;
   image?: string;
   classe: string;

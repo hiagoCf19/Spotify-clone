@@ -8,21 +8,22 @@ body {
   background: rgb(18, 18, 18);
   background: -moz-linear-gradient(
     357deg,
-    rgba(18, 18, 18, 1) 62%,
+    rgba(18, 18, 18, 1) 69%,
     rgba(66, 46, 194, 0.7455357142857143) 100%
   );
   background: -webkit-linear-gradient(
     357deg,
-    rgba(18, 18, 18, 1) 62%,
+    rgba(18, 18, 18, 1) 69%,
     rgba(66, 46, 194, 0.7455357142857143) 100%
   );
   background: linear-gradient(
     357deg,
-    rgba(18, 18, 18, 1) 62%,
+    rgba(18, 18, 18, 1) 69%,
     rgba(66, 46, 194, 0.7455357142857143) 100%
   );
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#121212",endColorstr="#422ec2",GradientType=1);
+  background-attachment: fixed;
 }
+
 .glass {
   background: rgba(0, 0, 0, 0.823);
 

@@ -3,7 +3,7 @@ import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
 
 export const HeaderMain = () => {
   return (
-    <header className="hidden sm:block">
+    <header className="hidden sm:block ">
       <div className="flex items-center justify-between">
         <div className="flex gap-2 ">
           <a href="" className="glassCircle rounded-full p-1">
