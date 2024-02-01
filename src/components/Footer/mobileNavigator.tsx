@@ -6,16 +6,16 @@ import { TiHome } from "react-icons/ti";
 export const MobileNavigator = () => {
   return (
     <nav className='sm:hidden block py-2 px-5 glass'>
-      <div className="flex justify-between items-center px-8">
-        <a href="" className="flex items-center flex-col text-[12px] hover:text-zinc-50">
+      <div className="flex justify-between items-center px-8 font-semibold">
+        <a href="" className="flex items-center flex-col text-[12px] hover:text-zinc-50 gap-1">
           <TiHome size={35} />
           Inicio
         </a>
-        <a href="" className="flex items-center flex-col text-[12px] hover:text-zinc-50">
+        <a href="" className="flex items-center flex-col text-[12px] hover:text-zinc-50 gap-1">
           <CiSearch size={35} />
           Buscar
         </a>
-        <a href="" className="flex items-center flex-col text-[12px] hover:text-zinc-50">
+        <a href="" className="flex items-center flex-col text-[12px] hover:text-zinc-50 gap-1">
           <LibraryIcon size={35} />
           Biblioteca
         </a>

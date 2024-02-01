@@ -1,8 +1,10 @@
+
+
 interface CardProps {
   image: string,
   title: string,
+  span: string,
 
-  span: string
 }
 export const Card = ({ image, title, span }: CardProps) => {
   return (

@@ -10,32 +10,32 @@ export const Recomendacoes = [
       },
       {
         title: "title do quatro",
-        image: "",
+
         description: "Informações sobre a descrição do quadro",
       },
       {
         title: "title do quatro",
-        image: "",
+
         description: "Informações sobre a descrição do quadro",
       },
       {
         title: "title do quatro",
-        image: "",
+
         description: "Informações sobre a descrição do quadro",
       },
       {
         title: "title do quatro",
-        image: "",
+
         description: "Informações sobre a descrição do quadro",
       },
       {
         title: "title do quatro",
-        image: "",
+
         description: "Informações sobre a descrição do quadro",
       },
       {
         title: "title do quatro",
-        image: "",
+
         description: "Informações sobre a descrição do quadro",
       },
     ],
@@ -45,12 +45,12 @@ export const Recomendacoes = [
     cards: [
       {
         title: "title do quatro",
-        image: "",
+
         description: "Informações sobre a descrição do quadro",
       },
       {
         title: "title do quatro",
-        image: "",
+
         description: "Informações sobre a descrição do quadro",
       },
     ],
@@ -60,17 +60,17 @@ export const Recomendacoes = [
     cards: [
       {
         title: "title do quatro",
-        image: "",
+
         description: "Informações sobre a descrição do quadro",
       },
       {
         title: "title do quatro",
-        image: "",
+
         description: "Informações sobre a descrição do quadro",
       },
       {
         title: "title do quatro",
-        image: "",
+
         description: "Informações sobre a descrição do quadro",
       },
     ],
