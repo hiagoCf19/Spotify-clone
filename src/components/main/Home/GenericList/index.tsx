@@ -2,6 +2,8 @@
 import { Recomendacoes } from "@/mocks/Recomendacoes"
 import { Card } from "./Card"
 import React from "react"
+import { Link } from "react-router-dom"
+import { urlFormater } from "@/scripts/normalize"
 
 
 
@@ -27,8 +29,13 @@ export const GenericList = () => {
           <div className="flex gap-6 ">
 
             {item.cards.map((data, i) => (
-              <Card title={data.title}
-                image={data.image ?? ''} span={data.description} key={i} />
+              <Link
+                to={urlFormater(`${data.title}-${i}`)}
+                key={i}>
+                <Card title={data.title}
+                  image={data.image ?? ''} span={data.description} />
+              </Link>
+
             ))}
 
 

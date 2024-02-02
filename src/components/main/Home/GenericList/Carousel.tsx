@@ -18,7 +18,7 @@ export const MobileCarousel = () => {
             <Carousel key={i} className="sm:hidden">
               <CarouselContent>
                 {item.cards.map((card, i) => (
-                  <CarouselItem key={i} className="basis-1/2">
+                  <CarouselItem key={`${card.title}-${i}`} className="basis-1/2">
                     <div className="flex flex-col gap-2">
                       <div className="w-[100%] h-[173px] ">
                         {'image' in card ? <img src={card.image} alt="" className="rounded h-[173px]" /> : <div className="w-full h-[173px] flex items-center justify-center bg-[#272727] rounded ">

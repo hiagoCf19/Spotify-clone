@@ -13,7 +13,7 @@ export const playlists: Pl[] = [
     musicsQnt: "122 Músicas",
   },
   {
-    name: "Playlist #1",
+    name: "Playlist #2",
     classe: "Playlist",
     musicsQnt: "62 Músicas",
   },

@@ -1,7 +1,9 @@
 
 import { playlists } from "@/mocks/playlists-albuns"
 import { Hour } from "@/scripts/Saudacao"
+import { urlFormater } from "@/scripts/normalize"
 import { Bell, Clock, Music, Settings } from "lucide-react"
+import { Link } from "react-router-dom"
 
 
 export const FirstSectionMain = () => {
@@ -24,28 +26,37 @@ export const FirstSectionMain = () => {
       hidden sm:block">
         <div className="flex gap-3 flex-wrap ">
           {play.slice(0, 8).map((card, i) => (
-            <div className=" w-[371px] h-16 flex items-center gap-4 rounded bg-opacity-10 backdrop-blur-20 bg-[#ffffff0f] hover:bg-[#ffffff1a] cursor-pointer" key={i}>
+            <Link
+              to={urlFormater(`${card.name}-${i}`)}
+              key={`${card.name}-${i}`}
+              className=" w-[371px] h-16 flex items-center gap-4 rounded bg-opacity-10 backdrop-blur-20 bg-[#ffffff0f] hover:bg-[#ffffff1a] cursor-pointer"
+            >
               {'image' in card ? <img src={card.image} alt={card.classe} className=" h-16 rounded rounded-r-none" /> : <div className="w-16 h-16 flex items-center justify-center bg-[#272727] rounded rounded-r-none">
                 <Music />
               </div>}
 
               <p className="text-[16px] font-semibold text-zinc-50">{card.name}</p>
-            </div>
+            </Link>
           ))}
 
         </div>
       </div>
+      {/* Lista Mobile */}
       <div className="sm:hidden ">
         <div className="flex gap-2 flex-wrap justify-center ">
           {play.slice(0, 6).map((card, i) => (
-            <div className=" w-[48%] h-14 flex items-center gap-2 rounded bg-opacity-10 backdrop-blur-20 bg-[#ffffff0f] hover:bg-[#ffffff1a] cursor-pointer" key={i}>
+            <Link
+              to={urlFormater(`${card.name}-${i}`)}
+              key={`${card.name}-${i}`}
+              className=" w-[48%] h-14 flex items-center gap-2 rounded bg-opacity-10 backdrop-blur-20 bg-[#ffffff0f] hover:bg-[#ffffff1a] cursor-pointer"
+            >
               {'image' in card ? <img src={card.image} alt={card.classe} className=" h-14 w-14 rounded rounded-r-none" /> : <div className="w-14 h-14 flex items-center justify-center bg-[#272727] rounded rounded-r-none">
                 <Music />
               </div>}
 
               <p className="text-[13px] font-semibold text-zinc-50 w-18 whitespace-nowrap overflow-hidden overflow-ellipsis">{card.name}</p>
 
-            </div>
+            </Link>
           ))}
 
         </div>
