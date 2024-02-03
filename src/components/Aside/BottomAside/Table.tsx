@@ -2,12 +2,14 @@ import { playlists } from "@/mocks/playlists-albuns"
 import { urlFormater } from "@/scripts/normalize"
 import { Music } from "lucide-react"
 import { Link } from "react-router-dom"
+import { SeusCurtidos } from "./Likeds"
 
 export const Table = () => {
   const pls = playlists
   return (
     <div className="flex flex-col ">
-      {pls.slice(0, 7).map((playlist, i) => (
+      <SeusCurtidos />
+      {pls.slice(0, 6).map((playlist, i) => (
         <Link
           to={urlFormater(`${playlist.name}-${i}`)}
           key={i}>
@@ -29,7 +31,7 @@ export const Table = () => {
             <div className="flex flex-col justify-center text-sm">
               <p className="text-zinc-50">{playlist.name}</p>
               <span className="text-[13px]">
-                {playlist.classe} • {'musicsQnt' in playlist ? playlist.musicsQnt : playlist.artista}
+                {playlist.classe} • {playlist.classe === 'Playlist' ? `${playlist.musics?.length} músicas` : playlist.artistaDoAlbum}
               </span>
             </div>
 

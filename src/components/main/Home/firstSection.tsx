@@ -1,4 +1,5 @@
 
+import { likeds } from "@/mocks/Likeds"
 import { playlists } from "@/mocks/playlists-albuns"
 import { Hour } from "@/scripts/Saudacao"
 import { urlFormater } from "@/scripts/normalize"
@@ -17,7 +18,6 @@ export const FirstSectionMain = () => {
           <Bell size={25} />
           <Clock size={25} />
           <Settings size={25} />
-
         </div>
 
       </div>
@@ -25,7 +25,17 @@ export const FirstSectionMain = () => {
       <div className="
       hidden sm:block">
         <div className="flex gap-3 flex-wrap ">
-          {play.slice(0, 8).map((card, i) => (
+          {/* seus curtidos */}
+          <Link
+            to={urlFormater(`${likeds[0].name}`)}
+
+            className=" w-[371px] h-16 flex items-center gap-4 rounded bg-opacity-10 backdrop-blur-20 bg-[#ffffff0f] hover:bg-[#ffffff1a] cursor-pointer"
+          >
+            <img src={likeds[0].image} className=" h-16 rounded rounded-r-none" />
+
+            <p className="text-[16px] font-semibold text-zinc-50">{likeds[0].name}</p>
+          </Link>
+          {play.slice(0, 7).map((card, i) => (
             <Link
               to={urlFormater(`${card.name}-${i}`)}
               key={`${card.name}-${i}`}
@@ -43,8 +53,19 @@ export const FirstSectionMain = () => {
       </div>
       {/* Lista Mobile */}
       <div className="sm:hidden ">
+
         <div className="flex gap-2 flex-wrap justify-center ">
-          {play.slice(0, 6).map((card, i) => (
+          {/* CURTIDOS */}
+          <Link
+            to={urlFormater(`${likeds[0].name}`)}
+
+            className=" w-[48%] h-14 flex items-center gap-2 rounded bg-opacity-10 backdrop-blur-20 bg-[#ffffff0f] hover:bg-[#ffffff1a] cursor-pointer"
+          >
+            <img src={likeds[0].image} alt={likeds[0].classe} className=" h-14 w-14 rounded rounded-r-none" />
+            <p className="text-[13px] font-semibold text-zinc-50 w-18 whitespace-nowrap overflow-hidden overflow-ellipsis">{likeds[0].name}</p>
+
+          </Link>
+          {play.slice(0, 5).map((card, i) => (
             <Link
               to={urlFormater(`${card.name}-${i}`)}
               key={`${card.name}-${i}`}

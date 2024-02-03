@@ -53,6 +53,21 @@ export const Recomendacoes = [
 
         description: "Informações sobre a descrição do quadro",
       },
+      {
+        title: "title do quatro",
+
+        description: "Informações sobre a descrição do quadro",
+      },
+      {
+        title: "title do quatro",
+
+        description: "Informações sobre a descrição do quadro",
+      },
+      {
+        title: "Daily Mix 5",
+        image: "assets/capas/mix5.jpeg",
+        description: "Fleetwood Mac, The Rolling Stones, America e mais.",
+      },
     ],
   },
   {

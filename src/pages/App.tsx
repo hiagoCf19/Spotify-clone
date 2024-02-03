@@ -11,6 +11,10 @@ import { OpenCard } from "@/components/main/OnOpenAlbum";
 import { urlFormater } from "@/scripts/normalize";
 import { Recomendacoes } from "@/mocks/Recomendacoes";
 import React from "react";
+import { likeds } from "@/mocks/Likeds";
+import { Curtidos } from "@/components/main/Home/GenericList/Curtidos";
+
+
 
 
 
@@ -27,6 +31,7 @@ function App() {
           <Aside />
           <Routes>
             <Route path="/" element={<Main />} />
+            <Route path={urlFormater(`${likeds[0].name}`)} element={<Curtidos />} />
             {playlists.map((route, i) => (
               <Route
                 path={urlFormater(`${route.name}-${i}`)}
