@@ -8,7 +8,9 @@ import {
 
   DrawerTrigger,
 } from "@/components/ui/drawer"
-import { propsMsc } from "@/components/main/cardMusic"
+
+import { BodyDrawerCard } from "./body"
+import { propsMsc } from "../cardMusic"
 
 
 
@@ -20,7 +22,6 @@ export const MenuMusics = ({ music }: propsMsc) => {
           <MoreVertical />
         </DrawerTrigger>
         <DrawerContent className=" bg-[#202020]">
-
           <DrawerHeader className="flex justify-center">
             <div className="w-8 h-1 bg-[#a7a7a7b0] rounded-full "></div>
           </DrawerHeader>
@@ -32,24 +33,20 @@ export const MenuMusics = ({ music }: propsMsc) => {
                 </div>
               }
               <div className="flex flex-col border  w-[80%] ">
-                <div className=" overflow-hidden text-nowrap overflow-ellipsis   text-sm ">
+                <div className=" font-medium text-sm text-zinc-50">
                   {music.name}
 
                 </div>
-                <div>
+                <span className="text-[12px] font-medium">
                   {music.artista}
-                </div>
-
-
+                </span>
               </div>
             </div>
 
 
           </div>
           <div className=" bg-[#a7a7a7a1] w-full h-[1px]"></div>
-          <div>
-            a
-          </div>
+          <BodyDrawerCard />
         </DrawerContent>
       </Drawer>
 

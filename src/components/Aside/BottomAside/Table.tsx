@@ -31,7 +31,7 @@ export const Table = () => {
             <div className="flex flex-col justify-center text-sm">
               <p className="text-zinc-50">{playlist.name}</p>
               <span className="text-[13px]">
-                {playlist.classe} • {playlist.classe === 'Playlist' ? `${playlist.musics?.length} músicas` : playlist.artistaDoAlbum}
+                {playlist.classe}  •  {playlist.classe === 'Playlist' ? `${playlist.musics?.length} músicas` : playlist.artistaDoAlbum}
               </span>
             </div>
 

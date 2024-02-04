@@ -29,7 +29,7 @@ export const FirstSectionMain = () => {
           <Link
             to={urlFormater(`${likeds[0].name}`)}
 
-            className=" w-[371px] h-16 flex items-center gap-4 rounded bg-opacity-10 backdrop-blur-20 bg-[#ffffff0f] hover:bg-[#ffffff1a] cursor-pointer"
+            className=" w-[371px] h-16 flex items-center gap-4 rounded bg-opacity-10 backdrop-blur-20 bg-[#ffffff26] hover:bg-[#ffffff41] cursor-pointer"
           >
             <img src={likeds[0].image} className=" h-16 rounded rounded-r-none" />
 
@@ -39,7 +39,7 @@ export const FirstSectionMain = () => {
             <Link
               to={urlFormater(`${card.name}-${i}`)}
               key={`${card.name}-${i}`}
-              className=" w-[371px] h-16 flex items-center gap-4 rounded bg-opacity-10 backdrop-blur-20 bg-[#ffffff0f] hover:bg-[#ffffff1a] cursor-pointer"
+              className=" w-[371px] h-16 flex items-center gap-4 rounded bg-opacity-10 backdrop-blur-20 bg-[#ffffff26] hover:bg-[#ffffff41]  cursor-pointer"
             >
               {'image' in card ? <img src={card.image} alt={card.classe} className=" h-16 rounded rounded-r-none" /> : <div className="w-16 h-16 flex items-center justify-center bg-[#272727] rounded rounded-r-none">
                 <Music />

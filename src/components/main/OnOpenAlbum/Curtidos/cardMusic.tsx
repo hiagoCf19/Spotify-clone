@@ -1,8 +1,8 @@
 import { musics } from "@/mocks/playlists-albuns"
 import { Music } from "lucide-react"
-import { IoHeart } from "react-icons/io5"
-import { MenuMusics } from "./Home/GenericList/Curtidos/menu"
-import { TiArrowDown } from "react-icons/ti";
+
+import { MenuMusics } from "./MenuMusic"
+
 
 export interface propsMsc {
   music: musics
@@ -22,12 +22,12 @@ export const CardMusic = ({ music }: propsMsc) => {
               {music.name}
             </p>
           </div>
-          <div className="flex items-center gap-2">
-            <div className=" w-4 h-4 rounded-full flex items-center justify-center  bg-[#1DB954]">
-              <TiArrowDown size={16} color="#000" />
+          <div className="flex items-center  gap-1">
+            <div className="bg-[#a7a7a796] p-1 rounded text-[8px] text-[#121212] font-semibold">
+              LYRICS
             </div>
 
-            <span className="text-[12px]">
+            <span className="text-[12px] font-medium">
               {music.artista}
             </span>
           </div>
@@ -38,7 +38,7 @@ export const CardMusic = ({ music }: propsMsc) => {
         </div>
       </div>
       <div className=" flex gap-2">
-        <IoHeart size={25} color="#1DB954" />
+
         <MenuMusics music={music} />
       </div>
 

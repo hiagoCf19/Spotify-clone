@@ -6,13 +6,14 @@ import { Footer } from '@/components/Footer'
 
 import { playlists } from "@/mocks/playlists-albuns";
 import { Aside } from "@/components/Aside";
-import { OpenCard } from "@/components/main/OnOpenAlbum";
+
 
 import { urlFormater } from "@/scripts/normalize";
 import { Recomendacoes } from "@/mocks/Recomendacoes";
 import React from "react";
 import { likeds } from "@/mocks/Likeds";
-import { Curtidos } from "@/components/main/Home/GenericList/Curtidos";
+import { Curtidos } from "@/components/main/OnOpenAlbum/Curtidos";
+import { OpenCard } from "@/components/main/OnOpenAlbum/albuns&pls";
 
 
 
