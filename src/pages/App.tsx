@@ -11,8 +11,8 @@ import { Aside } from "@/components/Aside";
 import { urlFormater } from "@/scripts/normalize";
 import { Recomendacoes } from "@/mocks/Recomendacoes";
 import React from "react";
-import { likeds } from "@/mocks/Likeds";
-import { Curtidos } from "@/components/main/OnOpenAlbum/Curtidos";
+
+import { OpenAlbumOrPlaylist } from "@/components/main/OnOpenAlbum/Curtidos";
 import { OpenCard } from "@/components/main/OnOpenAlbum/albuns&pls";
 
 
@@ -32,11 +32,11 @@ function App() {
           <Aside />
           <Routes>
             <Route path="/" element={<Main />} />
-            <Route path={urlFormater(`${likeds[0].name}`)} element={<Curtidos />} />
+
             {playlists.map((route, i) => (
               <Route
                 path={urlFormater(`${route.name}-${i}`)}
-                element={<OpenCard />} key={i} />
+                element={<OpenAlbumOrPlaylist album={route} />} key={i} />
             ))}
             {Recomendacoes.map((route, i) => (
               <React.Fragment key={i}>
