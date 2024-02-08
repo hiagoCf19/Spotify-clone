@@ -4,42 +4,6 @@ body {
   font-family: "Inter", sans-serif;
   font-weight: 300;
 }
-.backgroundGradientDesktop {
-  background: rgb(18, 18, 18);
-  background: -moz-linear-gradient(
-    357deg,
-    rgba(18, 18, 18, 1) 69%,
-    rgba(66, 46, 194, 0.7455357142857143) 100%
-  );
-  background: -webkit-linear-gradient(
-    357deg,
-    rgba(18, 18, 18, 1) 69%,
-    rgba(66, 46, 194, 0.7455357142857143) 100%
-  );
-  background: linear-gradient(
-    357deg,
-    rgba(18, 18, 18, 1) 69%,
-    rgba(66, 46, 194, 0.7455357142857143) 100%
-  );
-}
-.backgroundGradientMobile {
-  background: rgb(18, 18, 18);
-  background: -moz-linear-gradient(
-    357deg,
-    rgba(18, 18, 18, 1) 80%,
-    rgba(66, 46, 194, 0.7455357142857143) 100%
-  );
-  background: -webkit-linear-gradient(
-    357deg,
-    rgba(18, 18, 18, 1) 80%,
-    rgba(66, 46, 194, 0.7455357142857143) 100%
-  );
-  background: linear-gradient(
-    357deg,
-    rgba(18, 18, 18, 1) 80%,
-    rgba(66, 46, 194, 0.7455357142857143) 100%
-  );
-}
 
 .glass {
   background: rgba(0, 0, 0, 0.823);

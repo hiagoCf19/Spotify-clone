@@ -3,27 +3,19 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import '../styles/App.css'
 import { Main } from '@/components/main/Home'
 import { Footer } from '@/components/Footer'
-
 import { playlists } from "@/mocks/playlists-albuns";
 import { Aside } from "@/components/Aside";
-
-
 import { urlFormater } from "@/scripts/normalize";
-import { Recomendacoes } from "@/mocks/Recomendacoes";
-import React from "react";
 
-import { OpenAlbumOrPlaylist } from "@/components/main/OnOpenAlbum/Curtidos";
-import { OpenCard } from "@/components/main/OnOpenAlbum/albuns&pls";
-
-
-
-
+import { LibraryCards } from "@/scripts/bibliotecas";
+import { OpenAlbumOrPlaylist } from "@/components/main/OnOpenAlbum/PlaylistAreaOpen";
 
 
 function App() {
-
-
-
+  const dontLibraryCards = playlists.filter((item) => {
+    return item.biblioteca === false
+  })
+  console.log()
   return (
     <BrowserRouter>
 
@@ -32,26 +24,22 @@ function App() {
           <Aside />
           <Routes>
             <Route path="/" element={<Main />} />
-
-            {playlists.map((route, i) => (
+            {LibraryCards.map((route, i) => (
               <Route
                 path={urlFormater(`${route.name}-${i}`)}
                 element={<OpenAlbumOrPlaylist album={route} />} key={i} />
             ))}
-            {Recomendacoes.map((route, i) => (
-              <React.Fragment key={i}>
-                {route.cards.map((card, i) => (
-                  <Route
-                    path={urlFormater(`${card.title}-${i}`)}
-                    element={<OpenCard />}
-                    key={`${card.title}-${i}`} />
-                ))}
-              </React.Fragment>
+            {dontLibraryCards.map((item) => (
+
+              item.cards != undefined ? item.cards?.map((card, i) => (
+
+                <Route path={urlFormater(`${card.title}-${i}`)} element={<OpenAlbumOrPlaylist album={item} key={i} />} />
+
+              )) : ''
+
+
             ))}
-
-
           </Routes>
-
         </div>
         <Footer />
       </div>

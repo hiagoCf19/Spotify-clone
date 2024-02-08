@@ -6,7 +6,9 @@ import { Link } from "react-router-dom"
 
 
 export const FirstSectionMain = () => {
-  const play = playlists
+  const LibraryCards = playlists.filter((item) => {
+    return item.biblioteca === true
+  })
   const saudacao = Hour()
   return (
     <div className="flex flex-col gap-4 mt-6 sm:mt-0">
@@ -24,11 +26,11 @@ export const FirstSectionMain = () => {
       hidden sm:block">
         <div className="flex gap-3 flex-wrap ">
 
-          {play.slice(0, 8).map((card, i) => (
+          {LibraryCards.slice(0, 8).map((card, i) => (
             <Link
               to={urlFormater(`${card.name}-${i}`)}
               key={`${card.name}-${i}`}
-              className=" w-[371px] h-16 flex items-center gap-4 rounded bg-opacity-10 backdrop-blur-20 bg-[#ffffff26] hover:bg-[#ffffff41]  cursor-pointer"
+              className=" w-[371px] h-16 flex items-center gap-4 rounded bg-opacity-10 backdrop-blur-20 bg-[#ffffff13] hover:bg-[#ffffff22]  cursor-pointer"
             >
               {'image' in card ? <img src={card.image} alt={card.classe} className=" h-16 rounded rounded-r-none" /> : <div className="w-16 h-16 flex items-center justify-center bg-[#272727] rounded rounded-r-none">
                 <Music />
@@ -45,7 +47,7 @@ export const FirstSectionMain = () => {
 
         <div className="flex gap-2 flex-wrap justify-center ">
           {/* CURTIDOS */}
-          {play.slice(0, 6).map((card, i) => (
+          {LibraryCards.slice(0, 6).map((card, i) => (
             <Link
               to={urlFormater(`${card.name}-${i}`)}
               key={`${card.name}-${i}`}

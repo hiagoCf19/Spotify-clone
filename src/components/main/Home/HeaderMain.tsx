@@ -14,18 +14,18 @@ export const HeaderMain = () => {
           </a>
         </div>
         <div className="flex gap-2">
-          <a href="" className="glassCircleStrong rounded-full p-1 px-2 font-semibold text-sm flex items-center gap-2">
-            <ArrowDownCircle />
+          <a href="" className="glassCircleStrong rounded-full px-2 font-semibold text-[13px] flex items-center gap-2">
+            <ArrowDownCircle size={19} />
             instalar aplicativo
           </a>
-          <a href="" className="glassCircleStrong rounded-full p-1 px-2 font-semibold text-sm flex items-center gap-2">
-            <Bell size={20} />
+          <a href="" className="glassCircleStrong rounded-full px-2 font-semibold text-sm flex items-center gap-2">
+            <Bell size={18} />
           </a>
 
           <Avatar className="glassCircleStrong" >
             <AvatarImage src="" />
             <AvatarFallback>
-              <CircleUser size={25} />
+              <CircleUser size={20} />
             </AvatarFallback>
           </Avatar>
 

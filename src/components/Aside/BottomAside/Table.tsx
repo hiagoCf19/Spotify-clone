@@ -1,6 +1,8 @@
-import { playlists } from "@/mocks/playlists-albuns"
+
+import { LibraryCards } from "@/scripts/bibliotecas"
 import { urlFormater } from "@/scripts/normalize"
 import { Music } from "lucide-react"
+import React from "react"
 import { Link } from "react-router-dom"
 
 
@@ -9,7 +11,7 @@ export const Table = () => {
   return (
     <div className="flex flex-col ">
 
-      {playlists.slice(0, 6).map((playlist, i) => (
+      {LibraryCards.slice(0, 6).map((playlist, i) => (
         <Link
           to={urlFormater(`${playlist.name}-${i}`)}
           key={i}>
@@ -31,7 +33,20 @@ export const Table = () => {
             <div className="flex flex-col justify-center text-sm">
               <p className="text-zinc-50">{playlist.name}</p>
               <span className="text-[13px]">
-                {playlist.classe}  •  {playlist.classe === 'Playlist' ? `${playlist.musics?.length} músicas` : playlist.artistaDoAlbum}
+                {playlist.cards?.map((item, i) => (
+                  <React.Fragment key={i}>
+
+                    {playlist.classe} • {playlist.classe === 'Playlist'
+                      ? (
+                        `${item.musicas?.length} músicas`
+                      ) : (
+                        item.description
+                      )
+                    }
+                  </React.Fragment>
+                ))}
+
+
               </span>
             </div>
 

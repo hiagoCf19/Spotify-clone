@@ -10,11 +10,14 @@ import {
 } from "@/components/ui/drawer"
 
 import { BodyDrawerCard } from "./body"
-import { propsMsc } from "../cardMusic"
+
+import { musics } from "@/mocks/playlists-albuns"
 
 
-
-export const MenuMusics = ({ music }: propsMsc) => {
+interface propsMenu {
+  music: musics
+}
+export const MenuMusics = ({ music }: propsMenu) => {
   return (
     <div>
       <Drawer>
