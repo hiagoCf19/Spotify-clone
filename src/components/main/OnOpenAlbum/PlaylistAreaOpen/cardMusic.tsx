@@ -24,7 +24,7 @@ export const CardMusic = ({ props, i }: propsMsc) => {
             <Music />
           </div>
         }
-        <div className="flex flex-col border  w-[80%] ">
+        <div className="flex flex-col  w-[80%] ">
           <div className=" overflow-hidden text-nowrap overflow-ellipsis   text-sm sm:flex justify-between">
             <p className="font-medium text-sm text-zinc-50">
               {props.name}

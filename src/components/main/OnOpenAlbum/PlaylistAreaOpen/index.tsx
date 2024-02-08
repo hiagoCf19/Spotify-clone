@@ -59,7 +59,7 @@ export const OpenAlbumOrPlaylist = ({ album }: propsAlbum) => {
 
   `
   return (
-    <div className="flex-1 rounded-[6px] h-[88vh]  overflow-y-scroll gap-1 flex flex-col bg-[#171717] ">
+    <div className="flex-1 sm:rounded-[6px] h-[88vh]  overflow-y-scroll gap-1 flex flex-col bg-[#171717] ">
       <Gradient>
         <div className="flex flex-col gap-6">
           <HeaderMain />
