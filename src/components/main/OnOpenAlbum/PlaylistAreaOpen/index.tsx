@@ -1,9 +1,9 @@
 
-import { ArrowDownCircle, Clock, Music, Shuffle } from "lucide-react"
+import { ArrowDownCircle, Clock, Shuffle } from "lucide-react"
 import { IoMdPlay } from "react-icons/io";
 import { HeaderMain } from "../../Home/HeaderMain";
 import { List } from "lucide-react";
-import { Pl } from "@/mocks/playlists-albuns";
+import { Pl, cards } from "@/mocks/playlists-albuns";
 //import { MdPause } from "react-icons/md";
 import { styled } from 'styled-components'
 import { CardMusic } from "./cardMusic";
@@ -11,9 +11,10 @@ import React from "react";
 
 
 interface propsAlbum {
-  album: Pl
+  album: cards
+  pl?: Pl
 }
-export const OpenAlbumOrPlaylist = ({ album }: propsAlbum) => {
+export const OpenAlbumOrPlaylist = ({ album, pl }: propsAlbum) => {
 
   const Gradient = styled.div`
   
@@ -65,26 +66,23 @@ export const OpenAlbumOrPlaylist = ({ album }: propsAlbum) => {
           <HeaderMain />
           <div className="hidden sm:block">
             <div className="flex items-end gap-5 text-zinc-50">
-              {'image' in album ? <img src={album.image} alt="" className="rounded w-[232px]" /> :
-                <div className=" w-[232px] h-[232px] flex items-center justify-center bg-[#272727] ">
-                  <Music size={60} />
-                </div>
-              }
+              <img src={album.image} alt="" className="rounded w-[232px]" />
+
               <div className="flex gap-3 flex-col">
-                <span className="font-medium text-sm">{album.classe}</span>
+                <span className="font-medium text-sm">{pl?.classe}</span>
                 <p className="text-[6rem] font-bold text-zinc-50">
-                  {album.name}
+                  {album.title}
                 </p>
                 <span className="font-medium text-sm">
                   <strong className="font-bold">
                     User@user.com
                   </strong>  • { }
-                  {album.cards.map((card, i) => (
-                    <React.Fragment key={i}>
-                      {`${card.musicas.length} músicas`}
-                    </React.Fragment>
 
-                  ))}
+
+                  {`${album.musicas.length} músicas`}
+
+
+
                 </span>
               </div>
             </div>
@@ -92,7 +90,7 @@ export const OpenAlbumOrPlaylist = ({ album }: propsAlbum) => {
         </div>
         <div className="pt-10 sm:hidden">
           <h1 className="text-2xl font-bold text-zinc-50">
-            {album.name}
+            {album.title}
           </h1>
           <span className="text-[13px] font-medium">2 músicas</span>
         </div>
@@ -123,12 +121,12 @@ export const OpenAlbumOrPlaylist = ({ album }: propsAlbum) => {
         <div className="min-h-[500px]">
 
           <div className=" my-2  overflow-y-scroll sm:overflow-hidden mr-[-10px] flex flex-col gap-2 sm:px-3 ">
-            {album.cards.map((card) => (
-              <React.Fragment key={card.title}>
-                {
-                  card.musicas.map((musica, i) => (
-                    <CardMusic props={musica} i={i + 1} />
-                  ))}
+            {album.musicas.map((card, i) => (
+              <React.Fragment key={card.name}>
+
+
+                <CardMusic props={card} i={i + 1} />
+
               </React.Fragment>
 
             ))}

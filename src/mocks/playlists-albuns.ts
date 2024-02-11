@@ -1,6 +1,7 @@
 export interface cards {
   title: string;
   image?: string;
+  color?: string;
   description: string;
   musicas: musics[];
 }
@@ -32,6 +33,8 @@ export const playlists: Pl[] = [
     cards: [
       {
         title: "Musicas Curtidas",
+        image: "./assets/Art.png",
+        color: " rgba(66, 46, 194, 0.535) 100%",
         description: "As músicas que você curtiu.",
         musicas: [
           {
@@ -116,13 +119,32 @@ export const playlists: Pl[] = [
     biblioteca: false,
     classe: "Álbum",
     image: "",
-    description: "aaaaa",
     cards: [
       {
-        title: "Descobertas da semana",
-        image: "assets/descobertas.png",
-        description:
-          "Sua mixtape semanal cheia de novas descobertas e pérolas musicais escolhidas só pra você. Atualiza toda segunda.",
+        title: "Daily Mix 1",
+        image: "assets/capas/mix1.jpeg",
+        description: "Rashid, ADL, Sant e mais",
+        musicas: [
+          {
+            name: "rashid1",
+            artista: "artista a",
+
+            liked: false,
+            addEm: "11 fev. 2024",
+          },
+          {
+            name: "rash2",
+            artista: "artista b",
+            liked: true,
+            addEm: "11 fev. 2024",
+          },
+        ],
+      },
+      {
+        title: "Daily Mix 4",
+        color: "rgba(241, 94, 108, 0.535)",
+        image: "assets/capas/mix4.jpeg",
+        description: "The Walters, Vacations, Vundabar e mais",
         musicas: [
           {
             name: "musica 00",
@@ -139,9 +161,30 @@ export const playlists: Pl[] = [
         ],
       },
       {
-        title: "Descobertas da semana",
-        image: "",
-        description: "teste",
+        title: "Daily Mix 5",
+        color: "rgba(255, 164, 43, 1) 100%",
+        image: "assets/capas/mix5.jpeg",
+        description: "Fleetwood Mac, The Rolling Stones, America e mais",
+        musicas: [
+          {
+            name: "musica 00",
+            artista: "artista 02",
+            liked: true,
+            addEm: "05/02/2024",
+          },
+          {
+            name: "musica 01",
+            artista: "artista 02",
+            liked: true,
+            addEm: "05/02/2024",
+          },
+        ],
+      },
+      {
+        title: "Daily Mix 6",
+        color: "rgba(255, 164, 43, 1) 100%",
+        image: "assets/capas/mix6.jpeg",
+        description: "kamaitachi, LEXY, Vitello e mais",
         musicas: [
           {
             name: "musica 00",
