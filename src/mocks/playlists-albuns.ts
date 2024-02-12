@@ -122,6 +122,7 @@ export const playlists: Pl[] = [
     cards: [
       {
         title: "Daily Mix 1",
+        color: "rgba(152,206,197, 0.800) 120%",
         image: "assets/capas/mix1.jpeg",
         description: "Rashid, ADL, Sant e mais",
         musicas: [
@@ -142,7 +143,7 @@ export const playlists: Pl[] = [
       },
       {
         title: "Daily Mix 4",
-        color: "rgba(241, 94, 108, 0.535)",
+        color: "rgba(211,131,154, 0.800) 120%",
         image: "assets/capas/mix4.jpeg",
         description: "The Walters, Vacations, Vundabar e mais",
         musicas: [
@@ -162,7 +163,7 @@ export const playlists: Pl[] = [
       },
       {
         title: "Daily Mix 5",
-        color: "rgba(255, 164, 43, 1) 100%",
+        color: "rgb(240,192,105, 0.500) 120%",
         image: "assets/capas/mix5.jpeg",
         description: "Fleetwood Mac, The Rolling Stones, America e mais",
         musicas: [
@@ -182,7 +183,7 @@ export const playlists: Pl[] = [
       },
       {
         title: "Daily Mix 6",
-        color: "rgba(255, 164, 43, 1) 100%",
+        color: "rgba(169, 168, 196, 0.500) 120%",
         image: "assets/capas/mix6.jpeg",
         description: "kamaitachi, LEXY, Vitello e mais",
         musicas: [

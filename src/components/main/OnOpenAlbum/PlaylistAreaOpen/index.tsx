@@ -8,6 +8,7 @@ import { Pl, cards } from "@/mocks/playlists-albuns";
 import { styled } from 'styled-components'
 import { CardMusic } from "./cardMusic";
 import React from "react";
+import { FaSpotify } from "react-icons/fa6";
 
 
 interface propsAlbum {
@@ -21,25 +22,19 @@ export const OpenAlbumOrPlaylist = ({ album, pl }: propsAlbum) => {
   width: 100%;
   padding: 0 12px;
   background: rgb(18, 18, 18);
-  background: -moz-linear-gradient(
-    357deg,
-    rgba(18, 18, 18, 1) 87%,
-    ${album.color}
-    
-  );
-  background: -webkit-linear-gradient(
-    357deg,
-    rgba(18, 18, 18, 1) 87%,
-    ${album.color}
-  );
-  background: linear-gradient(
-    357deg,
-    rgba(18, 18, 18, 1) 87%,
-    ${album.color}
-  );
+  background: -moz-linear-gradient(357deg,
+     rgba(18,18,18,0.9556197478991597) 76%,
+      ${album.color});
+  background: -webkit-linear-gradient(357deg,
+     rgba(18,18,18,0.9556197478991597) 76%,
+      ${album.color});
+  background: linear-gradient(357deg,
+     rgba(18,18,18,0.9556197478991597) 76%,
+      ${album.color});
+
+
   @media (min-width: 640px) {
     padding: 1rem 1.5rem;
-
     background: rgb(18, 18, 18);
     background: -moz-linear-gradient(
       357deg,
@@ -64,36 +59,41 @@ export const OpenAlbumOrPlaylist = ({ album, pl }: propsAlbum) => {
       <Gradient>
         <div className="flex flex-col gap-6">
           <HeaderMain />
-          <div className="hidden sm:block">
-            <div className="flex items-end gap-5 text-zinc-50">
-              <img src={album.image} alt="" className="rounded w-[232px]" />
+          <div className="sm:flex items-end gap-5 text-zinc-50">
+            <div className="flex w-full justify-center py-4 sm:justify-normal sm:py-0 sm:w-auto ">
+              <img src={album.image} className="sm:rounded sm:w-[232px] w-[60%] flex" />
+            </div>
 
-              <div className="flex gap-3 flex-col">
-                <span className="font-medium text-sm">{pl?.classe}</span>
-                <p className="text-[6rem] font-bold text-zinc-50">
-                  {album.title}
-                </p>
-                <span className="font-medium text-sm">
-                  <strong className="font-bold">
+            <div className="flex gap-3 sm:gap-0  flex-col">
+              <span className="text-[#b7b7b7] text-sm sm:hidden font-medium ">
+                {album.description}
+              </span>
+              <span className="font-medium text-sm hidden sm:block sm:-mb-6">{pl?.classe}</span>
+              <p className="text-[6rem] font-bold text-zinc-50 hidden sm:block sm:-mb-4">
+                {album.title}
+              </p>
+              <div className="font-medium text-sm flex flex-col sm:flex-row gap-2">
+                <span className="flex gap-2">
+                  <FaSpotify color="#1DB954" size={20} /> Feito para
+                  <strong className="font-bold flex  gap-2">
                     User@user.com
-                  </strong>  • { }
-
+                    <i className="hidden sm:block">•</i>
+                  </strong>
+                </span>
+                <span >
 
                   {`${album.musicas.length} músicas`}
-
-
-
                 </span>
+
+
+
+
               </div>
             </div>
           </div>
+
         </div>
-        <div className="pt-10 sm:hidden">
-          <h1 className="text-2xl font-bold text-zinc-50">
-            {album.title}
-          </h1>
-          <span className="text-[13px] font-medium">2 músicas</span>
-        </div>
+
         <div className="flex items-center justify-between">
           <ArrowDownCircle size={25} className="sm:hidden" />
           <div className="flex items-center gap-5 sm:pt-10 pb-5 sm:justify-between sm:w-full">

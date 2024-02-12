@@ -13,18 +13,18 @@ export const Main = () => {
   background: rgb(18, 18, 18);
   background: -moz-linear-gradient(
     357deg,
-    rgba(18, 18, 18, 1) 87%,
+    rgba(18, 18, 18, 1) 88%,
      rgba(66, 46, 194, 0.535) 100%
     
   );
   background: -webkit-linear-gradient(
     357deg,
-    rgba(18, 18, 18, 1) 87%,
+    rgba(18, 18, 18, 1) 88%,
      rgba(66, 46, 194, 0.535) 100%
   );
   background: linear-gradient(
     357deg,
-    rgba(18, 18, 18, 1) 87%,
+    rgba(18, 18, 18, 1) 88%,
      rgba(66, 46, 194, 0.535) 100%
   );
   @media (min-width: 640px) {

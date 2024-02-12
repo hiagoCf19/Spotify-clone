@@ -18,7 +18,6 @@ function App() {
 
   return (
     <BrowserRouter>
-
       <div className=' sm:p-2 pb-0  flex flex-col gap-4 bg-[#050505] text-[#b7b7b7] h-[1--vh]'>
         <div className='flex sm:flex-1 sm:flex-row flex-col-reverse gap-2 relative '>
           <Aside />
@@ -28,22 +27,13 @@ function App() {
             {LibraryCards.map((item, Im) => (
 
               item.cards != undefined ? item.cards?.map((card, i) => (
-                //path={urlFormater(`${route.name}-${i}`)}
                 <Route path={urlFormater(`${item.name}-${Im}`)} element={<OpenAlbumOrPlaylist album={card} key={i} pl={item} />} />
-
               )) : ''
-
-
             ))}
             {dontLibraryCards.map((item) => (
-
               item.cards != undefined ? item.cards?.map((card, i) => (
-
                 <Route path={urlFormater(`${card.title}-${i}`)} element={<OpenAlbumOrPlaylist album={card} key={i} pl={item} />} />
-
               )) : ''
-
-
             ))}
           </Routes>
         </div>
