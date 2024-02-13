@@ -2,16 +2,20 @@ import { ArrowDownCircle, Bell, ChevronLeft, ChevronRight, CircleUser } from "lu
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
 
 export const HeaderMain = () => {
+
   return (
     <header className="hidden sm:block ">
       <div className="flex items-center justify-between">
         <div className="flex gap-2 ">
-          <a href="" className="glassCircle rounded-full p-1">
+          <div className={`rounded-full p-1 cursor-pointer ${window.location.pathname === '/' ? 'glassCircle pointer-events-none ' : 'glassCircleStrong'}`}
+            onClick={() => window.history.back()}>
             <ChevronLeft />
-          </a>
-          <a href="" className="glassCircleStrong rounded-full p-1">
+          </div>
+          <div
+            className={`rounded-full p-1 cursor-pointer ${window.location.pathname !== '/' ? 'glassCircle pointer-events-none' : 'glassCircleStrong'}`}
+            onClick={() => window.history.forward()}>
             <ChevronRight />
-          </a>
+          </div>
         </div>
         <div className="flex gap-2">
           <a href="" className="glassCircleStrong rounded-full px-2 font-semibold text-[13px] flex items-center gap-2">

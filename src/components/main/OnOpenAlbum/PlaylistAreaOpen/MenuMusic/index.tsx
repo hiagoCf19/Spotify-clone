@@ -21,7 +21,7 @@ export const MenuMusics = ({ music }: propsMenu) => {
   return (
     <div>
       <Drawer>
-        <DrawerTrigger >
+        <DrawerTrigger className="" >
           <MoreVertical />
         </DrawerTrigger>
         <DrawerContent className=" bg-[#202020]">
@@ -35,12 +35,12 @@ export const MenuMusics = ({ music }: propsMenu) => {
                   <Music />
                 </div>
               }
-              <div className="flex flex-col border  w-[80%] ">
+              <div className="flex flex-col  w-[80%] ">
                 <div className=" font-medium text-sm text-zinc-50">
                   {music.name}
 
                 </div>
-                <span className="text-[12px] font-medium">
+                <span className="text-[12px] font-medium text-[#b7b7b7]">
                   {music.artista}
                 </span>
               </div>

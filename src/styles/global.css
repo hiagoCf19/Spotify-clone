@@ -8,12 +8,12 @@ body {
   -webkit-backdrop-filter: blur(1.5px);
 }
 .glassCircle {
-  background: rgba(0, 0, 0, 0.35);
+  background: rgba(0, 0, 0, 0.24);
   backdrop-filter: blur(7.5px);
   -webkit-backdrop-filter: blur(7.5px);
 }
 .glassCircleStrong {
-  background: rgba(0, 0, 0, 0.565);
+  background: rgba(0, 0, 0, 0.597);
 
   backdrop-filter: blur(7.5px);
   -webkit-backdrop-filter: blur(7.5px);

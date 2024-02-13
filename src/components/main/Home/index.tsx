@@ -51,7 +51,7 @@ export const Main = () => {
   `
   return (
 
-    <div className="flex-1  rounded-[6px] h-[88vh]  overflow-y-scroll 
+    <div className="flex-1  sm:rounded-[6px] h-[88vh]  overflow-y-scroll 
      ">
       <GradientBase className="flex gap-4 flex-col 
       backgroundGradientMobile sm:backgroundGradientDesktop sm:p-4 sm:px-6 p-2">
