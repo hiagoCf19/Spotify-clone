@@ -62,9 +62,6 @@ export const Main = () => {
           <GenericList />
         </div>
       </GradientBase>
-
-
-
     </div >
   )
 }

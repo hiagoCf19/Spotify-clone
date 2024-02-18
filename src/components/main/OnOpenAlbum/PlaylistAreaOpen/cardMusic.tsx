@@ -5,10 +5,12 @@ import { useState } from "react";
 import { IoMdHeart } from "react-icons/io";
 import { FaPlay } from "react-icons/fa";
 
+
 export interface propsMsc {
   props: musics;
   i: number
 }
+
 export const CardMusic = ({ props, i }: propsMsc) => {
   const [isLiked, setIsLiked] = useState(false)
   const [mouseInside, setMouseInside] = useState(false)

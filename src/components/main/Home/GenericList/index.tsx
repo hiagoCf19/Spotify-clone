@@ -16,11 +16,11 @@ export const GenericList = () => {
             <h1 className="sm:text-[22px] text-2xl font-bold text-zinc-50">
               {item.name}
             </h1>
-            <a
-              href=""
+            <Link
+              to={urlFormater(item.name)}
               className="text-sm font-semibold hover:underline">
               Mostrar tudo
-            </a>
+            </Link>
           </div>
           <div className="flex gap-6">
             {item.cards != undefined ? item.cards?.map((card, i) => (

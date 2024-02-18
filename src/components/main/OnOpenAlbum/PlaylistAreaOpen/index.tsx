@@ -55,7 +55,7 @@ export const OpenAlbumOrPlaylist = ({ album, pl }: propsAlbum) => {
   return (
     <div className="flex-1 sm:rounded-[6px] h-[88vh]  overflow-y-scroll gap-1 flex flex-col bg-[#171717] ">
       <Gradient>
-        <div className="fixed py-4"
+        <div className="fixed py-4 sm:hidden"
           onClick={() => window.history.back()}
         >
           <ArrowLeft size={30} color="#a7a7a7" />
@@ -94,7 +94,7 @@ export const OpenAlbumOrPlaylist = ({ album, pl }: propsAlbum) => {
           <ArrowDownCircle size={25} className="sm:hidden" />
           <div className="flex items-center gap-5 sm:pt-10 pb-5 sm:justify-between sm:w-full">
             <Shuffle className="sm:hidden" />
-            <div className=" flex items-center justify-center rounded-full w-12 h-12 bg-[#1DB954] mr-[-20px] ">
+            <div className=" flex items-center justify-center rounded-full w-12 h-12 bg-spotgreen mr-[-20px] ">
               <IoMdPlay color="#000" size={20} />
               <div className="hidden sm:block">
               </div>

@@ -9,14 +9,14 @@ import { Link } from "react-router-dom"
 export const Table = () => {
 
   return (
-    <div className="flex flex-col ">
+    <div className="flex flex-col p-2 py-0 ">
 
       {LibraryCards.slice(0, 6).map((playlist, i) => (
         <Link
           to={urlFormater(`${playlist.name}-${i}`)}
           key={i}>
           <div
-            className="flex gap-3 hover:bg-[#181818] rounded border-solid py-2 cursor-pointer px-2 mx-[-10px]">
+            className="flex gap-3 hover:bg-[#191919] rounded border-solid py-2 cursor-pointer px-2 mx-[-10px]">
             {'image' in playlist
               ? <img
                 src={playlist.image}
@@ -30,9 +30,9 @@ export const Table = () => {
               </div>}
 
 
-            <div className="flex flex-col justify-center text-sm">
-              <p className="text-zinc-50">{playlist.name}</p>
-              <span className="text-[13px]">
+            <div className="flex flex-col justify-center">
+              <p className="text-zinc-50 font-normal">{playlist.name}</p>
+              <span className="text-[13px] font-normal">
                 {playlist.cards?.map((item, i) => (
                   <React.Fragment key={i}>
 

@@ -2,6 +2,8 @@ import { playlists } from "@/mocks/playlists-albuns"
 import { Hour } from "@/scripts/Saudacao"
 import { urlFormater } from "@/scripts/normalize"
 import { Bell, Clock, Music, Settings } from "lucide-react"
+import { useState } from "react"
+import { FaPlay } from "react-icons/fa6"
 import { Link } from "react-router-dom"
 
 
@@ -9,6 +11,7 @@ export const FirstSectionMain = () => {
   const LibraryCards = playlists.filter((item) => {
     return item.biblioteca === true
   })
+  const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
   const saudacao = Hour()
   return (
     <div className="flex flex-col gap-4 mt-6 sm:mt-0">
@@ -30,13 +33,24 @@ export const FirstSectionMain = () => {
             <Link
               to={urlFormater(`${card.name}-${i}`)}
               key={`${card.name}-${i}`}
-              className=" w-[371px] h-16 flex items-center gap-4 rounded bg-opacity-10 backdrop-blur-20 bg-[#ffffff13] hover:bg-[#ffffff22]  cursor-pointer"
+              className=" w-[24.4%] h-16 flex items-center gap-4 rounded bg-opacity-10 backdrop-blur-20 bg-[#ffffff13] hover:bg-[#ffffff22]  cursor-pointer relative"
+              onMouseOver={() => setHoveredIndex(i)}
+              onMouseOut={() => setHoveredIndex(null)}
             >
-              {'image' in card ? <img src={card.image} alt={card.classe} className=" h-16 rounded rounded-r-none" /> : <div className="w-16 h-16 flex items-center justify-center bg-[#272727] rounded rounded-r-none">
-                <Music />
-              </div>}
 
-              <p className="text-[16px] font-semibold text-zinc-50">{card.name}</p>
+              <div className="flex items-center gap-4">
+                {'image' in card ? <img src={card.image} alt={card.classe} className=" h-16 rounded rounded-r-none" /> : <div className="w-16 h-16 flex items-center justify-center bg-[#272727] rounded rounded-r-none">
+                  <Music />
+                </div>}
+
+                <p className="text-[16px] font-semibold text-zinc-50">{card.name}</p>
+                <div className={` absolute right-0 p-4 rounded-full bg-spotgreen shadow-lg shadow-[#000000c1] mx-4 ${hoveredIndex === i ? '' : 'hidden'}`}>
+                  <FaPlay color="#000" />
+                </div>
+
+              </div>
+
+
             </Link>
           ))}
 

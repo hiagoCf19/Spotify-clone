@@ -9,6 +9,7 @@ import { urlFormater } from "@/scripts/normalize";
 
 import { LibraryCards } from "@/scripts/bibliotecas";
 import { OpenAlbumOrPlaylist } from "@/components/main/OnOpenAlbum/PlaylistAreaOpen";
+import { MostrarTudo } from "@/components/main/Home/GenericList/mostrarTudo";
 
 
 function App() {
@@ -32,9 +33,13 @@ function App() {
             ))}
             {dontLibraryCards.map((item) => (
               item.cards != undefined ? item.cards?.map((card, i) => (
-                <Route path={urlFormater(`${card.title}-${i}`)} element={<OpenAlbumOrPlaylist album={card} key={i} pl={item} />} />
+                <>
+                  <Route path={urlFormater(`${card.title}-${i}`)} element={<OpenAlbumOrPlaylist album={card} key={i} pl={item} />} />
+                  <Route path={`/${urlFormater(item.name)}`} element={<MostrarTudo item={item} />} />
+                </>
               )) : ''
             ))}
+
           </Routes>
         </div>
         <Footer />
