@@ -1,36 +1,31 @@
 
 import { ArrowDownCircle, ArrowLeft, Clock, Shuffle } from "lucide-react"
 import { IoMdPlay } from "react-icons/io";
-import { HeaderMain } from "../../Home/HeaderMain";
+
 import { List } from "lucide-react";
-import { Pl, cards } from "@/mocks/playlists-albuns";
+import { musics, playlists } from "@/mocks/playlists-albuns";
 //import { MdPause } from "react-icons/md";
 import { styled } from 'styled-components'
-import { CardMusic } from "./cardMusic";
 
-import { FaSpotify } from "react-icons/fa6";
 import React from "react";
+import { FaSpotify } from "react-icons/fa6";
+import { HeaderMain } from "../main/Home/HeaderMain";
+import { CardMusic } from "../main/OnOpenAlbum/PlaylistAreaOpen/cardMusic";
+import { extrairMusicasLiked } from "@/scripts/ExtrairCurtidos";
 
-
-
-interface propsAlbum {
-  album: cards
-  pl?: Pl
-}
-export const OpenAlbumOrPlaylist = ({ album, pl }: propsAlbum) => {
-  const Gradient = styled.div`
+const Gradient = styled.div`
   width: 100%;
   padding: 0 12px;
   background: rgb(18, 18, 18);
   background: -moz-linear-gradient(357deg,
      rgba(18,18,18,0.9556197478991597) 76%,
-      ${album.color});
+      rgba(66, 46, 194, 0.535) 100%);
   background: -webkit-linear-gradient(357deg,
      rgba(18,18,18,0.9556197478991597) 76%,
-      ${album.color});
+      rgba(66, 46, 194, 0.535) 100%);
   background: linear-gradient(357deg,
      rgba(18,18,18,0.9556197478991597) 76%,
-      ${album.color});
+      rgba(66, 46, 194, 0.535) 100%);
 
 
   @media (min-width: 640px) {
@@ -39,22 +34,23 @@ export const OpenAlbumOrPlaylist = ({ album, pl }: propsAlbum) => {
     background: -moz-linear-gradient(
       0deg,
       rgba(18, 18, 18, 1) 59%,
-      ${album.color}
+      rgba(66, 46, 194, 0.535) 100%
     );
     background: -webkit-linear-gradient(
       0deg,
       rgba(18, 18, 18, 1) 59%,
-      ${album.color}
+      rgba(66, 46, 194, 0.535) 100%
     );
     background: linear-gradient(
       0deg,
       rgba(18, 18, 18, 1) 59%,
-      ${album.color}
+      rgba(66, 46, 194, 0.535) 100%
     );
   }
 
   `
-
+export const Curtidos = () => {
+  const musicasLiked: musics[] = extrairMusicasLiked(playlists);
   return (
     <div className="flex-1 sm:rounded-[6px] h-[88vh]  overflow-y-scroll gap-1 flex flex-col bg-[#171717] ">
       <Gradient>
@@ -67,16 +63,16 @@ export const OpenAlbumOrPlaylist = ({ album, pl }: propsAlbum) => {
           <HeaderMain />
           <div className="sm:flex items-end gap-5 text-zinc-50">
             <div className="flex w-full justify-center py-4 sm:justify-normal sm:py-0 sm:w-auto ">
-              <img src={album.image} className="sm:rounded sm:w-[232px] w-[60%] flex" />
+              <img src='./assets/Art.png' className="sm:rounded sm:w-[232px] w-[60%] flex" />
             </div>
 
             <div className="flex gap-3 sm:gap-0  flex-col">
               <span className="text-[#b7b7b7] text-sm sm:hidden font-medium ">
-                {album.description}
+                As músicas que você curtiu
               </span>
-              <span className="font-medium text-sm hidden sm:block sm:-mb-6">{pl?.classe}</span>
+              <span className="font-medium text-sm hidden sm:block sm:-mb-6">Playlist</span>
               <p className="text-[6rem] font-bold text-zinc-50 hidden sm:block sm:-mb-4">
-                {album.title}
+                Musicas Curtidas
               </p>
               <div className="font-medium text-sm flex flex-col sm:flex-row gap-2">
                 <span className="flex gap-2">
@@ -87,7 +83,7 @@ export const OpenAlbumOrPlaylist = ({ album, pl }: propsAlbum) => {
                   </strong>
                 </span>
                 <span >
-                  {`${album.musicas.length} músicas`}
+                  X músicas
                 </span>
               </div>
             </div>
@@ -126,9 +122,9 @@ export const OpenAlbumOrPlaylist = ({ album, pl }: propsAlbum) => {
           <div
             className=" my-2  overflow-y-scroll sm:overflow-hidden mr-[-10px] flex flex-col gap-2 sm:px-3 ">
 
-            {album.musicas.map((card, i) => (
+            {musicasLiked.map((card, i) => (
               <React.Fragment key={i}>
-                <CardMusic props={card} i={i + 1} />
+                <CardMusic props={card} key={i} i={i + 1} />
               </React.Fragment>
             ))}
           </div>

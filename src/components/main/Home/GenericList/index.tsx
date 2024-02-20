@@ -13,7 +13,7 @@ export const GenericList = () => {
       {DontLibraryCards.map((item, i) => (
         <React.Fragment key={i} >
           <div className="flex justify-between ">
-            <h1 className="sm:text-[22px] text-2xl font-bold text-zinc-50">
+            <h1 className="sm:text-[22px] text-2xl font-bold text-zinc-50 hover:underline">
               {item.name}
             </h1>
             <Link

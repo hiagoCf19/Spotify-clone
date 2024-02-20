@@ -12,8 +12,15 @@ export interface propsMsc {
 }
 
 export const CardMusic = ({ props, i }: propsMsc) => {
-  const [isLiked, setIsLiked] = useState(false)
+  const [isLiked, setIsLiked] = useState(props.liked ? true : false)
   const [mouseInside, setMouseInside] = useState(false)
+  let time
+  const convert = () => {
+    const base = props.durationMultipliedBy100 / 100
+    time = base.toFixed(2).replace('.', ':')
+    return time
+  }
+  convert()
   return (
     <div className="flex items-center justify-between gap-4 sm:py-1 sm:hover:bg-[#ffffff11] sm:-ml-3 sm:p-2 rounded"
       onMouseOver={() => setMouseInside(true)}
@@ -34,7 +41,7 @@ export const CardMusic = ({ props, i }: propsMsc) => {
         }
         <div className="flex flex-col  w-[80%] ">
           <div className=" overflow-hidden text-nowrap overflow-ellipsis text-sm sm:flex justify-between">
-            <p className="font-semibold text-sm text-zinc-50">
+            <p className="font-medium text-sm text-zinc-50">
               {props.name}
             </p>
           </div>
@@ -49,8 +56,8 @@ export const CardMusic = ({ props, i }: propsMsc) => {
           </div>
         </div>
       </div>
-      <p className="w-[20%] hidden sm:block text-[13px] font-medium ">{props.album}</p>
-      <p className="w-[20%]  hidden sm:block text-[13px] font-medium ">{props.addEm}</p>
+      <p className="w-[20%] hidden sm:block text-[13px] ">{props.album}</p>
+      <p className="w-[20%] hidden sm:block text-[13px]  ">{props.addEm}</p>
 
       <div className="sm:flex items-center gap-6">
         <div>
@@ -73,7 +80,9 @@ export const CardMusic = ({ props, i }: propsMsc) => {
           }
         </div>
 
-        <span className="text-[13px] font-semibold hidden sm:block mr-3">2:41</span>
+        <span className="text-[13px]  hidden sm:block mr-3">{
+          time
+        }</span>
 
         <span className="sm:hidden">
           <MenuMusics music={props} />

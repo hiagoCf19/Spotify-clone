@@ -1,3 +1,5 @@
+
+import { MiniCardLiked } from "@/components/curtidos/miniCard"
 import { playlists } from "@/mocks/playlists-albuns"
 import { Hour } from "@/scripts/Saudacao"
 import { urlFormater } from "@/scripts/normalize"
@@ -8,10 +10,11 @@ import { Link } from "react-router-dom"
 
 
 export const FirstSectionMain = () => {
-  const LibraryCards = playlists.filter((item) => {
-    return item.biblioteca === true
-  })
-  const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
+
+  let cardsRendered: number = 0
+
+
+  const [hoveredIndex, setHoveredIndex] = useState<string | null>(null);
   const saudacao = Hour()
   return (
     <div className="flex flex-col gap-4 mt-6 sm:mt-0">
@@ -25,59 +28,47 @@ export const FirstSectionMain = () => {
 
       </div>
       {/* LISTA DESKTOP */}
-      <div className="
-      hidden sm:block">
-        <div className="flex gap-3 flex-wrap ">
-
-          {LibraryCards.slice(0, 8).map((card, i) => (
-            <Link
-              to={urlFormater(`${card.name}-${i}`)}
-              key={`${card.name}-${i}`}
-              className=" w-[24.4%] h-16 flex items-center gap-4 rounded bg-opacity-10 backdrop-blur-20 bg-[#ffffff13] hover:bg-[#ffffff22]  cursor-pointer relative"
-              onMouseOver={() => setHoveredIndex(i)}
-              onMouseOut={() => setHoveredIndex(null)}
-            >
-
-              <div className="flex items-center gap-4">
-                {'image' in card ? <img src={card.image} alt={card.classe} className=" h-16 rounded rounded-r-none" /> : <div className="w-16 h-16 flex items-center justify-center bg-[#272727] rounded rounded-r-none">
-                  <Music />
-                </div>}
-
-                <p className="text-[16px] font-semibold text-zinc-50">{card.name}</p>
-                <div className={` absolute right-0 p-4 rounded-full bg-spotgreen shadow-lg shadow-[#000000c1] mx-4 ${hoveredIndex === i ? '' : 'hidden'}`}>
-                  <FaPlay color="#000" />
-                </div>
-
-              </div>
 
 
-            </Link>
-          ))}
+      <div className="flex sm:gap-3 gap-2 flex-wrap ">
+        <MiniCardLiked />
+        {
+          playlists.map((playlist) => (
+            playlist.cards.map((card, i) => {
+              if (cardsRendered >= 7) return null;
+              cardsRendered++;
+              return (
+                <Link
+                  to={urlFormater(`${card.title}-${i}`)}
+                  key={`${card}-${i}`}
+                  className="sm:w-[24.4%] w-[48%] sm:h-16 h-14 flex items-center sm:gap-4 gap-2 rounded bg-opacity-10 backdrop-blur-20 bg-[#ffffff13] hover:bg-[#ffffff22] cursor-pointer sm:relative"
+                  onMouseOver={() => setHoveredIndex(card.title)}
+                  onMouseOut={() => setHoveredIndex(null)}
+                >
 
-        </div>
+                  <div className="flex items-center sm:gap-4 gap-2 overflow-hidden">
+                    {card.image !== "" ? <img src={card.image} alt={card.title} className="sm:h-16 h-14 rounded rounded-r-none" /> : <div className="sm:size-16 size-14 flex items-center justify-center bg-[#272727] rounded rounded-r-none">
+                      <Music />
+                    </div>}
+
+                    <p className=" sm:text-base text-[13px] font-semibold text-zinc-50 whitespace-nowrap overflow-hidden overflow-ellipsis">{card.title}</p>
+
+                    <div className={` absolute right-0 p-4 rounded-full sm:bg-spotgreen bg-transparent sm:shadow-lg shadow-[#000000c1] mx-4 ${hoveredIndex === card.title ? '' : 'hidden'}`}>
+                      <FaPlay color="#000" className="hidden sm:block" />
+                    </div>
+                  </div>
+
+
+
+                </Link>
+              );
+            })
+          ))
+        }
       </div>
-      {/* Lista Mobile */}
-      <div className="sm:hidden ">
 
-        <div className="flex gap-2 flex-wrap justify-center ">
-          {/* CURTIDOS */}
-          {LibraryCards.slice(0, 6).map((card, i) => (
-            <Link
-              to={urlFormater(`${card.name}-${i}`)}
-              key={`${card.name}-${i}`}
-              className=" w-[48%] h-14 flex items-center gap-2 rounded bg-opacity-10 backdrop-blur-20 bg-[#ffffff0f] hover:bg-[#ffffff1a] cursor-pointer"
-            >
-              {'image' in card ? <img src={card.image} alt={card.classe} className=" h-14 w-14 rounded rounded-r-none" /> : <div className="w-14 h-14 flex items-center justify-center bg-[#272727] rounded rounded-r-none">
-                <Music />
-              </div>}
 
-              <p className="text-[13px] font-semibold text-zinc-50 w-18 whitespace-nowrap overflow-hidden overflow-ellipsis">{card.name}</p>
 
-            </Link>
-          ))}
-
-        </div>
-      </div>
 
     </div>
 

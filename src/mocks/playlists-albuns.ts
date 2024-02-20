@@ -1,6 +1,6 @@
 export interface cards {
   title: string;
-  image?: string;
+  image: string;
   color?: string;
   description: string;
   musicas: musics[];
@@ -12,7 +12,6 @@ export interface Pl {
   image?: string;
   classe: string;
   cards: cards[];
-
   description?: string;
 }
 export interface musics {
@@ -21,100 +20,11 @@ export interface musics {
   album: string;
   capa?: string;
   addEm: string;
+  liked: boolean;
+  durationMultipliedBy100: number;
 }
 
 export const playlists: Pl[] = [
-  {
-    name: "Musicas Curtidas",
-    color: " rgba(66, 46, 194, 0.535) 100%",
-    biblioteca: true,
-    classe: "Playlist",
-    image: "./assets/Art.png",
-    cards: [
-      {
-        title: "Musicas Curtidas",
-        image: "./assets/Art.png",
-        color: " rgba(66, 46, 194, 0.535) 100%",
-        description: "As músicas que você curtiu.",
-        musicas: [
-          {
-            name: "The Chain -2004 Remaster",
-            artista: "Fleetwood Mac",
-
-            album: "Rumours (Super Deluxe)",
-            capa: "assets/capas/theChain.jpeg",
-            addEm: "4 de set. de 2023",
-          },
-          {
-            name: "Dreams",
-            artista: "Bazzi",
-
-            album: "Cosmic",
-            capa: "assets/capas/cosmic.jpeg",
-            addEm: "05/02/2024",
-          },
-          {
-            name: "musica teste1",
-            artista: "artista 02",
-
-            album: "album03",
-            addEm: "05/02/2024",
-          },
-          {
-            name: "musica test2",
-            artista: "artista 03",
-
-            album: "album03",
-            addEm: "05/02/2024",
-          },
-          {
-            name: "musica test3",
-            artista: "artista 03",
-
-            album: "album03",
-            addEm: "05/02/2024",
-          },
-          {
-            name: "musica test3",
-            artista: "artista 03",
-
-            album: "album03",
-            addEm: "05/02/2024",
-          },
-        ],
-      },
-    ],
-  },
-  {
-    name: "playlist #2",
-    color: "",
-    biblioteca: true,
-    classe: "Playlist",
-    cards: [
-      {
-        title: "Playlist #2",
-        image: "",
-        description: "playlist #2",
-        musicas: [
-          {
-            name: "musica teste1",
-            artista: "artista 02",
-
-            album: "album03",
-
-            addEm: "05/02/2024",
-          },
-          {
-            name: "musica test2",
-            artista: "artista 03",
-
-            album: "album03",
-            addEm: "05/02/2024",
-          },
-        ],
-      },
-    ],
-  },
   {
     name: "Feito para você",
     color: "",
@@ -134,6 +44,8 @@ export const playlists: Pl[] = [
             album: "Confundindo Sábios",
             capa: "assets/capas/mix1/CnfSabios.jpeg",
             addEm: "11 fev. 2024",
+            durationMultipliedBy100: 403,
+            liked: true,
           },
           {
             name: "Da Favela pro Mundo",
@@ -141,6 +53,8 @@ export const playlists: Pl[] = [
             album: "Da Favela pro Mundo",
             capa: "assets/capas/mix1/FavMundo.jpeg",
             addEm: "13 fev. 2024",
+            durationMultipliedBy100: 436,
+            liked: false,
           },
         ],
       },
@@ -156,6 +70,8 @@ export const playlists: Pl[] = [
             capa: "assets/capas/mix4/ILso.jpeg",
             album: "I Love You So",
             addEm: "15 fev. 2024",
+            durationMultipliedBy100: 240,
+            liked: true,
           },
           {
             name: "Telephones",
@@ -163,6 +79,8 @@ export const playlists: Pl[] = [
             capa: "assets/capas/mix4/changes.jpeg",
             album: "Changes",
             addEm: "13 fev. 2024",
+            durationMultipliedBy100: 332,
+            liked: true,
           },
         ],
       },
@@ -178,6 +96,8 @@ export const playlists: Pl[] = [
             album: "Rumours (Super Deluxe)",
             capa: "assets/capas/theChain.jpeg",
             addEm: "4 de set. de 2023",
+            durationMultipliedBy100: 430,
+            liked: true,
           },
           {
             name: "Paint It, Black 01",
@@ -185,6 +105,8 @@ export const playlists: Pl[] = [
             capa: "assets/capas/mix5/afterm.jpeg",
             album: "Aftermath",
             addEm: "9 de fev. de 2024",
+            durationMultipliedBy100: 322,
+            liked: true,
           },
         ],
       },
@@ -197,196 +119,47 @@ export const playlists: Pl[] = [
           {
             name: "musica 00",
             artista: "artista 02",
-
             album: "album03",
             addEm: "05/02/2024",
+
+            durationMultipliedBy100: 100,
+            liked: false,
           },
           {
             name: "musica 01",
             artista: "artista 02",
-
             album: "album03",
             addEm: "05/02/2024",
+
+            durationMultipliedBy100: 100,
+            liked: false,
           },
         ],
       },
-    ],
-  },
-  {
-    name: "Playlist #3",
-    color: "",
-    biblioteca: true,
-    classe: "Playlist",
-
-    cards: [
       {
-        title: "Playlist #3",
-        image: "",
-        description: "playlist #3",
+        title: "Radar de Novidades",
+        color: "rgba(169, 168, 196, 0.500) 120%",
+        image: "assets/capas/RadarDeNovidades/radar.jpeg",
+        description:
+          "Confira os lançamentos dos artistas que você segue e novos singles escolhidos só pra você.",
         musicas: [
           {
-            name: "musica teste1",
-            artista: "artista 02",
-
-            album: "album03",
-
-            addEm: "05/02/2024",
+            name: "Leave Her",
+            artista: "d4vd",
+            album: "Withering",
+            capa: "assets/capas/RadarDeNovidades/withering.jpeg",
+            addEm: "há 2 dias",
+            durationMultipliedBy100: 244,
+            liked: true,
           },
           {
-            name: "musica test2",
-            artista: "artista 03",
-
-            album: "album03",
-
-            addEm: "05/02/2024",
-          },
-        ],
-      },
-    ],
-  },
-  {
-    name: "Playlist #4",
-    color: "",
-    biblioteca: true,
-    classe: "Playlist",
-
-    cards: [
-      {
-        title: "Playlist #5",
-        image: "",
-        description: "playlist #2",
-        musicas: [
-          {
-            name: "musica teste1",
-            artista: "artista 05",
-
-            album: "album03",
-            addEm: "05/02/2024",
-          },
-          {
-            name: "musica test2",
-            artista: "artista 03",
-
-            album: "album03",
-            addEm: "05/02/2024",
-          },
-        ],
-      },
-    ],
-  },
-  {
-    name: "Playlist #6",
-    color: "",
-    biblioteca: true,
-    classe: "Playlist",
-
-    cards: [
-      {
-        title: "Playlist #6",
-        image: "",
-        description: "playlist #2",
-        musicas: [
-          {
-            name: "musica teste1",
-            artista: "artista 02",
-
-            album: "album03",
-            addEm: "05/02/2024",
-          },
-          {
-            name: "musica test2",
-            artista: "artista 03",
-
-            album: "album03",
-            addEm: "05/02/2024",
-          },
-        ],
-      },
-    ],
-  },
-  {
-    name: "Playlist #7",
-    color: "",
-    biblioteca: true,
-    classe: "Playlist",
-    cards: [
-      {
-        title: "Playlist #7",
-        image: "",
-        description: "playlist #2",
-        musicas: [
-          {
-            name: "musica teste1",
-            artista: "artista 02",
-
-            album: "album03",
-            addEm: "05/02/2024",
-          },
-          {
-            name: "musica test2",
-            artista: "artista 03",
-
-            album: "album03",
-            addEm: "05/02/2024",
-          },
-        ],
-      },
-    ],
-  },
-  {
-    name: "Playlist #8",
-    color: "",
-    biblioteca: true,
-    classe: "Playlist",
-    cards: [
-      {
-        title: "Playlist #8",
-        image: "",
-        description: "playlist #2",
-        musicas: [
-          {
-            name: "musica teste1",
-            artista: "artista 02",
-
-            album: "album03",
-            addEm: "05/02/2024",
-          },
-          {
-            name: "musica test2",
-            artista: "artista 03",
-
-            album: "album03",
-            addEm: "05/02/2024",
-          },
-        ],
-      },
-    ],
-  },
-  {
-    name: "Playlist #9",
-    color: "",
-    biblioteca: true,
-    classe: "Playlist",
-
-    cards: [
-      {
-        title: "Playlist #9",
-        image: "",
-        description: "playlist #2",
-        musicas: [
-          {
-            name: "musica teste1",
-            artista: "artista 02",
-
-            album: "album03",
-            addEm: "05/02/2024",
-          },
-          {
-            name: "musica test2",
-            artista: "artista 03",
-
-            album: "album03",
-            addEm: "05/02/2024",
+            name: "Frank Miller (kill Again)",
+            artista: "Freddie Dredd",
+            album: "Frank Miller (kill Again)",
+            capa: "assets/capas/RadarDeNovidades/FrankMiller.jpeg",
+            addEm: "há 3 dias",
+            durationMultipliedBy100: 211,
+            liked: true,
           },
         ],
       },
@@ -411,6 +184,8 @@ export const playlists: Pl[] = [
             album: "album03",
 
             addEm: "05/02/2024",
+            durationMultipliedBy100: 100,
+            liked: false,
           },
           {
             name: "musica test2",
@@ -419,37 +194,8 @@ export const playlists: Pl[] = [
             album: "album03",
 
             addEm: "05/02/2024",
-          },
-        ],
-      },
-    ],
-  },
-  {
-    name: "Playlist #9",
-    color: "",
-    biblioteca: true,
-    classe: "Playlist",
-    cards: [
-      {
-        title: "Playlist #11",
-        image: "",
-        description: "playlist #2",
-        musicas: [
-          {
-            name: "musica teste1",
-            artista: "artista 02",
-
-            album: "album03",
-
-            addEm: "05/02/2024",
-          },
-          {
-            name: "musica test2",
-            artista: "artista 03",
-
-            album: "album03",
-
-            addEm: "05/02/2024",
+            durationMultipliedBy100: 100,
+            liked: false,
           },
         ],
       },
@@ -473,6 +219,8 @@ export const playlists: Pl[] = [
 
             album: "album03",
             addEm: "05/02/2024",
+            durationMultipliedBy100: 100,
+            liked: false,
           },
           {
             name: "musica test2",
@@ -480,6 +228,8 @@ export const playlists: Pl[] = [
 
             album: "album03",
             addEm: "05/02/2024",
+            durationMultipliedBy100: 100,
+            liked: false,
           },
         ],
       },
@@ -493,7 +243,7 @@ export const playlists: Pl[] = [
     classe: "Playlist",
     cards: [
       {
-        title: "Playlist #2",
+        title: "Playlist #1",
         image: "",
         description: "playlist #2",
         musicas: [
@@ -503,6 +253,8 @@ export const playlists: Pl[] = [
 
             album: "album03",
             addEm: "05/02/2024",
+            durationMultipliedBy100: 100,
+            liked: false,
           },
           {
             name: "musica test2",
@@ -510,6 +262,8 @@ export const playlists: Pl[] = [
 
             album: "album03",
             addEm: "05/02/2024",
+            durationMultipliedBy100: 100,
+            liked: false,
           },
         ],
       },

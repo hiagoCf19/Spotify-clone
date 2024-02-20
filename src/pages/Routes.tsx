@@ -10,6 +10,7 @@ import { urlFormater } from "@/scripts/normalize";
 import { LibraryCards } from "@/scripts/bibliotecas";
 import { OpenAlbumOrPlaylist } from "@/components/main/OnOpenAlbum/PlaylistAreaOpen";
 import { MostrarTudo } from "@/components/main/Home/GenericList/mostrarTudo";
+import { Curtidos } from "@/components/curtidos";
 
 
 function App() {
@@ -24,7 +25,7 @@ function App() {
           <Aside />
           <Routes>
             <Route path="/" element={<Main />} />
-
+            <Route path={urlFormater('Musicas-curtidas')} element={<Curtidos />} />
             {LibraryCards.map((item, Im) => (
 
               item.cards != undefined ? item.cards?.map((card, i) => (
