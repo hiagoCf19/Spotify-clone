@@ -10,10 +10,7 @@ import { Link } from "react-router-dom"
 
 
 export const FirstSectionMain = () => {
-
   let cardsRendered: number = 0
-
-
   const [hoveredIndex, setHoveredIndex] = useState<string | null>(null);
   const saudacao = Hour()
   return (
