@@ -38,7 +38,7 @@ export const FirstSectionMain = () => {
                 <Link
                   to={urlFormater(`${card.title}-${i}`)}
                   key={`${card}-${i}`}
-                  className="sm:w-[24.4%] w-[48%] sm:h-16 h-14 flex items-center sm:gap-4 gap-2 rounded bg-opacity-10 backdrop-blur-20 bg-[#ffffff13] hover:bg-[#ffffff22] cursor-pointer sm:relative"
+                  className="sm:w-[24.2%] w-[48%] sm:h-16 h-14 flex items-center sm:gap-4 gap-2 rounded bg-opacity-10 backdrop-blur-20 bg-[#ffffff13] hover:bg-[#ffffff22] cursor-pointer sm:relative"
                   onMouseOver={() => setHoveredIndex(card.title)}
                   onMouseOut={() => setHoveredIndex(null)}
                 >

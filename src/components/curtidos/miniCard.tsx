@@ -10,7 +10,7 @@ export const MiniCardLiked = () => {
     <Link
       to={urlFormater('Musicas-curtidas')}
 
-      className=" sm:w-[24.4%] w-[48%] sm:h-16 h-14 flex items-center gap-4 rounded bg-opacity-10 backdrop-blur-20 bg-[#ffffff13] hover:bg-[#ffffff22]  cursor-pointer relative"
+      className=" sm:w-[24.2%] w-[48%] sm:h-16 h-14 flex items-center gap-4 rounded bg-opacity-10 backdrop-blur-20 bg-[#ffffff13] hover:bg-[#ffffff22]  cursor-pointer relative"
       onMouseOver={() => setHoveredIndex(true)}
       onMouseOut={() => setHoveredIndex(false)}
     >
