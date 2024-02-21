@@ -22,6 +22,7 @@ export interface musics {
   addEm: string;
   liked: boolean;
   durationMultipliedBy100: number;
+  genre: string;
 }
 
 export const playlists: Pl[] = [
@@ -32,6 +33,25 @@ export const playlists: Pl[] = [
     classe: "Álbum",
     image: "",
     cards: [
+      {
+        title: "Moody Mix",
+        color: "rgba(223,84,139, 0.600) 120%",
+
+        image: "assets/capas/Moody/moody.jpeg",
+        description: "Nirvana, Tom Odell, Radiohead e mais",
+        musicas: [
+          {
+            name: "No Surprises",
+            artista: "Radiohead",
+            album: "OK Computer",
+            capa: "assets/capas/Moody/OkComp.jpeg",
+            addEm: "20 fev. 2024",
+            durationMultipliedBy100: 349,
+            liked: true,
+            genre: "Rock",
+          },
+        ],
+      },
       {
         title: "Daily Mix 1",
         color: "rgba(152,206,197, 0.800) 120%",
@@ -46,6 +66,7 @@ export const playlists: Pl[] = [
             addEm: "11 fev. 2024",
             durationMultipliedBy100: 403,
             liked: true,
+            genre: "Rap",
           },
           {
             name: "Da Favela pro Mundo",
@@ -55,6 +76,7 @@ export const playlists: Pl[] = [
             addEm: "13 fev. 2024",
             durationMultipliedBy100: 436,
             liked: false,
+            genre: "Rap",
           },
         ],
       },
@@ -72,6 +94,7 @@ export const playlists: Pl[] = [
             addEm: "15 fev. 2024",
             durationMultipliedBy100: 240,
             liked: true,
+            genre: "Indie",
           },
           {
             name: "Telephones",
@@ -81,9 +104,11 @@ export const playlists: Pl[] = [
             addEm: "13 fev. 2024",
             durationMultipliedBy100: 332,
             liked: true,
+            genre: "Indie",
           },
         ],
       },
+
       {
         title: "Daily Mix 5",
         color: "rgb(240,192,105, 0.500) 120%",
@@ -98,6 +123,7 @@ export const playlists: Pl[] = [
             addEm: "4 de set. de 2023",
             durationMultipliedBy100: 430,
             liked: true,
+            genre: "Rock",
           },
           {
             name: "Paint It, Black 01",
@@ -107,6 +133,7 @@ export const playlists: Pl[] = [
             addEm: "9 de fev. de 2024",
             durationMultipliedBy100: 322,
             liked: true,
+            genre: "Rock",
           },
         ],
       },
@@ -121,18 +148,18 @@ export const playlists: Pl[] = [
             artista: "artista 02",
             album: "album03",
             addEm: "05/02/2024",
-
             durationMultipliedBy100: 100,
             liked: false,
+            genre: "Outros",
           },
           {
             name: "musica 01",
             artista: "artista 02",
             album: "album03",
             addEm: "05/02/2024",
-
             durationMultipliedBy100: 100,
             liked: false,
+            genre: "Outros",
           },
         ],
       },
@@ -151,6 +178,7 @@ export const playlists: Pl[] = [
             addEm: "há 2 dias",
             durationMultipliedBy100: 244,
             liked: true,
+            genre: "Indie",
           },
           {
             name: "Frank Miller (kill Again)",
@@ -160,6 +188,7 @@ export const playlists: Pl[] = [
             addEm: "há 3 dias",
             durationMultipliedBy100: 211,
             liked: true,
+            genre: "Hip-Hop",
           },
         ],
       },
@@ -180,22 +209,20 @@ export const playlists: Pl[] = [
           {
             name: "musica teste1",
             artista: "artista 02",
-
             album: "album03",
-
             addEm: "05/02/2024",
             durationMultipliedBy100: 100,
             liked: false,
+            genre: "Outros",
           },
           {
             name: "musica test2",
             artista: "artista 03",
-
             album: "album03",
-
             addEm: "05/02/2024",
             durationMultipliedBy100: 100,
             liked: false,
+            genre: "Outros",
           },
         ],
       },
@@ -221,6 +248,7 @@ export const playlists: Pl[] = [
             addEm: "05/02/2024",
             durationMultipliedBy100: 100,
             liked: false,
+            genre: "Outros",
           },
           {
             name: "musica test2",
@@ -230,6 +258,7 @@ export const playlists: Pl[] = [
             addEm: "05/02/2024",
             durationMultipliedBy100: 100,
             liked: false,
+            genre: "Outros",
           },
         ],
       },
@@ -255,6 +284,7 @@ export const playlists: Pl[] = [
             addEm: "05/02/2024",
             durationMultipliedBy100: 100,
             liked: false,
+            genre: "Outros",
           },
           {
             name: "musica test2",
@@ -264,6 +294,7 @@ export const playlists: Pl[] = [
             addEm: "05/02/2024",
             durationMultipliedBy100: 100,
             liked: false,
+            genre: "Outros",
           },
         ],
       },

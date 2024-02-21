@@ -41,8 +41,10 @@ body {
   -webkit-line-clamp: 2;
 }
 
-::-webkit-scrollbar {
-  width: 6px;
+@media (min-width: 640px) {
+  ::-webkit-scrollbar {
+    width: 6px;
+  }
 }
 
 ::-webkit-scrollbar-thumb {

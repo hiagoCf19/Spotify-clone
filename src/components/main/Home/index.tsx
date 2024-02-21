@@ -5,11 +5,13 @@ import { HeaderMain } from "./HeaderMain"
 import { FirstSectionMain } from "./firstSection"
 
 
+
+
 export const Main = () => {
   const GradientBase = styled.div`
   
   width: 100%;
-  padding: 0 12px;
+  
   background: rgb(18, 18, 18);
   background: -moz-linear-gradient(
     357deg,
@@ -49,19 +51,24 @@ export const Main = () => {
   }
 
   `
+
+
   return (
 
-    <div className="flex-1  sm:rounded-[6px] h-[88vh]  overflow-y-scroll 
+    <div className=" h-[88vh]  overflow-y-scroll 
      ">
       <GradientBase className="flex gap-4 flex-col 
       backgroundGradientMobile sm:backgroundGradientDesktop sm:p-4 sm:px-6 p-2">
         < HeaderMain />
+
         <FirstSectionMain />
         <MobileCarousel />
         <div className="mt-2 hidden sm:block ">
           <GenericList />
         </div>
+        <div className="h-[22vh]" />
       </GradientBase>
+
     </div >
   )
 }

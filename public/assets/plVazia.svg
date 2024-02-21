@@ -1,9 +1,0 @@
-<svg version="1.2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 67 65" width="67" height="65">
-	<title>ex</title>
-	<defs>
-		<image  width="48" height="48" id="img1" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwBAMAAAClLOS0AAAAAXNSR0IB2cksfwAAACdQTFRFEBAQGBgYJiYmKCgoKCgos7OzXFxckJCQbm5uf39/oqKiOTk5JSUljnNeigAAAA10Uk5TAABggP//////////UBDZVTYAAACPSURBVHicY2BUNsYCjAQYhF2wAkMGFewSTgwm2CWcRyXwSIRCQAgJEmDSddhKpIEl3FLRJUpDQRLuGEHiEToTJNEaORVNwjUMbEdoCrodXtHeUUBq6ZatS1AlPMPTI4HU1LLSKagS3ktDVwOpXaFRW9Bc5TEDTHW2uGB4EBWMZIkj2CV8cBcyjIexFUs2AgBwJTaS3sH63gAAAABJRU5ErkJggg=="/>
-	</defs>
-	<style>
-	</style>
-	<use id="Background" href="#img1" x="10" y="8"/>
-</svg>

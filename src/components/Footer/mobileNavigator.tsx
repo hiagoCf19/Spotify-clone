@@ -1,3 +1,4 @@
+import { urlFormater } from "@/scripts/normalize";
 import { LibraryIcon } from "lucide-react"
 import { CiSearch } from "react-icons/ci"
 
@@ -12,15 +13,16 @@ export const MobileNavigator = () => {
           <TiHome size={35} />
           Inicio
         </Link>
-        <a href="" className="flex items-center flex-col text-[12px] hover:text-zinc-50 gap-1">
+        <Link to={urlFormater('search')} className="flex items-center flex-col text-[12px] hover:text-zinc-50 gap-1">
           <CiSearch size={35} />
           Buscar
-        </a>
+        </Link>
         <a href="" className="flex items-center flex-col text-[12px] hover:text-zinc-50 gap-1">
           <LibraryIcon size={35} />
           Biblioteca
         </a>
       </div>
+
     </nav>
 
   )

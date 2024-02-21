@@ -57,6 +57,7 @@ export const OpenAlbumOrPlaylist = ({ album, pl }: propsAlbum) => {
 
   return (
     <div className="flex-1 sm:rounded-[6px] h-[88vh]  overflow-y-scroll gap-1 flex flex-col bg-[#171717] ">
+
       <Gradient>
         <div className="fixed py-4 sm:hidden"
           onClick={() => window.history.back()}
@@ -114,11 +115,13 @@ export const OpenAlbumOrPlaylist = ({ album, pl }: propsAlbum) => {
         <div className="hidden sm:block">
           <div
             className="flex items-center justify-between  border-b border-solid border-[#a7a7a74e] pb-2 text-sm font-medium">
-            <span className="w-[20%]  flex pl-5 gap-3">
-              <i>#</i>Titulo</span>
-            <p className="w-[20%]  flex ml-8 ">Álbum</p>
+            <span className="w-[20%]  flex pl-3 gap-8">
+              <i>#</i>
+              Titulo
+            </span>
+            <p className="w-[20%]  flex ml-[2%]">Álbum</p>
             <p className="w-[20%]  flex mr-[3%]">Adicionado em</p>
-            <Clock size={18} className="mr-[3%]" />
+            <Clock size={18} className="mr-[4%]" />
           </div>
         </div>
         <div
@@ -131,8 +134,11 @@ export const OpenAlbumOrPlaylist = ({ album, pl }: propsAlbum) => {
                 <CardMusic props={card} i={i + 1} />
               </React.Fragment>
             ))}
+
           </div>
+
         </div>
+        <div className="sm:hidden h-[10vh]" />
       </Gradient>
     </div>
   )

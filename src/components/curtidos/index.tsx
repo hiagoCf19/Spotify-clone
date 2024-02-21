@@ -129,6 +129,7 @@ export const Curtidos = () => {
             ))}
           </div>
         </div>
+        <div className="sm:hidden h-[10vh]" />
       </Gradient>
     </div>
   )

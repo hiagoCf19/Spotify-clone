@@ -50,7 +50,7 @@ export const FirstSectionMain = () => {
 
                     <p className=" sm:text-base text-[13px] font-semibold text-zinc-50 whitespace-nowrap overflow-hidden overflow-ellipsis">{card.title}</p>
 
-                    <div className={` absolute right-0 p-4 rounded-full sm:bg-spotgreen bg-transparent sm:shadow-lg shadow-[#000000c1] mx-4 ${hoveredIndex === card.title ? '' : 'hidden'}`}>
+                    <div className={` absolute -right-3 p-4 rounded-full sm:bg-spotgreen bg-transparent sm:shadow-lg shadow-[#000000c1] mx-4 ${hoveredIndex === card.title ? '' : 'hidden'}`}>
                       <FaPlay color="#000" className="hidden sm:block" />
                     </div>
                   </div>

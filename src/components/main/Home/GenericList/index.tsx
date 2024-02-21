@@ -9,7 +9,7 @@ import { DontLibraryCards } from "@/scripts/Naobibliotecas"
 
 export const GenericList = () => {
   return (
-    <div className="flex flex-col gap-2">
+    <div className="flex flex-col gap-2  overflow-hidden">
       {DontLibraryCards.map((item, i) => (
         <React.Fragment key={i} >
           <div className="flex justify-between ">
@@ -22,15 +22,18 @@ export const GenericList = () => {
               Mostrar tudo
             </Link>
           </div>
-          <div className="flex gap-6">
+          <div className="flex gap-6  w-full">
             {item.cards != undefined ? item.cards?.map((card, i) => (
               <Link
                 to={urlFormater(`${card.title}-${i}`)}
                 key={i}
+                className=" w-[15%] h-[32vh] overflow-hidden"
               >
                 <Card
                   props={card}
                 />
+
+
               </Link>
             ))
               :
