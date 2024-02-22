@@ -12,10 +12,6 @@ import { AsideCardLiked } from "@/components/curtidos/asideCard";
 
 export const BottomAside = () => {
   const [SearchDiv, setSearchDiv] = useState(false)
-
-
-
-
   return (
     <section className=" h-[87%]  bg-[#141414] overflow-hidden overflow-y-scroll p-3 rounded-[6px]">
       <div className="  font-medium flex flex-col gap-3 h-max ">
@@ -27,7 +23,7 @@ export const BottomAside = () => {
         </div>
         <div className="flex items-center justify-between gap-2 ">
           <div
-            className={`animate__animated animate__fadeInLeft  flex items-center justify-center p-1 hover:bg-[#252525] gap-2 text-normal  ${SearchDiv ? 'rounded-[6px] bg-[#252525]' : 'rounded-full'} `}
+            className={` flex items-center justify-center p-1 hover:bg-[#252525] gap-2 text-normal  ${SearchDiv ? 'rounded-[6px] bg-[#252525]' : 'rounded-full'} `}
             onClick={() => setSearchDiv(true)}
 
           >

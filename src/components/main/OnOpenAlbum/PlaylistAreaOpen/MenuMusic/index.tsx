@@ -1,23 +1,20 @@
 import { MoreVertical, Music } from "lucide-react"
 import {
   Drawer,
-
   DrawerContent,
-
   DrawerHeader,
-
   DrawerTrigger,
 } from "@/components/ui/drawer"
 
 import { BodyDrawerCard } from "./body"
-
 import { musics } from "@/mocks/playlists-albuns"
-
 
 interface propsMenu {
   music: musics
 }
+
 export const MenuMusics = ({ music }: propsMenu) => {
+
   return (
     <div>
       <Drawer>
@@ -37,11 +34,13 @@ export const MenuMusics = ({ music }: propsMenu) => {
               }
               <div className="flex flex-col  w-[80%] ">
                 <div className=" font-medium text-sm text-zinc-50">
-                  {music.name}
+                  {music.artista.map((artista) => (
+                    artista.name
+                  ))}
 
                 </div>
                 <span className="text-[12px] font-medium text-[#b7b7b7]">
-                  {music.artista}
+                  { }
                 </span>
               </div>
             </div>

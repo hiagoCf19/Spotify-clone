@@ -14,9 +14,13 @@ export interface Pl {
   cards: cards[];
   description?: string;
 }
+export interface artista {
+  name: string;
+  foto: string;
+}
 export interface musics {
   name: string;
-  artista: string;
+  artista: artista[];
   album: string;
   capa?: string;
   addEm: string;
@@ -36,13 +40,17 @@ export const playlists: Pl[] = [
       {
         title: "Moody Mix",
         color: "rgba(223,84,139, 0.600) 120%",
-
         image: "assets/capas/Moody/moody.jpeg",
         description: "Nirvana, Tom Odell, Radiohead e mais",
         musicas: [
           {
             name: "No Surprises",
-            artista: "Radiohead",
+            artista: [
+              {
+                name: "Radiohead",
+                foto: "assets/artistas/radiohead.jpeg",
+              },
+            ],
             album: "OK Computer",
             capa: "assets/capas/Moody/OkComp.jpeg",
             addEm: "20 fev. 2024",
@@ -60,7 +68,12 @@ export const playlists: Pl[] = [
         musicas: [
           {
             name: "Mil Cairão",
-            artista: "Rashid",
+            artista: [
+              {
+                name: "Rashid",
+                foto: "assets/artistas/rashid.jpeg",
+              },
+            ],
             album: "Confundindo Sábios",
             capa: "assets/capas/mix1/CnfSabios.jpeg",
             addEm: "11 fev. 2024",
@@ -70,12 +83,32 @@ export const playlists: Pl[] = [
           },
           {
             name: "Da Favela pro Mundo",
-            artista: "ADL",
+            artista: [
+              {
+                name: "ADL",
+                foto: "assets/artistas/ADL.jpeg",
+              },
+            ],
             album: "Da Favela pro Mundo",
             capa: "assets/capas/mix1/FavMundo.jpeg",
             addEm: "13 fev. 2024",
             durationMultipliedBy100: 436,
             liked: false,
+            genre: "Rap",
+          },
+          {
+            name: "Gratidão",
+            artista: [
+              {
+                name: "Rashid",
+                foto: "assets/artistas/rashid.jpeg",
+              },
+            ],
+            album: "Gratidão",
+            capa: "assets/capas/rap/gratidao.jpeg",
+            addEm: "21 fev. 2024",
+            durationMultipliedBy100: 334,
+            liked: true,
             genre: "Rap",
           },
         ],
@@ -88,7 +121,12 @@ export const playlists: Pl[] = [
         musicas: [
           {
             name: "I Love You So",
-            artista: "The Walters",
+            artista: [
+              {
+                name: "The Walters",
+                foto: "assets/artistas/theWalters.jpeg",
+              },
+            ],
             capa: "assets/capas/mix4/ILso.jpeg",
             album: "I Love You So",
             addEm: "15 fev. 2024",
@@ -98,7 +136,12 @@ export const playlists: Pl[] = [
           },
           {
             name: "Telephones",
-            artista: "Vocations",
+            artista: [
+              {
+                name: "Vocations",
+                foto: "assets/artistas/vocations.jpeg",
+              },
+            ],
             capa: "assets/capas/mix4/changes.jpeg",
             album: "Changes",
             addEm: "13 fev. 2024",
@@ -117,7 +160,13 @@ export const playlists: Pl[] = [
         musicas: [
           {
             name: "The Chain -2004 Remaster",
-            artista: "Fleetwood Mac",
+            artista: [
+              {
+                name: "Fleetwood Mac",
+                foto: "assets/artistas/fleetwoodMac.jpeg",
+              },
+            ],
+
             album: "Rumours (Super Deluxe)",
             capa: "assets/capas/theChain.jpeg",
             addEm: "4 de set. de 2023",
@@ -127,7 +176,13 @@ export const playlists: Pl[] = [
           },
           {
             name: "Paint It, Black 01",
-            artista: "The Rolling Stones",
+            artista: [
+              {
+                name: "The Rolling Stones",
+                foto: "assets/artistas/stones.jpg",
+              },
+            ],
+
             capa: "assets/capas/mix5/afterm.jpeg",
             album: "Aftermath",
             addEm: "9 de fev. de 2024",
@@ -145,7 +200,12 @@ export const playlists: Pl[] = [
         musicas: [
           {
             name: "musica 00",
-            artista: "artista 02",
+            artista: [
+              {
+                name: "artista X",
+                foto: "assets",
+              },
+            ],
             album: "album03",
             addEm: "05/02/2024",
             durationMultipliedBy100: 100,
@@ -154,7 +214,12 @@ export const playlists: Pl[] = [
           },
           {
             name: "musica 01",
-            artista: "artista 02",
+            artista: [
+              {
+                name: "artista X",
+                foto: "assets",
+              },
+            ],
             album: "album03",
             addEm: "05/02/2024",
             durationMultipliedBy100: 100,
@@ -172,7 +237,12 @@ export const playlists: Pl[] = [
         musicas: [
           {
             name: "Leave Her",
-            artista: "d4vd",
+            artista: [
+              {
+                name: "d4vd",
+                foto: "assets",
+              },
+            ],
             album: "Withering",
             capa: "assets/capas/RadarDeNovidades/withering.jpeg",
             addEm: "há 2 dias",
@@ -182,7 +252,12 @@ export const playlists: Pl[] = [
           },
           {
             name: "Frank Miller (kill Again)",
-            artista: "Freddie Dredd",
+            artista: [
+              {
+                name: "Freddie Dredd",
+                foto: "assets/artistas/freddieDredd.jpeg",
+              },
+            ],
             album: "Frank Miller (kill Again)",
             capa: "assets/capas/RadarDeNovidades/FrankMiller.jpeg",
             addEm: "há 3 dias",
@@ -208,7 +283,12 @@ export const playlists: Pl[] = [
         musicas: [
           {
             name: "musica teste1",
-            artista: "artista 02",
+            artista: [
+              {
+                name: "artista X",
+                foto: "assets",
+              },
+            ],
             album: "album03",
             addEm: "05/02/2024",
             durationMultipliedBy100: 100,
@@ -217,7 +297,12 @@ export const playlists: Pl[] = [
           },
           {
             name: "musica test2",
-            artista: "artista 03",
+            artista: [
+              {
+                name: "artista X",
+                foto: "assets",
+              },
+            ],
             album: "album03",
             addEm: "05/02/2024",
             durationMultipliedBy100: 100,
@@ -242,7 +327,12 @@ export const playlists: Pl[] = [
         musicas: [
           {
             name: "musica teste1",
-            artista: "artista 02",
+            artista: [
+              {
+                name: "artista X",
+                foto: "assets",
+              },
+            ],
 
             album: "album03",
             addEm: "05/02/2024",
@@ -252,7 +342,12 @@ export const playlists: Pl[] = [
           },
           {
             name: "musica test2",
-            artista: "artista 03",
+            artista: [
+              {
+                name: "artista X",
+                foto: "assets",
+              },
+            ],
 
             album: "album03",
             addEm: "05/02/2024",
@@ -278,7 +373,12 @@ export const playlists: Pl[] = [
         musicas: [
           {
             name: "musica teste1",
-            artista: "artista 02",
+            artista: [
+              {
+                name: "artista X",
+                foto: "assets",
+              },
+            ],
 
             album: "album03",
             addEm: "05/02/2024",
@@ -288,7 +388,12 @@ export const playlists: Pl[] = [
           },
           {
             name: "musica test2",
-            artista: "artista 03",
+            artista: [
+              {
+                name: "artista X",
+                foto: "assets",
+              },
+            ],
 
             album: "album03",
             addEm: "05/02/2024",

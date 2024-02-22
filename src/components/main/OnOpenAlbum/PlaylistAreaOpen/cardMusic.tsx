@@ -39,7 +39,7 @@ export const CardMusic = ({ props, i }: propsMsc) => {
             <Music />
           </div>
         }
-        <div className="flex flex-col  w-[80%] ">
+        <div className="flex flex-col  w-[80%] gap-1 ">
           <div className=" overflow-hidden text-nowrap overflow-ellipsis text-sm sm:flex justify-between">
             <p className="font-medium text-sm text-zinc-50">
               {props.name}
@@ -51,7 +51,9 @@ export const CardMusic = ({ props, i }: propsMsc) => {
               LYRICS
             </div>
             <span className="text-[12px] font-medium">
-              {props.artista}
+              {props.artista.map((artista) => (
+                artista.name
+              ))}
             </span>
           </div>
         </div>

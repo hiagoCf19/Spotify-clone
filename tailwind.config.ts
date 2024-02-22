@@ -18,7 +18,7 @@ module.exports = {
     },
     extend: {
       fontFamily: {
-        sans: ["Roboto", "sans-serif"],
+        sans: ["Circular Std", "sans-serif"],
       },
       colors: {
         spotgreen: "#1DB954",

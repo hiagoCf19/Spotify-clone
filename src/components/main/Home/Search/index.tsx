@@ -37,12 +37,12 @@ export const SearchComponent = () => {
 
 
   return (
-    <div className="flex-1 sm:rounded-[6px] min-h-[88vh]  overflow-y-scroll gap-1 flex flex-col bg-[#171717] sm:px-6 p-2 "
+    <div className={`flex-1 sm:rounded-[6px] min-h-[88vh] sm:h-40 overflow-y-scroll gap-1 flex flex-col bg-[#171717] sm:px-6  ${hiddenHeaderMB ? 'p-0' : 'p-2'} `}
 
     >
       <HeaderMain search={searchOpen} handleSearch={handleSearch} />
       <HeaderSearchMobile hidden={hiddenHeaderMB} />
-      <div className={`text-zinc-50 sm:hidden no-underline w-full flex items-center gap-2   p-2 rounded my-5 ${hiddenHeaderMB ? 'bg-[#272727]' : 'bg-zinc-50'}`}
+      <div className={`text-zinc-50 sm:hidden no-underline w-full flex items-center gap-2   p-2   ${hiddenHeaderMB ? 'bg-[#272727] py-4 ' : 'bg-zinc-50 rounded my-5'}`}
         onClick={() => setHiddenModal(true)}
       >
         {hiddenHeaderMB ?
@@ -56,7 +56,7 @@ export const SearchComponent = () => {
           :
           <Search color="#272727" />}
 
-        <form className="w-full">
+        <form className="w-full ">
           <input type="text"
             className={` w-[90%] rounded  ${hiddenHeaderMB ? ' placeholder:text-[#a7a7a7]' : 'placeholder:text-[#272727]'} placeholder:font-semibold outline-none bg-transparent`}
             placeholder="O que você quer ouvir ? "
@@ -80,10 +80,15 @@ export const SearchComponent = () => {
           </div>
 
         </div> : (
-          <div className="sm:py-4">
-            <h1 className="sm:text-[22px] text-xl font-bold text-zinc-50 hover:underline">
-              {search.length !== 0 ? 'Melhores Resultados' : 'Navegar por todas as seções'}
-            </h1>
+          <div className="sm:py-4 h-full">
+
+            {search.length !== 0 ? <h1 className="sm:text-[22px] text-xl font-bold text-zinc-50 hover:underline hidden sm:block">
+              Melhores Resultados
+            </h1> : <h1 className="sm:text-[22px] text-xl font-bold text-zinc-50 hover:underline">
+              Navegar por todas as seções
+
+            </h1>}
+
             {search.length !== 0 ? <ModalSearch search={search} /> : <EstaticHome />}
 
           </div>
