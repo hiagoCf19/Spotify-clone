@@ -1,10 +1,12 @@
 import { ArrowDownCircle, Bell, ChevronLeft, ChevronRight, CircleUser, Search } from "lucide-react"
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
 import { Tiip } from "@/components/ui/tolltiResume"
+import { ChangeEvent } from "react";
 interface propsHeaderMain {
   search?: boolean
+  handleSearch?: (e: ChangeEvent<HTMLInputElement>) => void;
 }
-export const HeaderMain = ({ search }: propsHeaderMain) => {
+export const HeaderMain = ({ search, handleSearch }: propsHeaderMain) => {
   return (
     <header className="hidden sm:block ">
 
@@ -27,6 +29,7 @@ export const HeaderMain = ({ search }: propsHeaderMain) => {
               <Search />
               <input type="text" className=" rounded-full  bg-[#242424]  w-[90%] outline-none px-2
           "
+                onChange={handleSearch}
                 autoFocus
               >
               </input>

@@ -1,9 +1,9 @@
 import { Pl, musics, playlists } from "./playlists-albuns";
-export interface BrowseAll {
+export interface InterfaceBrowseAll {
   genre: string;
   musics: musics[];
   background: string;
-  image: string;
+  capa: string;
 }
 function filterGenre(genre: string): musics[] {
   let musicsfilter: musics[] = [];
@@ -19,65 +19,65 @@ function filterGenre(genre: string): musics[] {
   return musicsfilter;
 }
 
-export const BrowseAll: BrowseAll[] = [
+export const BrowseAll: InterfaceBrowseAll[] = [
   {
     genre: "Podcasts",
     musics: filterGenre("Podcast"),
     background: "bg-[#906be7]",
-    image: "assets/capas/podcast/podcast.jpeg",
+    capa: "assets/capas/podcast/podcast.jpeg",
   },
   {
     genre: "Rap",
     musics: filterGenre("Rap"),
     background: "bg-[#1e3263]",
-    image: "assets/capas/rap/rap.jpeg",
+    capa: "assets/capas/rap/rap.jpeg",
   },
   {
     genre: "Funk",
     musics: filterGenre("Funk"),
     background: "bg-[#e64332]",
-    image: "assets/capas/funk/funkBr.jpeg",
+    capa: "assets/capas/funk/funkBr.jpeg",
   },
   {
     genre: "Hip-Hop",
     musics: filterGenre("Hip-Hop"),
     background: "bg-[#f19b2e]",
-    image: "assets/capas/HipHop/hipHop.jpeg",
+    capa: "assets/capas/HipHop/hipHop.jpeg",
   },
   {
     genre: "Indie",
     musics: filterGenre("Indie"),
     background: "bg-[#499EC2]",
-    image: "assets/capas/indie/indie.jpeg",
+    capa: "assets/capas/indie/indie.jpeg",
   },
   {
     genre: "Mpb",
     musics: filterGenre("Mpb"),
     background: "bg-[#7d4b31]",
-    image: "assets/capas/mpb/mpb.jpeg",
+    capa: "assets/capas/mpb/mpb.jpeg",
   },
   {
     genre: "Summer",
     musics: filterGenre("Summer"),
     background: "bg-[#4f374f]",
-    image: "assets/capas/summer/summer.jpeg",
+    capa: "assets/capas/summer/summer.jpeg",
   },
   {
     genre: "Pop",
     musics: filterGenre("Pop"),
     background: "bg-[#0c73eb]",
-    image: "assets/capas/pop/pop.png",
+    capa: "assets/capas/pop/pop.png",
   },
   {
     genre: "Rock",
     musics: filterGenre("Rock"),
     background: "bg-[#777777]",
-    image: "assets/capas/rock/rock.jpeg",
+    capa: "assets/capas/rock/rock.jpeg",
   },
   {
     genre: "Sertanejo",
-    musics: filterGenre("Hip-Hop"),
+    musics: filterGenre("Sertanejo"),
     background: "bg-[#2b2045]",
-    image: "assets/capas/sertanejo/sertanejo.jpeg",
+    capa: "assets/capas/sertanejo/sertanejo.jpeg",
   },
 ];

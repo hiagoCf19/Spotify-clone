@@ -1,44 +1,93 @@
 import SearchCtx from "@/context/context.Search";
 import { HeaderMain } from "../HeaderMain";
-import { useContext, useEffect } from "react";
-import { BrowseAll } from "@/mocks/BrowseAll";
-import { urlFormater } from "@/scripts/normalize";
-import { Link } from "react-router-dom";
+import { ChangeEvent, useContext, useEffect, useState } from "react";
+//import { BrowseAll } from "@/mocks/BrowseAll";
+
+
 import { HeaderSearchMobile } from "./HeaderSearchmobile";
-import { Search } from "lucide-react";
+import { ArrowLeft, Search } from "lucide-react";
+import { EstaticHome } from "./home";
+import { ModalSearch } from "./modalSearch";
+
+
 
 export const SearchComponent = () => {
 
   const { searchOpen, setSearchOpen } = useContext(SearchCtx);
+  const [search, setSearch] = useState('')
+  const [hiddenHeaderMB, setHiddenHeaderMB] = useState(false)
+  const [hiddenModal, setHiddenModal] = useState(false)
+
+
+
   useEffect(() => {
     setSearchOpen(true);
   }, [setSearchOpen]);
+
+  function handleSearch(e: ChangeEvent<HTMLInputElement>) {
+    setHiddenModal(false)
+    const value = e.target.value
+    setSearch(value)
+    setHiddenModal(value.length === 0)
+  }
+  useEffect(() => {
+    search.length === 0 && hiddenHeaderMB ? setHiddenModal(true) : setHiddenModal(false)
+  }, [hiddenHeaderMB, hiddenModal, search.length])
+
+
+
   return (
-    <div className="flex-1 sm:rounded-[6px] h-[88vh]  overflow-y-scroll gap-1 flex flex-col bg-[#171717] sm:px-6 p-2 "
+    <div className="flex-1 sm:rounded-[6px] min-h-[88vh]  overflow-y-scroll gap-1 flex flex-col bg-[#171717] sm:px-6 p-2 "
 
     >
-      <HeaderMain search={searchOpen} />
-      <HeaderSearchMobile />
-      <div className="sm:hidden no-underline w-full flex items-center gap-2 bg-zinc-50  p-2 rounded my-5">
-        <Search color="#272727" />
-        <input type="text" className=" w-[90%] rounded placeholder:text-[#272727] placeholder:font-semibold outline-none" placeholder="O que você quer ouvir ? " />
+      <HeaderMain search={searchOpen} handleSearch={handleSearch} />
+      <HeaderSearchMobile hidden={hiddenHeaderMB} />
+      <div className={`text-zinc-50 sm:hidden no-underline w-full flex items-center gap-2   p-2 rounded my-5 ${hiddenHeaderMB ? 'bg-[#272727]' : 'bg-zinc-50'}`}
+        onClick={() => setHiddenModal(true)}
+      >
+        {hiddenHeaderMB ?
+          <ArrowLeft
+            color="#FFF"
+            onClick={() => {
+              setHiddenHeaderMB(false)
+              setHiddenModal(search.length === 0);
+              setSearch('')
+            }} />
+          :
+          <Search color="#272727" />}
+
+        <form className="w-full">
+          <input type="text"
+            className={` w-[90%] rounded  ${hiddenHeaderMB ? ' placeholder:text-[#a7a7a7]' : 'placeholder:text-[#272727]'} placeholder:font-semibold outline-none bg-transparent`}
+            placeholder="O que você quer ouvir ? "
+            value={search}
+            onChange={handleSearch}
+            onClick={() => {
+              setHiddenHeaderMB(true)
+              search.length === 0 ? setHiddenModal(true) : setHiddenModal(false)
+            }}
+
+          />
+        </form>
+
       </div>
 
-      <div className="sm:py-4">
-        <h1 className="sm:text-[22px] text-xl font-bold text-zinc-50 hover:underline">Navegar por todas as seções</h1>
-        <div className="grid sm:grid-cols-7 grid-cols-2 w-full ml-1 sm:ml-0">
-          {BrowseAll.map((card) => (
-            <div className={` sm:h-[20vh] h-[15vh] sm:w-[90%] w-[95%] rounded-[8px] p-4 sm:my-4 my-2 relative overflow-hidden cursor-pointer ${card.background} `} key={card.genre}>
-              <Link to={urlFormater(card.genre)}>
-                <h3 className="sm:text-[22px] text-2xl font-bold text-zinc-50 ">{card.genre}</h3>
+      {hiddenModal ?
+        <div className=" sm:hidden flex flex-col justify-center items-center h-full w-full">
+          <div className='flex flex-col justify-center items-center w-[80%] gap-2'>
+            <h2 className="font-bold text-zinc-50 text-xl text-center w-[90%]">Encontre o que você quer ouvir</h2>
+            <p className="text-center text-sm">Busque Artistas, músicas, podcasts e muito mais.</p>
+          </div>
 
-                <img src={card.image} alt="" className="absolute sm:h-[10vh] h-[10vh] transform rotate-[25deg] -bottom-2 -right-4" />
-              </Link>
-            </div>
-          ))}
+        </div> : (
+          <div className="sm:py-4">
+            <h1 className="sm:text-[22px] text-xl font-bold text-zinc-50 hover:underline">
+              {search.length !== 0 ? 'Melhores Resultados' : 'Navegar por todas as seções'}
+            </h1>
+            {search.length !== 0 ? <ModalSearch search={search} /> : <EstaticHome />}
 
-        </div>
-      </div>
+          </div>
+        )}
       <div className="sm:hidden h-[15vh]" />
     </div>
   )
