@@ -82,9 +82,7 @@ export const SearchComponent = () => {
         </div> : (
           <div className="sm:py-4 h-full">
 
-            {search.length !== 0 ? <h1 className="sm:text-[22px] text-xl font-bold text-zinc-50 hover:underline hidden sm:block">
-              Melhores Resultados
-            </h1> : <h1 className="sm:text-[22px] text-xl font-bold text-zinc-50 hover:underline">
+            {search.length !== 0 ? null : <h1 className="sm:text-[22px] text-xl font-bold text-zinc-50 hover:underline">
               Navegar por todas as seções
 
             </h1>}

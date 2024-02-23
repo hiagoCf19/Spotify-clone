@@ -11,6 +11,7 @@ import 'animate.css'
 import { AsideCardLiked } from "@/components/curtidos/asideCard";
 
 export const BottomAside = () => {
+
   const [SearchDiv, setSearchDiv] = useState(false)
   return (
     <section className=" h-[87%]  bg-[#141414] overflow-hidden overflow-y-scroll p-3 rounded-[6px]">
