@@ -1,15 +1,10 @@
 import SearchCtx from "@/context/context.Search";
 import { HeaderMain } from "../HeaderMain";
 import { ChangeEvent, useContext, useEffect, useState } from "react";
-//import { BrowseAll } from "@/mocks/BrowseAll";
-
-
 import { HeaderSearchMobile } from "./HeaderSearchmobile";
 import { ArrowLeft, Search } from "lucide-react";
 import { EstaticHome } from "./home";
 import { ModalSearch } from "./modalSearch";
-
-
 
 export const SearchComponent = () => {
 
