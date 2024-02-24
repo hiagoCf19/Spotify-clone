@@ -17,8 +17,8 @@ export const AsideCardLiked = () => {
 
         <div className="flex flex-col justify-center">
           <p className="text-zinc-50 font-medium text-[15px]">Músicas Curtidas</p>
-          <span className="text-[13px] font-normal">
-            Playlist • X músicas
+          <span className="text-[13px] font-normal flex gap-2 items-center">
+            Playlist <i className="text-[10px]">•</i> X músicas
           </span>
         </div>
 

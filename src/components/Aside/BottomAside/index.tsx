@@ -1,5 +1,5 @@
 
-import { SptBNT } from "./SptBTN";
+import { SptBNT } from "./Button";
 import { HeaderBottomAside } from "./HeaderBottom";
 import { CiSearch } from "react-icons/ci";
 import { List } from "lucide-react";
@@ -11,16 +11,20 @@ import 'animate.css'
 import { AsideCardLiked } from "@/components/curtidos/asideCard";
 
 export const BottomAside = () => {
-
+  const [ativo, setAtivo] = useState(3)
+  const baseButton: string[] = ['Playlists', 'Álbuns']
   const [SearchDiv, setSearchDiv] = useState(false)
   return (
-    <section className=" h-[87%]  bg-[#141414] overflow-hidden overflow-y-scroll p-3 rounded-[6px]">
+    <section className=" h-[87%]  bg-[#121212] overflow-hidden overflow-y-scroll p-3 rounded-[6px]">
       <div className="  font-medium flex flex-col gap-3 h-max ">
         {/* sua biblioteca */}
         <HeaderBottomAside />
         <div className="flex gap-2">
-          <SptBNT props="Playlists" />
-          <SptBNT props="Álbuns" />
+          {baseButton.map((base, i) => (
+            <SptBNT ativo={ativo} setAtivo={setAtivo} base={base} key={i} i={i} />
+          ))}
+
+
         </div>
         <div className="flex items-center justify-between gap-2 ">
           <div

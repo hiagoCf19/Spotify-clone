@@ -13,7 +13,7 @@ export const Card = ({ props }: propsCard) => {
       </div>
       <div className="flex flex-col py-2 px-1">
         <p className="font-bold text-[16px] text-zinc-50 text-ellipsis text-nowrap overflow-clip anti ">{props.title}</p>
-        <span className="text-sm line-clamp-2 text-ellipsis overflow-clip font" >{props.description}</span>
+        <span className="text-[12px] line-clamp-2 text-ellipsis overflow-clip font" >{props.description}</span>
       </div>
       <div>
 

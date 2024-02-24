@@ -124,7 +124,7 @@ export const Curtidos = () => {
 
             {musicasLiked.map((card, i) => (
               <React.Fragment key={i}>
-                <CardMusic props={card} key={i} i={i + 1} />
+                <CardMusic hiddenTopics={false} props={card} key={i} i={i + 1} />
               </React.Fragment>
             ))}
           </div>

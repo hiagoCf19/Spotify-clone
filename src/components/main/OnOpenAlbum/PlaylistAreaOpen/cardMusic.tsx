@@ -1,7 +1,7 @@
 import { musics } from "@/mocks/playlists-albuns"
 import { Heart, Music } from "lucide-react"
 import { MenuMusics } from "./MenuMusic"
-import { useState } from "react";
+import { Fragment, useState } from "react";
 import { IoMdHeart } from "react-icons/io";
 import { FaPlay } from "react-icons/fa";
 
@@ -9,9 +9,10 @@ import { FaPlay } from "react-icons/fa";
 export interface propsMsc {
   props: musics;
   i: number
+  hiddenTopics: boolean
 }
 
-export const CardMusic = ({ props, i }: propsMsc) => {
+export const CardMusic = ({ props, i, hiddenTopics }: propsMsc) => {
   const [isLiked, setIsLiked] = useState(props.liked ? true : false)
   const [mouseInside, setMouseInside] = useState(false)
   let time
@@ -20,6 +21,7 @@ export const CardMusic = ({ props, i }: propsMsc) => {
     time = base.toFixed(2).replace('.', ':')
     return time
   }
+  const hidden = hiddenTopics
   convert()
   return (
     <div className="flex items-center justify-between gap-4 sm:py-1 sm:hover:bg-[#ffffff11] sm:-ml-3 sm:p-2 rounded"
@@ -28,12 +30,12 @@ export const CardMusic = ({ props, i }: propsMsc) => {
       <div className="flex items-center  overflow-hidden gap-3 sm:w-[22%]"
 
       >
-        <span
+        {hidden ? null : <span
           className="text-sm font-medium mx-1 hidden sm:block sm:min-w-5"
         >
           {!mouseInside ? i : <FaPlay size={15} color="#FFF" />}
 
-        </span>
+        </span>}
         {'capa' in props ? <img src={props.capa} className=" w-12 h-12 rounded-[4px]" /> :
           <div className="w-[77px] sm:w-14 sm:rounded-[4px] h-12 flex items-center justify-center bg-[#272727] ">
             <Music />
@@ -47,10 +49,10 @@ export const CardMusic = ({ props, i }: propsMsc) => {
           </div>
 
           <div className="flex items-center  gap-1">
-            <div className="bg-[#a7a7a796] p-1 rounded text-[7px] text-[#121212] font-semibold">
+            {hidden ? null : <div className="bg-[#a7a7a796] p-1 rounded text-[7px] text-[#121212] font-semibold">
               LYRICS
-            </div>
-            <span className="text-[12px] font-medium">
+            </div>}
+            <span className="text-[13px] font-medium">
               {props.artista.map((artista) => (
                 artista.name
               ))}
@@ -58,8 +60,11 @@ export const CardMusic = ({ props, i }: propsMsc) => {
           </div>
         </div>
       </div>
-      <p className="w-[20%] hidden sm:block text-[13px] ">{props.album}</p>
-      <p className="w-[20%] hidden sm:block text-[13px]  ">{props.addEm}</p>
+      {hidden ? null : <Fragment>
+        <p className="w-[20%] hidden sm:block text-[13px] ">{props.album}</p>
+        <p className="w-[20%] hidden sm:block text-[13px]  ">{props.addEm}</p>
+      </Fragment>}
+
 
       <div className="sm:flex items-center gap-6">
         <div>

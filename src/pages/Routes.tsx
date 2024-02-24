@@ -13,7 +13,8 @@ import { MostrarTudo } from "@/components/main/Home/GenericList/mostrarTudo";
 import { Curtidos } from "@/components/curtidos";
 import { SearchComponent } from "@/components/main/Home/Search";
 import { BrowseAll } from "@/mocks/BrowseAll";
-import { OpenGenre } from "@/components/main/Home/Search/OpenGenre";
+import { OpenGenre } from "@/components/main/Home/Search/OpenCardGenre/OpenGenre";
+
 
 
 function App() {

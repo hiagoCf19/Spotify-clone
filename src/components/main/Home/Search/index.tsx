@@ -3,8 +3,9 @@ import { HeaderMain } from "../HeaderMain";
 import { ChangeEvent, useContext, useEffect, useState } from "react";
 import { HeaderSearchMobile } from "./HeaderSearchmobile";
 import { ArrowLeft, Search } from "lucide-react";
-import { EstaticHome } from "./home";
+import { EstaticHome } from "./genreCards";
 import { ModalSearch } from "./modalSearch";
+import { TitleSpt } from "@/components/Recorrentes/Title";
 
 export const SearchComponent = () => {
 
@@ -32,7 +33,7 @@ export const SearchComponent = () => {
 
 
   return (
-    <div className={`flex-1 sm:rounded-[6px] min-h-[88vh] sm:h-40 overflow-y-scroll gap-1 flex flex-col bg-[#171717] sm:px-6  ${hiddenHeaderMB ? 'p-0' : 'p-2'} `}
+    <div className={`flex-1 sm:rounded-[6px] min-h-[88vh] sm:h-40 overflow-y-scroll gap-1 flex flex-col bg-[#121212] sm:px-6  ${hiddenHeaderMB ? 'p-0' : 'p-2'} `}
 
     >
       <HeaderMain search={searchOpen} handleSearch={handleSearch} />
@@ -75,12 +76,12 @@ export const SearchComponent = () => {
           </div>
 
         </div> : (
-          <div className="sm:py-4 h-full">
+          <div className="sm:py-1 h-full">
 
-            {search.length !== 0 ? null : <h1 className="sm:text-[22px] text-xl font-bold text-zinc-50 hover:underline">
-              Navegar por todas as seções
+            {search.length !== 0 ? null :
+              <TitleSpt title="Navegar por todas as seções" />
 
-            </h1>}
+            }
 
             {search.length !== 0 ? <ModalSearch search={search} /> : <EstaticHome />}
 

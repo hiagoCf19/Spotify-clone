@@ -2,8 +2,8 @@
 import { BrowseAll } from "@/mocks/BrowseAll"
 import { artista, musics, playlists } from "@/mocks/playlists-albuns"
 import { useEffect, useState } from "react"
-import { DesktopSearchmodal } from "./desktopSearchmodal";
-import { MobileSearchModal } from "./MobileSearchModal";
+import { DesktopSearchmodal } from "./searching/desktopSearchmodal";
+import { MobileSearchModal } from "./searching/mobileSearchModal";
 
 interface ModalSearchProps {
   search: any
@@ -19,6 +19,7 @@ export const ModalSearch = ({ search }: ModalSearchProps) => {
       })
     })
   }, [])
+
 
   const filterGenre = search !== '' ?
     BrowseAll.filter(genre =>
@@ -42,9 +43,12 @@ export const ModalSearch = ({ search }: ModalSearchProps) => {
     });
   });
 
-
+  const [pesquisaV, setPesquisaV] = useState<null | boolean>(null)
+  useEffect(() => {
+    artistasUnicos.length === 0 && musicasUnicas.length === 0 && filterGenre.length === 0 ? setPesquisaV(false) : setPesquisaV(true)
+  }, [artistasUnicos.length, filterGenre.length, musicasUnicas.length, search])
+  console.log(pesquisaV)
   const [larguraDaTela, setLarguraDaTela] = useState(window.innerWidth)
-
   useEffect(() => {
     const handleResize = () => {
       setLarguraDaTela(window.innerWidth);
@@ -59,8 +63,11 @@ export const ModalSearch = ({ search }: ModalSearchProps) => {
 
   const desktopModal = larguraDaTela >= 640 ? true : false
 
+
+
+
   return (
-    desktopModal
+    pesquisaV ? desktopModal
       ?
       <DesktopSearchmodal
         artistasUnicos={artistasUnicos}
@@ -73,6 +80,12 @@ export const ModalSearch = ({ search }: ModalSearchProps) => {
         artistasUnicos={artistasUnicos}
         filterGenre={filterGenre}
         musicasUnicas={musicasUnicas} />
+      :
+      <div className="flex flex-col items-center justify-center h-full">
+        <h1 className="text-zinc-50 sm:text-3xl text-xl font-semibold text-center">Nenhum resultado encontrado para "{search}"</h1>
+        <span className="text-sm text-center">Confira se você digitou corretamente ou verifique nossos sons disponíveis</span>
+      </div>
+
 
   )
 }

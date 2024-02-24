@@ -56,7 +56,7 @@ export const Main = () => {
   return (
 
     <div className=" h-[88vh]  overflow-y-scroll 
-     ">
+      sm:rounded">
       <GradientBase className="flex gap-4 flex-col 
       backgroundGradientMobile sm:backgroundGradientDesktop sm:p-4 sm:px-6 p-2">
         < HeaderMain />

@@ -5,6 +5,7 @@ import React from "react"
 import { Link } from "react-router-dom"
 import { urlFormater } from "@/scripts/normalize"
 import { DontLibraryCards } from "@/scripts/Naobibliotecas"
+import { TitleSpt } from "@/components/Recorrentes/Title"
 
 
 export const GenericList = () => {
@@ -13,9 +14,7 @@ export const GenericList = () => {
       {DontLibraryCards.map((item, i) => (
         <React.Fragment key={i} >
           <div className="flex justify-between ">
-            <h1 className="sm:text-[22px] text-2xl font-bold text-zinc-50 hover:underline">
-              {item.name}
-            </h1>
+            <TitleSpt title={item.name} />
             <Link
               to={urlFormater(item.name)}
               className="text-sm font-semibold hover:underline">

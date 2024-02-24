@@ -84,7 +84,7 @@ export const OpenAlbumOrPlaylist = ({ album, pl }: propsAlbum) => {
                   <FaSpotify color="#1DB954" size={20} /> Feito para
                   <strong className="font-bold flex  gap-2">
                     User@user.com
-                    <i className="hidden sm:block">•</i>
+                    <i className="hidden sm:block text-[10px]">•</i>
                   </strong>
                 </span>
                 <span >
@@ -131,7 +131,7 @@ export const OpenAlbumOrPlaylist = ({ album, pl }: propsAlbum) => {
 
             {album.musicas.map((card, i) => (
               <React.Fragment key={i}>
-                <CardMusic props={card} i={i + 1} />
+                <CardMusic hiddenTopics={false} props={card} i={i + 1} />
               </React.Fragment>
             ))}
 

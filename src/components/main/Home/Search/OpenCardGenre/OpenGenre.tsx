@@ -1,5 +1,6 @@
-
 import { musics } from "@/mocks/playlists-albuns"
+
+
 interface propsOpenGenre {
   music: musics[]
 }
