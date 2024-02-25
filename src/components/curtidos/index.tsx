@@ -63,7 +63,7 @@ export const Curtidos = () => {
           <HeaderMain />
           <div className="sm:flex items-end gap-5 text-zinc-50">
             <div className="flex w-full justify-center py-4 sm:justify-normal sm:py-0 sm:w-auto ">
-              <img src='./assets/Art.png' className="sm:rounded sm:w-[232px] w-[60%] flex" />
+              <img src='./assets/capas/Art.png' className="sm:rounded sm:w-[232px] w-[60%] flex" />
             </div>
 
             <div className="flex gap-3 sm:gap-0  flex-col">

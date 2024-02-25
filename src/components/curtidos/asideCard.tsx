@@ -11,7 +11,7 @@ export const AsideCardLiked = () => {
         className="flex gap-3 hover:bg-[#191919] rounded border-solid py-2 cursor-pointer px-2 mx-[-10px]">
 
         <img
-          src='assets/Art.png'
+          src='assets/capas/Art.png'
           className=" w-12 rounded-[4px]"
         />
 

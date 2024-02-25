@@ -12,7 +12,7 @@ export const MostrarTudo = ({ item }: MostrarTudoProps) => {
       <HeaderMain />
       <div className="flex flex-col gap-1">
         <h1 className="py-4 text-2xl font-semibold text-zinc-50">{item.name}</h1>
-        <div className="grid grid-cols-7">
+        <div className="grid grid-cols-7 gap-5">
           {item.cards.map((card, i) => (
             <Card props={card} key={i} />
           ))}

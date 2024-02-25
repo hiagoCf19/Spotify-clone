@@ -27,8 +27,9 @@ export const FirstSectionMain = () => {
       {/* LISTA DESKTOP */}
 
 
-      <div className="flex sm:gap-3 gap-2 flex-wrap ">
+      <div className="flex sm:gap-2 gap-3 flex-wrap ">
         <MiniCardLiked />
+
         {
           playlists.map((playlist) => (
             playlist.cards.map((card, i) => {

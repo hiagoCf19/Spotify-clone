@@ -7,12 +7,9 @@ export interface cards {
 }
 export interface Pl {
   name: string;
-  color: string;
   biblioteca: boolean;
-  image?: string;
   classe: string;
   cards: cards[];
-  description?: string;
 }
 export interface artista {
   name: string;
@@ -32,15 +29,13 @@ export interface musics {
 export const playlists: Pl[] = [
   {
     name: "Feito para você",
-    color: "",
     biblioteca: false,
     classe: "Álbum",
-    image: "",
     cards: [
       {
         title: "Moody Mix",
         color: "rgba(223,84,139, 0.600) 120%",
-        image: "assets/capas/Moody/moody.jpeg",
+        image: "assets/capas/moody.jpeg",
         description: "Nirvana, Tom Odell, Radiohead e mais",
         musicas: [
           {
@@ -48,14 +43,14 @@ export const playlists: Pl[] = [
             artista: [
               {
                 name: "Radiohead",
-                foto: "assets/artistas/radiohead.jpeg",
+                foto: "assets/artistas/Radiohead/perfil.jpeg",
               },
             ],
             album: "OK Computer",
-            capa: "assets/capas/Moody/OkComp.jpeg",
+            capa: "assets/artistas/Radiohead/OkComp.jpeg",
             addEm: "20 fev. 2024",
             durationMultipliedBy100: 349,
-            liked: true,
+            liked: false,
             genre: "Rock",
           },
         ],
@@ -63,7 +58,7 @@ export const playlists: Pl[] = [
       {
         title: "Daily Mix 1",
         color: "rgba(152,206,197, 0.800) 120%",
-        image: "assets/capas/mix1/mix1.jpeg",
+        image: "assets/capas/mix1.jpeg",
         description: "Rashid, ADL, Sant e mais",
         musicas: [
           {
@@ -71,14 +66,14 @@ export const playlists: Pl[] = [
             artista: [
               {
                 name: "Rashid",
-                foto: "assets/artistas/rashid.jpeg",
+                foto: "assets/artistas/Rashid/perfil.jpeg",
               },
             ],
             album: "Confundindo Sábios",
-            capa: "assets/capas/mix1/CnfSabios.jpeg",
+            capa: "assets/artistas/Rashid/CnfSabios.jpeg",
             addEm: "11 fev. 2024",
             durationMultipliedBy100: 403,
-            liked: true,
+            liked: false,
             genre: "Rap",
           },
           {
@@ -86,11 +81,11 @@ export const playlists: Pl[] = [
             artista: [
               {
                 name: "ADL",
-                foto: "assets/artistas/ADL.jpeg",
+                foto: "assets/artistas/ADL/perfil.jpeg",
               },
             ],
             album: "Da Favela pro Mundo",
-            capa: "assets/capas/mix1/FavMundo.jpeg",
+            capa: "assets/artistas/ADL/FavMundo.jpeg",
             addEm: "13 fev. 2024",
             durationMultipliedBy100: 436,
             liked: false,
@@ -101,14 +96,14 @@ export const playlists: Pl[] = [
             artista: [
               {
                 name: "Rashid",
-                foto: "assets/artistas/rashid.jpeg",
+                foto: "assets/artistas/Rashid/perfil.jpeg",
               },
             ],
             album: "Gratidão",
-            capa: "assets/capas/rap/gratidao.jpeg",
+            capa: "assets/artistas/Rashid/gratidao.jpeg",
             addEm: "21 fev. 2024",
             durationMultipliedBy100: 334,
-            liked: true,
+            liked: false,
             genre: "Rap",
           },
         ],
@@ -116,7 +111,7 @@ export const playlists: Pl[] = [
       {
         title: "Daily Mix 4",
         color: "rgba(211,131,154, 0.800) 120%",
-        image: "assets/capas/mix4/mix4.jpeg",
+        image: "assets/capas/mix4.jpeg",
         description: "The Walters, Vacations, Vundabar e mais",
         musicas: [
           {
@@ -124,14 +119,14 @@ export const playlists: Pl[] = [
             artista: [
               {
                 name: "The Walters",
-                foto: "assets/artistas/theWalters.jpeg",
+                foto: "assets/artistas/TheWalters/perfil.jpeg",
               },
             ],
-            capa: "assets/capas/mix4/ILso.jpeg",
+            capa: "assets/artistas/TheWalters/ILso.jpeg",
             album: "I Love You So",
             addEm: "15 fev. 2024",
             durationMultipliedBy100: 240,
-            liked: true,
+            liked: false,
             genre: "Indie",
           },
           {
@@ -139,14 +134,14 @@ export const playlists: Pl[] = [
             artista: [
               {
                 name: "Vocations",
-                foto: "assets/artistas/vocations.jpeg",
+                foto: "assets/artistas/Vocations/perfil.jpeg",
               },
             ],
-            capa: "assets/capas/mix4/changes.jpeg",
+            capa: "assets/artistas/Vocations/changes.jpeg",
             album: "Changes",
             addEm: "13 fev. 2024",
             durationMultipliedBy100: 332,
-            liked: true,
+            liked: false,
             genre: "Indie",
           },
         ],
@@ -155,7 +150,7 @@ export const playlists: Pl[] = [
       {
         title: "Daily Mix 5",
         color: "rgb(240,192,105, 0.500) 120%",
-        image: "assets/capas/mix5/mix5.jpeg",
+        image: "assets/capas/mix5.jpeg",
         description: "Fleetwood Mac, The Rolling Stones, America e mais",
         musicas: [
           {
@@ -163,15 +158,15 @@ export const playlists: Pl[] = [
             artista: [
               {
                 name: "Fleetwood Mac",
-                foto: "assets/artistas/fleetwoodMac.jpeg",
+                foto: "assets/artistas/FleetwoodMac/perfil.jpeg",
               },
             ],
 
             album: "Rumours (Super Deluxe)",
-            capa: "assets/capas/theChain.jpeg",
+            capa: "assets/artistas/FleetwoodMac/theChain.jpeg",
             addEm: "4 de set. de 2023",
             durationMultipliedBy100: 430,
-            liked: true,
+            liked: false,
             genre: "Rock",
           },
           {
@@ -179,15 +174,15 @@ export const playlists: Pl[] = [
             artista: [
               {
                 name: "The Rolling Stones",
-                foto: "assets/artistas/stones.jpg",
+                foto: "assets/artistas/Stones/perfil.jpg",
               },
             ],
 
-            capa: "assets/capas/mix5/afterm.jpeg",
+            capa: "assets/artistas/Stones/afterm.jpeg",
             album: "Aftermath",
             addEm: "9 de fev. de 2024",
             durationMultipliedBy100: 322,
-            liked: true,
+            liked: false,
             genre: "Rock",
           },
         ],
@@ -231,7 +226,7 @@ export const playlists: Pl[] = [
       {
         title: "Radar de Novidades",
         color: "rgba(169, 168, 196, 0.500) 120%",
-        image: "assets/capas/RadarDeNovidades/radar.jpeg",
+        image: "assets/capas/radar.jpeg",
         description:
           "Confira os lançamentos dos artistas que você segue e novos singles escolhidos só pra você.",
         musicas: [
@@ -240,14 +235,14 @@ export const playlists: Pl[] = [
             artista: [
               {
                 name: "d4vd",
-                foto: "assets",
+                foto: "assets/artistas/d4vd/perfil.jpeg",
               },
             ],
             album: "Withering",
-            capa: "assets/capas/RadarDeNovidades/withering.jpeg",
-            addEm: "há 2 dias",
+            capa: "assets/artistas/d4vd/withering.jpeg",
+            addEm: "25 de fev. de 2024",
             durationMultipliedBy100: 244,
-            liked: true,
+            liked: false,
             genre: "Indie",
           },
           {
@@ -255,14 +250,14 @@ export const playlists: Pl[] = [
             artista: [
               {
                 name: "Freddie Dredd",
-                foto: "assets/artistas/freddieDredd.jpeg",
+                foto: "assets/artistas/FreddieDredd/perfil.jpeg",
               },
             ],
             album: "Frank Miller (kill Again)",
-            capa: "assets/capas/RadarDeNovidades/FrankMiller.jpeg",
+            capa: "assets/artistas/FreddieDredd/FrankMiller.jpeg",
             addEm: "há 3 dias",
             durationMultipliedBy100: 211,
-            liked: true,
+            liked: false,
             genre: "Hip-Hop",
           },
         ],
@@ -270,44 +265,100 @@ export const playlists: Pl[] = [
     ],
   },
   {
-    name: "abc title card",
-    color: "",
+    name: "O melhor de cada Artista",
     biblioteca: false,
-    description: "descrição do card",
+
     classe: "Playlist",
     cards: [
       {
-        title: "abc album",
-        image: "",
-        description: "playlist #2",
+        title: "This Is d4vd",
+        color: "rgba(56, 82, 109, 1.800) 120%",
+        image: "assets/artistas/d4vd/thisIsD4vd.jpeg",
+        description: "This is d4vd. Todos os maiores hits em uma só playlist.",
         musicas: [
           {
-            name: "musica teste1",
+            name: "Leave Her",
             artista: [
               {
-                name: "artista X",
-                foto: "assets",
+                name: "d4vd",
+                foto: "assets/artistas/d4vd/perfil.jpeg",
               },
             ],
-            album: "album03",
-            addEm: "05/02/2024",
-            durationMultipliedBy100: 100,
+            album: "Withering",
+            capa: "assets/artistas/d4vd/withering.jpeg",
+            addEm: "25 de fev. de 2024",
+            durationMultipliedBy100: 244,
             liked: false,
-            genre: "Outros",
+            genre: "Indie",
           },
           {
-            name: "musica test2",
+            name: "Here With Me",
+            capa: "assets/artistas/d4vd/petals.jpeg",
             artista: [
               {
-                name: "artista X",
-                foto: "assets",
+                name: "d4vd",
+                foto: "assets/artistas/d4vd/perfil.jpeg",
               },
             ],
-            album: "album03",
-            addEm: "05/02/2024",
-            durationMultipliedBy100: 100,
+            album: "Petals to Thorns",
+            addEm: "25 de fev. de 2024",
+            durationMultipliedBy100: 420,
             liked: false,
-            genre: "Outros",
+            genre: "Indie",
+          },
+        ],
+      },
+      {
+        title: "This Is Lana Del Rey",
+        color: "rgba(216, 210, 214,1.800) 120%",
+        image: "assets/artistas/Lana/thisIsLana.jpg",
+        description:
+          "This is Lana Del Rey. Todos os maiores hits em uma só playlist.",
+        musicas: [
+          {
+            name: "Summertime Sadness",
+            artista: [
+              {
+                name: "Lana Del Rey",
+                foto: "assets/artistas/Lana/perfil.jpeg",
+              },
+            ],
+            album: "Born To Die",
+            capa: "assets/artistas/Lana/bornToDie.jpeg",
+            addEm: "1 de jan. de 2012",
+            durationMultipliedBy100: 425,
+            liked: false,
+            genre: "Pop",
+          },
+          {
+            name: "Young And Beautiful",
+            artista: [
+              {
+                name: "Lana Del Rey",
+                foto: "assets/artistas/Lana/perfil.jpeg",
+              },
+            ],
+            album: "Young And Beautiful",
+            capa: "assets/artistas/Lana/youngBeautiful.jpeg",
+            addEm: "1 de jan. de 2013",
+            durationMultipliedBy100: 356,
+            liked: false,
+            genre: "Pop",
+          },
+          {
+            name: "Radio",
+            artista: [
+              {
+                name: "Lana Del Rey",
+                foto: "assets/artistas/Lana/perfil.jpeg",
+              },
+            ],
+            album: "Born To Die",
+            capa: "assets/artistas/Lana/bornToDie.jpeg",
+            addEm: "1 de jan. de 2012",
+            durationMultipliedBy100: 334,
+            liked: false,
+            genre: "Pop",
           },
         ],
       },
@@ -315,8 +366,6 @@ export const playlists: Pl[] = [
   },
   {
     name: "Recomendados ",
-    description: "seus recomendados",
-    color: "",
     biblioteca: false,
     classe: "Playlist",
     cards: [
@@ -361,8 +410,7 @@ export const playlists: Pl[] = [
   },
   {
     name: "ex",
-    description: "exx",
-    color: "",
+
     biblioteca: false,
     classe: "Playlist",
     cards: [

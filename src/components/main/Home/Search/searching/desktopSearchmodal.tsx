@@ -14,8 +14,9 @@ export interface desktopSearchModalProps {
   artistasUnicos: artista[]
   filterGenre: InterfaceBrowseAll[]
   musicasUnicas: musics[]
+  albunsUnicos: musics[]
 }
-export const DesktopSearchmodal = ({ artistasUnicos, filterGenre, musicasUnicas }: desktopSearchModalProps) => {
+export const DesktopSearchmodal = ({ artistasUnicos, filterGenre, musicasUnicas, albunsUnicos }: desktopSearchModalProps) => {
   const [ativo, setAtivo] = useState<number>(0)
   const filterButtons: string[] = ['Tudo', 'Músicas', 'Artistas', 'Álbuns', 'Gêneros']
   const isfiltering = ativo !== 0 ? true : false
@@ -25,6 +26,7 @@ export const DesktopSearchmodal = ({ artistasUnicos, filterGenre, musicasUnicas 
     const partesData = data.split(" ");
     return partesData[partesData.length - 1];
   }
+
 
   return (
 
@@ -102,13 +104,15 @@ export const DesktopSearchmodal = ({ artistasUnicos, filterGenre, musicasUnicas 
             <TitleSpt title="Albums" />
             <div className="flex gap-5  w-full">
 
-              {musicasUnicas.slice(0, 7).map((album, i) => (
+              {albunsUnicos.slice(0, 7).map((album, i) => (
+
+
                 <Link
                   to={urlFormater(`${album.name}`)}
                   key={i}
                   className=" w-[13%]  overflow-hidden"
                 >
-                  <GridGeneric image={album.capa ?? ""} text={album.name} span={` ${album.artista.map((artista) => artista.name)} • ${extrairAno(album.addEm)}`} />
+                  <GridGeneric image={album.capa ?? ""} text={album.album} span={` ${album.artista.map((artista) => artista.name)} • ${extrairAno(album.addEm)}`} />
                 </Link>
 
               ))}
@@ -170,13 +174,13 @@ export const DesktopSearchmodal = ({ artistasUnicos, filterGenre, musicasUnicas 
                     <TitleSpt title="Albums" />
                     <div className="flex gap-5  w-full">
 
-                      {musicasUnicas.slice(0, 7).map((album, i) => (
+                      {albunsUnicos.slice(0, 7).map((album, i) => (
                         <Link
                           to={urlFormater(`${album.name}`)}
                           key={i}
                           className=" w-[13%]  overflow-hidden"
                         >
-                          <GridGeneric image={album.capa ?? ""} text={album.name} span={` ${album.artista.map((artista) => artista.name)} • ${extrairAno(album.addEm)}`} />
+                          <GridGeneric image={album.capa ?? ""} text={album.album} span={` ${album.artista.map((artista) => artista.name)} • ${extrairAno(album.addEm)}`} />
                         </Link>
 
                       ))}

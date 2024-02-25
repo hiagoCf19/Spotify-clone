@@ -42,12 +42,20 @@ export const ModalSearch = ({ search }: ModalSearchProps) => {
       }
     });
   });
+  const albunsNomeUnicos = new Set();
+  const albunsUnicos: any = []
+  musicasUnicas.forEach((album) => {
+    if (!albunsNomeUnicos.has(album.album)) {
+      albunsNomeUnicos.add(album.album)
+      albunsUnicos.push(album)
+    }
+  })
 
   const [pesquisaV, setPesquisaV] = useState<null | boolean>(null)
   useEffect(() => {
     artistasUnicos.length === 0 && musicasUnicas.length === 0 && filterGenre.length === 0 ? setPesquisaV(false) : setPesquisaV(true)
   }, [artistasUnicos.length, filterGenre.length, musicasUnicas.length, search])
-  console.log(pesquisaV)
+
   const [larguraDaTela, setLarguraDaTela] = useState(window.innerWidth)
   useEffect(() => {
     const handleResize = () => {
@@ -73,6 +81,7 @@ export const ModalSearch = ({ search }: ModalSearchProps) => {
         artistasUnicos={artistasUnicos}
         filterGenre={filterGenre}
         musicasUnicas={musicasUnicas}
+        albunsUnicos={albunsUnicos}
       />
 
       :
@@ -80,6 +89,7 @@ export const ModalSearch = ({ search }: ModalSearchProps) => {
         artistasUnicos={artistasUnicos}
         filterGenre={filterGenre}
         musicasUnicas={musicasUnicas} />
+
       :
       <div className="flex flex-col items-center justify-center h-full">
         <h1 className="text-zinc-50 sm:text-3xl text-xl font-semibold text-center">Nenhum resultado encontrado para "{search}"</h1>
