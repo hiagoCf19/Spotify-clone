@@ -42,8 +42,7 @@ export const DesktopSearchmodal = ({ artistasUnicos, filterGenre, musicasUnicas 
 
           <div className="flex gap-5  ">
             {/* Melhor resultado */}
-
-            <div className="   flex flex-col gap-2 w-[29%] ">
+            {artistasUnicos.length !== 0 ? <div className="   flex flex-col gap-2 w-[29%] ">
               <TitleSpt title="Melhor resultado" />
               {artistasUnicos.slice(0, 1).map((artista, i) => (
                 <div
@@ -64,9 +63,10 @@ export const DesktopSearchmodal = ({ artistasUnicos, filterGenre, musicasUnicas 
                   </div>
                 </div>
               ))}
-            </div>
+            </div> : null}
+
             {/* Músicas */}
-            <div className=" w-[68%] flex flex-col gap-2">
+            {musicasUnicas.length !== 0 ? <div className=" w-[68%] flex flex-col gap-2">
               <TitleSpt title="Músicas" />
               <div className="flex flex-col w-full h-[230px] overflow-hidden p-1 px-4">
 
@@ -75,11 +75,11 @@ export const DesktopSearchmodal = ({ artistasUnicos, filterGenre, musicasUnicas 
                 ))}
               </div>
 
-            </div>
+            </div> : null}
+
           </div>
           { /* Artistas */}
-
-          <div className="flex flex-col gap-2">
+          {artistasUnicos.length !== 0 ? <div className="flex flex-col gap-2">
             <TitleSpt title="Artistas" />
             <div className="flex gap-5  w-full">
 
@@ -95,9 +95,10 @@ export const DesktopSearchmodal = ({ artistasUnicos, filterGenre, musicasUnicas 
               ))}
             </div>
 
-          </div>
+          </div> : null}
+
           {/* Albuns */}
-          <div className="flex flex-col gap-2">
+          {musicasUnicas.length !== 0 ? <div className="flex flex-col gap-2">
             <TitleSpt title="Albums" />
             <div className="flex gap-5  w-full">
 
@@ -112,7 +113,8 @@ export const DesktopSearchmodal = ({ artistasUnicos, filterGenre, musicasUnicas 
 
               ))}
             </div>
-          </div>
+          </div> : null}
+
           {/* genero */}
           {filterGenre.length !== 0 ?
             <div className="flex flex-col gap-2">
