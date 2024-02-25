@@ -7,7 +7,7 @@ export interface cards {
 }
 export interface Pl {
   name: string;
-  biblioteca: boolean;
+  exibitionHome: boolean;
   classe: string;
   cards: cards[];
 }
@@ -29,7 +29,7 @@ export interface musics {
 export const playlists: Pl[] = [
   {
     name: "Feito para você",
-    biblioteca: false,
+    exibitionHome: true,
     classe: "Álbum",
     cards: [
       {
@@ -174,7 +174,7 @@ export const playlists: Pl[] = [
             artista: [
               {
                 name: "The Rolling Stones",
-                foto: "assets/artistas/Stones/perfil.jpg",
+                foto: "assets/artistas/Stones/perfil.jpeg",
               },
             ],
 
@@ -255,7 +255,7 @@ export const playlists: Pl[] = [
             ],
             album: "Frank Miller (kill Again)",
             capa: "assets/artistas/FreddieDredd/FrankMiller.jpeg",
-            addEm: "há 3 dias",
+            addEm: "1 de fev. de 2024",
             durationMultipliedBy100: 211,
             liked: false,
             genre: "Hip-Hop",
@@ -266,8 +266,7 @@ export const playlists: Pl[] = [
   },
   {
     name: "O melhor de cada Artista",
-    biblioteca: false,
-
+    exibitionHome: true,
     classe: "Playlist",
     cards: [
       {
@@ -362,11 +361,204 @@ export const playlists: Pl[] = [
           },
         ],
       },
+      {
+        title: "This Is Rashid",
+        color: "rgba(131, 211, 204, 1.800) 120%",
+        image: "assets/artistas/Rashid/thisIsRashid.jpg",
+        description:
+          "This is Rashid. Todos os maiores hits em uma só playlist.",
+        musicas: [
+          {
+            name: "Mil Cairão",
+            artista: [
+              {
+                name: "Rashid",
+                foto: "assets/artistas/Rashid/perfil.jpeg",
+              },
+            ],
+            album: "Confundindo Sábios",
+            capa: "assets/artistas/Rashid/CnfSabios.jpeg",
+            addEm: "11 fev. 2024",
+            durationMultipliedBy100: 403,
+            liked: false,
+            genre: "Rap",
+          },
+          {
+            name: "Gratidão",
+            artista: [
+              {
+                name: "Rashid",
+                foto: "assets/artistas/Rashid/perfil.jpeg",
+              },
+            ],
+            album: "Gratidão",
+            capa: "assets/artistas/Rashid/gratidao.jpeg",
+            addEm: "21 fev. 2024",
+            durationMultipliedBy100: 334,
+            liked: false,
+            genre: "Rap",
+          },
+        ],
+      },
+      {
+        title: "This Is The Rolling Stones",
+        color: "rgb(111, 145, 193, 1.800) 120%",
+        image: "assets/artistas/Stones/thisIsStones.jpg",
+        description:
+          "This is The Rolling Stones. Todos os maiores hits em uma só playlist.",
+        musicas: [
+          {
+            name: "Paint It, Black 01",
+            artista: [
+              {
+                name: "The Rolling Stones",
+                foto: "assets/artistas/Stones/perfil.jpeg",
+              },
+            ],
+
+            capa: "assets/artistas/Stones/afterm.jpeg",
+            album: "Aftermath",
+            addEm: "9 de fev. de 2024",
+            durationMultipliedBy100: 322,
+            liked: false,
+            genre: "Rock",
+          },
+          {
+            name: "Gimme Shelter",
+            artista: [
+              {
+                name: "The Rolling Stones",
+                foto: "assets/artistas/Stones/perfil.jpeg",
+              },
+            ],
+            album: "Let It Bleed",
+            capa: "assets/artistas/Stones/letItBleed.jpeg",
+            addEm: "5 de dez. de 1969",
+            durationMultipliedBy100: 334,
+            liked: false,
+            genre: "Rock",
+          },
+        ],
+      },
+      {
+        title: "This Is The Bazzi",
+        color: "rgba(188, 179, 186, 1.9) 120%",
+        image: "assets/artistas/Bazzi/thisIsBazzi.jpg",
+        description:
+          "This is The Bazzi. Todos os maiores hits em uma só playlist.",
+        musicas: [
+          {
+            name: "Dreams",
+            artista: [
+              {
+                name: "Bazzi",
+                foto: "assets/artistas/Bazzi/perfil.jpeg",
+              },
+            ],
+
+            capa: "assets/artistas/Bazzi/cosmic.jpeg",
+            album: "COSMIC",
+            addEm: "12 de abr. de 2018",
+            durationMultipliedBy100: 227,
+            liked: false,
+            genre: "Pop",
+          },
+          {
+            name: "Star",
+            artista: [
+              {
+                name: "Bazzi",
+                foto: "assets/artistas/Bazzi/perfil.jpeg",
+              },
+            ],
+
+            capa: "assets/artistas/Bazzi/cosmic.jpeg",
+            album: "COSMIC",
+            addEm: "12 de abr. de 2018",
+            durationMultipliedBy100: 249,
+            liked: false,
+            genre: "Pop",
+          },
+          {
+            name: "I.F.L.Y",
+            artista: [
+              {
+                name: "Bazzi",
+                foto: "assets/artistas/Bazzi/perfil.jpeg",
+              },
+            ],
+
+            capa: "assets/artistas/Bazzi/soulSearching.jpeg",
+            album: "Soul Searching",
+            addEm: "9 de ago. de 2019",
+            durationMultipliedBy100: 245,
+            liked: false,
+            genre: "Pop",
+          },
+        ],
+      },
+      {
+        title: "This Is The Eduardo Costa",
+        color: "rgb(75, 35, 123, 1) 95%",
+        image: "assets/artistas/EduardoCosta/thisIsEdCosta.jpg",
+        description:
+          "This is The Bazzi. Todos os maiores hits em uma só playlist.",
+        musicas: [
+          {
+            name: "Amor de Violeiro",
+            artista: [
+              {
+                name: "Eduardo Costa",
+                foto: "assets/artistas/EduardoCosta/perfil.jpeg",
+              },
+            ],
+
+            capa: "assets/artistas/EduardoCosta/acustico2004.jpeg",
+            album: "EduardoCosta - Acustico",
+            addEm: "1 de jan. de 2004",
+            durationMultipliedBy100: 415,
+            liked: false,
+            genre: "Sertanejo",
+          },
+          {
+            name: "Sapequinha",
+            artista: [
+              {
+                name: "Eduardo Costa",
+                foto: "assets/artistas/EduardoCosta/perfil.jpeg",
+              },
+            ],
+
+            capa: "assets/artistas/EduardoCosta/vivendoEaprendendo.jpeg",
+            album: "Vivendo e Aprendendo",
+            addEm: "31 de jul. de 2015",
+            durationMultipliedBy100: 311,
+            liked: false,
+            genre: "Sertanejo",
+          },
+          {
+            name: "Sou Seu Fã N° 1",
+            artista: [
+              {
+                name: "Eduardo Costa",
+                foto: "assets/artistas/EduardoCosta/perfil.jpeg",
+              },
+            ],
+
+            capa: "assets/artistas/EduardoCosta/temTudoAVer.jpeg",
+            album: "Tem tudo a ver",
+            addEm: "1 de jan. de 2009",
+            durationMultipliedBy100: 350,
+            liked: false,
+            genre: "Sertanejo",
+          },
+        ],
+      },
     ],
   },
   {
-    name: "Recomendados ",
-    biblioteca: false,
+    name: "Musicas Brasileiras ",
+    exibitionHome: true,
     classe: "Playlist",
     cards: [
       {
@@ -409,9 +601,8 @@ export const playlists: Pl[] = [
     ],
   },
   {
-    name: "ex",
-
-    biblioteca: false,
+    name: "a",
+    exibitionHome: true,
     classe: "Playlist",
     cards: [
       {

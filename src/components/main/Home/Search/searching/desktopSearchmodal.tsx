@@ -17,6 +17,7 @@ export interface desktopSearchModalProps {
   albunsUnicos: musics[]
 }
 export const DesktopSearchmodal = ({ artistasUnicos, filterGenre, musicasUnicas, albunsUnicos }: desktopSearchModalProps) => {
+
   const [ativo, setAtivo] = useState<number>(0)
   const filterButtons: string[] = ['Tudo', 'Músicas', 'Artistas', 'Álbuns', 'Gêneros']
   const isfiltering = ativo !== 0 ? true : false
@@ -29,10 +30,7 @@ export const DesktopSearchmodal = ({ artistasUnicos, filterGenre, musicasUnicas,
 
 
   return (
-
-
     <Fragment>
-
       <div className="flex gap-2">
         {filterButtons.map((filtro, i) => (
           <SptBNT ativo={ativo} setAtivo={setAtivo} base={filtro} key={i} i={i} />
@@ -144,7 +142,7 @@ export const DesktopSearchmodal = ({ artistasUnicos, filterGenre, musicasUnicas,
               <div className="flex flex-col gap-2">
                 <TitleSpt title="Músicas" />
                 {musicasUnicas.map((musica, i) => (
-                  <CardMusic props={musica} i={i + 1} hiddenTopics={false} />
+                  <CardMusic props={musica} i={i + 1} hiddenTopics={false} key={i} />
                 ))}
               </div>
             </Fragment>
@@ -216,8 +214,5 @@ export const DesktopSearchmodal = ({ artistasUnicos, filterGenre, musicasUnicas,
                 </Fragment>}
       </div>
     </Fragment>
-
-
-
   )
 }

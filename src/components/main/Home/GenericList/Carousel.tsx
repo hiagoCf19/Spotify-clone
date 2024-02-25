@@ -7,15 +7,14 @@ import {
 import { Fragment } from "react"
 
 import { Music } from "lucide-react"
-
-import { DontLibraryCards } from "@/scripts/Naobibliotecas"
 import { Link } from "react-router-dom"
 import { urlFormater } from "@/scripts/normalize"
+import { naoExibidos } from "@/scripts/exibitionControl"
 
 export const MobileCarousel = () => {
 
   return (
-    DontLibraryCards.map((cards, i) => (
+    naoExibidos.map((cards, i) => (
       <Fragment key={i}>
         <h1 className=" text-xl font-bold text-zinc-50 sm:hidden">{cards.name}</h1>
 

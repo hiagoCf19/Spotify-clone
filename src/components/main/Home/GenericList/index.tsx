@@ -1,18 +1,18 @@
 
 
 import { Card } from "./Card"
-import React from "react"
 import { Link } from "react-router-dom"
 import { urlFormater } from "@/scripts/normalize"
-import { DontLibraryCards } from "@/scripts/Naobibliotecas"
+
 import { TitleSpt } from "@/components/Recorrentes/Title"
+import { exibidos } from "@/scripts/exibitionControl"
 
 
 export const GenericList = () => {
   return (
-    <div className="flex flex-col gap-2  overflow-hidden">
-      {DontLibraryCards.map((item, i) => (
-        <React.Fragment key={i} >
+    <div className="flex flex-col gap-2  overflow-hidden mt-2">
+      {exibidos.map((item, i) => (
+        <section key={i} className=" my-3 flex flex-col gap-3" >
           <div className="flex justify-between ">
             <TitleSpt title={item.name} />
             <Link
@@ -42,7 +42,7 @@ export const GenericList = () => {
 
 
 
-        </React.Fragment>
+        </section>
 
       ))}
 

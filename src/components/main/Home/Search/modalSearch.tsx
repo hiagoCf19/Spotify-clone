@@ -26,7 +26,8 @@ export const ModalSearch = ({ search }: ModalSearchProps) => {
       genre.genre.toLowerCase().includes(search.toLowerCase()))
     :
     BrowseAll
-  const musicasUnicas = [...new Set(musics.filter(music =>
+
+  const multiFilter = [...new Set(musics.filter(music =>
     music.name.toLowerCase().includes(search.toLowerCase()) ||
     music.artista.some(artist => artist.name.toLowerCase().includes(search.toLowerCase())) ||
     music.genre.toLowerCase().includes(search.toLowerCase()) ||
@@ -34,7 +35,7 @@ export const ModalSearch = ({ search }: ModalSearchProps) => {
   ))];
   const artistasNomesUnicos = new Set();
   const artistasUnicos: artista[] = [];
-  musicasUnicas.forEach(music => {
+  multiFilter.forEach(music => {
     music.artista.forEach(artist => {
       if (!artistasNomesUnicos.has(artist.name)) {
         artistasNomesUnicos.add(artist.name);
@@ -44,17 +45,25 @@ export const ModalSearch = ({ search }: ModalSearchProps) => {
   });
   const albunsNomeUnicos = new Set();
   const albunsUnicos: any = []
-  musicasUnicas.forEach((album) => {
+  multiFilter.forEach((album) => {
     if (!albunsNomeUnicos.has(album.album)) {
       albunsNomeUnicos.add(album.album)
       albunsUnicos.push(album)
     }
   })
+  const musicsNomeunico = new Set()
+  const musicas: musics[] = []
+  multiFilter.forEach((musica) => {
+    if (!musicsNomeunico.has(musica.name)) {
+      musicsNomeunico.add(musica.name)
+      musicas.push(musica)
+    }
+  })
 
   const [pesquisaV, setPesquisaV] = useState<null | boolean>(null)
   useEffect(() => {
-    artistasUnicos.length === 0 && musicasUnicas.length === 0 && filterGenre.length === 0 ? setPesquisaV(false) : setPesquisaV(true)
-  }, [artistasUnicos.length, filterGenre.length, musicasUnicas.length, search])
+    artistasUnicos.length === 0 && multiFilter.length === 0 && filterGenre.length === 0 ? setPesquisaV(false) : setPesquisaV(true)
+  }, [artistasUnicos.length, filterGenre.length, multiFilter.length, search])
 
   const [larguraDaTela, setLarguraDaTela] = useState(window.innerWidth)
   useEffect(() => {
@@ -69,6 +78,7 @@ export const ModalSearch = ({ search }: ModalSearchProps) => {
     };
   }, [larguraDaTela]);
 
+
   const desktopModal = larguraDaTela >= 640 ? true : false
 
 
@@ -80,7 +90,7 @@ export const ModalSearch = ({ search }: ModalSearchProps) => {
       <DesktopSearchmodal
         artistasUnicos={artistasUnicos}
         filterGenre={filterGenre}
-        musicasUnicas={musicasUnicas}
+        musicasUnicas={musicas}
         albunsUnicos={albunsUnicos}
       />
 
@@ -88,7 +98,7 @@ export const ModalSearch = ({ search }: ModalSearchProps) => {
       <MobileSearchModal
         artistasUnicos={artistasUnicos}
         filterGenre={filterGenre}
-        musicasUnicas={musicasUnicas} />
+        musicasUnicas={musicas} />
 
       :
       <div className="flex flex-col items-center justify-center h-full">
