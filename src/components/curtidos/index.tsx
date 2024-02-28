@@ -3,7 +3,7 @@ import { ArrowDownCircle, ArrowLeft, Clock, Shuffle } from "lucide-react"
 import { IoMdPlay } from "react-icons/io";
 
 import { List } from "lucide-react";
-import { musics, playlists } from "@/mocks/playlists-albuns";
+import { musics } from "@/mocks/playlists-albuns";
 //import { MdPause } from "react-icons/md";
 import { styled } from 'styled-components'
 
@@ -11,7 +11,7 @@ import React from "react";
 import { FaSpotify } from "react-icons/fa6";
 import { HeaderMain } from "../main/Home/HeaderMain";
 import { CardMusic } from "../main/OnOpenAlbum/PlaylistAreaOpen/cardMusic";
-import { extrairMusicasLiked } from "@/scripts/ExtrairCurtidos";
+
 
 const Gradient = styled.div`
   width: 100%;
@@ -50,7 +50,11 @@ const Gradient = styled.div`
 
   `
 export const Curtidos = () => {
-  const musicasLiked: musics[] = extrairMusicasLiked(playlists);
+  const musicasLiked: musics[] = []
+
+
+
+
   return (
     <div className="flex-1 sm:rounded-[6px] h-[88vh]  overflow-y-scroll gap-1 flex flex-col bg-[#171717] ">
       <Gradient>
@@ -93,7 +97,10 @@ export const Curtidos = () => {
           <ArrowDownCircle size={25} className="sm:hidden" />
           <div className="flex items-center gap-5 sm:pt-10 pb-5 sm:justify-between sm:w-full">
             <Shuffle className="sm:hidden" />
-            <div className=" flex items-center justify-center rounded-full w-12 h-12 bg-spotgreen mr-[-20px] ">
+            <div
+              className=" flex items-center justify-center rounded-full w-12 h-12 bg-spotgreen mr-[-20px] "
+
+            >
               <IoMdPlay color="#000" size={20} />
               <div className="hidden sm:block">
               </div>

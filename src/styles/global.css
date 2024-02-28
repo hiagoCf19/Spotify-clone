@@ -40,6 +40,16 @@ body {
   overflow: hidden;
   -webkit-line-clamp: 2;
 }
+.bg-config {
+  background-attachment: scroll;
+  background-position: 50% 25%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 40vh;
+  min-height: 30vh;
+  content-visibility: auto;
+  contain: strict;
+}
 
 @media (min-width: 640px) {
   ::-webkit-scrollbar {

@@ -14,6 +14,8 @@ export interface Pl {
 export interface artista {
   name: string;
   foto: string;
+  bannerID: string;
+  color?: string;
 }
 export interface musics {
   name: string;
@@ -25,6 +27,30 @@ export interface musics {
   durationMultipliedBy100: number;
   genre: string;
 }
+const BannerIDS = {
+  adl: "https://i.scdn.co/image/ab6761860000101659a64b13ff207d3184e0079a",
+  bazzi: "	https://i.scdn.co/image/ab676186000010163fd1984fedc4528377b8358c",
+  d4vd: "	https://i.scdn.co/image/ab67618600001016f328ba2b3c84ec0e31243360",
+  eduardoCosta:
+    "	https://i.scdn.co/image/ab67618600001016234986d48714d9ccd2b18e9b",
+  fleetwoodMac:
+    "	https://i.scdn.co/image/ab67618600001016c6b15528173510ab4deb8f98",
+  freddieDred:
+    "	https://i.scdn.co/image/ab676186000010161817255b3972bcfc061f822d",
+  lanaDelRey:
+    "https://i.scdn.co/image/ab67618600001016adc556aaf75e626cb4a1a1be",
+  mcBinLaden:
+    "https://i.scdn.co/image/ab6761860000101684785398d9eff76caa21aae7",
+  radiohead: "https://i.scdn.co/image/ab676186000010161802a4cbec82e078cc15cbb0",
+  rashid: "https://i.scdn.co/image/ab676186000010167357d8cde3d66a65a6e695a2",
+  stones: "https://i.scdn.co/image/ab67618600001016282f8e91da4dff9d5bee49a8",
+  theWalters:
+    "https://i.scdn.co/image/ab676186000010169773b5bbdc030cf349a4fde0",
+  vocations: "https://i.scdn.co/image/ab676186000010169ce635209a083bb42401e465",
+};
+const artistaColors = {
+  Rashid: "rgba(169, 168, 196, 0.314) 190%",
+};
 
 export const playlists: Pl[] = [
   {
@@ -43,6 +69,7 @@ export const playlists: Pl[] = [
             artista: [
               {
                 name: "Radiohead",
+                bannerID: BannerIDS.radiohead,
                 foto: "assets/artistas/Radiohead/perfil.jpeg",
               },
             ],
@@ -66,11 +93,13 @@ export const playlists: Pl[] = [
             artista: [
               {
                 name: "Rashid",
+                color: artistaColors.Rashid,
                 foto: "assets/artistas/Rashid/perfil.jpeg",
+                bannerID: BannerIDS.rashid,
               },
             ],
             album: "Confundindo Sábios",
-            capa: "assets/artistas/Rashid/CnfSabios.jpeg",
+            capa: "https://i.scdn.co/image/ab67616d00001e02136f6e8e15c00b93d12c0cf8",
             addEm: "11 fev. 2024",
             durationMultipliedBy100: 403,
             liked: false,
@@ -81,6 +110,7 @@ export const playlists: Pl[] = [
             artista: [
               {
                 name: "ADL",
+                bannerID: BannerIDS.adl,
                 foto: "assets/artistas/ADL/perfil.jpeg",
               },
             ],
@@ -96,11 +126,13 @@ export const playlists: Pl[] = [
             artista: [
               {
                 name: "Rashid",
+                color: artistaColors.Rashid,
                 foto: "assets/artistas/Rashid/perfil.jpeg",
+                bannerID: BannerIDS.rashid,
               },
             ],
             album: "Gratidão",
-            capa: "assets/artistas/Rashid/gratidao.jpeg",
+            capa: "https://i.scdn.co/image/ab67616d00001e02807fe591c189e35125945479",
             addEm: "21 fev. 2024",
             durationMultipliedBy100: 334,
             liked: false,
@@ -119,6 +151,7 @@ export const playlists: Pl[] = [
             artista: [
               {
                 name: "The Walters",
+                bannerID: BannerIDS.theWalters,
                 foto: "assets/artistas/TheWalters/perfil.jpeg",
               },
             ],
@@ -134,6 +167,7 @@ export const playlists: Pl[] = [
             artista: [
               {
                 name: "Vocations",
+                bannerID: BannerIDS.vocations,
                 foto: "assets/artistas/Vocations/perfil.jpeg",
               },
             ],
@@ -158,6 +192,7 @@ export const playlists: Pl[] = [
             artista: [
               {
                 name: "Fleetwood Mac",
+                bannerID: BannerIDS.fleetwoodMac,
                 foto: "assets/artistas/FleetwoodMac/perfil.jpeg",
               },
             ],
@@ -174,6 +209,7 @@ export const playlists: Pl[] = [
             artista: [
               {
                 name: "The Rolling Stones",
+                bannerID: BannerIDS.stones,
                 foto: "assets/artistas/Stones/perfil.jpeg",
               },
             ],
@@ -198,6 +234,7 @@ export const playlists: Pl[] = [
             artista: [
               {
                 name: "artista X",
+                bannerID: "",
                 foto: "assets",
               },
             ],
@@ -212,6 +249,7 @@ export const playlists: Pl[] = [
             artista: [
               {
                 name: "artista X",
+                bannerID: "",
                 foto: "assets",
               },
             ],
@@ -235,6 +273,7 @@ export const playlists: Pl[] = [
             artista: [
               {
                 name: "d4vd",
+                bannerID: BannerIDS.d4vd,
                 foto: "assets/artistas/d4vd/perfil.jpeg",
               },
             ],
@@ -250,6 +289,7 @@ export const playlists: Pl[] = [
             artista: [
               {
                 name: "Freddie Dredd",
+                bannerID: BannerIDS.freddieDred,
                 foto: "assets/artistas/FreddieDredd/perfil.jpeg",
               },
             ],
@@ -280,6 +320,7 @@ export const playlists: Pl[] = [
             artista: [
               {
                 name: "d4vd",
+                bannerID: BannerIDS.d4vd,
                 foto: "assets/artistas/d4vd/perfil.jpeg",
               },
             ],
@@ -296,6 +337,7 @@ export const playlists: Pl[] = [
             artista: [
               {
                 name: "d4vd",
+                bannerID: BannerIDS.d4vd,
                 foto: "assets/artistas/d4vd/perfil.jpeg",
               },
             ],
@@ -319,6 +361,7 @@ export const playlists: Pl[] = [
             artista: [
               {
                 name: "Lana Del Rey",
+                bannerID: BannerIDS.lanaDelRey,
                 foto: "assets/artistas/Lana/perfil.jpeg",
               },
             ],
@@ -334,6 +377,23 @@ export const playlists: Pl[] = [
             artista: [
               {
                 name: "Lana Del Rey",
+                bannerID: BannerIDS.lanaDelRey,
+                foto: "assets/artistas/Lana/perfil.jpeg",
+              },
+            ],
+            album: "Young And Beautiful",
+            capa: "assets/artistas/Lana/youngBeautiful.jpeg",
+            addEm: "1 de jan. de 2013",
+            durationMultipliedBy100: 356,
+            liked: false,
+            genre: "Pop",
+          },
+          {
+            name: "Young And Beautiful",
+            artista: [
+              {
+                name: "Lana Del Rey",
+                bannerID: BannerIDS.lanaDelRey,
                 foto: "assets/artistas/Lana/perfil.jpeg",
               },
             ],
@@ -349,6 +409,7 @@ export const playlists: Pl[] = [
             artista: [
               {
                 name: "Lana Del Rey",
+                bannerID: BannerIDS.lanaDelRey,
                 foto: "assets/artistas/Lana/perfil.jpeg",
               },
             ],
@@ -373,11 +434,13 @@ export const playlists: Pl[] = [
             artista: [
               {
                 name: "Rashid",
+                color: artistaColors.Rashid,
                 foto: "assets/artistas/Rashid/perfil.jpeg",
+                bannerID: BannerIDS.rashid,
               },
             ],
             album: "Confundindo Sábios",
-            capa: "assets/artistas/Rashid/CnfSabios.jpeg",
+            capa: "https://i.scdn.co/image/ab67616d00001e02136f6e8e15c00b93d12c0cf8",
             addEm: "11 fev. 2024",
             durationMultipliedBy100: 403,
             liked: false,
@@ -388,11 +451,13 @@ export const playlists: Pl[] = [
             artista: [
               {
                 name: "Rashid",
+                color: artistaColors.Rashid,
                 foto: "assets/artistas/Rashid/perfil.jpeg",
+                bannerID: BannerIDS.rashid,
               },
             ],
             album: "Gratidão",
-            capa: "assets/artistas/Rashid/gratidao.jpeg",
+            capa: "https://i.scdn.co/image/ab67616d00001e02807fe591c189e35125945479",
             addEm: "21 fev. 2024",
             durationMultipliedBy100: 334,
             liked: false,
@@ -412,6 +477,7 @@ export const playlists: Pl[] = [
             artista: [
               {
                 name: "The Rolling Stones",
+                bannerID: BannerIDS.stones,
                 foto: "assets/artistas/Stones/perfil.jpeg",
               },
             ],
@@ -428,6 +494,7 @@ export const playlists: Pl[] = [
             artista: [
               {
                 name: "The Rolling Stones",
+                bannerID: BannerIDS.stones,
                 foto: "assets/artistas/Stones/perfil.jpeg",
               },
             ],
@@ -452,6 +519,7 @@ export const playlists: Pl[] = [
             artista: [
               {
                 name: "Bazzi",
+                bannerID: BannerIDS.bazzi,
                 foto: "assets/artistas/Bazzi/perfil.jpeg",
               },
             ],
@@ -468,6 +536,7 @@ export const playlists: Pl[] = [
             artista: [
               {
                 name: "Bazzi",
+                bannerID: BannerIDS.bazzi,
                 foto: "assets/artistas/Bazzi/perfil.jpeg",
               },
             ],
@@ -484,6 +553,7 @@ export const playlists: Pl[] = [
             artista: [
               {
                 name: "Bazzi",
+                bannerID: BannerIDS.bazzi,
                 foto: "assets/artistas/Bazzi/perfil.jpeg",
               },
             ],
@@ -509,6 +579,7 @@ export const playlists: Pl[] = [
             artista: [
               {
                 name: "Eduardo Costa",
+                bannerID: BannerIDS.eduardoCosta,
                 foto: "assets/artistas/EduardoCosta/perfil.jpeg",
               },
             ],
@@ -525,6 +596,7 @@ export const playlists: Pl[] = [
             artista: [
               {
                 name: "Eduardo Costa",
+                bannerID: BannerIDS.eduardoCosta,
                 foto: "assets/artistas/EduardoCosta/perfil.jpeg",
               },
             ],
@@ -541,6 +613,7 @@ export const playlists: Pl[] = [
             artista: [
               {
                 name: "Eduardo Costa",
+                bannerID: BannerIDS.eduardoCosta,
                 foto: "assets/artistas/EduardoCosta/perfil.jpeg",
               },
             ],
@@ -571,6 +644,7 @@ export const playlists: Pl[] = [
             artista: [
               {
                 name: "artista X",
+                bannerID: "",
                 foto: "assets",
               },
             ],
@@ -586,6 +660,7 @@ export const playlists: Pl[] = [
             artista: [
               {
                 name: "artista X",
+                bannerID: "",
                 foto: "assets",
               },
             ],
@@ -615,6 +690,7 @@ export const playlists: Pl[] = [
             artista: [
               {
                 name: "artista X",
+                bannerID: "",
                 foto: "assets",
               },
             ],
@@ -630,6 +706,7 @@ export const playlists: Pl[] = [
             artista: [
               {
                 name: "artista X",
+                bannerID: "",
                 foto: "assets",
               },
             ],

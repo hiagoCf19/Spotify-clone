@@ -1,3 +1,4 @@
+
 import { InterfaceBrowseAll } from "@/mocks/BrowseAll"
 import { artista, musics } from "@/mocks/playlists-albuns"
 import { MdVerified } from "react-icons/md"

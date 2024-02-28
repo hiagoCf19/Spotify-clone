@@ -1,9 +1,10 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import { BrowseAll } from "@/mocks/BrowseAll"
+
 import { artista, musics, playlists } from "@/mocks/playlists-albuns"
 import { useEffect, useState } from "react"
 import { DesktopSearchmodal } from "./searching/desktopSearchmodal";
 import { MobileSearchModal } from "./searching/mobileSearchModal";
+import { BrowseAll } from "@/mocks/BrowseAll";
 
 interface ModalSearchProps {
   search: any

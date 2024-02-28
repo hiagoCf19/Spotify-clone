@@ -8,7 +8,7 @@ interface propsHeaderMain {
 }
 export const HeaderMain = ({ search, handleSearch }: propsHeaderMain) => {
   return (
-    <header className="hidden sm:block ">
+    <header className="hidden sm:block z-10 ">
 
       <div className="flex items-center justify-between">
         <div className="flex gap-2 items-center  w-[35%]  ">

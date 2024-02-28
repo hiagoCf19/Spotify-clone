@@ -49,9 +49,6 @@ export const CardMusic = ({ props, i, hiddenTopics }: propsMsc) => {
           </div>
 
           <div className="flex items-center  gap-1">
-            {hidden ? null : <div className="bg-[#a7a7a796] p-1 rounded text-[7px] text-[#121212] font-semibold">
-              LYRICS
-            </div>}
             <span className="text-[13px] font-medium">
               {props.artista.map((artista) => (
                 artista.name

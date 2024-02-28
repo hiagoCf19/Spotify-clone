@@ -23,17 +23,10 @@ export const GenericList = () => {
           </div>
           <div className="flex gap-6  w-full">
             {item.cards != undefined ? item.cards?.map((card, i) => (
-              <Link
-                to={urlFormater(`${card.title}-${i}`)}
+              <Card
+                props={card}
                 key={i}
-                className=" w-[15%] h-[32vh] overflow-hidden"
-              >
-                <Card
-                  props={card}
-                />
-
-
-              </Link>
+              />
             ))
               :
               ''}
