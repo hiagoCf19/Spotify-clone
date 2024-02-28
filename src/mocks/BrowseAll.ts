@@ -5,7 +5,7 @@ export interface InterfaceBrowseAll {
   background: string;
   capa: string;
 }
-function filterGenre(genre: string): musics[] {
+export function filterMusicPorGenre(genre: string): musics[] {
   let musicsfilter: musics[] = [];
 
   playlists.forEach((cards: Pl) => {
@@ -22,61 +22,61 @@ function filterGenre(genre: string): musics[] {
 export const BrowseAll: InterfaceBrowseAll[] = [
   {
     genre: "Podcasts",
-    musics: filterGenre("Podcast"),
+    musics: filterMusicPorGenre("Podcast"),
     background: "bg-[#906be7]",
     capa: "assets/capas/podcast.jpeg",
   },
   {
     genre: "Rap",
-    musics: filterGenre("Rap"),
+    musics: filterMusicPorGenre("Rap"),
     background: "bg-[#1e3263]",
     capa: "assets/capas/rap.jpeg",
   },
   {
     genre: "Funk",
-    musics: filterGenre("Funk"),
+    musics: filterMusicPorGenre("Funk"),
     background: "bg-[#e64332]",
     capa: "assets/capas/funkBr.jpeg",
   },
   {
     genre: "Hip-Hop",
-    musics: filterGenre("Hip-Hop"),
+    musics: filterMusicPorGenre("Hip-Hop"),
     background: "bg-[#f19b2e]",
     capa: "assets/capas/hipHop.jpeg",
   },
   {
     genre: "Indie",
-    musics: filterGenre("Indie"),
+    musics: filterMusicPorGenre("Indie"),
     background: "bg-[#499EC2]",
     capa: "assets/capas/indie.jpeg",
   },
   {
     genre: "Mpb",
-    musics: filterGenre("Mpb"),
+    musics: filterMusicPorGenre("Mpb"),
     background: "bg-[#7d4b31]",
     capa: "assets/capas/mpb.jpeg",
   },
   {
     genre: "Summer",
-    musics: filterGenre("Summer"),
+    musics: filterMusicPorGenre("Summer"),
     background: "bg-[#4f374f]",
     capa: "assets/capas/summer.jpeg",
   },
   {
     genre: "Pop",
-    musics: filterGenre("Pop"),
+    musics: filterMusicPorGenre("Pop"),
     background: "bg-[#0c73eb]",
     capa: "assets/capas/pop.png",
   },
   {
     genre: "Rock",
-    musics: filterGenre("Rock"),
+    musics: filterMusicPorGenre("Rock"),
     background: "bg-[#777777]",
     capa: "assets/capas/rock.jpeg",
   },
   {
     genre: "Sertanejo",
-    musics: filterGenre("Sertanejo"),
+    musics: filterMusicPorGenre("Sertanejo"),
     background: "bg-[#2b2045]",
     capa: "assets/capas/sertanejo.jpeg",
   },

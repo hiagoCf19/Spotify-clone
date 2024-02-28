@@ -1,6 +1,8 @@
 import { Pl } from "@/mocks/playlists-albuns"
-import { Card } from "./Card"
 import { HeaderMain } from "../HeaderMain"
+import { GridGeneric } from "../Search/searching/gridGeneric"
+import { urlFormater } from "@/scripts/normalize"
+import { Link } from "react-router-dom"
 
 interface MostrarTudoProps {
   item: Pl
@@ -14,7 +16,15 @@ export const MostrarTudo = ({ item }: MostrarTudoProps) => {
         <h1 className="py-4 text-2xl font-semibold text-zinc-50">{item.name}</h1>
         <div className="flex gap-6  w-full">
           {item.cards.map((card, i) => (
-            <Card props={card} key={i} />
+            <Link
+              to={urlFormater(`${card.title}`)}
+              key={i}
+              className=" w-[14%]  overflow-hidden"
+
+            >
+              <GridGeneric image={card.image} text={card.title} imageRoundedFull={false} key={i} span={card.description} />
+            </Link>
+
           ))}
         </div>
       </div>

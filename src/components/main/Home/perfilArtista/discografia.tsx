@@ -3,8 +3,10 @@ import { TitleSpt } from "@/components/Recorrentes/Title"
 import { useState } from "react"
 
 import { musics } from "@/mocks/playlists-albuns"
-import { Card } from "../GenericList/Card"
 import { constructorSinglesAndAlbuns } from "@/scripts/DataConstructor"
+import { urlFormater } from "@/scripts/normalize"
+import { Link } from "react-router-dom"
+import { GridGeneric } from "../Search/searching/gridGeneric"
 
 interface propsDiscografia {
   musicas: musics[]
@@ -27,14 +29,37 @@ export const Discografia = ({ musicas }:
       </div>
       {ativo === 0 ? <div className="flex gap-6  w-full mt-3">
         {albuns.map((album, i) => (
-          <Card props={album} key={i} />
+          <Link
+            to={urlFormater(`${album.title}`)}
+            key={i}
+            className=" w-[14%]  overflow-hidden"
+          >
+            <GridGeneric
+              image={album.image}
+              text={album.title}
+              imageRoundedFull={false}
+              key={i}
+              span={album.description} />
+          </Link>
         ))}
       </div>
         :
         <div className="flex gap-6  w-full mt-3">
           {singles.map((single, i) => (
-            <Card props={single} key={i} />
+            <Link
+              to={urlFormater(`${single.title}`)}
+              key={i}
+              className=" w-[14%]  overflow-hidden"
+            >
+              <GridGeneric
+                image={single.image}
+                text={single.title}
+                imageRoundedFull={false}
+                key={i}
+                span={single.description} />
+            </Link>
           ))}
+
         </div>
       }
     </div>

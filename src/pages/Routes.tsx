@@ -15,13 +15,19 @@ import { playlists } from "@/mocks/playlists-albuns";
 import { PerfilArtista } from "@/components/main/Home/perfilArtista";
 import '../styles/App.css'
 
+
+
 function App() {
+
   return (
     <BrowserRouter>
+
       <div className=' sm:p-2 pb-0  flex flex-col gap-4 h-[100vh]'>
         <div className='flex sm:flex-1 sm:flex-row flex-col-reverse gap-2 relative '>
           <Aside />
+
           <Routes>
+
             <Route path="/" element={<Main />} />
             <Route path={urlFormater('Musicas-curtidas')} element={<Curtidos />} />
             <Route path={urlFormater('search')} element={<SearchComponent />} />
@@ -30,9 +36,11 @@ function App() {
 
                 card.musicas.map((musica, indexOfMusic) => (
                   <React.Fragment key={`${musica.name}-${indexOfMusic}`}>
+
                     {/* Criar componente para albuns e singles */}
                     <Route path={urlFormater(musica.album)} element={<div>{musica.album}</div>} />
                     {musica.artista.map((artista, indexOfArtist) => (
+
                       <Route
                         key={`${artista.name}-${indexOfArtist}`}
                         path={urlFormater(artista.name)}
@@ -63,6 +71,7 @@ function App() {
         </div>
         <Footer />
       </div>
+
     </BrowserRouter>
 
   )

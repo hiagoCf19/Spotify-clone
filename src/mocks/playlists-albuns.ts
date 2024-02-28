@@ -16,6 +16,7 @@ export interface artista {
   foto: string;
   bannerID: string;
   color?: string;
+  genre: string;
 }
 export interface musics {
   name: string;
@@ -69,6 +70,7 @@ export const playlists: Pl[] = [
             artista: [
               {
                 name: "Radiohead",
+                genre: "Rock",
                 bannerID: BannerIDS.radiohead,
                 foto: "assets/artistas/Radiohead/perfil.jpeg",
               },
@@ -93,6 +95,7 @@ export const playlists: Pl[] = [
             artista: [
               {
                 name: "Rashid",
+                genre: "Rap",
                 color: artistaColors.Rashid,
                 foto: "assets/artistas/Rashid/perfil.jpeg",
                 bannerID: BannerIDS.rashid,
@@ -110,6 +113,7 @@ export const playlists: Pl[] = [
             artista: [
               {
                 name: "ADL",
+                genre: "Rap",
                 bannerID: BannerIDS.adl,
                 foto: "assets/artistas/ADL/perfil.jpeg",
               },
@@ -126,6 +130,7 @@ export const playlists: Pl[] = [
             artista: [
               {
                 name: "Rashid",
+                genre: "Rap",
                 color: artistaColors.Rashid,
                 foto: "assets/artistas/Rashid/perfil.jpeg",
                 bannerID: BannerIDS.rashid,
@@ -151,6 +156,7 @@ export const playlists: Pl[] = [
             artista: [
               {
                 name: "The Walters",
+                genre: "Indie",
                 bannerID: BannerIDS.theWalters,
                 foto: "assets/artistas/TheWalters/perfil.jpeg",
               },
@@ -167,6 +173,7 @@ export const playlists: Pl[] = [
             artista: [
               {
                 name: "Vocations",
+                genre: "Indie",
                 bannerID: BannerIDS.vocations,
                 foto: "assets/artistas/Vocations/perfil.jpeg",
               },
@@ -192,6 +199,7 @@ export const playlists: Pl[] = [
             artista: [
               {
                 name: "Fleetwood Mac",
+                genre: "Rock",
                 bannerID: BannerIDS.fleetwoodMac,
                 foto: "assets/artistas/FleetwoodMac/perfil.jpeg",
               },
@@ -209,6 +217,7 @@ export const playlists: Pl[] = [
             artista: [
               {
                 name: "The Rolling Stones",
+                genre: "Rock",
                 bannerID: BannerIDS.stones,
                 foto: "assets/artistas/Stones/perfil.jpeg",
               },
@@ -234,6 +243,7 @@ export const playlists: Pl[] = [
             artista: [
               {
                 name: "artista X",
+                genre: "outros",
                 bannerID: "",
                 foto: "assets",
               },
@@ -249,6 +259,7 @@ export const playlists: Pl[] = [
             artista: [
               {
                 name: "artista X",
+                genre: "outros",
                 bannerID: "",
                 foto: "assets",
               },
@@ -273,6 +284,7 @@ export const playlists: Pl[] = [
             artista: [
               {
                 name: "d4vd",
+                genre: "Indie",
                 bannerID: BannerIDS.d4vd,
                 foto: "assets/artistas/d4vd/perfil.jpeg",
               },
@@ -289,6 +301,7 @@ export const playlists: Pl[] = [
             artista: [
               {
                 name: "Freddie Dredd",
+                genre: "Hip-Hop",
                 bannerID: BannerIDS.freddieDred,
                 foto: "assets/artistas/FreddieDredd/perfil.jpeg",
               },
@@ -320,6 +333,7 @@ export const playlists: Pl[] = [
             artista: [
               {
                 name: "d4vd",
+                genre: "Indie",
                 bannerID: BannerIDS.d4vd,
                 foto: "assets/artistas/d4vd/perfil.jpeg",
               },
@@ -337,6 +351,7 @@ export const playlists: Pl[] = [
             artista: [
               {
                 name: "d4vd",
+                genre: "Indie",
                 bannerID: BannerIDS.d4vd,
                 foto: "assets/artistas/d4vd/perfil.jpeg",
               },
@@ -361,6 +376,7 @@ export const playlists: Pl[] = [
             artista: [
               {
                 name: "Lana Del Rey",
+                genre: "Pop",
                 bannerID: BannerIDS.lanaDelRey,
                 foto: "assets/artistas/Lana/perfil.jpeg",
               },
@@ -377,6 +393,7 @@ export const playlists: Pl[] = [
             artista: [
               {
                 name: "Lana Del Rey",
+                genre: "Pop",
                 bannerID: BannerIDS.lanaDelRey,
                 foto: "assets/artistas/Lana/perfil.jpeg",
               },
@@ -393,6 +410,7 @@ export const playlists: Pl[] = [
             artista: [
               {
                 name: "Lana Del Rey",
+                genre: "Pop",
                 bannerID: BannerIDS.lanaDelRey,
                 foto: "assets/artistas/Lana/perfil.jpeg",
               },
@@ -409,6 +427,7 @@ export const playlists: Pl[] = [
             artista: [
               {
                 name: "Lana Del Rey",
+                genre: "Pop",
                 bannerID: BannerIDS.lanaDelRey,
                 foto: "assets/artistas/Lana/perfil.jpeg",
               },
@@ -434,6 +453,7 @@ export const playlists: Pl[] = [
             artista: [
               {
                 name: "Rashid",
+                genre: "Rap",
                 color: artistaColors.Rashid,
                 foto: "assets/artistas/Rashid/perfil.jpeg",
                 bannerID: BannerIDS.rashid,
@@ -451,6 +471,7 @@ export const playlists: Pl[] = [
             artista: [
               {
                 name: "Rashid",
+                genre: "Rap",
                 color: artistaColors.Rashid,
                 foto: "assets/artistas/Rashid/perfil.jpeg",
                 bannerID: BannerIDS.rashid,
@@ -477,6 +498,7 @@ export const playlists: Pl[] = [
             artista: [
               {
                 name: "The Rolling Stones",
+                genre: "Rock",
                 bannerID: BannerIDS.stones,
                 foto: "assets/artistas/Stones/perfil.jpeg",
               },
@@ -494,6 +516,7 @@ export const playlists: Pl[] = [
             artista: [
               {
                 name: "The Rolling Stones",
+                genre: "Rock",
                 bannerID: BannerIDS.stones,
                 foto: "assets/artistas/Stones/perfil.jpeg",
               },
@@ -519,6 +542,7 @@ export const playlists: Pl[] = [
             artista: [
               {
                 name: "Bazzi",
+                genre: "Pop",
                 bannerID: BannerIDS.bazzi,
                 foto: "assets/artistas/Bazzi/perfil.jpeg",
               },
@@ -536,6 +560,7 @@ export const playlists: Pl[] = [
             artista: [
               {
                 name: "Bazzi",
+                genre: "Pop",
                 bannerID: BannerIDS.bazzi,
                 foto: "assets/artistas/Bazzi/perfil.jpeg",
               },
@@ -553,6 +578,7 @@ export const playlists: Pl[] = [
             artista: [
               {
                 name: "Bazzi",
+                genre: "Pop",
                 bannerID: BannerIDS.bazzi,
                 foto: "assets/artistas/Bazzi/perfil.jpeg",
               },
@@ -579,6 +605,7 @@ export const playlists: Pl[] = [
             artista: [
               {
                 name: "Eduardo Costa",
+                genre: "Sertanejo",
                 bannerID: BannerIDS.eduardoCosta,
                 foto: "assets/artistas/EduardoCosta/perfil.jpeg",
               },
@@ -596,6 +623,7 @@ export const playlists: Pl[] = [
             artista: [
               {
                 name: "Eduardo Costa",
+                genre: "Sertanejo",
                 bannerID: BannerIDS.eduardoCosta,
                 foto: "assets/artistas/EduardoCosta/perfil.jpeg",
               },
@@ -613,6 +641,7 @@ export const playlists: Pl[] = [
             artista: [
               {
                 name: "Eduardo Costa",
+                genre: "Sertanejo",
                 bannerID: BannerIDS.eduardoCosta,
                 foto: "assets/artistas/EduardoCosta/perfil.jpeg",
               },
@@ -644,6 +673,7 @@ export const playlists: Pl[] = [
             artista: [
               {
                 name: "artista X",
+                genre: "outros",
                 bannerID: "",
                 foto: "assets",
               },
@@ -660,6 +690,7 @@ export const playlists: Pl[] = [
             artista: [
               {
                 name: "artista X",
+                genre: "outros",
                 bannerID: "",
                 foto: "assets",
               },
@@ -690,6 +721,7 @@ export const playlists: Pl[] = [
             artista: [
               {
                 name: "artista X",
+                genre: "outros",
                 bannerID: "",
                 foto: "assets",
               },
@@ -706,6 +738,7 @@ export const playlists: Pl[] = [
             artista: [
               {
                 name: "artista X",
+                genre: "outros",
                 bannerID: "",
                 foto: "assets",
               },

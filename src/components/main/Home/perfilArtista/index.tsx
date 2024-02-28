@@ -9,10 +9,13 @@ import { useState } from "react";
 import { Discografia } from "./discografia";
 import { GenericSectionsInPerfil } from "./genericSections";
 
+
+
 interface PropsPerfil {
   artist: artista[]
 
 }
+
 
 const Gradient = styled.div`
 border-radius: 6px;
@@ -55,14 +58,17 @@ export const PerfilArtista = ({ artist }: PropsPerfil) => {
   const musicas = extrairMusicasPorArtista(artist[0].name)
   const [follow, setFollow] = useState(false)
 
+
+
+
   return (
 
     <section className="flex flex-col gap-3 w-full  h-[88vh] ">
-      <div className="flex-1  min-h-[40vh] sm:h-40   gap-1 flex flex-col bg-[#121212]   relative rounded-[6px]overflow-y-scroll overflow-x-hidden ">
+
+      <div className="flex-1  min-h-[40vh] sm:h-40   gap-1 flex flex-col bg-[#121212]   relative rounded-[6px] overflow-y-scroll overflow-x-hidden " >
         <div className="p-4 z-50 fixed w-full">
           <HeaderMain />
         </div>
-
         {/* BACKGROUND */}
         <div className=" w-full relative   ">
           <div
@@ -116,8 +122,10 @@ export const PerfilArtista = ({ artist }: PropsPerfil) => {
         </Gradient>
 
         <div className="-z-1 w-full p-4 m-2 flex flex-col gap-10">
+          <GenericSectionsInPerfil apareceEm={false} title={`Os Fãs também curtem`} artist={artist[0]} />
           <Discografia musicas={musicas} />
-          <GenericSectionsInPerfil title={`Com ${artist[0].name}`} />
+          <GenericSectionsInPerfil title={`Aparece em`} artist={artist[0]} apareceEm />
+
         </div>
 
       </div>

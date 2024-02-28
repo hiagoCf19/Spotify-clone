@@ -87,7 +87,7 @@ export const DesktopSearchmodal = ({ artistasUnicos, filterGenre, musicasUnicas,
                   <Link
                     to={urlFormater(`${artista.name}`)}
                     key={i}
-                    className=" w-[13%]  overflow-hidden"
+                    className=" w-[14%]  overflow-hidden"
                   >
                     <GridGeneric image={artista.foto ?? ""} text={artista.name} span={'Artista'} imageRoundedFull />
                   </Link>
@@ -108,7 +108,7 @@ export const DesktopSearchmodal = ({ artistasUnicos, filterGenre, musicasUnicas,
                   <Link
                     to={urlFormater(`${album.name}`)}
                     key={i}
-                    className=" w-[13%]  overflow-hidden"
+                    className=" w-[14%]  overflow-hidden"
                   >
                     <GridGeneric image={album.capa ?? ""} text={album.album} span={` ${album.artista.map((artista) => artista.name)} • ${extrairAno(album.addEm)}`} />
                   </Link>
@@ -127,7 +127,7 @@ export const DesktopSearchmodal = ({ artistasUnicos, filterGenre, musicasUnicas,
                     <Link
                       to={urlFormater(`${genre.genre}`)}
                       key={i}
-                      className=" w-[13%]  overflow-hidden"
+                      className=" w-[14%]  overflow-hidden"
                     >
                       <GridGeneric image='assets/capas/genericGenrs.jpeg' text={genre.genre} />
                     </Link>
@@ -156,7 +156,7 @@ export const DesktopSearchmodal = ({ artistasUnicos, filterGenre, musicasUnicas,
                       <Link
                         to={urlFormater(`${artista.name}`)}
                         key={i}
-                        className=" w-[13%]  overflow-hidden"
+                        className=" w-[14%]  overflow-hidden"
                       >
                         <GridGeneric image={artista.foto ?? ""} text={artista.name} span={'Artista'} imageRoundedFull />
                       </Link>
@@ -176,7 +176,7 @@ export const DesktopSearchmodal = ({ artistasUnicos, filterGenre, musicasUnicas,
                         <Link
                           to={urlFormater(`${album.name}`)}
                           key={i}
-                          className=" w-[13%]  overflow-hidden"
+                          className=" w-[14%]  overflow-hidden"
                         >
                           <GridGeneric image={album.capa ?? ""} text={album.album} span={` ${album.artista.map((artista) => artista.name)} • ${extrairAno(album.addEm)}`} />
                         </Link>
@@ -196,7 +196,7 @@ export const DesktopSearchmodal = ({ artistasUnicos, filterGenre, musicasUnicas,
                           <Link
                             to={urlFormater(`${genre.genre}`)}
                             key={i}
-                            className=" w-[13%]  overflow-hidden"
+                            className=" w-[14%]  overflow-hidden"
                           >
                             <GridGeneric image='assets/capas/genericGenrs.jpeg' text={genre.genre} />
                           </Link>

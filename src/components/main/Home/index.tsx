@@ -8,6 +8,7 @@ import { MobileCarousel } from "./GenericList/Carousel"
 
 
 
+
 const GradientBase = styled.div`
   width: 100%;
   background: rgb(18, 18, 18);
@@ -51,11 +52,11 @@ const GradientBase = styled.div`
 export const Main = () => {
 
 
-
   return (
 
     <div className=" h-[88vh]  overflow-y-scroll 
       sm:rounded w-full">
+
       <GradientBase className="flex gap-4 flex-col 
       backgroundGradientMobile sm:backgroundGradientDesktop sm:p-4 sm:px-6 p-2">
         < HeaderMain />
