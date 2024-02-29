@@ -15,11 +15,11 @@ export const GenericCarousel = ({ image, title, span, maisDeUmCard, imageRounded
 
   return (
 
-    <CarouselItem className={`${maisDeUmCard ? 'basis-1/2' : 'basis-1/1'}`} >
+    <CarouselItem className={`${maisDeUmCard ? 'basis-1/2 w-[50%]' : 'basis-1/1'}   `} >
       <Link
         to={urlFormater(`${title}`)}
         className="flex flex-col gap-2 ">
-        <div className={`h-[173px]`}>
+        <div className={`h-[173px] `}>
           <img src={image} className={`  ${imageRoundedFull ? 'rounded-full h-[153px]' : 'rounded h-[173px]'}`} />
         </div>
         <div className={`text-sm font-medium overflow-hidden overflow-ellipsis line-clamp-2 ${imageRoundedFull ? 'text-center' : ''}`}>

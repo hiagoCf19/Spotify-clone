@@ -24,7 +24,7 @@ export const CardMusic = ({ props, i, hiddenTopics }: propsMsc) => {
   const hidden = hiddenTopics
   convert()
   return (
-    <div className="flex items-center justify-between gap-4 sm:py-1 sm:hover:bg-[#ffffff11] sm:-ml-3 sm:p-2 rounded"
+    <div className="flex items-center justify-between gap-4 sm:py-1 sm:hover:bg-[#ffffff11] sm:-ml-3 sm:p-2 rounded "
       onMouseOver={() => setMouseInside(true)}
       onMouseOut={() => setMouseInside(false)}>
       <div className="flex items-center  overflow-hidden gap-3 sm:w-[22%]"

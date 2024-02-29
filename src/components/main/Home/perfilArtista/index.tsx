@@ -1,4 +1,4 @@
-import { artista, musics, playlists } from "@/mocks/playlists-albuns"
+import { artista } from "@/mocks/playlists-albuns"
 import { HeaderMain } from "../HeaderMain"
 import { MdVerified } from "react-icons/md";
 import styled from "styled-components";
@@ -9,6 +9,7 @@ import { useEffect, useState } from "react";
 import { Discografia } from "./discografia";
 import { GenericSectionsInPerfil } from "./genericSections";
 import { ChevronRight, MoreVertical, Shuffle } from "lucide-react";
+import { extrairMusicasPorArtista } from "@/scripts/musicasDoArtista";
 
 
 interface PropsPerfil {
@@ -35,26 +36,6 @@ border-radius: 6px;
 `;
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 export const PerfilArtista = ({ artist }: PropsPerfil) => {
-
-  function extrairMusicasPorArtista(artistName: string): musics[] {
-    const musicasNomeUnico: Set<string> = new Set();
-    const musicasEncontradas: musics[] = [];
-
-    playlists.forEach((playlist) => {
-      playlist.cards.forEach((card) => {
-        card.musicas.forEach((musica) => {
-          if (musica.artista.some((artista) => artista.name === artistName)) {
-            if (!musicasNomeUnico.has(musica.name)) {
-              musicasNomeUnico.add(musica.name);
-              musicasEncontradas.push(musica);
-            }
-          }
-        });
-      });
-    });
-
-    return musicasEncontradas;
-  }
   const musicas = extrairMusicasPorArtista(artist[0].name)
   const [follow, setFollow] = useState(false)
   const [larguraDaTela, setLarguraDaTela] = useState(window.innerWidth)
@@ -101,6 +82,7 @@ export const PerfilArtista = ({ artist }: PropsPerfil) => {
                 {artist[0].name}
 
               </h1>
+              <p className="hidden sm:block  text-base text-zinc-50 px-3"> 910,2 mil ouvintes mensais</p>
             </div>
           </div>
         </div>
@@ -128,7 +110,7 @@ export const PerfilArtista = ({ artist }: PropsPerfil) => {
             </div>
             :
             <div>
-              <p className="sm:hidden  mt-8 text-base text-zinc-50 px-3"> 910,2 mil ouvintes mensais</p>
+
               <div className="mt-4 mx-3 flex items-center gap-5 justify-between">
 
                 <div className="flex gap-4 items-center">
@@ -196,18 +178,20 @@ export const PerfilArtista = ({ artist }: PropsPerfil) => {
             title={`Os Fãs também curtem`}
             artist={artist[0]}
             desktopScreen={desktopScreen}
+
           />
           <Discografia
             musicas={musicas}
             desktopScreen={desktopScreen}
           />
           <GenericSectionsInPerfil
+
             desktopScreen={desktopScreen}
             title={`Aparece em`}
             artist={artist[0]}
             apareceEm
           />
-          <div className="  w-full" />
+          <div className=" sm:hidden  w-full" />
         </div>
 
       </div >

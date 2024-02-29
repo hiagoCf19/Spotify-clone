@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Fragment } from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { Main } from '@/components/main/Home';
 import { Footer } from '@/components/Footer';
@@ -14,6 +14,7 @@ import { OpenGenre } from "@/components/main/Home/Search/OpenCardGenre/OpenGenre
 import { playlists } from "@/mocks/playlists-albuns";
 import { PerfilArtista } from "@/components/main/Home/perfilArtista";
 import '../styles/App.css'
+import { extrairMusicasPorArtista } from "@/scripts/musicasDoArtista";
 
 
 
@@ -40,15 +41,26 @@ function App() {
                     {/* Criar componente para albuns e singles */}
                     <Route path={urlFormater(musica.album)} element={<div>{musica.album}</div>} />
                     {musica.artista.map((artista, indexOfArtist) => (
+                      <Fragment key={`${artista.name}-${indexOfArtist}`}>
+                        <Route
 
-                      <Route
-                        key={`${artista.name}-${indexOfArtist}`}
-                        path={urlFormater(artista.name)}
-                        element={
-                          <PerfilArtista
-                            artist={musica.artista}
-                          />
-                        } />
+                          path={urlFormater(artista.name)}
+                          element={
+                            <PerfilArtista
+                              artist={musica.artista}
+                            />
+                          } />
+                        <Route path={urlFormater(`this-is-${artista.name}`)} element={
+                          <OpenAlbumOrPlaylist
+                            color={artista.color ?? ''}
+                            image={artista.thisIs ?? ''}
+                            title={`This Is ${artista.name}`}
+                            description={`This is ${artista.name}. Os maiores sucessos em uma unica playlist`}
+                            classe={'Playlist'}
+                            musicas={extrairMusicasPorArtista(artista.name)}
+                          />} />
+                      </Fragment>
+
                     ))}
                   </React.Fragment>
 
@@ -60,10 +72,18 @@ function App() {
             ))}
             {exibidos.map((item) => (
               item.cards != undefined ? item.cards?.map((card, i) => (
-                <>
-                  <Route path={urlFormater(`${card.title}`)} element={<OpenAlbumOrPlaylist album={card} key={i} pl={item} />} />
+                <Fragment key={i}>
+                  <Route path={urlFormater(`${card.title}`)} element={
+                    <OpenAlbumOrPlaylist
+                      color={card.color ?? ''}
+                      image={card.image ?? ''}
+                      title={`${card.title}`}
+                      description={`${card.description}`}
+                      classe={'Playlist'}
+                      musicas={card.musicas}
+                    />} />
                   <Route path={`/${urlFormater(item.name)}`} element={<MostrarTudo item={item} />} />
-                </>
+                </Fragment>
               )) : ''
             ))}
 

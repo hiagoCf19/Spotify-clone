@@ -6,6 +6,7 @@ import { Link } from "react-router-dom"
 import { urlFormater } from "@/scripts/normalize"
 import { Carousel, CarouselContent } from "@/components/ui/carousel"
 import { GenericCarousel } from "./genericCarousel"
+import { MontaThisIs } from "@/scripts/DataConstructor"
 
 
 
@@ -70,6 +71,7 @@ export const GenericSectionsInPerfil = ({ title, artist, apareceEm, desktopScree
     }
   });
 
+  const artistThisIS = [new MontaThisIs(artist.name, artist.thisIs ?? '', artist.name)]
 
 
   return (
@@ -77,74 +79,92 @@ export const GenericSectionsInPerfil = ({ title, artist, apareceEm, desktopScree
     <div className="">
       <TitleSpt title={title} />
       <div className="flex sm:gap-6  w-full mt-3">
-        {apareceEm ?
-          desktopScreen ?
-            comArtista(artist.name).map((playlists) => (
-              playlists.cards.map((card, i) => (
-                <Link
-                  className=" w-[14%]  overflow-hidden "
-                  to={urlFormater(card.title)}
-                  key={`${card.title}-${i}`}
-                >
-                  <GridGeneric
-                    image={card.image}
-                    text={card.title}
-                    imageRoundedFull={false}
-                    span={card.description} />
-                </Link>
-              ))
-            ))
-            :
-            <Carousel >
-              <CarouselContent>
-                {comArtista(artist.name).map((playlist, i) => (
-                  playlist.cards.map((card) => (
-                    <GenericCarousel
-                      key={i}
-                      image={card.image}
-                      span={card.description}
-                      title={card.title}
-                      maisDeUmCard={comArtista(artist.name).length >= 2}
-                      imageRoundedFull={false}
-                    />
+        {
+
+          apareceEm ?
+
+            desktopScreen ?
+              <>
+                {artistThisIS.map((thisIs, i) => (
+                  <Link
+                    to={urlFormater(`${thisIs.title}`)}
+                    key={i}
+                    className=" w-[14%]  overflow-hidden"
+
+                  >
+                    <GridGeneric image={thisIs.capa} text={thisIs.title} span={thisIs.span} imageRoundedFull={false} />
+                  </Link>
+
+                ))}
+                {comArtista(artist.name).map((playlists) => (
+                  playlists.cards.map((card, i) => (
+                    <Link
+                      className=" w-[14%]  overflow-hidden "
+                      to={urlFormater(card.title)}
+                      key={`${card.title}-${i}`}
+                    >
+                      <GridGeneric
+                        image={card.image}
+                        text={card.title}
+                        imageRoundedFull={false}
+                        span={card.description} />
+                    </Link>
                   ))
                 ))}
-              </CarouselContent>
-            </Carousel>
-          :
-          desktopScreen ?
-            artistasUnicos.slice(0, 7).map((artista, i) => (
-              <Link
-                to={urlFormater(`${artista.name}`)}
-                key={i}
-                className=" w-[14%]  overflow-hidden"
+              </>
 
-              >
-                <GridGeneric
-                  image={artista.foto}
-                  text={artista.name}
-                  imageRoundedFull
+              :
+              <Carousel >
+                <CarouselContent>
+                  {comArtista(artist.name).map((playlist, i) => (
+                    playlist.cards.map((card) => (
+                      <GenericCarousel
+                        key={i}
+                        image={card.image}
+                        span={card.description}
+                        title={card.title}
+                        maisDeUmCard={comArtista(artist.name).length >= 2}
+                        imageRoundedFull={false}
+                      />
+                    ))
+                  ))}
+                </CarouselContent>
+              </Carousel>
+            :
+            desktopScreen ?
+              artistasUnicos.slice(0, 7).map((artista, i) => (
+                <Link
+                  to={urlFormater(`${artista.name}`)}
                   key={i}
-                  span={'Artista'} />
-              </Link>
-            )) :
-            <Carousel >
-              <CarouselContent>
-                {artistasUnicos.map((artista, i) => (
-                  <GenericCarousel
-                    key={i}
+                  className=" w-[14%]  overflow-hidden"
+
+                >
+                  <GridGeneric
                     image={artista.foto}
-                    span={''}
-                    title={artista.name}
-                    maisDeUmCard={artistasUnicos.length > 1}
+                    text={artista.name}
                     imageRoundedFull
-                  />
-                ))}
-              </CarouselContent>
-            </Carousel>
+                    key={i}
+                    span={'Artista'} />
+                </Link>
+              )) :
+              <Carousel className=" w-full flex justify-center items-center ">
+                <CarouselContent className=" ">
+                  {artistasUnicos.map((artista, i) => (
+                    <GenericCarousel
+                      key={i}
+                      image={artista.foto}
+                      span={''}
+                      title={artista.name}
+                      maisDeUmCard={artistasUnicos.length > 1}
+                      imageRoundedFull
+                    />
+                  ))}
+                </CarouselContent>
+              </Carousel>
         }
 
       </div>
     </div>
+
   )
 }

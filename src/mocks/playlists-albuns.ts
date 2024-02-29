@@ -15,6 +15,7 @@ export interface artista {
   name: string;
   foto: string;
   bannerID: string;
+  thisIs?: string;
   color?: string;
   genre: string;
 }
@@ -28,29 +29,111 @@ export interface musics {
   durationMultipliedBy100: number;
   genre: string;
 }
-const BannerIDS = {
-  adl: "https://i.scdn.co/image/ab6761860000101659a64b13ff207d3184e0079a",
-  bazzi: "	https://i.scdn.co/image/ab676186000010163fd1984fedc4528377b8358c",
-  d4vd: "	https://i.scdn.co/image/ab67618600001016f328ba2b3c84ec0e31243360",
-  eduardoCosta:
-    "	https://i.scdn.co/image/ab67618600001016234986d48714d9ccd2b18e9b",
-  fleetwoodMac:
-    "	https://i.scdn.co/image/ab67618600001016c6b15528173510ab4deb8f98",
-  freddieDred:
-    "	https://i.scdn.co/image/ab676186000010161817255b3972bcfc061f822d",
-  lanaDelRey:
-    "https://i.scdn.co/image/ab67618600001016adc556aaf75e626cb4a1a1be",
-  mcBinLaden:
-    "https://i.scdn.co/image/ab6761860000101684785398d9eff76caa21aae7",
-  radiohead: "https://i.scdn.co/image/ab676186000010161802a4cbec82e078cc15cbb0",
-  rashid: "https://i.scdn.co/image/ab676186000010167357d8cde3d66a65a6e695a2",
-  stones: "https://i.scdn.co/image/ab67618600001016282f8e91da4dff9d5bee49a8",
-  theWalters:
-    "https://i.scdn.co/image/ab676186000010169773b5bbdc030cf349a4fde0",
-  vocations: "https://i.scdn.co/image/ab676186000010169ce635209a083bb42401e465",
-};
-const artistaColors = {
-  Rashid: "rgba(169, 168, 196, 0.314) 190%",
+const artista = {
+  adl: {
+    foto: "assets/artistas/ADL/perfil.jpeg",
+    thisIs:
+      "https://thisis-images.spotifycdn.com/37i9dQZF1DZ06evO47M0aB-default.jpg",
+    bannerID:
+      "https://i.scdn.co/image/ab6761860000101659a64b13ff207d3184e0079a",
+    color: "rgba(76, 75, 73, 0.800) 140%",
+  },
+  bazzi: {
+    foto: "https://i.scdn.co/image/ab676161000051742491594c8f731523e085d84a",
+    thisIs:
+      "https://thisis-images.spotifycdn.com/37i9dQZF1DZ06evO2Kkc5y-default.jpg",
+    bannerID:
+      "https://i.scdn.co/image/ab676186000010163fd1984fedc4528377b8358c",
+    color: "rgba(169, 168, 196, 0.314) 190%",
+  },
+  chicoBuarque: {
+    foto: "https://i.scdn.co/image/ab676161000051741f33f0eccfef05940a1ef879",
+    bannerID:
+      "https://i.scdn.co/image/ab676186000010168c42d9dc79e31ea217ff4470",
+    thisIs: "assets/artistas/ChicoBuarque/thisIs.jpg",
+    color: "rgb(62, 47, 44)",
+  },
+  d4vd: {
+    foto: "	https://i.scdn.co/image/ab67616100005174ad447187a35f422307e88ad3",
+    bannerID:
+      "	https://i.scdn.co/image/ab67618600001016f328ba2b3c84ec0e31243360",
+    thisIs:
+      "	https://thisis-images.spotifycdn.com/37i9dQZF1DZ06evO3gAXLR-default.jpg",
+    color: "rgba(169, 168, 196, 0.314) 190%",
+  },
+  eduardoCosta: {
+    foto: "",
+    bannerID:
+      "	https://i.scdn.co/image/ab67618600001016234986d48714d9ccd2b18e9b",
+    thisIs: "",
+    color: "rgba(80, 21, 69, 1.814) 120%",
+  },
+
+  fleetwoodMac: {
+    foto: "",
+    bannerID:
+      "	https://i.scdn.co/image/ab67618600001016c6b15528173510ab4deb8f98",
+    thisIs: "",
+    color: "rgba(169, 168, 196, 0.314) 190%",
+  },
+
+  freddieDred: {
+    foto: "",
+    bannerID:
+      "	https://i.scdn.co/image/ab676186000010161817255b3972bcfc061f822d",
+    thisIs: "",
+    color: "rgba(52, 17, 14, 1) 120%",
+  },
+  lanaDelRey: {
+    foto: "",
+    bannerID:
+      "https://i.scdn.co/image/ab67618600001016adc556aaf75e626cb4a1a1be",
+    thisIs: "",
+    color: "rgba(20, 23, 30, 1) 60%",
+  },
+  mcBinLaden: {
+    foto: "https://i.scdn.co/image/ab676161000051741472571ab38e76b5307585d8",
+    bannerID:
+      "https://i.scdn.co/image/ab6761860000101684785398d9eff76caa21aae7",
+    thisIs: "",
+    color: "rgba(2, 53, 54, 1) 160%",
+  },
+  radiohead: {
+    foto: "assets/artistas/Radiohead/perfil.jpeg",
+    bannerID:
+      "https://i.scdn.co/image/ab676186000010161802a4cbec82e078cc15cbb0",
+    thisIs:
+      "https://thisis-images.spotifycdn.com/37i9dQZF1DZ06evO2VxlyE-default.jpg",
+    color: "rgba(25, 52, 69, 2) 100%",
+  },
+  rashid: {
+    foto: "https://i.scdn.co/image/ab67616100005174b783f0d38cfd32275fe49ad7",
+    bannerID:
+      "https://i.scdn.co/image/ab676186000010167357d8cde3d66a65a6e695a2",
+    thisIs: "",
+    color: "rgba(169, 168, 196, 0.314) 190%",
+  },
+  stones: {
+    foto: "assets/artistas/Stones/perfil.jpeg",
+    bannerID:
+      "https://i.scdn.co/image/ab67618600001016282f8e91da4dff9d5bee49a8",
+    thisIs: "",
+    color: "rgba(169, 168, 196, 0.314) 190%",
+  },
+  theWalters: {
+    foto: "assets/artistas/TheWalters/perfil.jpeg",
+    bannerID:
+      "https://i.scdn.co/image/ab676186000010169773b5bbdc030cf349a4fde0",
+    thisIs: "",
+    color: "rgb(70, 42, 39, 0.800) 120%",
+  },
+  vocations: {
+    foto: "assets/artistas/Vocations/perfil.jpeg",
+    bannerID:
+      "https://i.scdn.co/image/ab676186000010169ce635209a083bb42401e465",
+    thisIs: "",
+    color: "rgb(39, 13, 8)",
+  },
 };
 
 export const playlists: Pl[] = [
@@ -66,13 +149,15 @@ export const playlists: Pl[] = [
         description: "Nirvana, Tom Odell, Radiohead e mais",
         musicas: [
           {
-            name: "No Surprises",
+            name: "No Surprises ",
             artista: [
               {
-                name: "Radiohead",
+                name: "Radiohead ",
                 genre: "Rock",
-                bannerID: BannerIDS.radiohead,
-                foto: "assets/artistas/Radiohead/perfil.jpeg",
+                bannerID: artista.radiohead.bannerID,
+                color: artista.radiohead.color,
+                foto: artista.radiohead.foto,
+                thisIs: artista.radiohead.thisIs,
               },
             ],
             album: "OK Computer",
@@ -96,9 +181,9 @@ export const playlists: Pl[] = [
               {
                 name: "Rashid",
                 genre: "Rap",
-                color: artistaColors.Rashid,
-                foto: "assets/artistas/Rashid/perfil.jpeg",
-                bannerID: BannerIDS.rashid,
+                color: artista.rashid.color,
+                foto: artista.rashid.foto,
+                bannerID: artista.rashid.bannerID,
               },
             ],
             album: "Confundindo Sábios",
@@ -114,8 +199,10 @@ export const playlists: Pl[] = [
               {
                 name: "ADL",
                 genre: "Rap",
-                bannerID: BannerIDS.adl,
-                foto: "assets/artistas/ADL/perfil.jpeg",
+                bannerID: artista.adl.bannerID,
+                thisIs: artista.adl.thisIs,
+                color: artista.adl.color,
+                foto: artista.adl.foto,
               },
             ],
             album: "Da Favela pro Mundo",
@@ -131,9 +218,9 @@ export const playlists: Pl[] = [
               {
                 name: "Rashid",
                 genre: "Rap",
-                color: artistaColors.Rashid,
-                foto: "assets/artistas/Rashid/perfil.jpeg",
-                bannerID: BannerIDS.rashid,
+                color: artista.rashid.color,
+                foto: artista.rashid.foto,
+                bannerID: artista.rashid.bannerID,
               },
             ],
             album: "Gratidão",
@@ -157,8 +244,9 @@ export const playlists: Pl[] = [
               {
                 name: "The Walters",
                 genre: "Indie",
-                bannerID: BannerIDS.theWalters,
-                foto: "assets/artistas/TheWalters/perfil.jpeg",
+                bannerID: artista.theWalters.bannerID,
+                color: artista.theWalters.color,
+                foto: artista.theWalters.foto,
               },
             ],
             capa: "assets/artistas/TheWalters/ILso.jpeg",
@@ -174,8 +262,9 @@ export const playlists: Pl[] = [
               {
                 name: "Vocations",
                 genre: "Indie",
-                bannerID: BannerIDS.vocations,
-                foto: "assets/artistas/Vocations/perfil.jpeg",
+                bannerID: artista.vocations.bannerID,
+                color: artista.vocations.color,
+                foto: artista.vocations.foto,
               },
             ],
             capa: "assets/artistas/Vocations/changes.jpeg",
@@ -200,7 +289,8 @@ export const playlists: Pl[] = [
               {
                 name: "Fleetwood Mac",
                 genre: "Rock",
-                bannerID: BannerIDS.fleetwoodMac,
+                bannerID: artista.fleetwoodMac.bannerID,
+                color: artista.fleetwoodMac.color,
                 foto: "assets/artistas/FleetwoodMac/perfil.jpeg",
               },
             ],
@@ -218,8 +308,10 @@ export const playlists: Pl[] = [
               {
                 name: "The Rolling Stones",
                 genre: "Rock",
-                bannerID: BannerIDS.stones,
-                foto: "assets/artistas/Stones/perfil.jpeg",
+                bannerID: artista.stones.bannerID,
+                color: artista.stones.color,
+
+                foto: artista.stones.foto,
               },
             ],
 
@@ -285,12 +377,14 @@ export const playlists: Pl[] = [
               {
                 name: "d4vd",
                 genre: "Indie",
-                bannerID: BannerIDS.d4vd,
-                foto: "assets/artistas/d4vd/perfil.jpeg",
+                bannerID: artista.d4vd.bannerID,
+                color: artista.d4vd.color,
+                foto: artista.d4vd.foto,
+                thisIs: artista.d4vd.thisIs,
               },
             ],
             album: "Withering",
-            capa: "assets/artistas/d4vd/withering.jpeg",
+            capa: "	https://i.scdn.co/image/ab67616d00001e029a48777a54e25db0a037db48",
             addEm: "25 de fev. de 2024",
             durationMultipliedBy100: 244,
             liked: false,
@@ -302,7 +396,8 @@ export const playlists: Pl[] = [
               {
                 name: "Freddie Dredd",
                 genre: "Hip-Hop",
-                bannerID: BannerIDS.freddieDred,
+                bannerID: artista.freddieDred.bannerID,
+                color: artista.freddieDred.color,
                 foto: "assets/artistas/FreddieDredd/perfil.jpeg",
               },
             ],
@@ -323,48 +418,6 @@ export const playlists: Pl[] = [
     classe: "Playlist",
     cards: [
       {
-        title: "This Is d4vd",
-        color: "rgba(56, 82, 109, 1.800) 120%",
-        image: "assets/artistas/d4vd/thisIsD4vd.jpeg",
-        description: "This is d4vd. Todos os maiores hits em uma só playlist.",
-        musicas: [
-          {
-            name: "Leave Her",
-            artista: [
-              {
-                name: "d4vd",
-                genre: "Indie",
-                bannerID: BannerIDS.d4vd,
-                foto: "assets/artistas/d4vd/perfil.jpeg",
-              },
-            ],
-            album: "Withering",
-            capa: "assets/artistas/d4vd/withering.jpeg",
-            addEm: "25 de fev. de 2024",
-            durationMultipliedBy100: 244,
-            liked: false,
-            genre: "Indie",
-          },
-          {
-            name: "Here With Me",
-            capa: "assets/artistas/d4vd/petals.jpeg",
-            artista: [
-              {
-                name: "d4vd",
-                genre: "Indie",
-                bannerID: BannerIDS.d4vd,
-                foto: "assets/artistas/d4vd/perfil.jpeg",
-              },
-            ],
-            album: "Petals to Thorns",
-            addEm: "25 de fev. de 2024",
-            durationMultipliedBy100: 420,
-            liked: false,
-            genre: "Indie",
-          },
-        ],
-      },
-      {
         title: "This Is Lana Del Rey",
         color: "rgba(216, 210, 214,1.800) 120%",
         image: "assets/artistas/Lana/thisIsLana.jpg",
@@ -377,7 +430,8 @@ export const playlists: Pl[] = [
               {
                 name: "Lana Del Rey",
                 genre: "Pop",
-                bannerID: BannerIDS.lanaDelRey,
+                bannerID: artista.lanaDelRey.bannerID,
+                color: artista.lanaDelRey.color,
                 foto: "assets/artistas/Lana/perfil.jpeg",
               },
             ],
@@ -394,7 +448,8 @@ export const playlists: Pl[] = [
               {
                 name: "Lana Del Rey",
                 genre: "Pop",
-                bannerID: BannerIDS.lanaDelRey,
+                bannerID: artista.lanaDelRey.bannerID,
+                color: artista.lanaDelRey.color,
                 foto: "assets/artistas/Lana/perfil.jpeg",
               },
             ],
@@ -411,7 +466,8 @@ export const playlists: Pl[] = [
               {
                 name: "Lana Del Rey",
                 genre: "Pop",
-                bannerID: BannerIDS.lanaDelRey,
+                bannerID: artista.lanaDelRey.bannerID,
+                color: artista.lanaDelRey.color,
                 foto: "assets/artistas/Lana/perfil.jpeg",
               },
             ],
@@ -428,7 +484,8 @@ export const playlists: Pl[] = [
               {
                 name: "Lana Del Rey",
                 genre: "Pop",
-                bannerID: BannerIDS.lanaDelRey,
+                bannerID: artista.lanaDelRey.bannerID,
+                color: artista.lanaDelRey.color,
                 foto: "assets/artistas/Lana/perfil.jpeg",
               },
             ],
@@ -454,9 +511,9 @@ export const playlists: Pl[] = [
               {
                 name: "Rashid",
                 genre: "Rap",
-                color: artistaColors.Rashid,
-                foto: "assets/artistas/Rashid/perfil.jpeg",
-                bannerID: BannerIDS.rashid,
+                color: artista.rashid.color,
+                foto: artista.rashid.foto,
+                bannerID: artista.rashid.bannerID,
               },
             ],
             album: "Confundindo Sábios",
@@ -472,9 +529,9 @@ export const playlists: Pl[] = [
               {
                 name: "Rashid",
                 genre: "Rap",
-                color: artistaColors.Rashid,
-                foto: "assets/artistas/Rashid/perfil.jpeg",
-                bannerID: BannerIDS.rashid,
+                color: artista.rashid.color,
+                foto: artista.rashid.foto,
+                bannerID: artista.rashid.bannerID,
               },
             ],
             album: "Gratidão",
@@ -499,8 +556,10 @@ export const playlists: Pl[] = [
               {
                 name: "The Rolling Stones",
                 genre: "Rock",
-                bannerID: BannerIDS.stones,
-                foto: "assets/artistas/Stones/perfil.jpeg",
+                bannerID: artista.stones.bannerID,
+                color: artista.stones.color,
+
+                foto: artista.stones.foto,
               },
             ],
 
@@ -517,8 +576,10 @@ export const playlists: Pl[] = [
               {
                 name: "The Rolling Stones",
                 genre: "Rock",
-                bannerID: BannerIDS.stones,
-                foto: "assets/artistas/Stones/perfil.jpeg",
+                bannerID: artista.stones.bannerID,
+                color: artista.stones.color,
+
+                foto: artista.stones.foto,
               },
             ],
             album: "Let It Bleed",
@@ -530,75 +591,13 @@ export const playlists: Pl[] = [
           },
         ],
       },
-      {
-        title: "This Is The Bazzi",
-        color: "rgba(188, 179, 186, 1.9) 120%",
-        image: "assets/artistas/Bazzi/thisIsBazzi.jpg",
-        description:
-          "This is The Bazzi. Todos os maiores hits em uma só playlist.",
-        musicas: [
-          {
-            name: "Dreams",
-            artista: [
-              {
-                name: "Bazzi",
-                genre: "Pop",
-                bannerID: BannerIDS.bazzi,
-                foto: "assets/artistas/Bazzi/perfil.jpeg",
-              },
-            ],
 
-            capa: "assets/artistas/Bazzi/cosmic.jpeg",
-            album: "COSMIC",
-            addEm: "12 de abr. de 2018",
-            durationMultipliedBy100: 227,
-            liked: false,
-            genre: "Pop",
-          },
-          {
-            name: "Star",
-            artista: [
-              {
-                name: "Bazzi",
-                genre: "Pop",
-                bannerID: BannerIDS.bazzi,
-                foto: "assets/artistas/Bazzi/perfil.jpeg",
-              },
-            ],
-
-            capa: "assets/artistas/Bazzi/cosmic.jpeg",
-            album: "COSMIC",
-            addEm: "12 de abr. de 2018",
-            durationMultipliedBy100: 249,
-            liked: false,
-            genre: "Pop",
-          },
-          {
-            name: "I.F.L.Y",
-            artista: [
-              {
-                name: "Bazzi",
-                genre: "Pop",
-                bannerID: BannerIDS.bazzi,
-                foto: "assets/artistas/Bazzi/perfil.jpeg",
-              },
-            ],
-
-            capa: "assets/artistas/Bazzi/soulSearching.jpeg",
-            album: "Soul Searching",
-            addEm: "9 de ago. de 2019",
-            durationMultipliedBy100: 245,
-            liked: false,
-            genre: "Pop",
-          },
-        ],
-      },
       {
         title: "This Is The Eduardo Costa",
         color: "rgb(75, 35, 123, 1) 95%",
         image: "assets/artistas/EduardoCosta/thisIsEdCosta.jpg",
         description:
-          "This is The Bazzi. Todos os maiores hits em uma só playlist.",
+          "This is The Eduardo Costa. Todos os maiores hits em uma só playlist.",
         musicas: [
           {
             name: "Amor de Violeiro",
@@ -606,7 +605,8 @@ export const playlists: Pl[] = [
               {
                 name: "Eduardo Costa",
                 genre: "Sertanejo",
-                bannerID: BannerIDS.eduardoCosta,
+                bannerID: artista.eduardoCosta.bannerID,
+                color: artista.eduardoCosta.color,
                 foto: "assets/artistas/EduardoCosta/perfil.jpeg",
               },
             ],
@@ -624,7 +624,8 @@ export const playlists: Pl[] = [
               {
                 name: "Eduardo Costa",
                 genre: "Sertanejo",
-                bannerID: BannerIDS.eduardoCosta,
+                bannerID: artista.eduardoCosta.bannerID,
+                color: artista.eduardoCosta.color,
                 foto: "assets/artistas/EduardoCosta/perfil.jpeg",
               },
             ],
@@ -642,7 +643,8 @@ export const playlists: Pl[] = [
               {
                 name: "Eduardo Costa",
                 genre: "Sertanejo",
-                bannerID: BannerIDS.eduardoCosta,
+                bannerID: artista.eduardoCosta.bannerID,
+                color: artista.eduardoCosta.color,
                 foto: "assets/artistas/EduardoCosta/perfil.jpeg",
               },
             ],
@@ -707,48 +709,149 @@ export const playlists: Pl[] = [
     ],
   },
   {
-    name: "a",
-    exibitionHome: true,
-    classe: "Playlist",
+    name: "Musicas",
+    exibitionHome: false,
+    classe: "musicas",
     cards: [
       {
-        title: "Playlist #1",
+        title: "",
         image: "",
-        description: "playlist #2",
+        description: "",
         musicas: [
           {
-            name: "musica teste1",
+            name: "Ta Tranquilo Ta Favorável",
             artista: [
               {
-                name: "artista X",
-                genre: "outros",
-                bannerID: "",
-                foto: "assets",
+                name: "Mc Bin Laden",
+                genre: "Funk",
+                bannerID: artista.mcBinLaden.bannerID,
+                color: artista.mcBinLaden.color,
+                foto: artista.mcBinLaden.foto,
               },
             ],
-
-            album: "album03",
-            addEm: "05/02/2024",
-            durationMultipliedBy100: 100,
+            capa: "https://i.scdn.co/image/ab67616d00001e023330f51ed9fac1de5f274d1e",
+            album: "Ta Tranquilo Ta Favorável",
+            addEm: "12 de jan. de 2016",
+            durationMultipliedBy100: 411,
             liked: false,
-            genre: "Outros",
+            genre: "Funk",
           },
           {
-            name: "musica test2",
+            name: "Apesar de Você",
             artista: [
               {
-                name: "artista X",
-                genre: "outros",
-                bannerID: "",
-                foto: "assets",
+                name: "Chico Buarque",
+                genre: "Mpb",
+                foto: artista.chicoBuarque.foto,
+                bannerID: artista.chicoBuarque.bannerID,
+                thisIs: artista.chicoBuarque.thisIs,
+                color: artista.chicoBuarque.color,
+              },
+            ],
+            capa: "https://i.scdn.co/image/ab67616d00001e02175c5e58d396b45c4f637deb",
+            album: "Chico Buarque 1978",
+            addEm: "1 de jan. de 1978",
+            durationMultipliedBy100: 355,
+            liked: false,
+            genre: "Mpb",
+          },
+          {
+            name: "Dreams",
+            artista: [
+              {
+                name: "Bazzi",
+                genre: "Pop",
+                bannerID: artista.bazzi.bannerID,
+                color: artista.bazzi.color,
+                foto: artista.bazzi.foto,
+                thisIs: artista.bazzi.thisIs,
               },
             ],
 
-            album: "album03",
-            addEm: "05/02/2024",
-            durationMultipliedBy100: 100,
+            capa: "https://i.scdn.co/image/ab67616d00001e02f9f2d43ff44bdfbe8c556f8d",
+            album: "COSMIC",
+            addEm: "12 de abr. de 2018",
+            durationMultipliedBy100: 227,
             liked: false,
-            genre: "Outros",
+            genre: "Pop",
+          },
+          {
+            name: "Star",
+            artista: [
+              {
+                name: "Bazzi",
+                genre: "Pop",
+                bannerID: artista.bazzi.bannerID,
+                color: artista.bazzi.color,
+                foto: artista.bazzi.foto,
+                thisIs: artista.bazzi.thisIs,
+              },
+            ],
+
+            capa: "https://i.scdn.co/image/ab67616d00001e02f9f2d43ff44bdfbe8c556f8d",
+            album: "COSMIC",
+            addEm: "12 de abr. de 2018",
+            durationMultipliedBy100: 249,
+            liked: false,
+            genre: "Pop",
+          },
+          {
+            name: "I.F.L.Y",
+            artista: [
+              {
+                name: "Bazzi",
+                genre: "Pop",
+                bannerID: artista.bazzi.bannerID,
+                color: artista.bazzi.color,
+                foto: artista.bazzi.foto,
+                thisIs: artista.bazzi.thisIs,
+              },
+            ],
+
+            capa: "https://i.scdn.co/image/ab67616d00001e023a376bd9b9b1f4b2686807db",
+            album: "Soul Searching",
+            addEm: "9 de ago. de 2019",
+            durationMultipliedBy100: 245,
+            liked: false,
+            genre: "Pop",
+          },
+          {
+            name: "Leave Her",
+            artista: [
+              {
+                name: "d4vd",
+                genre: "Indie",
+                bannerID: artista.d4vd.bannerID,
+                color: artista.d4vd.color,
+                foto: artista.d4vd.foto,
+                thisIs: artista.d4vd.thisIs,
+              },
+            ],
+            album: "Withering",
+            capa: "	https://i.scdn.co/image/ab67616d00001e029a48777a54e25db0a037db48",
+            addEm: "25 de fev. de 2024",
+            durationMultipliedBy100: 244,
+            liked: false,
+            genre: "Indie",
+          },
+          {
+            name: "Here With Me",
+            capa: "	https://i.scdn.co/image/ab67616d00001e0264fa1bda999f4fbd2b7c4bb7",
+            artista: [
+              {
+                name: "d4vd",
+                genre: "Indie",
+                bannerID: artista.d4vd.bannerID,
+                color: artista.d4vd.color,
+                foto: artista.d4vd.foto,
+                thisIs: artista.d4vd.thisIs,
+              },
+            ],
+            album: "Petals to Thorns",
+            addEm: "25 de fev. de 2024",
+            durationMultipliedBy100: 420,
+            liked: false,
+            genre: "Indie",
           },
         ],
       },

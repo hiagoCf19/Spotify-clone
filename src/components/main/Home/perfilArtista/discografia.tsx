@@ -35,7 +35,7 @@ export const Discografia = ({ musicas, desktopScreen }:
           {/* albuns no desktop */}
           {desktopScreen ?
 
-            albuns.length > 2 ?
+            albuns.length > 0 ?
               albuns.map((album, i) => (
                 <Link
                   to={urlFormater(`${album.title}`)}
@@ -55,7 +55,7 @@ export const Discografia = ({ musicas, desktopScreen }:
 
             :
 
-            <Carousel>
+            <Carousel className=" w-full flex justify-center items-center">
               <CarouselContent  >
                 {albuns.length > 0 ?
                   albuns.map((album, i) => (
@@ -64,7 +64,7 @@ export const Discografia = ({ musicas, desktopScreen }:
                       image={album.image}
                       span={''}
                       title={album.title}
-                      maisDeUmCard={albuns.length > 2}
+                      maisDeUmCard={albuns.length > 1}
                       imageRoundedFull={false}
                     />
                   ))

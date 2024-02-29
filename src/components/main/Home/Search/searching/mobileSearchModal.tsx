@@ -1,6 +1,7 @@
 
 import { InterfaceBrowseAll } from "@/mocks/BrowseAll"
 import { artista, musics } from "@/mocks/playlists-albuns"
+import { MontaThisIs } from "@/scripts/DataConstructor"
 import { urlFormater } from "@/scripts/normalize"
 import { MdVerified } from "react-icons/md"
 import { Link } from "react-router-dom"
@@ -9,9 +10,11 @@ interface mobileSearchModelProps {
   artistasUnicos: artista[]
   filterGenre: InterfaceBrowseAll[]
   musicasUnicas: musics[]
+  thisIsUni: MontaThisIs[]
+
 }
 
-export const MobileSearchModal = ({ artistasUnicos, filterGenre, musicasUnicas }: mobileSearchModelProps) => {
+export const MobileSearchModal = ({ artistasUnicos, filterGenre, musicasUnicas, thisIsUni }: mobileSearchModelProps) => {
   return (
     <div className=" overflow-y-scroll flex flex-col gap-4 p-2">
       {/* Artista */}
@@ -51,9 +54,27 @@ export const MobileSearchModal = ({ artistasUnicos, filterGenre, musicasUnicas }
 
         </Link>
       ))}
-      {/* MUSICAS */}
+      {/* This is e MUSICAS */}
       <div>
+
         <div className="flex flex-col gap-4">
+          {thisIsUni.slice(0, 5).map((thisis, i) => (
+            <Link
+              to={urlFormater(`${thisis.title}`)}
+              key={i}
+
+            >
+              <div className="  flex gap-2">
+                <img src={thisis.capa} className=" size-12 rounded-[2px]" />
+                <div className="flex flex-col">
+                  <p className="text-md text-zinc-50">{thisis.title}</p>
+                  <span className="text-[13px] font-normal line-clamp-1">{thisis.span}</span>
+                </div>
+
+              </div>
+            </Link>
+
+          ))}
           {musicasUnicas.map((music, i) => (
             <Link to={urlFormater(music.name)} key={i}>
               <div className="  flex gap-2">

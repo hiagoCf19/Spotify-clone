@@ -11,6 +11,16 @@ export class Album {
     this.description = data;
   }
 }
+export class MontaThisIs {
+  title: string;
+  capa: string;
+  span: string;
+  constructor(nameArtist: string, capa: string, span: string) {
+    this.title = `this is ${nameArtist}`;
+    this.capa = capa;
+    this.span = `This is ${span}. Todos os maiores hits em uma única playlist`;
+  }
+}
 // O parâmetro musicas tem que corresponder extatamente ao array de músicas do nosso objeto
 export function constructorSinglesAndAlbuns(
   musicas: musics[],
