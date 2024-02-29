@@ -29,7 +29,6 @@ export const MobileCarousel = () => {
                   <div className="w-[100%] h-[173px] ">
                     {'image' in card ? <img src={card.image} alt="" className="rounded h-[173px]" /> : <div className="w-full h-[173px] flex items-center justify-center bg-[#272727] rounded ">
                       <Music size={50} />
-
                     </div>}
 
                   </div>
@@ -49,9 +48,5 @@ export const MobileCarousel = () => {
         </Carousel>
       </Fragment>
     ))
-
-
-
-
   )
 }

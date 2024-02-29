@@ -4,6 +4,8 @@ import { artista, cards, playlists } from "@/mocks/playlists-albuns"
 import { GridGeneric } from "../Search/searching/gridGeneric"
 import { Link } from "react-router-dom"
 import { urlFormater } from "@/scripts/normalize"
+import { Carousel, CarouselContent } from "@/components/ui/carousel"
+import { GenericCarousel } from "./genericCarousel"
 
 
 
@@ -74,7 +76,7 @@ export const GenericSectionsInPerfil = ({ title, artist, apareceEm, desktopScree
 
     <div className="">
       <TitleSpt title={title} />
-      <div className="flex gap-6  w-full mt-3">
+      <div className="flex sm:gap-6  w-full mt-3">
         {apareceEm ?
           desktopScreen ?
             comArtista(artist.name).map((playlists) => (
@@ -84,18 +86,31 @@ export const GenericSectionsInPerfil = ({ title, artist, apareceEm, desktopScree
                   to={urlFormater(card.title)}
                   key={`${card.title}-${i}`}
                 >
-
                   <GridGeneric
                     image={card.image}
                     text={card.title}
                     imageRoundedFull={false}
-
                     span={card.description} />
                 </Link>
-
               ))
             ))
-            : <div>criar modal</div>
+            :
+            <Carousel >
+              <CarouselContent>
+                {comArtista(artist.name).map((playlist, i) => (
+                  playlist.cards.map((card) => (
+                    <GenericCarousel
+                      key={i}
+                      image={card.image}
+                      span={card.description}
+                      title={card.title}
+                      maisDeUmCard={comArtista(artist.name).length >= 2}
+                      imageRoundedFull={false}
+                    />
+                  ))
+                ))}
+              </CarouselContent>
+            </Carousel>
           :
           desktopScreen ?
             artistasUnicos.slice(0, 7).map((artista, i) => (
@@ -105,9 +120,28 @@ export const GenericSectionsInPerfil = ({ title, artist, apareceEm, desktopScree
                 className=" w-[14%]  overflow-hidden"
 
               >
-                <GridGeneric image={artista.foto} text={artista.name} imageRoundedFull key={i} span={'Artista'} />
+                <GridGeneric
+                  image={artista.foto}
+                  text={artista.name}
+                  imageRoundedFull
+                  key={i}
+                  span={'Artista'} />
               </Link>
-            )) : <div>criar modal</div>
+            )) :
+            <Carousel >
+              <CarouselContent>
+                {artistasUnicos.map((artista, i) => (
+                  <GenericCarousel
+                    key={i}
+                    image={artista.foto}
+                    span={''}
+                    title={artista.name}
+                    maisDeUmCard={artistasUnicos.length > 1}
+                    imageRoundedFull
+                  />
+                ))}
+              </CarouselContent>
+            </Carousel>
         }
 
       </div>
