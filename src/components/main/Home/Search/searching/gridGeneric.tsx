@@ -13,7 +13,7 @@ export const GridGeneric: React.FC<PropsGenericGrid> = ({ image, text, span, ima
   const roundedFull = imageRoundedFull
   return (
 
-    <div className=" w-full h-[29vh]">
+    <div className=" sm:w-full h-[29vh]">
 
       <div className=" w-full h-full p-3  rounded-[6px] bg-[#191919] hover:bg-[#ffffff11] flex flex-col overflow-hidden cursor-pointer ">
         <div className="flex items-center justify-center  p-1">

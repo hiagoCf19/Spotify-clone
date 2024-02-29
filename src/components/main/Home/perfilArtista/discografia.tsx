@@ -10,9 +10,10 @@ import { GridGeneric } from "../Search/searching/gridGeneric"
 
 interface propsDiscografia {
   musicas: musics[]
+  desktopScreen: boolean
 }
 
-export const Discografia = ({ musicas }:
+export const Discografia = ({ musicas, desktopScreen }:
   propsDiscografia) => {
   const [ativo, setAtivo] = useState(0)
   const baseButton = ['Álbuns', 'Singles e EPs']
@@ -28,37 +29,40 @@ export const Discografia = ({ musicas }:
         ))}
       </div>
       {ativo === 0 ? <div className="flex gap-6  w-full mt-3">
-        {albuns.map((album, i) => (
-          <Link
-            to={urlFormater(`${album.title}`)}
-            key={i}
-            className=" w-[14%]  overflow-hidden"
-          >
-            <GridGeneric
-              image={album.image}
-              text={album.title}
-              imageRoundedFull={false}
-              key={i}
-              span={album.description} />
-          </Link>
-        ))}
-      </div>
-        :
-        <div className="flex gap-6  w-full mt-3">
-          {singles.map((single, i) => (
+
+        {desktopScreen ?
+          albuns.map((album, i) => (
             <Link
-              to={urlFormater(`${single.title}`)}
+              to={urlFormater(`${album.title}`)}
               key={i}
               className=" w-[14%]  overflow-hidden"
             >
               <GridGeneric
-                image={single.image}
-                text={single.title}
+                image={album.image}
+                text={album.title}
                 imageRoundedFull={false}
                 key={i}
-                span={single.description} />
+                span={album.description} />
             </Link>
-          ))}
+          )) : <div> criar modal de albuns</div>}
+      </div>
+        :
+        <div className="flex gap-6  w-full mt-3">
+          {desktopScreen ?
+            singles.map((single, i) => (
+              <Link
+                to={urlFormater(`${single.title}`)}
+                key={i}
+                className=" w-[14%]  overflow-hidden"
+              >
+                <GridGeneric
+                  image={single.image}
+                  text={single.title}
+                  imageRoundedFull={false}
+                  key={i}
+                  span={single.description} />
+              </Link>
+            )) : <div>Criar modal de singles</div>}
 
         </div>
       }

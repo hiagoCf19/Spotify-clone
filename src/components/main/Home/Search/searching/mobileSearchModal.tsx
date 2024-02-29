@@ -1,6 +1,7 @@
 
 import { InterfaceBrowseAll } from "@/mocks/BrowseAll"
 import { artista, musics } from "@/mocks/playlists-albuns"
+import { urlFormater } from "@/scripts/normalize"
 import { MdVerified } from "react-icons/md"
 import { Link } from "react-router-dom"
 
@@ -16,8 +17,8 @@ export const MobileSearchModal = ({ artistasUnicos, filterGenre, musicasUnicas }
       {/* Artista */}
       <div className=" flex  flex-col gap-3">
         {artistasUnicos.slice(0, 3).map((artista: artista, i: number) => (
-          <div key={i}>
-            {/* Aqui você pode renderizar a imagem do artista e outras informações se necessário */}
+          <Link to={urlFormater(artista.name)} key={i}>
+
             <div className="flex items-center gap-3">
               <img src={artista.foto} className="size-12 rounded-full shadow shadow-black" />
               <div className="flex flex-col">
@@ -33,12 +34,12 @@ export const MobileSearchModal = ({ artistasUnicos, filterGenre, musicasUnicas }
               </div>
 
             </div>
-          </div>
+          </Link>
         ))}
       </div>
       {/* GENERO */}
       {filterGenre.map((card: InterfaceBrowseAll, i: number) => (
-        <Link to={'/'} key={i}>
+        <Link to={urlFormater(card.genre)} key={i}>
           <div className="  flex gap-2">
             <img src={card.capa} className="size-12 rounded-[4px]" />
             <div className="flex flex-col">
@@ -54,7 +55,7 @@ export const MobileSearchModal = ({ artistasUnicos, filterGenre, musicasUnicas }
       <div>
         <div className="flex flex-col gap-4">
           {musicasUnicas.map((music, i) => (
-            <Link to={'/'} key={i}>
+            <Link to={urlFormater(music.name)} key={i}>
               <div className="  flex gap-2">
                 <img src={music.capa} className=" size-12 rounded-[2px]" />
                 <div className="flex flex-col">

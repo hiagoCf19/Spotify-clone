@@ -45,10 +45,22 @@ body {
   background-position: 50% 25%;
   background-repeat: no-repeat;
   background-size: cover;
-  height: 40vh;
-  min-height: 30vh;
+  height: 30vh;
+  min-height: 25vh;
   content-visibility: auto;
   contain: strict;
+}
+@media (min-width: 640px) {
+  .bg-config {
+    background-attachment: scroll;
+    background-position: 50% 25%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 40vh;
+    min-height: 30vh;
+    content-visibility: auto;
+    contain: strict;
+  }
 }
 
 @media (min-width: 640px) {

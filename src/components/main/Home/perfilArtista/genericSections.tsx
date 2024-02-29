@@ -11,10 +11,11 @@ interface propsGenericSectionsInPerfil {
   title: string
   artist: artista
   apareceEm: boolean
+  desktopScreen: boolean
 
 
 }
-export const GenericSectionsInPerfil = ({ title, artist, apareceEm, }:
+export const GenericSectionsInPerfil = ({ title, artist, apareceEm, desktopScreen }:
   propsGenericSectionsInPerfil) => {
 
   function comArtista(artistName: string) {
@@ -67,7 +68,7 @@ export const GenericSectionsInPerfil = ({ title, artist, apareceEm, }:
     }
   });
 
-  console.log(artistasUnicos);
+
 
   return (
 
@@ -75,39 +76,38 @@ export const GenericSectionsInPerfil = ({ title, artist, apareceEm, }:
       <TitleSpt title={title} />
       <div className="flex gap-6  w-full mt-3">
         {apareceEm ?
-          comArtista(artist.name).map((playlists) => (
-            playlists.cards.map((card, i) => (
+          desktopScreen ?
+            comArtista(artist.name).map((playlists) => (
+              playlists.cards.map((card, i) => (
+                <Link
+                  className=" w-[14%]  overflow-hidden "
+                  to={urlFormater(card.title)}
+                  key={`${card.title}-${i}`}
+                >
+
+                  <GridGeneric
+                    image={card.image}
+                    text={card.title}
+                    imageRoundedFull={false}
+
+                    span={card.description} />
+                </Link>
+
+              ))
+            ))
+            : <div>criar modal</div>
+          :
+          desktopScreen ?
+            artistasUnicos.slice(0, 7).map((artista, i) => (
               <Link
-                className=" w-[14%]  overflow-hidden "
-                to={urlFormater(card.title)}
-                key={`${card.title}-${i}`}
-
-
+                to={urlFormater(`${artista.name}`)}
+                key={i}
+                className=" w-[14%]  overflow-hidden"
 
               >
-
-
-                <GridGeneric
-                  image={card.image}
-                  text={card.title}
-                  imageRoundedFull={false}
-
-                  span={card.description} />
+                <GridGeneric image={artista.foto} text={artista.name} imageRoundedFull key={i} span={'Artista'} />
               </Link>
-
-            ))
-          ))
-          :
-          artistasUnicos.slice(0, 7).map((artista, i) => (
-            <Link
-              to={urlFormater(`${artista.name}`)}
-              key={i}
-              className=" w-[14%]  overflow-hidden"
-
-            >
-              <GridGeneric image={artista.foto} text={artista.name} imageRoundedFull key={i} span={'Artista'} />
-            </Link>
-          ))
+            )) : <div>criar modal</div>
         }
 
       </div>
