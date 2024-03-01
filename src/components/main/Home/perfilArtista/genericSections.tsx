@@ -17,6 +17,7 @@ interface propsGenericSectionsInPerfil {
   desktopScreen: boolean
 
 
+
 }
 export const GenericSectionsInPerfil = ({ title, artist, apareceEm, desktopScreen }:
   propsGenericSectionsInPerfil) => {

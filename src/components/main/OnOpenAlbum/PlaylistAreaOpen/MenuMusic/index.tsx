@@ -35,13 +35,15 @@ export const MenuMusics = ({ music }: propsMenu) => {
               <div className="flex flex-col  w-[80%] ">
                 <div className=" font-medium text-sm text-zinc-50">
                   {music.artista.map((artista) => (
-                    artista.name
+                    <div>
+                      <p className="text-zinc-50 text-[18px]">{music.name}</p>
+                      <span className="text-sm font-medium text-[#b7b7b7]">{artista.name}</span>
+                    </div>
                   ))}
 
                 </div>
-                <span className="text-[12px] font-medium text-[#b7b7b7]">
-                  { }
-                </span>
+
+
               </div>
             </div>
 

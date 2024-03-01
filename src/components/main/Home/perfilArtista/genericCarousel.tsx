@@ -10,12 +10,13 @@ interface propsGenericCarousel {
   span: string
   maisDeUmCard: boolean
   imageRoundedFull: boolean
+
 }
 export const GenericCarousel = ({ image, title, span, maisDeUmCard, imageRoundedFull }: propsGenericCarousel) => {
 
   return (
 
-    <CarouselItem className={`${maisDeUmCard ? 'basis-1/2 w-[50%]' : 'basis-1/1'}   `} >
+    <CarouselItem className={`${maisDeUmCard ? 'basis-1/2 w-[50%]' : 'basis-1/1'}   `}>
       <Link
         to={urlFormater(`${title}`)}
         className="flex flex-col gap-2 ">

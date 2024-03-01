@@ -68,7 +68,7 @@ export const MobileSearchModal = ({ artistasUnicos, filterGenre, musicasUnicas, 
                 <img src={thisis.capa} className=" size-12 rounded-[2px]" />
                 <div className="flex flex-col">
                   <p className="text-md text-zinc-50">{thisis.title}</p>
-                  <span className="text-[13px] font-normal line-clamp-1">{thisis.span}</span>
+                  <span className="text-[13px] font-normal line-clamp-1">Playlist <i className="text-[10px]">• </i> Spotify</span>
                 </div>
 
               </div>

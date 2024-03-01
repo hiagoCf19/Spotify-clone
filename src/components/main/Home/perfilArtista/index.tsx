@@ -8,7 +8,7 @@ import { TitleSpt } from "@/components/Recorrentes/Title";
 import { useEffect, useState } from "react";
 import { Discografia } from "./discografia";
 import { GenericSectionsInPerfil } from "./genericSections";
-import { ChevronRight, MoreVertical, Shuffle } from "lucide-react";
+import { ArrowLeft, ChevronRight, MoreVertical, Shuffle } from "lucide-react";
 import { extrairMusicasPorArtista } from "@/scripts/musicasDoArtista";
 
 
@@ -51,16 +51,33 @@ export const PerfilArtista = ({ artist }: PropsPerfil) => {
     };
   }, [larguraDaTela]);
 
-
+  const [scrollDown, setScrollDown] = useState(0)
   const desktopScreen = larguraDaTela >= 640 ? true : false
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  function handleScroll(event: any) {
+    // Obter a posição atual do scroll dentro do elemento de rolagem
+    const scrollPosition = event.target.scrollTop;
+    setScrollDown(scrollPosition);
+
+  }
 
   return (
 
     <section className="flex flex-col gap-3 w-full  h-[88vh] ">
 
-      <div className="flex-1  min-h-[40vh] sm:h-40   gap-1 flex flex-col bg-[#121212]    relative rounded-[6px] overflow-y-scroll overflow-x-hidden " >
+      <div className="flex-1  min-h-[40vh] sm:h-40   gap-1 flex flex-col bg-[#121212]    relative sm:rounded-[6px] overflow-y-scroll overflow-x-hidden " onScroll={handleScroll} >
         <div className="p-4 z-50 fixed w-full">
           <HeaderMain />
+        </div>
+        <div className={`sm:hidden fixed z-30 p-4 w-full  ${scrollDown >= 140 ? `bg-[#101010] shadow-black shadow-md` : ''}`} >
+          <div className="flex items-center gap-8">
+            <div className={`${scrollDown >= 140 ? '' : 'p-3 glass rounded-full -mx-2'} `}>
+              <ArrowLeft color="#FFF" onClick={() => window.history.back()} size={25} />
+            </div>
+
+            <p className={`text-white font-semibold ${scrollDown >= 140 ? '' : 'hidden'}`}>{artist[0].name}</p>
+          </div>
+
         </div>
         {/* BACKGROUND */}
         <div className=" w-full relative ">
@@ -78,7 +95,7 @@ export const PerfilArtista = ({ artist }: PropsPerfil) => {
                 </span>
               </div>
 
-              <h1 className={`sm:text-[5rem] px-3 ${artist[0].name.length >= 12 ? 'text-[3em]' : 'text-[4rem]'} font-extrabold leading-none tracking-tight `}>
+              <h1 className={`sm:text-[5rem] px-3 ${artist[0].name.length >= 10 ? 'text-[3em]' : 'text-[4rem]'} font-extrabold leading-none tracking-tight `}>
                 {artist[0].name}
 
               </h1>
@@ -110,11 +127,9 @@ export const PerfilArtista = ({ artist }: PropsPerfil) => {
             </div>
             :
             <div>
-
+              <p className=" text-sm px-3 mt-8 "> 910,2 mil ouvintes mensais</p>
               <div className="mt-4 mx-3 flex items-center gap-5 justify-between">
-
                 <div className="flex gap-4 items-center">
-
                   <button
                     onClick={() => !follow ? setFollow(true) : setFollow(false)}
                     className="border p-1 rounded px-2 text-sm text-zinc-50 hover:scale-105 cursor-pointer"

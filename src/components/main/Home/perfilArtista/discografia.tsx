@@ -13,6 +13,7 @@ import { GenericCarousel } from "./genericCarousel"
 interface propsDiscografia {
   musicas: musics[]
   desktopScreen: boolean
+
 }
 
 export const Discografia = ({ musicas, desktopScreen }:
@@ -48,6 +49,7 @@ export const Discografia = ({ musicas, desktopScreen }:
                     imageRoundedFull={false}
                     key={i}
                     span={album.description} />
+
                 </Link>
               )) : <div className="h-44 flex items-center w-full">
                 Nenhum Álbum foi adicionado
@@ -55,7 +57,7 @@ export const Discografia = ({ musicas, desktopScreen }:
 
             :
 
-            <Carousel className=" w-full flex justify-center items-center">
+            <Carousel className=" w-full flex items-center">
               <CarouselContent  >
                 {albuns.length > 0 ?
                   albuns.map((album, i) => (
@@ -67,6 +69,7 @@ export const Discografia = ({ musicas, desktopScreen }:
                       maisDeUmCard={albuns.length > 1}
                       imageRoundedFull={false}
                     />
+
                   ))
                   :
                   <div className="h-44 flex r items-center justify-center w-full">

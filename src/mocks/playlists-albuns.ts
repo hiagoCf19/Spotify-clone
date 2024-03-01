@@ -44,7 +44,7 @@ const artista = {
       "https://thisis-images.spotifycdn.com/37i9dQZF1DZ06evO2Kkc5y-default.jpg",
     bannerID:
       "https://i.scdn.co/image/ab676186000010163fd1984fedc4528377b8358c",
-    color: "rgba(169, 168, 196, 0.314) 190%",
+    color: "rgba(169, 168, 196, 0.314) 140%",
   },
   chicoBuarque: {
     foto: "https://i.scdn.co/image/ab676161000051741f33f0eccfef05940a1ef879",
@@ -60,7 +60,7 @@ const artista = {
       "	https://i.scdn.co/image/ab67618600001016f328ba2b3c84ec0e31243360",
     thisIs:
       "	https://thisis-images.spotifycdn.com/37i9dQZF1DZ06evO3gAXLR-default.jpg",
-    color: "rgba(169, 168, 196, 0.314) 190%",
+    color: "rgba(169, 168, 196, 0.314) 140%",
   },
   eduardoCosta: {
     foto: " https://i.scdn.co/image/ab67616100005174d568e3af8ac0ac319678d01d",
@@ -77,7 +77,7 @@ const artista = {
       "	https://i.scdn.co/image/ab67618600001016c6b15528173510ab4deb8f98",
     thisIs:
       "https://thisis-images.spotifycdn.com/37i9dQZF1DZ06evO00KN2M-default.jpg",
-    color: "rgba(169, 168, 196, 0.314) 190%",
+    color: "rgba(169, 168, 196, 0.314) 120%",
   },
 
   freddieDred: {
@@ -94,7 +94,7 @@ const artista = {
       "https://i.scdn.co/image/ab67618600001016adc556aaf75e626cb4a1a1be",
     thisIs:
       "https://thisis-images.spotifycdn.com/37i9dQZF1DZ06evNZVVBPG-default.jpg",
-    color: "rgba(20, 23, 30, 1) 60%",
+    color: "rgba(20, 23, 30, 1) 30%",
   },
   mcBinLaden: {
     foto: "https://i.scdn.co/image/ab676161000051741472571ab38e76b5307585d8",
@@ -102,7 +102,7 @@ const artista = {
       "https://i.scdn.co/image/ab6761860000101684785398d9eff76caa21aae7",
     thisIs:
       "	https://thisis-images.spotifycdn.com/37i9dQZF1DZ06evO1DbVO5-default.jpg",
-    color: "rgba(2, 53, 54, 1) 160%",
+    color: "rgba(2, 53, 54, 1) 120%",
   },
   radiohead: {
     foto: "https://i.scdn.co/image/ab67616100005174a03696716c9ee605006047fd",
@@ -110,7 +110,7 @@ const artista = {
       "https://i.scdn.co/image/ab676186000010161802a4cbec82e078cc15cbb0",
     thisIs:
       "https://thisis-images.spotifycdn.com/37i9dQZF1DZ06evO2VxlyE-default.jpg",
-    color: "rgba(25, 52, 69, 2) 100%",
+    color: "rgba(25, 52, 69, 2) 80%",
   },
   rashid: {
     foto: "https://i.scdn.co/image/ab67616100005174b783f0d38cfd32275fe49ad7",
@@ -118,7 +118,7 @@ const artista = {
       "https://i.scdn.co/image/ab676186000010167357d8cde3d66a65a6e695a2",
     thisIs:
       "https://thisis-images.spotifycdn.com/37i9dQZF1DZ06evO3v7h3h-default.jpg",
-    color: "rgba(169, 168, 196, 0.314) 190%",
+    color: "rgba(169, 168, 196, 0.314) 150%",
   },
   stones: {
     foto: "	https://i.scdn.co/image/ab67616100005174e4cea917b68726aadb4854b8",
@@ -126,7 +126,7 @@ const artista = {
       "https://i.scdn.co/image/ab67618600001016282f8e91da4dff9d5bee49a8",
     thisIs:
       "	https://thisis-images.spotifycdn.com/37i9dQZF1DZ06evO19s0CZ-default.jpg",
-    color: "rgba(169, 168, 196, 0.314) 190%",
+    color: "rgba(169, 168, 196, 0.314) 150%",
   },
   theWalters: {
     foto: "https://i.scdn.co/image/ab676161000051746c4366f40ea49c1318707f97",
@@ -142,7 +142,7 @@ const artista = {
       "https://i.scdn.co/image/ab676186000010169ce635209a083bb42401e465",
     thisIs:
       "https://thisis-images.spotifycdn.com/37i9dQZF1DZ06evO0ti1Ik-default.jpg",
-    color: "rgb(39, 13, 8)",
+    color: "rgb(60, 13, 8) 80%",
   },
 };
 

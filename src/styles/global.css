@@ -2,10 +2,18 @@ body {
   letter-spacing: 0.025em;
 }
 .glass {
-  background: rgba(0, 0, 0, 0.823);
+  background: rgba(0, 0, 0, 0.574);
 
   backdrop-filter: blur(0.6px);
   -webkit-backdrop-filter: blur(1.5px);
+}
+@media (min-width: 640px) {
+  .glass {
+    background: rgba(0, 0, 0, 0.823);
+
+    backdrop-filter: blur(0.6px);
+    -webkit-backdrop-filter: blur(1.5px);
+  }
 }
 .glassCircle {
   background: rgba(0, 0, 0, 0.24);
