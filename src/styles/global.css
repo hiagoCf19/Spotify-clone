@@ -58,6 +58,16 @@ body {
   content-visibility: auto;
   contain: strict;
 }
+.bg-cardMobile {
+  background-attachment: scroll;
+  background-position: 50% 25%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 50vh;
+  min-height: 25vh;
+  content-visibility: auto;
+  contain: strict;
+}
 @media (min-width: 640px) {
   .bg-config {
     background-attachment: scroll;

@@ -154,7 +154,7 @@ export const playlists: Pl[] = [
     cards: [
       {
         title: "Moody Mix",
-        color: "rgba(223,84,139, 0.600) 120%",
+        color: "rgba(223,84,139, 0.600) 190%",
         image: "assets/capas/moody.jpeg",
         description: "Nirvana, Tom Odell, Radiohead e mais",
         musicas: [
@@ -181,7 +181,7 @@ export const playlists: Pl[] = [
       },
       {
         title: "Daily Mix 1",
-        color: "rgba(152,206,197, 0.800) 120%",
+        color: "rgba(152,206,197, 0.800) 190%",
         image: "assets/capas/mix1.jpeg",
         description: "Rashid, ADL, Sant e mais",
         musicas: [
@@ -246,7 +246,7 @@ export const playlists: Pl[] = [
       },
       {
         title: "Daily Mix 4",
-        color: "rgba(211,131,154, 0.800) 120%",
+        color: "rgba(211,131,154, 0.800) 190%",
         image: "assets/capas/mix4.jpeg",
         description: "The Walters, Vacations, Vundabar e mais",
         musicas: [

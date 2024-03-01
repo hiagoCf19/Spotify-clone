@@ -1,4 +1,4 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
+
 
 import { artista, musics, playlists } from "@/mocks/playlists-albuns"
 import { useEffect, useState } from "react"
@@ -7,8 +7,9 @@ import { MobileSearchModal } from "./searching/mobileSearchModal";
 import { BrowseAll } from "@/mocks/BrowseAll";
 import { MontaThisIs } from "@/scripts/DataConstructor";
 
+
 interface ModalSearchProps {
-  search: any
+  search: string
 
 }
 
@@ -70,7 +71,7 @@ export const ModalSearch = ({ search }: ModalSearchProps) => {
     });
   });
   const albunsNomeUnicos = new Set();
-  const albunsUnicos: any = []
+  const albunsUnicos: musics[] = []
   multiFilter.forEach((album) => {
     if (!albunsNomeUnicos.has(album.album)) {
       albunsNomeUnicos.add(album.album)
@@ -108,29 +109,28 @@ export const ModalSearch = ({ search }: ModalSearchProps) => {
   const desktopModal = larguraDaTela >= 640 ? true : false
 
 
-
   return (
-    pesquisaV ? desktopModal
-      ?
-      <DesktopSearchmodal
-        artistasUnicos={artistasUnicos}
-        filterGenre={filterGenre}
-        musicasUnicas={musicas}
-        albunsUnicos={albunsUnicos}
-        thisIsUni={thisIsFilter}
-      />
+    pesquisaV ?
+      desktopModal
+        ?
+        <DesktopSearchmodal
+          artistasUnicos={artistasUnicos}
+          filterGenre={filterGenre}
+          musicasUnicas={musicas}
+          albunsUnicos={albunsUnicos}
+          thisIsUni={thisIsFilter}
+        />
 
-      :
-      <MobileSearchModal
-        artistasUnicos={artistasUnicos}
-        filterGenre={filterGenre}
-        musicasUnicas={musicas}
-        thisIsUni={thisIsFilter}
+        :
+        <MobileSearchModal
+          artistasUnicos={artistasUnicos}
+          filterGenre={filterGenre}
+          musicasUnicas={musicas}
+          thisIsUni={thisIsFilter}
 
-      />
+        />
 
-      :
-      <div className="flex flex-col items-center justify-center h-full">
+      : <div className="flex flex-col items-center justify-center h-full">
         <h1 className="text-zinc-50 sm:text-3xl text-xl font-semibold text-center">Nenhum resultado encontrado para "{search}"</h1>
         <span className="text-sm text-center">Confira se você digitou corretamente ou verifique nossos sons disponíveisa</span>
       </div>

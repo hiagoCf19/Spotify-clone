@@ -2,8 +2,10 @@ import { urlFormater } from "@/scripts/normalize"
 import { useState } from "react";
 import { FaPlay } from "react-icons/fa6";
 import { Link } from "react-router-dom"
-
-export const MiniCardLiked = () => {
+interface propsMiniCardLike {
+  setBackground: React.Dispatch<React.SetStateAction<string>>
+}
+export const MiniCardLiked = ({ setBackground }: propsMiniCardLike) => {
   const [hoveredIndex, setHoveredIndex] = useState(false);
   return (
 
@@ -13,6 +15,7 @@ export const MiniCardLiked = () => {
       className=" sm:w-[24.2%] w-[48%] sm:h-16 h-14 flex items-center gap-4 rounded bg-opacity-10 backdrop-blur-20 bg-[#ffffff13] hover:bg-[#ffffff22]  cursor-pointer relative"
       onMouseOver={() => setHoveredIndex(true)}
       onMouseOut={() => setHoveredIndex(false)}
+      onMouseEnter={() => setBackground(' rgba(66, 46, 194, 0.535) 100%')}
     >
 
       <div className="flex items-center sm:gap-4 gap-2">

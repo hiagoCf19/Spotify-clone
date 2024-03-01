@@ -2,7 +2,7 @@ import { TitleSpt } from "@/components/Recorrentes/Title"
 import { musics, playlists } from "@/mocks/playlists-albuns"
 import { extrairMusicas } from "@/scripts/desestruturacao";
 import { urlFormater } from "@/scripts/normalize";
-import { Fragment } from "react";
+import { Fragment, useEffect, useState } from "react";
 
 
 import { BsPlusCircle } from "react-icons/bs";
@@ -11,26 +11,26 @@ import { Link } from "react-router-dom";
 
 export const MobileLancamentos = () => {
 
-  const musicas = extrairMusicas(playlists)
-  const escolherMusicaAleatoria = (musicas: musics[]) => {
 
-    const indiceAleatorio = Math.floor(Math.random() * musicas.length)
-    return [musicas[indiceAleatorio]];
-  };
-
+  const [randomMusic, setRandomMusic] = useState<musics[]>([]);
+  useEffect(() => {
+    const musicas = extrairMusicas(playlists);
+    const indiceAleatorio = Math.floor(Math.random() * musicas.length);
+    setRandomMusic([musicas[indiceAleatorio]]);
+  }, []);
 
 
   return (
-    <div className="sm:hidden flex flex-col gap-4 mt-4 ">
-      {escolherMusicaAleatoria(musicas).map((data) => (
-        <Fragment>
-          <header className="flex gap-3 items-center">
+    <div className="sm:hidden flex flex-col gap-2 mt-4 p-2 ">
+      {randomMusic.map((data, i) => (
+        <Fragment key={i}>
+          <header className="flex gap-2 items-center">
             <img
               src={data.artista[0].foto}
               className="size-14 rounded-full"
             />
             <div className="flex flex-col">
-              <span className="text-sm">A recomendação do dia é</span>
+              <span className="text-sm -mb-1">Recomendação do dia</span>
               <Link
                 to={urlFormater(data.artista[0].name)}
                 className="hover:underline"
@@ -40,11 +40,11 @@ export const MobileLancamentos = () => {
 
             </div>
           </header>
-          <Link to={urlFormater(data.album)} className="w-full rounded flex bg-[#202020]">
+          <Link to={urlFormater(data.album)} className="w-full rounded-[6px] flex bg-[#202020]">
 
-            <img src={data.capa} className=" size-40 rounded-l" />
+            <img src={data.capa} className=" size-36 rounded-l-[6px]" />
             <div className="p-3 relative flex flex-col  w-full overflow-hidden">
-              <div className="flex flex-col gap-3 ">
+              <div className="flex flex-col gap-1 ">
                 <div className="text-zinc-50  overflow-hidden  flex-col">
                   <h1 className="text-lg line-clamp-1"> {data.name}  </h1>
                   <span className="text-sm text-[#b7b7b7]">{data.album}</span>
@@ -60,7 +60,7 @@ export const MobileLancamentos = () => {
                   </span>
                 </div>
               </div>
-              <div className="absolute bottom-3 p-3 -m-3  w-full">
+              <div className="absolute bottom-3 p-2 -m-3  w-full">
                 <div className="flex w-full items-center justify-between">
                   <BsPlusCircle color="#FFF" size={28} />
                   <div className="size-10 rounded-full bg-zinc-50 flex justify-center items-center">
