@@ -16,7 +16,7 @@ export class MontaThisIs {
   capa: string;
   span: string;
   constructor(nameArtist: string, capa: string, span: string) {
-    this.title = `this is ${nameArtist}`;
+    this.title = `This Is ${nameArtist}`;
     this.capa = capa;
     this.span = `This is ${span}. Todos os maiores hits em uma única playlist`;
   }

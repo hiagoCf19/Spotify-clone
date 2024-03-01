@@ -31,7 +31,7 @@ export interface musics {
 }
 const artista = {
   adl: {
-    foto: "assets/artistas/ADL/perfil.jpeg",
+    foto: "https://i.scdn.co/image/ab6761610000517476bc39d59e3ab3cf5fbcae14",
     thisIs:
       "https://thisis-images.spotifycdn.com/37i9dQZF1DZ06evO47M0aB-default.jpg",
     bannerID:
@@ -50,7 +50,8 @@ const artista = {
     foto: "https://i.scdn.co/image/ab676161000051741f33f0eccfef05940a1ef879",
     bannerID:
       "https://i.scdn.co/image/ab676186000010168c42d9dc79e31ea217ff4470",
-    thisIs: "assets/artistas/ChicoBuarque/thisIs.jpg",
+    thisIs:
+      "https://thisis-images.spotifycdn.com/37i9dQZF1DZ06evO3Piqqc-default.jpg",
     color: "rgb(62, 47, 44)",
   },
   d4vd: {
@@ -62,44 +63,49 @@ const artista = {
     color: "rgba(169, 168, 196, 0.314) 190%",
   },
   eduardoCosta: {
-    foto: "",
+    foto: " https://i.scdn.co/image/ab67616100005174d568e3af8ac0ac319678d01d",
     bannerID:
       "	https://i.scdn.co/image/ab67618600001016234986d48714d9ccd2b18e9b",
-    thisIs: "",
+    thisIs:
+      "https://thisis-images.spotifycdn.com/37i9dQZF1DZ06evO1CLDUc-default.jpg",
     color: "rgba(80, 21, 69, 1.814) 120%",
   },
 
   fleetwoodMac: {
-    foto: "",
+    foto: "https://i.scdn.co/image/ab67616100005174c8752dd511cda8c31e9daee8",
     bannerID:
       "	https://i.scdn.co/image/ab67618600001016c6b15528173510ab4deb8f98",
-    thisIs: "",
+    thisIs:
+      "https://thisis-images.spotifycdn.com/37i9dQZF1DZ06evO00KN2M-default.jpg",
     color: "rgba(169, 168, 196, 0.314) 190%",
   },
 
   freddieDred: {
-    foto: "",
+    foto: "https://i.scdn.co/image/ab67616100005174043681a0d16ab5885a68d0e9",
     bannerID:
       "	https://i.scdn.co/image/ab676186000010161817255b3972bcfc061f822d",
-    thisIs: "",
+    thisIs:
+      "https://thisis-images.spotifycdn.com/37i9dQZF1DZ06evO03yOTR-default.jpg",
     color: "rgba(52, 17, 14, 1) 120%",
   },
   lanaDelRey: {
-    foto: "",
+    foto: "https://i.scdn.co/image/ab67616100005174b99cacf8acd5378206767261",
     bannerID:
       "https://i.scdn.co/image/ab67618600001016adc556aaf75e626cb4a1a1be",
-    thisIs: "",
+    thisIs:
+      "https://thisis-images.spotifycdn.com/37i9dQZF1DZ06evNZVVBPG-default.jpg",
     color: "rgba(20, 23, 30, 1) 60%",
   },
   mcBinLaden: {
     foto: "https://i.scdn.co/image/ab676161000051741472571ab38e76b5307585d8",
     bannerID:
       "https://i.scdn.co/image/ab6761860000101684785398d9eff76caa21aae7",
-    thisIs: "",
+    thisIs:
+      "	https://thisis-images.spotifycdn.com/37i9dQZF1DZ06evO1DbVO5-default.jpg",
     color: "rgba(2, 53, 54, 1) 160%",
   },
   radiohead: {
-    foto: "assets/artistas/Radiohead/perfil.jpeg",
+    foto: "https://i.scdn.co/image/ab67616100005174a03696716c9ee605006047fd",
     bannerID:
       "https://i.scdn.co/image/ab676186000010161802a4cbec82e078cc15cbb0",
     thisIs:
@@ -110,28 +116,32 @@ const artista = {
     foto: "https://i.scdn.co/image/ab67616100005174b783f0d38cfd32275fe49ad7",
     bannerID:
       "https://i.scdn.co/image/ab676186000010167357d8cde3d66a65a6e695a2",
-    thisIs: "",
+    thisIs:
+      "https://thisis-images.spotifycdn.com/37i9dQZF1DZ06evO3v7h3h-default.jpg",
     color: "rgba(169, 168, 196, 0.314) 190%",
   },
   stones: {
-    foto: "assets/artistas/Stones/perfil.jpeg",
+    foto: "	https://i.scdn.co/image/ab67616100005174e4cea917b68726aadb4854b8",
     bannerID:
       "https://i.scdn.co/image/ab67618600001016282f8e91da4dff9d5bee49a8",
-    thisIs: "",
+    thisIs:
+      "	https://thisis-images.spotifycdn.com/37i9dQZF1DZ06evO19s0CZ-default.jpg",
     color: "rgba(169, 168, 196, 0.314) 190%",
   },
   theWalters: {
-    foto: "assets/artistas/TheWalters/perfil.jpeg",
+    foto: "https://i.scdn.co/image/ab676161000051746c4366f40ea49c1318707f97",
     bannerID:
       "https://i.scdn.co/image/ab676186000010169773b5bbdc030cf349a4fde0",
-    thisIs: "",
+    thisIs:
+      "https://thisis-images.spotifycdn.com/37i9dQZF1DZ06evNZWNVs5-default.jpg",
     color: "rgb(70, 42, 39, 0.800) 120%",
   },
-  vocations: {
-    foto: "assets/artistas/Vocations/perfil.jpeg",
+  Vacations: {
+    foto: "https://i.scdn.co/image/ab67616100005174080c868c83bba9ba37f13639",
     bannerID:
       "https://i.scdn.co/image/ab676186000010169ce635209a083bb42401e465",
-    thisIs: "",
+    thisIs:
+      "https://thisis-images.spotifycdn.com/37i9dQZF1DZ06evO0ti1Ik-default.jpg",
     color: "rgb(39, 13, 8)",
   },
 };
@@ -161,7 +171,7 @@ export const playlists: Pl[] = [
               },
             ],
             album: "OK Computer",
-            capa: "assets/artistas/Radiohead/OkComp.jpeg",
+            capa: "https://i.scdn.co/image/ab67616d00001e02c8b444df094279e70d0ed856",
             addEm: "20 fev. 2024",
             durationMultipliedBy100: 349,
             liked: false,
@@ -184,6 +194,7 @@ export const playlists: Pl[] = [
                 color: artista.rashid.color,
                 foto: artista.rashid.foto,
                 bannerID: artista.rashid.bannerID,
+                thisIs: artista.rashid.thisIs,
               },
             ],
             album: "Confundindo Sábios",
@@ -206,7 +217,7 @@ export const playlists: Pl[] = [
               },
             ],
             album: "Da Favela pro Mundo",
-            capa: "assets/artistas/ADL/FavMundo.jpeg",
+            capa: "	https://i.scdn.co/image/ab67616d00001e023f764e08f367ff3925a9bf08",
             addEm: "13 fev. 2024",
             durationMultipliedBy100: 436,
             liked: false,
@@ -221,6 +232,7 @@ export const playlists: Pl[] = [
                 color: artista.rashid.color,
                 foto: artista.rashid.foto,
                 bannerID: artista.rashid.bannerID,
+                thisIs: artista.rashid.thisIs,
               },
             ],
             album: "Gratidão",
@@ -247,9 +259,10 @@ export const playlists: Pl[] = [
                 bannerID: artista.theWalters.bannerID,
                 color: artista.theWalters.color,
                 foto: artista.theWalters.foto,
+                thisIs: artista.theWalters.thisIs,
               },
             ],
-            capa: "assets/artistas/TheWalters/ILso.jpeg",
+            capa: "	https://i.scdn.co/image/ab67616d00001e029214ff0109a0e062f8a6cf0f",
             album: "I Love You So",
             addEm: "15 fev. 2024",
             durationMultipliedBy100: 240,
@@ -260,14 +273,15 @@ export const playlists: Pl[] = [
             name: "Telephones",
             artista: [
               {
-                name: "Vocations",
+                name: "Vacations",
                 genre: "Indie",
-                bannerID: artista.vocations.bannerID,
-                color: artista.vocations.color,
-                foto: artista.vocations.foto,
+                bannerID: artista.Vacations.bannerID,
+                color: artista.Vacations.color,
+                foto: artista.Vacations.foto,
+                thisIs: artista.Vacations.thisIs,
               },
             ],
-            capa: "assets/artistas/Vocations/changes.jpeg",
+            capa: "https://i.scdn.co/image/ab67616d00001e023dd6e8bbc5b1ac43fd8a838c",
             album: "Changes",
             addEm: "13 fev. 2024",
             durationMultipliedBy100: 332,
@@ -289,14 +303,15 @@ export const playlists: Pl[] = [
               {
                 name: "Fleetwood Mac",
                 genre: "Rock",
+                foto: artista.fleetwoodMac.foto,
                 bannerID: artista.fleetwoodMac.bannerID,
                 color: artista.fleetwoodMac.color,
-                foto: "assets/artistas/FleetwoodMac/perfil.jpeg",
+                thisIs: artista.fleetwoodMac.thisIs,
               },
             ],
 
             album: "Rumours (Super Deluxe)",
-            capa: "assets/artistas/FleetwoodMac/theChain.jpeg",
+            capa: "https://i.scdn.co/image/ab67616d00001e0257df7ce0eac715cf70e519a7",
             addEm: "4 de set. de 2023",
             durationMultipliedBy100: 430,
             liked: false,
@@ -312,10 +327,11 @@ export const playlists: Pl[] = [
                 color: artista.stones.color,
 
                 foto: artista.stones.foto,
+                thisIs: artista.stones.thisIs,
               },
             ],
 
-            capa: "assets/artistas/Stones/afterm.jpeg",
+            capa: "https://i.scdn.co/image/ab67616d00001e02bad7062c3fd2f2d037989694",
             album: "Aftermath",
             addEm: "9 de fev. de 2024",
             durationMultipliedBy100: 322,
@@ -398,11 +414,12 @@ export const playlists: Pl[] = [
                 genre: "Hip-Hop",
                 bannerID: artista.freddieDred.bannerID,
                 color: artista.freddieDred.color,
-                foto: "assets/artistas/FreddieDredd/perfil.jpeg",
+                foto: artista.freddieDred.foto,
+                thisIs: artista.freddieDred.thisIs,
               },
             ],
             album: "Frank Miller (kill Again)",
-            capa: "assets/artistas/FreddieDredd/FrankMiller.jpeg",
+            capa: "https://i.scdn.co/image/ab67616d00001e0277393fb10b6bccbd9a9748bd",
             addEm: "1 de fev. de 2024",
             durationMultipliedBy100: 211,
             liked: false,
@@ -412,254 +429,7 @@ export const playlists: Pl[] = [
       },
     ],
   },
-  {
-    name: "O melhor de cada Artista",
-    exibitionHome: true,
-    classe: "Playlist",
-    cards: [
-      {
-        title: "This Is Lana Del Rey",
-        color: "rgba(216, 210, 214,1.800) 120%",
-        image: "assets/artistas/Lana/thisIsLana.jpg",
-        description:
-          "This is Lana Del Rey. Todos os maiores hits em uma só playlist.",
-        musicas: [
-          {
-            name: "Summertime Sadness",
-            artista: [
-              {
-                name: "Lana Del Rey",
-                genre: "Pop",
-                bannerID: artista.lanaDelRey.bannerID,
-                color: artista.lanaDelRey.color,
-                foto: "assets/artistas/Lana/perfil.jpeg",
-              },
-            ],
-            album: "Born To Die",
-            capa: "assets/artistas/Lana/bornToDie.jpeg",
-            addEm: "1 de jan. de 2012",
-            durationMultipliedBy100: 425,
-            liked: false,
-            genre: "Pop",
-          },
-          {
-            name: "Young And Beautiful",
-            artista: [
-              {
-                name: "Lana Del Rey",
-                genre: "Pop",
-                bannerID: artista.lanaDelRey.bannerID,
-                color: artista.lanaDelRey.color,
-                foto: "assets/artistas/Lana/perfil.jpeg",
-              },
-            ],
-            album: "Young And Beautiful",
-            capa: "assets/artistas/Lana/youngBeautiful.jpeg",
-            addEm: "1 de jan. de 2013",
-            durationMultipliedBy100: 356,
-            liked: false,
-            genre: "Pop",
-          },
-          {
-            name: "Young And Beautiful",
-            artista: [
-              {
-                name: "Lana Del Rey",
-                genre: "Pop",
-                bannerID: artista.lanaDelRey.bannerID,
-                color: artista.lanaDelRey.color,
-                foto: "assets/artistas/Lana/perfil.jpeg",
-              },
-            ],
-            album: "Young And Beautiful",
-            capa: "assets/artistas/Lana/youngBeautiful.jpeg",
-            addEm: "1 de jan. de 2013",
-            durationMultipliedBy100: 356,
-            liked: false,
-            genre: "Pop",
-          },
-          {
-            name: "Radio",
-            artista: [
-              {
-                name: "Lana Del Rey",
-                genre: "Pop",
-                bannerID: artista.lanaDelRey.bannerID,
-                color: artista.lanaDelRey.color,
-                foto: "assets/artistas/Lana/perfil.jpeg",
-              },
-            ],
-            album: "Born To Die",
-            capa: "assets/artistas/Lana/bornToDie.jpeg",
-            addEm: "1 de jan. de 2012",
-            durationMultipliedBy100: 334,
-            liked: false,
-            genre: "Pop",
-          },
-        ],
-      },
-      {
-        title: "This Is Rashid",
-        color: "rgba(131, 211, 204, 1.800) 120%",
-        image: "assets/artistas/Rashid/thisIsRashid.jpg",
-        description:
-          "This is Rashid. Todos os maiores hits em uma só playlist.",
-        musicas: [
-          {
-            name: "Mil Cairão",
-            artista: [
-              {
-                name: "Rashid",
-                genre: "Rap",
-                color: artista.rashid.color,
-                foto: artista.rashid.foto,
-                bannerID: artista.rashid.bannerID,
-              },
-            ],
-            album: "Confundindo Sábios",
-            capa: "https://i.scdn.co/image/ab67616d00001e02136f6e8e15c00b93d12c0cf8",
-            addEm: "11 fev. 2024",
-            durationMultipliedBy100: 403,
-            liked: false,
-            genre: "Rap",
-          },
-          {
-            name: "Gratidão",
-            artista: [
-              {
-                name: "Rashid",
-                genre: "Rap",
-                color: artista.rashid.color,
-                foto: artista.rashid.foto,
-                bannerID: artista.rashid.bannerID,
-              },
-            ],
-            album: "Gratidão",
-            capa: "https://i.scdn.co/image/ab67616d00001e02807fe591c189e35125945479",
-            addEm: "21 fev. 2024",
-            durationMultipliedBy100: 334,
-            liked: false,
-            genre: "Rap",
-          },
-        ],
-      },
-      {
-        title: "This Is The Rolling Stones",
-        color: "rgb(111, 145, 193, 1.800) 120%",
-        image: "assets/artistas/Stones/thisIsStones.jpg",
-        description:
-          "This is The Rolling Stones. Todos os maiores hits em uma só playlist.",
-        musicas: [
-          {
-            name: "Paint It, Black 01",
-            artista: [
-              {
-                name: "The Rolling Stones",
-                genre: "Rock",
-                bannerID: artista.stones.bannerID,
-                color: artista.stones.color,
 
-                foto: artista.stones.foto,
-              },
-            ],
-
-            capa: "assets/artistas/Stones/afterm.jpeg",
-            album: "Aftermath",
-            addEm: "9 de fev. de 2024",
-            durationMultipliedBy100: 322,
-            liked: false,
-            genre: "Rock",
-          },
-          {
-            name: "Gimme Shelter",
-            artista: [
-              {
-                name: "The Rolling Stones",
-                genre: "Rock",
-                bannerID: artista.stones.bannerID,
-                color: artista.stones.color,
-
-                foto: artista.stones.foto,
-              },
-            ],
-            album: "Let It Bleed",
-            capa: "assets/artistas/Stones/letItBleed.jpeg",
-            addEm: "5 de dez. de 1969",
-            durationMultipliedBy100: 334,
-            liked: false,
-            genre: "Rock",
-          },
-        ],
-      },
-
-      {
-        title: "This Is The Eduardo Costa",
-        color: "rgb(75, 35, 123, 1) 95%",
-        image: "assets/artistas/EduardoCosta/thisIsEdCosta.jpg",
-        description:
-          "This is The Eduardo Costa. Todos os maiores hits em uma só playlist.",
-        musicas: [
-          {
-            name: "Amor de Violeiro",
-            artista: [
-              {
-                name: "Eduardo Costa",
-                genre: "Sertanejo",
-                bannerID: artista.eduardoCosta.bannerID,
-                color: artista.eduardoCosta.color,
-                foto: "assets/artistas/EduardoCosta/perfil.jpeg",
-              },
-            ],
-
-            capa: "assets/artistas/EduardoCosta/acustico2004.jpeg",
-            album: "EduardoCosta - Acustico",
-            addEm: "1 de jan. de 2004",
-            durationMultipliedBy100: 415,
-            liked: false,
-            genre: "Sertanejo",
-          },
-          {
-            name: "Sapequinha",
-            artista: [
-              {
-                name: "Eduardo Costa",
-                genre: "Sertanejo",
-                bannerID: artista.eduardoCosta.bannerID,
-                color: artista.eduardoCosta.color,
-                foto: "assets/artistas/EduardoCosta/perfil.jpeg",
-              },
-            ],
-
-            capa: "assets/artistas/EduardoCosta/vivendoEaprendendo.jpeg",
-            album: "Vivendo e Aprendendo",
-            addEm: "31 de jul. de 2015",
-            durationMultipliedBy100: 311,
-            liked: false,
-            genre: "Sertanejo",
-          },
-          {
-            name: "Sou Seu Fã N° 1",
-            artista: [
-              {
-                name: "Eduardo Costa",
-                genre: "Sertanejo",
-                bannerID: artista.eduardoCosta.bannerID,
-                color: artista.eduardoCosta.color,
-                foto: "assets/artistas/EduardoCosta/perfil.jpeg",
-              },
-            ],
-
-            capa: "assets/artistas/EduardoCosta/temTudoAVer.jpeg",
-            album: "Tem tudo a ver",
-            addEm: "1 de jan. de 2009",
-            durationMultipliedBy100: 350,
-            liked: false,
-            genre: "Sertanejo",
-          },
-        ],
-      },
-    ],
-  },
   {
     name: "Musicas Brasileiras ",
     exibitionHome: true,
@@ -727,6 +497,7 @@ export const playlists: Pl[] = [
                 bannerID: artista.mcBinLaden.bannerID,
                 color: artista.mcBinLaden.color,
                 foto: artista.mcBinLaden.foto,
+                thisIs: artista.mcBinLaden.thisIs,
               },
             ],
             capa: "https://i.scdn.co/image/ab67616d00001e023330f51ed9fac1de5f274d1e",
@@ -852,6 +623,240 @@ export const playlists: Pl[] = [
             durationMultipliedBy100: 420,
             liked: false,
             genre: "Indie",
+          },
+          {
+            name: "Amor de Violeiro",
+            artista: [
+              {
+                name: "Eduardo Costa",
+                genre: "Sertanejo",
+                bannerID: artista.eduardoCosta.bannerID,
+                color: artista.eduardoCosta.color,
+                foto: artista.eduardoCosta.foto,
+                thisIs: artista.eduardoCosta.thisIs,
+              },
+            ],
+
+            capa: "https://i.scdn.co/image/ab67616d00001e024006ba2540778b9ffd224be0",
+            album: "EduardoCosta - Acustico",
+            addEm: "1 de jan. de 2004",
+            durationMultipliedBy100: 415,
+            liked: false,
+            genre: "Sertanejo",
+          },
+          {
+            name: "Sapequinha",
+            artista: [
+              {
+                name: "Eduardo Costa",
+                genre: "Sertanejo",
+                bannerID: artista.eduardoCosta.bannerID,
+                color: artista.eduardoCosta.color,
+                foto: artista.eduardoCosta.foto,
+                thisIs: artista.eduardoCosta.thisIs,
+              },
+            ],
+
+            capa: "https://i.scdn.co/image/ab67616d00001e02e0ac9880d35de2d86e8849a1",
+            album: "Vivendo e Aprendendo",
+            addEm: "31 de jul. de 2015",
+            durationMultipliedBy100: 311,
+            liked: false,
+            genre: "Sertanejo",
+          },
+          {
+            name: "Sou Seu Fã N° 1",
+            artista: [
+              {
+                name: "Eduardo Costa",
+                genre: "Sertanejo",
+                bannerID: artista.eduardoCosta.bannerID,
+                color: artista.eduardoCosta.color,
+                foto: artista.eduardoCosta.foto,
+                thisIs: artista.eduardoCosta.thisIs,
+              },
+            ],
+
+            capa: "https://i.scdn.co/image/ab67616d00001e028cb2a7756160d148d551c834",
+            album: "Tem tudo a ver",
+            addEm: "1 de jan. de 2009",
+            durationMultipliedBy100: 350,
+            liked: false,
+            genre: "Sertanejo",
+          },
+          {
+            name: "Favela Vive I",
+            artista: [
+              {
+                name: "ADL",
+                genre: "Rap",
+                bannerID: artista.adl.bannerID,
+                thisIs: artista.adl.thisIs,
+                color: artista.adl.color,
+                foto: artista.adl.foto,
+              },
+            ],
+            album: "Favela Vive",
+            capa: "https://i.scdn.co/image/ab67616d00001e02c80e63b7f1602b345362ea3c",
+            addEm: "20 de set. de 2016",
+            durationMultipliedBy100: 549,
+            liked: false,
+            genre: "Rap",
+          },
+          {
+            name: " Limbo",
+            artista: [
+              {
+                name: "Freddie Dredd",
+                genre: "Hip-Hop",
+                bannerID: artista.freddieDred.bannerID,
+                color: artista.freddieDred.color,
+                foto: artista.freddieDred.foto,
+                thisIs: artista.freddieDred.thisIs,
+              },
+            ],
+            album: "Freddie's Inferno",
+            capa: "https://i.scdn.co/image/ab67616d00001e0269b381d574b329409bd806e6",
+            addEm: "11 de ago. de 2021",
+            durationMultipliedBy100: 249,
+            liked: false,
+            genre: "Hip-Hop",
+          },
+          {
+            name: "Summertime Sadness",
+            artista: [
+              {
+                name: "Lana Del Rey",
+                genre: "Pop",
+                bannerID: artista.lanaDelRey.bannerID,
+                color: artista.lanaDelRey.color,
+                foto: artista.lanaDelRey.foto,
+                thisIs: artista.lanaDelRey.thisIs,
+              },
+            ],
+            album: "Born To Die",
+            capa: "	https://i.scdn.co/image/ab67616d00001e02ebc8cfac8b586bc475b04918",
+            addEm: "1 de jan. de 2012",
+            durationMultipliedBy100: 425,
+            liked: false,
+            genre: "Pop",
+          },
+          {
+            name: "Young And Beautiful",
+            artista: [
+              {
+                name: "Lana Del Rey",
+                genre: "Pop",
+                bannerID: artista.lanaDelRey.bannerID,
+                color: artista.lanaDelRey.color,
+                foto: artista.lanaDelRey.foto,
+                thisIs: artista.lanaDelRey.thisIs,
+              },
+            ],
+            album: "Young And Beautiful",
+            capa: "https://i.scdn.co/image/ab67616d00001e02d7fb3e4c63020039d1cff6b2",
+            addEm: "1 de jan. de 2013",
+            durationMultipliedBy100: 356,
+            liked: false,
+            genre: "Pop",
+          },
+
+          {
+            name: "Radio",
+            artista: [
+              {
+                name: "Lana Del Rey",
+                genre: "Pop",
+                bannerID: artista.lanaDelRey.bannerID,
+                color: artista.lanaDelRey.color,
+                foto: artista.lanaDelRey.foto,
+                thisIs: artista.lanaDelRey.thisIs,
+              },
+            ],
+            album: "Born To Die",
+            capa: "	https://i.scdn.co/image/ab67616d00001e02ebc8cfac8b586bc475b04918",
+            addEm: "1 de jan. de 2012",
+            durationMultipliedBy100: 334,
+            liked: false,
+            genre: "Pop",
+          },
+          {
+            name: "Mil Cairão",
+            artista: [
+              {
+                name: "Rashid",
+                genre: "Rap",
+                color: artista.rashid.color,
+                foto: artista.rashid.foto,
+                bannerID: artista.rashid.bannerID,
+                thisIs: artista.rashid.thisIs,
+              },
+            ],
+            album: "Confundindo Sábios",
+            capa: "https://i.scdn.co/image/ab67616d00001e02136f6e8e15c00b93d12c0cf8",
+            addEm: "11 fev. 2024",
+            durationMultipliedBy100: 403,
+            liked: false,
+            genre: "Rap",
+          },
+          {
+            name: "Gratidão",
+            artista: [
+              {
+                name: "Rashid",
+                genre: "Rap",
+                color: artista.rashid.color,
+                foto: artista.rashid.foto,
+                bannerID: artista.rashid.bannerID,
+                thisIs: artista.rashid.thisIs,
+              },
+            ],
+            album: "Gratidão",
+            capa: "https://i.scdn.co/image/ab67616d00001e02807fe591c189e35125945479",
+            addEm: "21 fev. 2024",
+            durationMultipliedBy100: 334,
+            liked: false,
+            genre: "Rap",
+          },
+          {
+            name: "Paint It, Black 01",
+            artista: [
+              {
+                name: "The Rolling Stones",
+                genre: "Rock",
+                bannerID: artista.stones.bannerID,
+                color: artista.stones.color,
+
+                foto: artista.stones.foto,
+                thisIs: artista.stones.thisIs,
+              },
+            ],
+
+            capa: "https://i.scdn.co/image/ab67616d00001e02bad7062c3fd2f2d037989694",
+            album: "Aftermath",
+            addEm: "9 de fev. de 2024",
+            durationMultipliedBy100: 322,
+            liked: false,
+            genre: "Rock",
+          },
+          {
+            name: "Gimme Shelter",
+            artista: [
+              {
+                name: "The Rolling Stones",
+                genre: "Rock",
+                bannerID: artista.stones.bannerID,
+                color: artista.stones.color,
+                foto: artista.stones.foto,
+                thisIs: artista.stones.thisIs,
+              },
+            ],
+            album: "Let It Bleed",
+            capa: "	https://i.scdn.co/image/ab67616d00001e022af30c881bb23cfb82a8cf99",
+            addEm: "5 de dez. de 1969",
+            durationMultipliedBy100: 334,
+            liked: false,
+            genre: "Rock",
           },
         ],
       },
