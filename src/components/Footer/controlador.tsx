@@ -1,19 +1,57 @@
 import { ShuffleIcon } from "lucide-react"
-import { Slider } from "../ui/slider"
 import { useState } from "react"
+import { musics } from "@/mocks/playlists-albuns"
+import { Progress } from "@/components/ui/progress"
 
-export const ControlBar = () => {
-  const [pause, setPause] = useState(true)
+
+interface propsControlBar {
+  time: musics
+}
+export const ControlBar = ({ time }: propsControlBar) => {
+  const [pausado, setPausado] = useState(true)
+  const [tempoAtual, setTempoAtual] = useState(0);
+  function tempoDeMusica(playing: musics) {
+    const time = playing.durationMultipliedBy100 / 100
+    return time.toFixed(2).replace('.', ':')
+  }
+
+  function formatarTempoAtual(tempoAtual: number) {
+    const minutos = Math.floor(tempoAtual / 60);
+    const segundos = Math.floor(tempoAtual % 60);
+    return `${minutos < 10 ? '0' : ''}${minutos}:${segundos < 10 ? '0' : ''}${segundos}`;
+  }
+
+  !pausado ?
+    setTimeout(() => {
+      if (tempoAtual < time.durationMultipliedBy100) {
+        setTempoAtual(tempoAtual + 1);
+      }
+      else {
+        clearInterval
+      }
+    }, 1000)
+    : console.log('esta pausado')
+  // Função para iniciar a reprodução da música
+
+
+  // Intervalo de 1 segundo
+  console.log(`valor atual: ${tempoAtual}`)
+  console.log(`valor total: ${time.durationMultipliedBy100}`)
+  function pause() {
+    console.log('pausado')
+  }
+
   return (
     <div className="flex flex-col sm:flex-col-reverse sm:gap-2">
       <div className="flex flex-col sm:flex-row gap-2 ">
         <span className="hidden sm:block">vi</span>
-        <Slider defaultValue={[33]} max={100} step={1} />
+        <Progress value={0} />
+
         <span className="hidden sm:block">vf</span>
 
-        <div className="flex justify-between text-[#b7b7b7] sm:hidden">
-          <span>vi</span>
-          <span>vf</span>
+        <div className="flex justify-between text-[#b7b7b7] text-sm sm:hidden">
+          <span>{formatarTempoAtual(tempoAtual)}</span>
+          <span>{tempoDeMusica(time)}</span>
         </div>
 
       </div>
@@ -23,12 +61,21 @@ export const ControlBar = () => {
         <div className="flex items-center gap-7 sm:gap-5">
           {/* back music svg */}
           <svg data-encore-id="icon" role="img" aria-hidden="true" viewBox="0 0 16 16" className="size-7 sm:size-4 text-white" fill="currentColor"><path d="M3.3 1a.7.7 0 0 1 .7.7v5.15l9.95-5.744a.7.7 0 0 1 1.05.606v12.575a.7.7 0 0 1-1.05.607L4 9.149V14.3a.7.7 0 0 1-.7.7H1.7a.7.7 0 0 1-.7-.7V1.7a.7.7 0 0 1 .7-.7h1.6z"></path></svg>
-          {/* pause svg */}
+          {/* pausado svg */}
           <div
             className="bg-white p-5 sm:p-2 rounded-full"
-            onClick={() => pause ? setPause(false) : setPause(true)}>
+            onClick={() => {
+              if (pausado) {
+
+                setPausado(false);
+              } else {
+                pause()
+                setPausado(true);
+              }
+            }}
+          >
             {
-              pause ?
+              pausado ?
                 <svg data-encore-id="icon" role="img" aria-hidden="true" viewBox="0 0 16 16" className="size-6 sm:size-4"><path d="M3 1.713a.7.7 0 0 1 1.05-.607l10.89 6.288a.7.7 0 0 1 0 1.212L4.05 14.894A.7.7 0 0 1 3 14.288V1.713z"></path></svg>
                 :
                 <svg data-encore-id="icon" role="img" aria-hidden="true" viewBox="0 0 16 16" className="size-6 sm:size-4"><path d="M2.7 1a.7.7 0 0 0-.7.7v12.6a.7.7 0 0 0 .7.7h2.6a.7.7 0 0 0 .7-.7V1.7a.7.7 0 0 0-.7-.7H2.7zm8 0a.7.7 0 0 0-.7.7v12.6a.7.7 0 0 0 .7.7h2.6a.7.7 0 0 0 .7-.7V1.7a.7.7 0 0 0-.7-.7h-2.6z"></path></svg>

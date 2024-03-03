@@ -302,6 +302,7 @@ export const playlists: Pl[] = [
         musicas: [
           {
             name: "The Chain -2004 Remaster",
+            MusicColor: "rgb(46, 46, 46) 100%",
             artista: [
               {
                 name: "Fleetwood Mac",

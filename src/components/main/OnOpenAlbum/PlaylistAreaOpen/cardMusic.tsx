@@ -1,9 +1,10 @@
 import { musics } from "@/mocks/playlists-albuns"
 import { Heart, Music } from "lucide-react"
 import { MenuMusics } from "./MenuMusic"
-import { Fragment, useState } from "react";
+import { Fragment, useContext, useState } from "react";
 import { IoMdHeart } from "react-icons/io";
 import { FaPlay } from "react-icons/fa";
+import PlayingCtx from "@/context/context.Playing";
 
 
 export interface propsMsc {
@@ -13,6 +14,8 @@ export interface propsMsc {
 }
 
 export const CardMusic = ({ props, i, hiddenTopics }: propsMsc) => {
+
+  const { setMusicPlaying } = useContext(PlayingCtx)
   const [isLiked, setIsLiked] = useState(props.liked ? true : false)
   const [mouseInside, setMouseInside] = useState(false)
   let time
@@ -23,10 +26,16 @@ export const CardMusic = ({ props, i, hiddenTopics }: propsMsc) => {
   }
   const hidden = hiddenTopics
   convert()
+
   return (
     <div className="flex items-center justify-between gap-4 sm:py-1 sm:hover:bg-[#ffffff11] sm:-ml-3 sm:p-2 rounded "
+      onClick={(() => {
+        setMusicPlaying([props])
+      })}
       onMouseOver={() => setMouseInside(true)}
-      onMouseOut={() => setMouseInside(false)}>
+      onMouseOut={() => setMouseInside(false)}
+    >
+
       <div className="flex items-center  overflow-hidden gap-3 sm:w-[22%]"
 
       >
@@ -49,11 +58,13 @@ export const CardMusic = ({ props, i, hiddenTopics }: propsMsc) => {
           </div>
 
           <div className="flex items-center  gap-1">
-            <span className="text-[13px] font-medium">
-              {props.artista.map((artista) => (
-                artista.name
-              ))}
-            </span>
+
+            {props.artista.map((artista) => (
+              <span key={artista.bannerID} className="text-[13px] font-medium">
+                {artista.name}
+              </span>
+            ))}
+
           </div>
         </div>
       </div>

@@ -1,5 +1,5 @@
 
-import { playlists } from "@/mocks/playlists-albuns"
+import { musics } from "@/mocks/playlists-albuns"
 import { Heart, MonitorSpeaker, MoreVertical, Share2 } from "lucide-react"
 import { FiMinusCircle } from "react-icons/fi";
 import { IoMdHeart } from "react-icons/io";
@@ -16,29 +16,31 @@ const Gradient = styled.div<{ color: string }>`
     background: linear-gradient(0deg, rgba(18, 18, 18, 1) 8%, ${(props) => props.color});
 
 `;
+interface propsCardAberto {
+  playing: musics
+}
+export const CardAberto = ({ playing }: propsCardAberto) => {
 
-export const CardAberto = () => {
-  const bg = playlists[0].cards[0].musicas[0].MusicColor
   const [isLiked, setIsLiked] = useState(false)
 
   return (
 
 
     <div className={`text-zinc-50  bg-[rgb(18,18,18)]`} >
-      <Gradient color={bg ?? ''} className='p-6'>
+      <Gradient color={playing.MusicColor ?? ''} className='p-6'>
         <header className="flex justify-between items-center mt-[15%]">
           <div className="w-px" />
           <h1 className="uppercase  text-sm  ml-5">RECOMENDAÇÕES  PARA VOCÊ </h1>
           <MoreVertical />
         </header>
         <div className="mt-5 flex flex-col gap-6 relative">
-          <img src={playlists[0].cards[0].musicas[0].capa} className="w-full rounded-[12px]" />
+          <img src={playing.capa} className="w-full rounded-[12px]" />
           <div className="flex flex-col gap-6">
             <div className=" flex justify-between items-center">
               {/* music info */}
               <div className="flex flex-col">
-                <h1 className="text-xl text-zinc-50 font-bold">{playlists[0].cards[0].musicas[0].name}</h1>
-                <span className="text-sm text-[#b7b7b7]">{playlists[0].cards[0].musicas[0].artista[0].name}</span>
+                <h1 className="text-lg text-zinc-50 font-bold line-clamp-1">{playing.name}</h1>
+                <span className="text-sm text-[#b7b7b7] line-clamp-1">{playing.artista[0].name}</span>
               </div>
               {/* icons */}
               <div className="flex items-center gap-5">
@@ -63,7 +65,7 @@ export const CardAberto = () => {
 
               </div>
             </div>
-            <ControlBar />
+            <ControlBar time={playing} />
             {/*  icons de compartilhamento */}
             <div className="flex justify-between -mt-2">
               <MonitorSpeaker size={28} color="#a7a7a7" />
@@ -77,8 +79,8 @@ export const CardAberto = () => {
           </div>
         </div>
       </Gradient>
-      <SobreOArtista />
-      <Creditos />
+      <SobreOArtista playing={playing} />
+      <Creditos playing={playing} />
     </div >
 
 

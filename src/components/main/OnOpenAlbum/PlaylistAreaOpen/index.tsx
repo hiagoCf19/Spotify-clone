@@ -4,8 +4,10 @@ import { FaSpotify } from 'react-icons/fa';
 import { IoMdPlay } from 'react-icons/io';
 import { HeaderMain } from '../../Home/HeaderMain';
 import { CardMusic } from './cardMusic';
-import React from 'react';
+
 import { musics } from '@/mocks/playlists-albuns';
+import React from 'react';
+
 
 interface PropsAlbum {
   color: string
@@ -35,6 +37,8 @@ const Gradient = styled.div<{ color: string }>`
 `;
 
 export const OpenAlbumOrPlaylist = ({ color, image, title, description, classe, musicas }: PropsAlbum) => {
+
+
   return (
     <div className="flex-1 sm:rounded-[6px] sm:h-[88vh] overflow-y-scroll gap-1 flex flex-col bg-[rgb(20,20,20)] ">
       {/* Utilização do componente estilizado */}
@@ -101,6 +105,7 @@ export const OpenAlbumOrPlaylist = ({ color, image, title, description, classe, 
                   key={i} />
               </React.Fragment>
             ))}
+
           </div>
         </div>
 

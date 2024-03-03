@@ -1,8 +1,10 @@
 
 import { FollowButton } from "@/components/Recorrentes/followButton"
-import { playlists } from "@/mocks/playlists-albuns"
-
-export const Creditos = () => {
+import { musics } from "@/mocks/playlists-albuns"
+interface propsCreditos {
+  playing: musics
+}
+export const Creditos = ({ playing }: propsCreditos) => {
   return (
     <div className="w-full -mt-8 ">
       <div className="p-6">
@@ -14,7 +16,7 @@ export const Creditos = () => {
           <ul className="flex flex-col gap-5">
             <li className="flex justify-between">
               <div className="flex flex-col">
-                <p className="text-lg">{playlists[0].cards[0].musicas[0].artista[0].name}</p>
+                <p className="text-lg">{playing.artista[0].name}</p>
                 <span className="text-[#b7b7b7] text-sm">Artista principal</span>
               </div>
               <FollowButton />

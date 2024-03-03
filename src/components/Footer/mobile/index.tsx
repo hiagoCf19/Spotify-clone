@@ -3,18 +3,16 @@ import { useState } from "react";
 import { IoMdHeart } from "react-icons/io";
 import { IoPauseSharp } from "react-icons/io5";
 import { Progress } from "@/components/ui/progress"
-import { playlists } from "@/mocks/playlists-albuns";
+import { musics } from "@/mocks/playlists-albuns";
 import { IoPlay } from "react-icons/io5";
 import {
   Sheet,
   SheetContent,
-
-
-
   SheetTrigger,
 } from "@/components/ui/sheet"
 import { CardAberto } from "./pageMusicOpen";
 import styled from "styled-components";
+
 
 const Gradient = styled.div<{ color: string }>`
 
@@ -30,29 +28,36 @@ const Gradient = styled.div<{ color: string }>`
   }
   
 `;
-export const MobileReprodutor = () => {
+interface propsMobileReprodutor {
+  playing: musics
+}
+export const MobileReprodutor = ({ playing }: propsMobileReprodutor) => {
   // criar contexto para liked
   const [isLiked, setIsLiked] = useState(false)
   const [pause, setPause] = useState(true)
-  const bg = playlists[0].cards[0].musicas[0].MusicColor
+
+
+
+
+
   return (
 
-    <section className="rounded-[6px] h-16 mx-2 p-2 flex flex-col  justify-center" style={{ background: bg }}>
+    <section className="rounded-[6px] h-16 mx-2 p-2 flex flex-col  justify-center" style={{ background: playing.MusicColor }}>
       <div className=' flex justify-between relative items-center gap-3' >
         <Sheet>
           <SheetTrigger className=" w-full">
             <div className="flex gap-3 items-center ">
-              <img src={playlists[0].cards[0].musicas[0].capa} className="size-11 rounded" />
-              <div className="">
-                <h1 className="text-base text-zinc-50 font-bold -mb-1">{playlists[0].cards[0].musicas[0].name}</h1>
-                <span className="text-sm text-start -ml-6">{playlists[0].cards[0].musicas[0].artista[0].name}</span>
+              <img src={playing.capa} className="size-11 rounded" />
+              <div className="flex flex-col">
+                <h1 className="text-base text-zinc-50 font-bold -mb-px text-left line-clamp-1">{playing.name}</h1>
+                <span className="text-sm text-start">{playing.artista[0].name}</span>
               </div>
             </div>
           </SheetTrigger>
 
           <SheetContent side={'bottom'} className=" p-0 ">
-            <Gradient color={bg ?? ''} className=' overflow-y-scroll h-screen'>
-              <CardAberto />
+            <Gradient color={playing.MusicColor ?? ''} className=' overflow-y-scroll h-screen'>
+              <CardAberto playing={playing} />
             </Gradient>
           </SheetContent>
         </Sheet>
@@ -89,11 +94,7 @@ export const MobileReprodutor = () => {
           <Progress value={13} className=" h-[3px] w-full rounded " />
         </div>
       </div>
-
     </section>
-
-
-
 
   )
 }

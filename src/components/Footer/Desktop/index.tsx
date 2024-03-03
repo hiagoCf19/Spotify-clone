@@ -1,4 +1,4 @@
-import { playlists } from "@/mocks/playlists-albuns"
+import { musics, playlists } from "@/mocks/playlists-albuns"
 import { urlFormater } from "@/scripts/normalize"
 import { Heart, Maximize2, Mic2, MonitorSpeaker, PlaySquare } from "lucide-react"
 import { CgMiniPlayer } from "react-icons/cg";
@@ -8,8 +8,10 @@ import { Link } from "react-router-dom"
 import { ControlBar } from "../controlador"
 import { Slider } from "@/components/ui/slider"
 
-
-export const DesktopReprodutor = () => {
+interface propsDesktopReprodutor {
+  playing: musics
+}
+export const DesktopReprodutor = ({ playing }: propsDesktopReprodutor) => {
   const [isLiked, setIsLiked] = useState(false)
 
 
@@ -42,7 +44,7 @@ export const DesktopReprodutor = () => {
 
       </div>
       <div className="flex-1">
-        <ControlBar />
+        <ControlBar time={playing} />
       </div>
       <div className="flex-1 justify-end items-center flex gap-3">
         <PlaySquare size={17} className="hover:text-zinc-50 cursor-pointer" />
