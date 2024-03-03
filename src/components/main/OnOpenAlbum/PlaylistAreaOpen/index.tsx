@@ -36,7 +36,7 @@ const Gradient = styled.div<{ color: string }>`
 
 export const OpenAlbumOrPlaylist = ({ color, image, title, description, classe, musicas }: PropsAlbum) => {
   return (
-    <div className="flex-1 sm:rounded-[6px] h-[88vh] overflow-y-scroll gap-1 flex flex-col bg-[#171717] ">
+    <div className="flex-1 sm:rounded-[6px] sm:h-[88vh] overflow-y-scroll gap-1 flex flex-col bg-[rgb(20,20,20)] ">
       {/* Utilização do componente estilizado */}
       <Gradient color={color}>
         <div className="fixed py-4 sm:hidden" onClick={() => window.history.back()}>
@@ -94,13 +94,18 @@ export const OpenAlbumOrPlaylist = ({ color, image, title, description, classe, 
           <div className="my-2  sm:overflow-y-scroll overflow-hidden mr-[-10px] flex flex-col gap-2 sm:px-3  ">
             {musicas.map((card, i) => (
               <React.Fragment key={i}>
-                <CardMusic hiddenTopics={false} props={card} i={i + 1} />
+                <CardMusic
+                  hiddenTopics={false}
+                  props={card}
+                  i={i + 1}
+                  key={i} />
               </React.Fragment>
             ))}
           </div>
         </div>
-        <div className="sm:hidden h-[10vh]" />
+
       </Gradient>
+
     </div>
   );
 };

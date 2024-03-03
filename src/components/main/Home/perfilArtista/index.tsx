@@ -63,7 +63,7 @@ export const PerfilArtista = ({ artist }: PropsPerfil) => {
 
   return (
 
-    <section className="flex flex-col gap-3 w-full  h-[88vh] ">
+    <section className="flex flex-col gap-3 w-full  sm:h-[88vh] ">
 
       <div className="flex-1  min-h-[40vh] sm:h-40   gap-1 flex flex-col bg-[#121212]    relative sm:rounded-[6px] overflow-y-scroll overflow-x-hidden " onScroll={handleScroll} >
         <div className="p-4 z-50 fixed w-full">

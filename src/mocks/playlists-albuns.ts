@@ -21,6 +21,7 @@ export interface artista {
 }
 export interface musics {
   name: string;
+  MusicColor?: string;
   artista: artista[];
   album: string;
   capa?: string;
@@ -94,7 +95,7 @@ const artista = {
       "https://i.scdn.co/image/ab67618600001016adc556aaf75e626cb4a1a1be",
     thisIs:
       "https://thisis-images.spotifycdn.com/37i9dQZF1DZ06evNZVVBPG-default.jpg",
-    color: "rgba(20, 23, 30, 1) 30%",
+    color: "rgba(20, 22, 30, 1) 90%",
   },
   mcBinLaden: {
     foto: "https://i.scdn.co/image/ab676161000051741472571ab38e76b5307585d8",
@@ -110,7 +111,7 @@ const artista = {
       "https://i.scdn.co/image/ab676186000010161802a4cbec82e078cc15cbb0",
     thisIs:
       "https://thisis-images.spotifycdn.com/37i9dQZF1DZ06evO2VxlyE-default.jpg",
-    color: "rgba(25, 52, 69, 2) 80%",
+    color: "rgba(25, 52, 69, 2) 100%",
   },
   rashid: {
     foto: "https://i.scdn.co/image/ab67616100005174b783f0d38cfd32275fe49ad7",
@@ -142,7 +143,7 @@ const artista = {
       "https://i.scdn.co/image/ab676186000010169ce635209a083bb42401e465",
     thisIs:
       "https://thisis-images.spotifycdn.com/37i9dQZF1DZ06evO0ti1Ik-default.jpg",
-    color: "rgb(60, 13, 8) 80%",
+    color: "rgb(60, 13, 8) 100%",
   },
 };
 
@@ -160,9 +161,11 @@ export const playlists: Pl[] = [
         musicas: [
           {
             name: "No Surprises ",
+            MusicColor: "rgba(74, 95, 107, 1) 100%",
             artista: [
               {
                 name: "Radiohead ",
+
                 genre: "Rock",
                 bannerID: artista.radiohead.bannerID,
                 color: artista.radiohead.color,

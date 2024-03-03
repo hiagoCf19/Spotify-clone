@@ -1,5 +1,4 @@
 import styled from "styled-components"
-
 import { HeaderMain } from "./HeaderMain"
 import { FirstSectionMain } from "./firstSection"
 import { GenericList } from "./GenericList"
@@ -34,7 +33,7 @@ export const Main = () => {
   const [ativo, setAtivo] = useState(0)
   return (
 
-    <div className=" h-[88vh]  overflow-y-scroll 
+    <div className=" sm:h-[88vh]  overflow-y-scroll 
       sm:rounded w-full" onScroll={handleScroll}>
       <HeaderMobile scrollDown={scrollDown} ativo={ativo} setAtivo={setAtivo} />
       <Gradient color={background} className="flex gap-4 flex-col sm:p-4 sm:px-6 p-2">

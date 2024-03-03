@@ -148,7 +148,8 @@ export const GenericSectionsInPerfil = ({ title, artist, apareceEm, desktopScree
                     span={'Artista'} />
                 </Link>
               )) :
-              <Carousel className=" w-full flex justify-center items-center ">
+              <Carousel className=" w-full ">
+
                 <CarouselContent className=" ">
                   {artistasUnicos.map((artista, i) => (
                     <GenericCarousel

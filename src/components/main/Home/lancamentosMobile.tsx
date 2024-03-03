@@ -27,7 +27,7 @@ export const MobileLancamentos = () => {
           <header className="flex gap-2 items-center">
             <img
               src={data.artista[0].foto}
-              className="size-14 rounded-full"
+              className="size-12   rounded-full"
             />
             <div className="flex flex-col">
               <span className="text-sm -mb-1">Recomendação do dia</span>
@@ -43,11 +43,11 @@ export const MobileLancamentos = () => {
           <Link to={urlFormater(data.album)} className="w-full rounded-[6px] flex bg-[#202020]">
 
             <img src={data.capa} className=" size-36 rounded-l-[6px]" />
-            <div className="p-3 relative flex flex-col  w-full overflow-hidden">
+            <div className="p-3 pt-2 relative flex flex-col  w-full overflow-hidden">
               <div className="flex flex-col gap-1 ">
                 <div className="text-zinc-50  overflow-hidden  flex-col">
                   <h1 className="text-lg line-clamp-1"> {data.name}  </h1>
-                  <span className="text-sm text-[#b7b7b7]">{data.album}</span>
+                  <span className="text-sm text-[#b7b7b7] line-clamp-1">{data.album}</span>
                 </div>
                 <div className="flex items-center gap-1 text-sm ">
                   <span>
