@@ -25,7 +25,7 @@ export const CardAberto = () => {
 
     <div className={`text-zinc-50  bg-[rgb(18,18,18)]`} >
       <Gradient color={bg ?? ''} className='p-6'>
-        <header className="flex justify-between items-center mt-1">
+        <header className="flex justify-between items-center mt-10">
           <div className="w-px" />
           <h1 className="uppercase  text-sm  ml-5">RECOMENDAÇÕES  PARA VOCÊ </h1>
           <MoreVertical />
@@ -80,7 +80,7 @@ export const CardAberto = () => {
                 <svg data-encore-id="icon" role="img" aria-hidden="true" viewBox="0 0 16 16" className="size-7 text-white" fill="currentColor"><path d="M3.3 1a.7.7 0 0 1 .7.7v5.15l9.95-5.744a.7.7 0 0 1 1.05.606v12.575a.7.7 0 0 1-1.05.607L4 9.149V14.3a.7.7 0 0 1-.7.7H1.7a.7.7 0 0 1-.7-.7V1.7a.7.7 0 0 1 .7-.7h1.6z"></path></svg>
                 {/* pause svg */}
                 <div
-                  className="bg-white p-6 rounded-full"
+                  className="bg-white p-5 rounded-full"
                   onClick={() => pause ? setPause(false) : setPause(true)}>
                   {
                     pause ?
