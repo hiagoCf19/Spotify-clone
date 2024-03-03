@@ -14,7 +14,7 @@ export const HeaderMobile = ({ scrollDown, ativo, setAtivo }: propsHeaderMobile)
 
   return (
     <div
-      className={`fixed w-full h-14 z-50 shadow-lg shadow-black bg-[rgb(16,16,16)] flex items-center gap-4 px-3 ${scrollDown > 120 ? '' : 'hidden'}`}>
+      className={` sm:hidden fixed w-full h-14 z-50 shadow-lg shadow-black bg-[rgb(16,16,16)] flex items-center gap-4 px-3 ${scrollDown > 120 ? '' : 'hidden'}`}>
 
       <Avatar className="" >
         <AvatarImage src="" />

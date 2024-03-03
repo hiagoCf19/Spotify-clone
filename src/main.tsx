@@ -13,7 +13,6 @@ import { SearchOpenProvider } from './context/context.Search.tsx'
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
     <SearchOpenProvider>
-
       <App />
     </SearchOpenProvider>
 

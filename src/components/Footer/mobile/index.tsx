@@ -13,7 +13,7 @@ import {
 
   SheetTrigger,
 } from "@/components/ui/sheet"
-import { CardAberto } from "./reprodutor/cardAberto";
+import { CardAberto } from "./pageMusicOpen";
 import styled from "styled-components";
 
 const Gradient = styled.div<{ color: string }>`
@@ -23,15 +23,21 @@ const Gradient = styled.div<{ color: string }>`
     background: -webkit-linear-gradient(0deg, rgba(18, 18, 18, 1) 8%, ${(props) => props.color});
     background: linear-gradient(0deg, rgba(18, 18, 18, 1) 8%, ${(props) => props.color});
 
+ @media (min-width: 640px) {
+    padding: 1rem 1.5rem;
+    background: rgb(18, 18, 18);
+    
+  }
+  
 `;
-export const Reprodutor = () => {
+export const MobileReprodutor = () => {
   // criar contexto para liked
   const [isLiked, setIsLiked] = useState(false)
   const [pause, setPause] = useState(true)
   const bg = playlists[0].cards[0].musicas[0].MusicColor
   return (
 
-    <section className="rounded-[6px] sm:h-full h-16 mx-2 p-2 flex flex-col  justify-center" style={{ background: bg }}>
+    <section className="rounded-[6px] h-16 mx-2 p-2 flex flex-col  justify-center" style={{ background: bg }}>
       <div className=' flex justify-between relative items-center gap-3' >
         <Sheet>
           <SheetTrigger className=" w-full">
@@ -44,15 +50,12 @@ export const Reprodutor = () => {
             </div>
           </SheetTrigger>
 
-          <SheetContent side={'bottom'} className=" p-0">
-            <Gradient color={bg ?? ''} className='h-screen overflow-y-scroll '>
+          <SheetContent side={'bottom'} className=" p-0 ">
+            <Gradient color={bg ?? ''} className=' overflow-y-scroll h-screen'>
               <CardAberto />
             </Gradient>
           </SheetContent>
         </Sheet>
-
-
-
         <div className="flex items-center gap-3">
           <MonitorSpeaker size={28} />
           {
