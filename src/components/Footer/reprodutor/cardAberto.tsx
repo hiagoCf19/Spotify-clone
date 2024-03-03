@@ -25,7 +25,7 @@ export const CardAberto = () => {
 
     <div className={`text-zinc-50  bg-[rgb(18,18,18)]`} >
       <Gradient color={bg ?? ''} className='p-6'>
-        <header className="flex justify-between items-center mt-10">
+        <header className="flex justify-between items-center mt-12">
           <div className="w-px" />
           <h1 className="uppercase  text-sm  ml-5">RECOMENDAÇÕES  PARA VOCÊ </h1>
           <MoreVertical />
