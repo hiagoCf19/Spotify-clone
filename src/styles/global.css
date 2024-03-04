@@ -91,3 +91,7 @@ body {
   background-color: #f4f4f41c;
   border-radius: 100px;
 }
+.range {
+  height: 4px;
+  background: #ffffff2a;
+}

@@ -21,13 +21,13 @@ export interface artista {
 }
 export interface musics {
   name: string;
-  MusicColor?: string;
+  MusicColor: string;
   artista: artista[];
   album: string;
   capa?: string;
   addEm: string;
   liked: boolean;
-  durationMultipliedBy100: number;
+  durationInSecounts: number;
   genre: string;
 }
 const artista = {
@@ -164,8 +164,7 @@ export const playlists: Pl[] = [
             MusicColor: "rgba(74, 95, 107, 1) 100%",
             artista: [
               {
-                name: "Radiohead ",
-
+                name: "Radiohead",
                 genre: "Rock",
                 bannerID: artista.radiohead.bannerID,
                 color: artista.radiohead.color,
@@ -176,7 +175,7 @@ export const playlists: Pl[] = [
             album: "OK Computer",
             capa: "https://i.scdn.co/image/ab67616d00001e02c8b444df094279e70d0ed856",
             addEm: "20 fev. 2024",
-            durationMultipliedBy100: 349,
+            durationInSecounts: 229,
             liked: false,
             genre: "Rock",
           },
@@ -190,6 +189,7 @@ export const playlists: Pl[] = [
         musicas: [
           {
             name: "Mil Cairão",
+            MusicColor: "rgb(39, 7, 5) 100%",
             artista: [
               {
                 name: "Rashid",
@@ -203,12 +203,13 @@ export const playlists: Pl[] = [
             album: "Confundindo Sábios",
             capa: "https://i.scdn.co/image/ab67616d00001e02136f6e8e15c00b93d12c0cf8",
             addEm: "11 fev. 2024",
-            durationMultipliedBy100: 403,
+            durationInSecounts: 243,
             liked: false,
             genre: "Rap",
           },
           {
             name: "Da Favela pro Mundo",
+            MusicColor: "rgb(66, 33, 73) 100%",
             artista: [
               {
                 name: "ADL",
@@ -222,12 +223,13 @@ export const playlists: Pl[] = [
             album: "Da Favela pro Mundo",
             capa: "	https://i.scdn.co/image/ab67616d00001e023f764e08f367ff3925a9bf08",
             addEm: "13 fev. 2024",
-            durationMultipliedBy100: 436,
+            durationInSecounts: 276,
             liked: false,
             genre: "Rap",
           },
           {
             name: "Gratidão",
+            MusicColor: "rgb(20, 48, 41) 100%",
             artista: [
               {
                 name: "Rashid",
@@ -241,7 +243,7 @@ export const playlists: Pl[] = [
             album: "Gratidão",
             capa: "https://i.scdn.co/image/ab67616d00001e02807fe591c189e35125945479",
             addEm: "21 fev. 2024",
-            durationMultipliedBy100: 334,
+            durationInSecounts: 214,
             liked: false,
             genre: "Rap",
           },
@@ -255,6 +257,7 @@ export const playlists: Pl[] = [
         musicas: [
           {
             name: "I Love You So",
+            MusicColor: "rgb(35, 35, 35) 100%",
             artista: [
               {
                 name: "The Walters",
@@ -268,12 +271,13 @@ export const playlists: Pl[] = [
             capa: "	https://i.scdn.co/image/ab67616d00001e029214ff0109a0e062f8a6cf0f",
             album: "I Love You So",
             addEm: "15 fev. 2024",
-            durationMultipliedBy100: 240,
+            durationInSecounts: 160,
             liked: false,
             genre: "Indie",
           },
           {
             name: "Telephones",
+            MusicColor: "rgb(90, 22, 15) 100%",
             artista: [
               {
                 name: "Vacations",
@@ -287,7 +291,7 @@ export const playlists: Pl[] = [
             capa: "https://i.scdn.co/image/ab67616d00001e023dd6e8bbc5b1ac43fd8a838c",
             album: "Changes",
             addEm: "13 fev. 2024",
-            durationMultipliedBy100: 332,
+            durationInSecounts: 212,
             liked: false,
             genre: "Indie",
           },
@@ -317,12 +321,13 @@ export const playlists: Pl[] = [
             album: "Rumours (Super Deluxe)",
             capa: "https://i.scdn.co/image/ab67616d00001e0257df7ce0eac715cf70e519a7",
             addEm: "4 de set. de 2023",
-            durationMultipliedBy100: 430,
+            durationInSecounts: 270,
             liked: false,
             genre: "Rock",
           },
           {
             name: "Paint It, Black 01",
+            MusicColor: "rgb(16, 58, 84) 100%",
             artista: [
               {
                 name: "The Rolling Stones",
@@ -338,7 +343,7 @@ export const playlists: Pl[] = [
             capa: "https://i.scdn.co/image/ab67616d00001e02bad7062c3fd2f2d037989694",
             album: "Aftermath",
             addEm: "9 de fev. de 2024",
-            durationMultipliedBy100: 322,
+            durationInSecounts: 202,
             liked: false,
             genre: "Rock",
           },
@@ -352,6 +357,7 @@ export const playlists: Pl[] = [
         musicas: [
           {
             name: "musica 00",
+            MusicColor: "",
             artista: [
               {
                 name: "artista X",
@@ -362,23 +368,7 @@ export const playlists: Pl[] = [
             ],
             album: "album03",
             addEm: "05/02/2024",
-            durationMultipliedBy100: 100,
-            liked: false,
-            genre: "Outros",
-          },
-          {
-            name: "musica 01",
-            artista: [
-              {
-                name: "artista X",
-                genre: "outros",
-                bannerID: "",
-                foto: "assets",
-              },
-            ],
-            album: "album03",
-            addEm: "05/02/2024",
-            durationMultipliedBy100: 100,
+            durationInSecounts: 100,
             liked: false,
             genre: "Outros",
           },
@@ -393,6 +383,7 @@ export const playlists: Pl[] = [
         musicas: [
           {
             name: "Leave Her",
+            MusicColor: "rgb(95, 39, 15) 100%",
             artista: [
               {
                 name: "d4vd",
@@ -406,12 +397,13 @@ export const playlists: Pl[] = [
             album: "Withering",
             capa: "	https://i.scdn.co/image/ab67616d00001e029a48777a54e25db0a037db48",
             addEm: "25 de fev. de 2024",
-            durationMultipliedBy100: 244,
+            durationInSecounts: 164,
             liked: false,
             genre: "Indie",
           },
           {
             name: "Frank Miller (kill Again)",
+            MusicColor: "rgb(35, 35, 35) 100%",
             artista: [
               {
                 name: "Freddie Dredd",
@@ -425,7 +417,7 @@ export const playlists: Pl[] = [
             album: "Frank Miller (kill Again)",
             capa: "https://i.scdn.co/image/ab67616d00001e0277393fb10b6bccbd9a9748bd",
             addEm: "1 de fev. de 2024",
-            durationMultipliedBy100: 211,
+            durationInSecounts: 131,
             liked: false,
             genre: "Hip-Hop",
           },
@@ -446,6 +438,7 @@ export const playlists: Pl[] = [
         musicas: [
           {
             name: "musica teste1",
+            MusicColor: "",
             artista: [
               {
                 name: "artista X",
@@ -457,24 +450,7 @@ export const playlists: Pl[] = [
 
             album: "album03",
             addEm: "05/02/2024",
-            durationMultipliedBy100: 100,
-            liked: false,
-            genre: "Outros",
-          },
-          {
-            name: "musica test2",
-            artista: [
-              {
-                name: "artista X",
-                genre: "outros",
-                bannerID: "",
-                foto: "assets",
-              },
-            ],
-
-            album: "album03",
-            addEm: "05/02/2024",
-            durationMultipliedBy100: 100,
+            durationInSecounts: 100,
             liked: false,
             genre: "Outros",
           },
@@ -494,6 +470,7 @@ export const playlists: Pl[] = [
         musicas: [
           {
             name: "Ta Tranquilo Ta Favorável",
+            MusicColor: "rgb(83, 94, 64) 100%",
             artista: [
               {
                 name: "Mc Bin Laden",
@@ -507,12 +484,13 @@ export const playlists: Pl[] = [
             capa: "https://i.scdn.co/image/ab67616d00001e023330f51ed9fac1de5f274d1e",
             album: "Ta Tranquilo Ta Favorável",
             addEm: "12 de jan. de 2016",
-            durationMultipliedBy100: 411,
+            durationInSecounts: 251,
             liked: false,
             genre: "Funk",
           },
           {
             name: "Apesar de Você",
+            MusicColor: "rgb(92, 106, 78) 100%",
             artista: [
               {
                 name: "Chico Buarque",
@@ -526,12 +504,13 @@ export const playlists: Pl[] = [
             capa: "https://i.scdn.co/image/ab67616d00001e02175c5e58d396b45c4f637deb",
             album: "Chico Buarque 1978",
             addEm: "1 de jan. de 1978",
-            durationMultipliedBy100: 355,
+            durationInSecounts: 235,
             liked: false,
             genre: "Mpb",
           },
           {
             name: "Dreams",
+            MusicColor: "rgb(11, 39, 69) 100%",
             artista: [
               {
                 name: "Bazzi",
@@ -546,12 +525,13 @@ export const playlists: Pl[] = [
             capa: "https://i.scdn.co/image/ab67616d00001e02f9f2d43ff44bdfbe8c556f8d",
             album: "COSMIC",
             addEm: "12 de abr. de 2018",
-            durationMultipliedBy100: 227,
+            durationInSecounts: 147,
             liked: false,
             genre: "Pop",
           },
           {
             name: "Star",
+            MusicColor: "rgb(11, 39, 69) 100%",
             artista: [
               {
                 name: "Bazzi",
@@ -566,12 +546,13 @@ export const playlists: Pl[] = [
             capa: "https://i.scdn.co/image/ab67616d00001e02f9f2d43ff44bdfbe8c556f8d",
             album: "COSMIC",
             addEm: "12 de abr. de 2018",
-            durationMultipliedBy100: 249,
+            durationInSecounts: 169,
             liked: false,
             genre: "Pop",
           },
           {
             name: "I.F.L.Y",
+            MusicColor: "rgb(102, 109, 114) 100%",
             artista: [
               {
                 name: "Bazzi",
@@ -586,31 +567,14 @@ export const playlists: Pl[] = [
             capa: "https://i.scdn.co/image/ab67616d00001e023a376bd9b9b1f4b2686807db",
             album: "Soul Searching",
             addEm: "9 de ago. de 2019",
-            durationMultipliedBy100: 245,
+            durationInSecounts: 165,
             liked: false,
             genre: "Pop",
           },
-          {
-            name: "Leave Her",
-            artista: [
-              {
-                name: "d4vd",
-                genre: "Indie",
-                bannerID: artista.d4vd.bannerID,
-                color: artista.d4vd.color,
-                foto: artista.d4vd.foto,
-                thisIs: artista.d4vd.thisIs,
-              },
-            ],
-            album: "Withering",
-            capa: "	https://i.scdn.co/image/ab67616d00001e029a48777a54e25db0a037db48",
-            addEm: "25 de fev. de 2024",
-            durationMultipliedBy100: 244,
-            liked: false,
-            genre: "Indie",
-          },
+
           {
             name: "Here With Me",
+            MusicColor: "rgb(82, 19, 13) 100%",
             capa: "	https://i.scdn.co/image/ab67616d00001e0264fa1bda999f4fbd2b7c4bb7",
             artista: [
               {
@@ -624,12 +588,13 @@ export const playlists: Pl[] = [
             ],
             album: "Petals to Thorns",
             addEm: "25 de fev. de 2024",
-            durationMultipliedBy100: 420,
+            durationInSecounts: 260,
             liked: false,
             genre: "Indie",
           },
           {
             name: "Amor de Violeiro",
+            MusicColor: "rgb(111, 94, 81) 100%",
             artista: [
               {
                 name: "Eduardo Costa",
@@ -644,12 +609,13 @@ export const playlists: Pl[] = [
             capa: "https://i.scdn.co/image/ab67616d00001e024006ba2540778b9ffd224be0",
             album: "EduardoCosta - Acustico",
             addEm: "1 de jan. de 2004",
-            durationMultipliedBy100: 415,
+            durationInSecounts: 255,
             liked: false,
             genre: "Sertanejo",
           },
           {
             name: "Sapequinha",
+            MusicColor: "rgb(110, 110, 110) 100%",
             artista: [
               {
                 name: "Eduardo Costa",
@@ -664,12 +630,13 @@ export const playlists: Pl[] = [
             capa: "https://i.scdn.co/image/ab67616d00001e02e0ac9880d35de2d86e8849a1",
             album: "Vivendo e Aprendendo",
             addEm: "31 de jul. de 2015",
-            durationMultipliedBy100: 311,
+            durationInSecounts: 191,
             liked: false,
             genre: "Sertanejo",
           },
           {
             name: "Sou Seu Fã N° 1",
+            MusicColor: "rgb(120, 113, 85) 100%",
             artista: [
               {
                 name: "Eduardo Costa",
@@ -684,12 +651,13 @@ export const playlists: Pl[] = [
             capa: "https://i.scdn.co/image/ab67616d00001e028cb2a7756160d148d551c834",
             album: "Tem tudo a ver",
             addEm: "1 de jan. de 2009",
-            durationMultipliedBy100: 350,
+            durationInSecounts: 230,
             liked: false,
             genre: "Sertanejo",
           },
           {
             name: "Favela Vive I",
+            MusicColor: "rgb(56, 56, 56) 100%",
             artista: [
               {
                 name: "ADL",
@@ -703,12 +671,13 @@ export const playlists: Pl[] = [
             album: "Favela Vive",
             capa: "https://i.scdn.co/image/ab67616d00001e02c80e63b7f1602b345362ea3c",
             addEm: "20 de set. de 2016",
-            durationMultipliedBy100: 549,
+            durationInSecounts: 349,
             liked: false,
             genre: "Rap",
           },
           {
             name: " Limbo",
+            MusicColor: "rgb(45, 60, 69)",
             artista: [
               {
                 name: "Freddie Dredd",
@@ -722,12 +691,13 @@ export const playlists: Pl[] = [
             album: "Freddie's Inferno",
             capa: "https://i.scdn.co/image/ab67616d00001e0269b381d574b329409bd806e6",
             addEm: "11 de ago. de 2021",
-            durationMultipliedBy100: 249,
+            durationInSecounts: 169,
             liked: false,
             genre: "Hip-Hop",
           },
           {
             name: "Summertime Sadness",
+            MusicColor: "rgb(96, 83, 52) 100%",
             artista: [
               {
                 name: "Lana Del Rey",
@@ -741,12 +711,13 @@ export const playlists: Pl[] = [
             album: "Born To Die",
             capa: "	https://i.scdn.co/image/ab67616d00001e02ebc8cfac8b586bc475b04918",
             addEm: "1 de jan. de 2012",
-            durationMultipliedBy100: 425,
+            durationInSecounts: 265,
             liked: false,
             genre: "Pop",
           },
           {
             name: "Young And Beautiful",
+            MusicColor: "rgb(16, 49, 71) 100%",
             artista: [
               {
                 name: "Lana Del Rey",
@@ -760,13 +731,14 @@ export const playlists: Pl[] = [
             album: "Young And Beautiful",
             capa: "https://i.scdn.co/image/ab67616d00001e02d7fb3e4c63020039d1cff6b2",
             addEm: "1 de jan. de 2013",
-            durationMultipliedBy100: 356,
+            durationInSecounts: 236,
             liked: false,
             genre: "Pop",
           },
 
           {
             name: "Radio",
+            MusicColor: "rgb(96, 83, 52) 100%",
             artista: [
               {
                 name: "Lana Del Rey",
@@ -780,71 +752,13 @@ export const playlists: Pl[] = [
             album: "Born To Die",
             capa: "	https://i.scdn.co/image/ab67616d00001e02ebc8cfac8b586bc475b04918",
             addEm: "1 de jan. de 2012",
-            durationMultipliedBy100: 334,
+            durationInSecounts: 214,
             liked: false,
             genre: "Pop",
           },
           {
-            name: "Mil Cairão",
-            artista: [
-              {
-                name: "Rashid",
-                genre: "Rap",
-                color: artista.rashid.color,
-                foto: artista.rashid.foto,
-                bannerID: artista.rashid.bannerID,
-                thisIs: artista.rashid.thisIs,
-              },
-            ],
-            album: "Confundindo Sábios",
-            capa: "https://i.scdn.co/image/ab67616d00001e02136f6e8e15c00b93d12c0cf8",
-            addEm: "11 fev. 2024",
-            durationMultipliedBy100: 403,
-            liked: false,
-            genre: "Rap",
-          },
-          {
-            name: "Gratidão",
-            artista: [
-              {
-                name: "Rashid",
-                genre: "Rap",
-                color: artista.rashid.color,
-                foto: artista.rashid.foto,
-                bannerID: artista.rashid.bannerID,
-                thisIs: artista.rashid.thisIs,
-              },
-            ],
-            album: "Gratidão",
-            capa: "https://i.scdn.co/image/ab67616d00001e02807fe591c189e35125945479",
-            addEm: "21 fev. 2024",
-            durationMultipliedBy100: 334,
-            liked: false,
-            genre: "Rap",
-          },
-          {
-            name: "Paint It, Black 01",
-            artista: [
-              {
-                name: "The Rolling Stones",
-                genre: "Rock",
-                bannerID: artista.stones.bannerID,
-                color: artista.stones.color,
-
-                foto: artista.stones.foto,
-                thisIs: artista.stones.thisIs,
-              },
-            ],
-
-            capa: "https://i.scdn.co/image/ab67616d00001e02bad7062c3fd2f2d037989694",
-            album: "Aftermath",
-            addEm: "9 de fev. de 2024",
-            durationMultipliedBy100: 322,
-            liked: false,
-            genre: "Rock",
-          },
-          {
             name: "Gimme Shelter",
+            MusicColor: "rgb(132, 36, 26) 100%",
             artista: [
               {
                 name: "The Rolling Stones",
@@ -858,7 +772,7 @@ export const playlists: Pl[] = [
             album: "Let It Bleed",
             capa: "	https://i.scdn.co/image/ab67616d00001e022af30c881bb23cfb82a8cf99",
             addEm: "5 de dez. de 1969",
-            durationMultipliedBy100: 334,
+            durationInSecounts: 214,
             liked: false,
             genre: "Rock",
           },

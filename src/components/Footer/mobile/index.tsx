@@ -2,7 +2,7 @@ import { Heart, MonitorSpeaker } from "lucide-react"
 import { useState } from "react";
 import { IoMdHeart } from "react-icons/io";
 import { IoPauseSharp } from "react-icons/io5";
-import { Progress } from "@/components/ui/progress"
+
 import { musics } from "@/mocks/playlists-albuns";
 import { IoPlay } from "react-icons/io5";
 import {
@@ -12,6 +12,8 @@ import {
 } from "@/components/ui/sheet"
 import { CardAberto } from "./pageMusicOpen";
 import styled from "styled-components";
+import { InputRange } from "../controlador";
+
 
 
 const Gradient = styled.div<{ color: string }>`
@@ -34,15 +36,10 @@ interface propsMobileReprodutor {
 export const MobileReprodutor = ({ playing }: propsMobileReprodutor) => {
   // criar contexto para liked
   const [isLiked, setIsLiked] = useState(false)
-  const [pause, setPause] = useState(true)
-
-
-
-
+  const [pause, setPause] = useState(false)
 
   return (
-
-    <section className="rounded-[6px] h-16 mx-2 p-2 flex flex-col  justify-center" style={{ background: playing.MusicColor }}>
+    <section className="rounded-[6px] h-16 mx-2 p-2 flex flex-col  justify-center relative" style={{ background: playing.MusicColor }}>
       <div className=' flex justify-between relative items-center gap-3' >
         <Sheet>
           <SheetTrigger className=" w-full">
@@ -90,10 +87,14 @@ export const MobileReprodutor = ({ playing }: propsMobileReprodutor) => {
           </div>
 
         </div>
-        <div className="absolute bottom-1 -my-3 w-full ">
-          <Progress value={13} className=" h-[3px] w-full rounded " />
-        </div>
+
       </div>
+      <div className="absolute bottom-0 -mx-2 -my-[6px] px-2 w-full" >
+        <InputRange className="slider w-full">
+          <input type="range" max={playing.durationInSecounts} value={5} className="level" readOnly />
+        </InputRange>
+      </div>
+
     </section>
 
   )

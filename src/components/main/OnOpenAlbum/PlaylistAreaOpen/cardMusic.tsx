@@ -20,7 +20,7 @@ export const CardMusic = ({ props, i, hiddenTopics }: propsMsc) => {
   const [mouseInside, setMouseInside] = useState(false)
   let time
   const convert = () => {
-    const base = props.durationMultipliedBy100 / 100
+    const base = props.durationInSecounts / 100
     time = base.toFixed(2).replace('.', ':')
     return time
   }

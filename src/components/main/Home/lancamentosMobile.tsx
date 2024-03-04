@@ -1,8 +1,9 @@
 import { TitleSpt } from "@/components/Recorrentes/Title"
+import PlayingCtx from "@/context/context.Playing";
 import { musics, playlists } from "@/mocks/playlists-albuns"
 import { extrairMusicas } from "@/scripts/desestruturacao";
 import { urlFormater } from "@/scripts/normalize";
-import { Fragment, useEffect, useState } from "react";
+import { Fragment, useContext, useEffect, useState } from "react";
 
 
 import { BsPlusCircle } from "react-icons/bs";
@@ -11,7 +12,7 @@ import { Link } from "react-router-dom";
 
 export const MobileLancamentos = () => {
 
-
+  const { setMusicPlaying } = useContext(PlayingCtx)
   const [randomMusic, setRandomMusic] = useState<musics[]>([]);
   useEffect(() => {
     const musicas = extrairMusicas(playlists);
@@ -40,13 +41,16 @@ export const MobileLancamentos = () => {
 
             </div>
           </header>
-          <Link to={urlFormater(data.album)} className="w-full rounded-[6px] flex bg-[#202020]">
+          <div className="w-full rounded-[6px] flex bg-[#202020]">
 
             <img src={data.capa} className=" size-36 rounded-l-[6px]" />
             <div className="p-3 pt-2 relative flex flex-col  w-full overflow-hidden">
               <div className="flex flex-col gap-1 ">
                 <div className="text-zinc-50  overflow-hidden  flex-col">
-                  <h1 className="text-lg line-clamp-1"> {data.name}  </h1>
+                  <Link to={urlFormater(data.album)}>
+                    <h1 className="text-lg line-clamp-1"> {data.name}  </h1>
+                  </Link>
+
                   <span className="text-sm text-[#b7b7b7] line-clamp-1">{data.album}</span>
                 </div>
                 <div className="flex items-center gap-1 text-sm ">
@@ -60,10 +64,12 @@ export const MobileLancamentos = () => {
                   </span>
                 </div>
               </div>
-              <div className="absolute bottom-3 p-2 -m-3  w-full">
+              <div className="absolute bottom-3 p-3 -m-3  w-full">
                 <div className="flex w-full items-center justify-between">
                   <BsPlusCircle color="#FFF" size={28} />
-                  <div className="size-10 rounded-full bg-zinc-50 flex justify-center items-center">
+                  <div className="size-10 rounded-full bg-spotgreen flex justify-center items-center" onClick={(() => {
+                    setMusicPlaying([data])
+                  })}>
                     <FaPlay color="#000" />
                   </div>
                 </div>
@@ -72,7 +78,7 @@ export const MobileLancamentos = () => {
 
 
             </div>
-          </Link>
+          </div>
         </Fragment>
       ))}
 

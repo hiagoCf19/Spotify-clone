@@ -1,57 +1,100 @@
 import { ShuffleIcon } from "lucide-react"
 import { useState } from "react"
 import { musics } from "@/mocks/playlists-albuns"
-import { Progress } from "@/components/ui/progress"
-
+import styled from "styled-components"
 
 interface propsControlBar {
   time: musics
 }
+
+export const InputRange = styled.label`
+
+  /* slider */
+  --slider-width: 100%;
+  --slider-height: 6px;
+  --slider-bg: rgb(82, 82, 82);
+  --slider-border-radius: 999px;
+  /* level */
+  --level-color: #FFF;
+  --level-transition-duration: .1s;
+  cursor: pointer;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: reverse;
+  -ms-flex-direction: row-reverse;
+  flex-direction: row-reverse;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+
+
+
+.level {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  width: 100%;
+  height: 4px;
+  background: var(--slider-bg);
+  overflow: hidden;
+  border-radius: var(--slider-border-radius);
+  -webkit-transition: height var(--level-transition-duration);
+  -o-transition: height var(--level-transition-duration);
+  transition: height var(--level-transition-duration);
+  cursor: inherit;
+}
+
+.level::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 0;
+  height: 0;
+  -webkit-box-shadow: -200px 0 0 200px var(--level-color);
+  box-shadow: -200px 0 0 200px var(--level-color);
+}
+
+
+`
 export const ControlBar = ({ time }: propsControlBar) => {
   const [pausado, setPausado] = useState(true)
   const [tempoAtual, setTempoAtual] = useState(0);
-  function tempoDeMusica(playing: musics) {
-    const time = playing.durationMultipliedBy100 / 100
-    return time.toFixed(2).replace('.', ':')
-  }
 
   function formatarTempoAtual(tempoAtual: number) {
     const minutos = Math.floor(tempoAtual / 60);
-    const segundos = Math.floor(tempoAtual % 60);
-    return `${minutos < 10 ? '0' : ''}${minutos}:${segundos < 10 ? '0' : ''}${segundos}`;
+    const segundos = tempoAtual % 60;
+    const segundosFormatados = segundos < 10 ? '0' + segundos : segundos;
+
+    return `${minutos}:${segundosFormatados}`;
   }
+
 
   !pausado ?
     setTimeout(() => {
-      if (tempoAtual < time.durationMultipliedBy100) {
+      if (tempoAtual < time.durationInSecounts) {
         setTempoAtual(tempoAtual + 1);
       }
       else {
         clearInterval
       }
     }, 1000)
-    : console.log('esta pausado')
-  // Função para iniciar a reprodução da música
+    : null
 
-
-  // Intervalo de 1 segundo
-  console.log(`valor atual: ${tempoAtual}`)
-  console.log(`valor total: ${time.durationMultipliedBy100}`)
-  function pause() {
-    console.log('pausado')
-  }
 
   return (
     <div className="flex flex-col sm:flex-col-reverse sm:gap-2">
-      <div className="flex flex-col sm:flex-row gap-2 ">
+      <div className="flex flex-col sm:flex-row gap-2 bg-spo ">
         <span className="hidden sm:block">vi</span>
-        <Progress value={0} />
+        <InputRange className="slider">
+          <input type="range" max={time.durationInSecounts} value={tempoAtual} className="level" readOnly />
+        </InputRange>
+
 
         <span className="hidden sm:block">vf</span>
 
         <div className="flex justify-between text-[#b7b7b7] text-sm sm:hidden">
           <span>{formatarTempoAtual(tempoAtual)}</span>
-          <span>{tempoDeMusica(time)}</span>
+          <span>{formatarTempoAtual(time.durationInSecounts)}</span>
         </div>
 
       </div>
@@ -69,7 +112,7 @@ export const ControlBar = ({ time }: propsControlBar) => {
 
                 setPausado(false);
               } else {
-                pause()
+
                 setPausado(true);
               }
             }}

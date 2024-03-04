@@ -25,8 +25,8 @@ export const Footer = () => {
   const desktopScreen = larguraDaTela >= 640
   const { musicPlaying } = useContext(PlayingCtx)
   return (
-    musicPlaying.length !== 0 ? musicPlaying.map((playing: musics) => (
-      <footer className='sm:h-[8.7vh]  fixed sm:relative w-full bottom-0 flex flex-col sm>gap-2 '>
+    musicPlaying.length !== 0 ? musicPlaying.map((playing: musics, i: number) => (
+      <footer className='sm:h-[8.7vh]  fixed sm:relative w-full bottom-0 flex flex-col sm>gap-2 ' key={i}>
         {desktopScreen ?
           <DesktopReprodutor playing={playing} /> :
           <>
