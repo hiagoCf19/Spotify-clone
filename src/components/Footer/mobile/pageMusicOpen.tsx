@@ -18,8 +18,12 @@ const Gradient = styled.div<{ color: string }>`
 `;
 interface propsCardAberto {
   playing: musics
+  tempoAtual: number
+  pausado: boolean
+  setPausado: React.Dispatch<React.SetStateAction<boolean>>
+
 }
-export const CardAberto = ({ playing }: propsCardAberto) => {
+export const CardAberto = ({ playing, tempoAtual, pausado, setPausado, }: propsCardAberto) => {
 
   const [isLiked, setIsLiked] = useState(false)
 
@@ -65,7 +69,7 @@ export const CardAberto = ({ playing }: propsCardAberto) => {
 
               </div>
             </div>
-            <ControlBar time={playing} />
+            <ControlBar playing={playing} tempoAtual={tempoAtual} pausado={pausado} setPausado={setPausado} />
             {/*  icons de compartilhamento */}
             <div className="flex justify-between -mt-2">
               <MonitorSpeaker size={28} color="#a7a7a7" />

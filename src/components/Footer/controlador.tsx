@@ -1,12 +1,7 @@
 import { ShuffleIcon } from "lucide-react"
-import { useEffect, useState } from "react"
 import { musics } from "@/mocks/playlists-albuns"
 import styled from "styled-components"
 import { Slider } from "../ui/slider"
-
-interface propsControlBar {
-  time?: musics
-}
 
 export const InputRange = styled.label`
 
@@ -29,12 +24,6 @@ export const InputRange = styled.label`
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-
-
-
-
-
-
 .level {
   -webkit-appearance: none;
   -moz-appearance: none;
@@ -60,9 +49,17 @@ export const InputRange = styled.label`
 
 
 `
-export const ControlBar = ({ time }: propsControlBar) => {
-  const [pausado, setPausado] = useState(true)
-  const [tempoAtual, setTempoAtual] = useState(0);
+interface propsControlBar {
+  playing?: musics
+  tempoAtual: number
+  pausado: boolean
+  setPausado: React.Dispatch<React.SetStateAction<boolean>>
+
+}
+
+
+export const ControlBar = ({ playing, tempoAtual, pausado, setPausado }: propsControlBar) => {
+
 
   function formatarTempoAtual(tempoAtual: number) {
     const minutos = Math.floor(tempoAtual / 60);
@@ -72,50 +69,31 @@ export const ControlBar = ({ time }: propsControlBar) => {
     return `${minutos}:${segundosFormatados}`;
   }
 
-  time?.durationInSecounts != undefined ?
-    !pausado ?
-      setTimeout(() => {
-        if (tempoAtual < time?.durationInSecounts) {
-          setTempoAtual(tempoAtual + 1);
-        }
-        else {
-          clearInterval
-        }
-      }, 1000)
-      : null : null
-  useEffect(() => {
-    setTempoAtual(0)
-    setPausado(false)
 
-
-
-  }, [time])
   return (
     <div className="flex flex-col sm:flex-col-reverse sm:gap-2">
-      <div className="flex flex-col sm:flex-row gap-2  items-center text-sm ">
-        <span className="hidden sm:block">{time?.durationInSecounts != undefined ? formatarTempoAtual(tempoAtual) : '-:-'}</span>
+      <div className="flex flex-col sm:flex-row gap-2  items-center text-sm w-full">
+        <span className="hidden sm:block">{formatarTempoAtual(tempoAtual)}</span>
+        <Slider max={playing?.durationInSecounts ?? 0} className=" w-full" value={[tempoAtual]} />
+        <span className="hidden sm:block ">{playing?.durationInSecounts != undefined ? formatarTempoAtual(playing?.durationInSecounts) : '-:-'}</span>
 
-        <Slider max={time?.durationInSecounts ?? 0} className="level" value={[tempoAtual]} />
-        <span className="hidden sm:block">{time?.durationInSecounts != undefined ? formatarTempoAtual(time?.durationInSecounts) : '-:-'}</span>
-
-        <div className={`flex justify-between ${time?.durationInSecounts != undefined ? 'text-[#b7b7b7]' : '#78787851'} text-sm sm:hidden`}>
-          <span >{time?.durationInSecounts != undefined ? formatarTempoAtual(tempoAtual) : '-:-'}</span>
-          <span>{time?.durationInSecounts != undefined ? formatarTempoAtual(time?.durationInSecounts) : '-:-'}</span>
+        <div className={`flex justify-between ${playing?.durationInSecounts != undefined ? 'text-[#b7b7b7]' : '#78787851'} text-sm sm:hidden w-full`}>
+          <span >{playing?.durationInSecounts != undefined ? formatarTempoAtual(tempoAtual) : '-:-'}</span>
+          <span>{playing?.durationInSecounts != undefined ? formatarTempoAtual(playing?.durationInSecounts) : '-:-'}</span>
         </div>
 
       </div>
 
       <div className="flex justify-between sm:justify-center sm:gap-5 items-center">
-        <ShuffleIcon color={`${time?.durationInSecounts != undefined ? '#b7b7b7' : '#78787851'}`} className="size-7 sm:size-4" />
+        <ShuffleIcon color={`${playing?.durationInSecounts != undefined ? '#b7b7b7' : '#78787851'}`} className="size-7 sm:size-4" />
         <div className="flex items-center gap-7 sm:gap-5">
           {/* back music svg */}
-          <svg data-encore-id="icon" role="img" aria-hidden="true" viewBox="0 0 16 16" className={`size-7 sm:size-4 ${time?.durationInSecounts !== undefined ? 'text-zinc-50' : 'text-[#78787851]'}`} fill="currentColor"><path d="M3.3 1a.7.7 0 0 1 .7.7v5.15l9.95-5.744a.7.7 0 0 1 1.05.606v12.575a.7.7 0 0 1-1.05.607L4 9.149V14.3a.7.7 0 0 1-.7.7H1.7a.7.7 0 0 1-.7-.7V1.7a.7.7 0 0 1 .7-.7h1.6z"></path></svg>
+          <svg data-encore-id="icon" role="img" aria-hidden="true" viewBox="0 0 16 16" className={`size-7 sm:size-4 ${playing?.durationInSecounts !== undefined ? 'text-zinc-50' : 'text-[#78787851]'}`} fill="currentColor"><path d="M3.3 1a.7.7 0 0 1 .7.7v5.15l9.95-5.744a.7.7 0 0 1 1.05.606v12.575a.7.7 0 0 1-1.05.607L4 9.149V14.3a.7.7 0 0 1-.7.7H1.7a.7.7 0 0 1-.7-.7V1.7a.7.7 0 0 1 .7-.7h1.6z"></path></svg>
           {/* pausado svg */}
           <div
-            className={`${time?.durationInSecounts !== undefined ? 'bg-white' : 'bg-[#78787851] pointer-events-none'} p-5 sm:p-2 rounded-full`}
+            className={`${playing?.durationInSecounts !== undefined ? 'bg-white' : 'bg-[#78787851] pointer-events-none'} p-5 sm:p-2 rounded-full`}
             onClick={() => {
               if (pausado) {
-
                 setPausado(false);
               } else {
 
@@ -131,10 +109,10 @@ export const ControlBar = ({ time }: propsControlBar) => {
             }
           </div>
           {/* next music icon */}
-          <svg data-encore-id="icon" role="img" aria-hidden="true" viewBox="0 0 16 16" className={`size-7 sm:size-4 ${time?.durationInSecounts !== undefined ? 'text-zinc-50' : 'text-[#78787851]'}`} fill="currentColor"><path d="M12.7 1a.7.7 0 0 0-.7.7v5.15L2.05 1.107A.7.7 0 0 0 1 1.712v12.575a.7.7 0 0 0 1.05.607L12 9.149V14.3a.7.7 0 0 0 .7.7h1.6a.7.7 0 0 0 .7-.7V1.7a.7.7 0 0 0-.7-.7h-1.6z"></path></svg>
+          <svg data-encore-id="icon" role="img" aria-hidden="true" viewBox="0 0 16 16" className={`size-7 sm:size-4 ${playing?.durationInSecounts !== undefined ? 'text-zinc-50' : 'text-[#78787851]'}`} fill="currentColor"><path d="M12.7 1a.7.7 0 0 0-.7.7v5.15L2.05 1.107A.7.7 0 0 0 1 1.712v12.575a.7.7 0 0 0 1.05.607L12 9.149V14.3a.7.7 0 0 0 .7.7h1.6a.7.7 0 0 0 .7-.7V1.7a.7.7 0 0 0-.7-.7h-1.6z"></path></svg>
         </div>
         {/* rotate icon */}
-        <svg data-encore-id="icon" role="img" aria-hidden="true" viewBox="0 0 16 16" className={`size-7 sm:size-4 ${time?.durationInSecounts !== undefined ? 'text-zinc-50' : 'text-[#78787851]'}`} fill="currentColor"><path d="M0 4.75A3.75 3.75 0 0 1 3.75 1h8.5A3.75 3.75 0 0 1 16 4.75v5a3.75 3.75 0 0 1-3.75 3.75H9.81l1.018 1.018a.75.75 0 1 1-1.06 1.06L6.939 12.75l2.829-2.828a.75.75 0 1 1 1.06 1.06L9.811 12h2.439a2.25 2.25 0 0 0 2.25-2.25v-5a2.25 2.25 0 0 0-2.25-2.25h-8.5A2.25 2.25 0 0 0 1.5 4.75v5A2.25 2.25 0 0 0 3.75 12H5v1.5H3.75A3.75 3.75 0 0 1 0 9.75v-5z"></path></svg>
+        <svg data-encore-id="icon" role="img" aria-hidden="true" viewBox="0 0 16 16" className={`size-7 sm:size-4 ${playing?.durationInSecounts !== undefined ? 'text-zinc-50' : 'text-[#78787851]'}`} fill="currentColor"><path d="M0 4.75A3.75 3.75 0 0 1 3.75 1h8.5A3.75 3.75 0 0 1 16 4.75v5a3.75 3.75 0 0 1-3.75 3.75H9.81l1.018 1.018a.75.75 0 1 1-1.06 1.06L6.939 12.75l2.829-2.828a.75.75 0 1 1 1.06 1.06L9.811 12h2.439a2.25 2.25 0 0 0 2.25-2.25v-5a2.25 2.25 0 0 0-2.25-2.25h-8.5A2.25 2.25 0 0 0 1.5 4.75v5A2.25 2.25 0 0 0 3.75 12H5v1.5H3.75A3.75 3.75 0 0 1 0 9.75v-5z"></path></svg>
       </div>
     </div>
 

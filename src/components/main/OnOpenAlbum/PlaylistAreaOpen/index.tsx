@@ -18,7 +18,6 @@ interface PropsAlbum {
   musicas: musics[]
 }
 
-// Componente estilizado fora do componente funcional
 const Gradient = styled.div<{ color: string }>`
   width: 100%;
   padding: 0 12px;
@@ -40,7 +39,7 @@ export const OpenAlbumOrPlaylist = ({ color, image, title, description, classe, 
 
 
   return (
-    <div className="flex-1 sm:rounded-[6px] sm:h-[88vh] overflow-y-scroll gap-1 flex flex-col bg-[rgb(20,20,20)] ">
+    <div className="flex-1 sm:rounded-[6px] sm:h-[90vh] overflow-y-scroll gap-1 flex flex-col bg-[rgb(20,20,20)] ">
       {/* Utilização do componente estilizado */}
       <Gradient color={color}>
         <div className="fixed py-4 sm:hidden" onClick={() => window.history.back()}>

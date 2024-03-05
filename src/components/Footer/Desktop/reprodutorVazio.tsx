@@ -6,7 +6,7 @@ import { ControlBar } from "../controlador"
 
 export const ReprodutorVazio = () => {
   return (
-    <section className="flex justify-between  h-full items-center px-2">
+    <section className="flex justify-between  h-min items-center px-2  ">
       <div className="flex-1" />
       <div className="flex-1 w-full">
         <ControlBar />

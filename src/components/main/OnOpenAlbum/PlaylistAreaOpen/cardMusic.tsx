@@ -5,6 +5,8 @@ import { Fragment, useContext, useState } from "react";
 import { IoMdHeart } from "react-icons/io";
 import { FaPlay } from "react-icons/fa";
 import PlayingCtx from "@/context/context.Playing";
+import { Link } from "react-router-dom";
+import { urlFormater } from "@/scripts/normalize";
 
 
 export interface propsMsc {
@@ -53,26 +55,27 @@ export const CardMusic = ({ props, i, hiddenTopics }: propsMsc) => {
         }
         <div className="flex flex-col  w-[80%] gap-1 ">
           <div className=" overflow-hidden text-nowrap overflow-ellipsis text-sm sm:flex justify-between">
-            <p className="font-medium text-sm text-zinc-50">
+            <Link to={urlFormater(props.album)} className="font-medium text-sm text-zinc-50 hover:underline">
               {props.name}
-            </p>
+            </Link>
           </div>
 
           <div className="flex items-center  gap-1">
 
             {props.artista.map((artista) => (
-              <span key={artista.bannerID} className="text-[13px] font-medium">
+              <Link to={urlFormater(artista.name)} key={artista.bannerID} className="text-[13px] font-medium hover:underline">
                 {artista.name}
-              </span>
+              </Link>
             ))}
 
           </div>
         </div>
       </div>
-      {hidden ? null : <Fragment>
-        <p className="w-[20%] hidden sm:block text-[13px] ">{props.album}</p>
-        <p className="w-[20%] hidden sm:block text-[13px]  ">{props.addEm}</p>
-      </Fragment>}
+      {hidden ? null :
+        <Fragment>
+          <Link to={urlFormater(props.album)} className="w-[20%] hidden sm:block text-[13px] hover:underline ">{props.album}</Link>
+          <span className="w-[20%] hidden sm:block text-[13px]  ">{props.addEm}</span>
+        </Fragment>}
 
 
       <div className="sm:flex items-center gap-6">

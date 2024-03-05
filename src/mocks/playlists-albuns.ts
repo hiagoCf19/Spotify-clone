@@ -37,7 +37,7 @@ const artista = {
       "https://thisis-images.spotifycdn.com/37i9dQZF1DZ06evO47M0aB-default.jpg",
     bannerID:
       "https://i.scdn.co/image/ab6761860000101659a64b13ff207d3184e0079a",
-    color: "rgba(76, 75, 73, 0.800) 140%",
+    color: "rgb(76, 75, 73, 0.800) 140%",
   },
   bazzi: {
     foto: "https://i.scdn.co/image/ab676161000051742491594c8f731523e085d84a",
@@ -45,7 +45,7 @@ const artista = {
       "https://thisis-images.spotifycdn.com/37i9dQZF1DZ06evO2Kkc5y-default.jpg",
     bannerID:
       "https://i.scdn.co/image/ab676186000010163fd1984fedc4528377b8358c",
-    color: "rgba(169, 168, 196, 0.314) 140%",
+    color: "rgb(169, 168, 196, 0.314) 140%",
   },
   chicoBuarque: {
     foto: "https://i.scdn.co/image/ab676161000051741f33f0eccfef05940a1ef879",
@@ -61,7 +61,7 @@ const artista = {
       "	https://i.scdn.co/image/ab67618600001016f328ba2b3c84ec0e31243360",
     thisIs:
       "	https://thisis-images.spotifycdn.com/37i9dQZF1DZ06evO3gAXLR-default.jpg",
-    color: "rgba(169, 168, 196, 0.314) 140%",
+    color: "rgb(169, 168, 196, 0.314) 140%",
   },
   eduardoCosta: {
     foto: " https://i.scdn.co/image/ab67616100005174d568e3af8ac0ac319678d01d",
@@ -69,7 +69,7 @@ const artista = {
       "	https://i.scdn.co/image/ab67618600001016234986d48714d9ccd2b18e9b",
     thisIs:
       "https://thisis-images.spotifycdn.com/37i9dQZF1DZ06evO1CLDUc-default.jpg",
-    color: "rgba(80, 21, 69, 1.814) 120%",
+    color: "rgb(80, 21, 69, 1.814) 120%",
   },
 
   fleetwoodMac: {
@@ -78,7 +78,7 @@ const artista = {
       "	https://i.scdn.co/image/ab67618600001016c6b15528173510ab4deb8f98",
     thisIs:
       "https://thisis-images.spotifycdn.com/37i9dQZF1DZ06evO00KN2M-default.jpg",
-    color: "rgba(169, 168, 196, 0.314) 120%",
+    color: "rgb(169, 168, 196, 0.314) 120%",
   },
 
   freddieDred: {
@@ -87,7 +87,7 @@ const artista = {
       "	https://i.scdn.co/image/ab676186000010161817255b3972bcfc061f822d",
     thisIs:
       "https://thisis-images.spotifycdn.com/37i9dQZF1DZ06evO03yOTR-default.jpg",
-    color: "rgba(52, 17, 14, 1) 120%",
+    color: "rgb(52, 17, 14, 1) 120%",
   },
   lanaDelRey: {
     foto: "https://i.scdn.co/image/ab67616100005174b99cacf8acd5378206767261",
@@ -95,7 +95,7 @@ const artista = {
       "https://i.scdn.co/image/ab67618600001016adc556aaf75e626cb4a1a1be",
     thisIs:
       "https://thisis-images.spotifycdn.com/37i9dQZF1DZ06evNZVVBPG-default.jpg",
-    color: "rgba(20, 22, 30, 1) 90%",
+    color: "rgb(20, 22, 30, 1) 90%",
   },
   mcBinLaden: {
     foto: "https://i.scdn.co/image/ab676161000051741472571ab38e76b5307585d8",
@@ -103,7 +103,7 @@ const artista = {
       "https://i.scdn.co/image/ab6761860000101684785398d9eff76caa21aae7",
     thisIs:
       "	https://thisis-images.spotifycdn.com/37i9dQZF1DZ06evO1DbVO5-default.jpg",
-    color: "rgba(2, 53, 54, 1) 120%",
+    color: "rgb(2, 53, 54, 1) 120%",
   },
   radiohead: {
     foto: "https://i.scdn.co/image/ab67616100005174a03696716c9ee605006047fd",
@@ -111,7 +111,7 @@ const artista = {
       "https://i.scdn.co/image/ab676186000010161802a4cbec82e078cc15cbb0",
     thisIs:
       "https://thisis-images.spotifycdn.com/37i9dQZF1DZ06evO2VxlyE-default.jpg",
-    color: "rgba(25, 52, 69, 2) 100%",
+    color: "rgb(25, 52, 69, 2) 100%",
   },
   rashid: {
     foto: "https://i.scdn.co/image/ab67616100005174b783f0d38cfd32275fe49ad7",
@@ -119,7 +119,7 @@ const artista = {
       "https://i.scdn.co/image/ab676186000010167357d8cde3d66a65a6e695a2",
     thisIs:
       "https://thisis-images.spotifycdn.com/37i9dQZF1DZ06evO3v7h3h-default.jpg",
-    color: "rgba(169, 168, 196, 0.314) 150%",
+    color: "rgb(169, 168, 196, 0.314) 150%",
   },
   stones: {
     foto: "	https://i.scdn.co/image/ab67616100005174e4cea917b68726aadb4854b8",
@@ -127,7 +127,7 @@ const artista = {
       "https://i.scdn.co/image/ab67618600001016282f8e91da4dff9d5bee49a8",
     thisIs:
       "	https://thisis-images.spotifycdn.com/37i9dQZF1DZ06evO19s0CZ-default.jpg",
-    color: "rgba(169, 168, 196, 0.314) 150%",
+    color: "rgb(169, 168, 196, 0.314) 150%",
   },
   theWalters: {
     foto: "https://i.scdn.co/image/ab676161000051746c4366f40ea49c1318707f97",
@@ -155,13 +155,13 @@ export const playlists: Pl[] = [
     cards: [
       {
         title: "Moody Mix",
-        color: "rgba(223,84,139, 0.600) 190%",
+        color: "rgb(223,84,139, 0.600) 190%",
         image: "assets/capas/moody.jpeg",
         description: "Nirvana, Tom Odell, Radiohead e mais",
         musicas: [
           {
             name: "No Surprises ",
-            MusicColor: "rgba(74, 95, 107, 1) 100%",
+            MusicColor: "rgb(74, 95, 107, 1) 100%",
             artista: [
               {
                 name: "Radiohead",
@@ -183,7 +183,7 @@ export const playlists: Pl[] = [
       },
       {
         title: "Daily Mix 1",
-        color: "rgba(152,206,197, 0.800) 190%",
+        color: "rgb(152,206,197, 0.800) 190%",
         image: "assets/capas/mix1.jpeg",
         description: "Rashid, ADL, Sant e mais",
         musicas: [
@@ -251,7 +251,7 @@ export const playlists: Pl[] = [
       },
       {
         title: "Daily Mix 4",
-        color: "rgba(211,131,154, 0.800) 190%",
+        color: "rgb(211,131,154, 0.800) 190%",
         image: "assets/capas/mix4.jpeg",
         description: "The Walters, Vacations, Vundabar e mais",
         musicas: [
@@ -351,7 +351,7 @@ export const playlists: Pl[] = [
       },
       {
         title: "Daily Mix 6",
-        color: "rgba(169, 168, 196, 0.500) 120%",
+        color: "rgb(169, 168, 196, 0.500) 120%",
         image: "assets/capas/mix6.jpeg",
         description: "kamaitachi, LEXY, Vitello e mais",
         musicas: [
@@ -376,7 +376,7 @@ export const playlists: Pl[] = [
       },
       {
         title: "Radar de Novidades",
-        color: "rgba(169, 168, 196, 0.500) 120%",
+        color: "rgb(169, 168, 196, 0.500) 120%",
         image: "assets/capas/radar.jpeg",
         description:
           "Confira os lançamentos dos artistas que você segue e novos singles escolhidos só pra você.",

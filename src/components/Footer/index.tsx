@@ -24,24 +24,49 @@ export const Footer = () => {
     };
   }, [larguraDaTela]);
   const desktopScreen = larguraDaTela >= 640
-  const { musicPlaying } = useContext(PlayingCtx)
+  const { setMusicPlaying, musicPlaying } = useContext(PlayingCtx)
+
+  const [pausado, setPausado] = useState(true)
+  const [tempoAtual, setTempoAtual] = useState(0);
+
+
+  musicPlaying.length !== 0 ?
+    !pausado ?
+      setTimeout(() => {
+        if (tempoAtual < musicPlaying[0].durationInSecounts) {
+          setTempoAtual(tempoAtual + 1);
+        }
+        else {
+          clearInterval
+        }
+      }, 1000)
+      : null : null
+  useEffect(() => {
+    setPausado(false)
+  }, [musicPlaying, setMusicPlaying])
+
   return (
     musicPlaying.length !== 0 ? musicPlaying.map((playing: musics, i: number) => (
       <footer className='sm:h-[8.7vh]  fixed sm:relative w-full bottom-0 flex flex-col sm>gap-2 ' key={i}>
         {desktopScreen ?
-          <DesktopReprodutor playing={playing} /> :
+          <DesktopReprodutor playing={playing} tempoAtual={tempoAtual} pausado={pausado} setPausado={setPausado} />
+          :
           <>
-            <MobileReprodutor playing={playing} />
+            <MobileReprodutor playing={playing} tempoAtual={tempoAtual} pausado={pausado} setPausado={setPausado} />
             <MobileNavigator />
           </>
+
+
 
         }
 
 
       </footer>
-    )) : !desktopScreen ? <footer className='sm:h-[8.7vh]  fixed sm:relative w-full bottom-0 flex flex-col sm>gap-2 ' >
+    )) : !desktopScreen ? <footer className='  fixed sm:relative w-full bottom-0 flex flex-col  ' >
       <MobileNavigator />
-    </footer> : <ReprodutorVazio />
+    </footer> :
+
+      <ReprodutorVazio />
 
 
   )

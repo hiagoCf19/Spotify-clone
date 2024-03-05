@@ -32,11 +32,15 @@ const Gradient = styled.div<{ color: string }>`
 `;
 interface propsMobileReprodutor {
   playing: musics
+  tempoAtual: number
+  pausado: boolean
+  setPausado: React.Dispatch<React.SetStateAction<boolean>>
+
 }
-export const MobileReprodutor = ({ playing }: propsMobileReprodutor) => {
+export const MobileReprodutor = ({ playing, tempoAtual, pausado, setPausado, }: propsMobileReprodutor) => {
   // criar contexto para liked
   const [isLiked, setIsLiked] = useState(false)
-  const [pause, setPause] = useState(false)
+
 
   return (
     <section className="rounded-[6px] h-16 mx-2 p-2 flex flex-col  justify-center relative" style={{ background: playing.MusicColor }}>
@@ -46,7 +50,7 @@ export const MobileReprodutor = ({ playing }: propsMobileReprodutor) => {
             <div className="flex gap-3 items-center ">
               <img src={playing.capa} className="size-11 rounded" />
               <div className="flex flex-col">
-                <h1 className="text-base text-zinc-50 font-bold -mb-px text-left line-clamp-1">{playing.name}</h1>
+                <h1 className={`text-base ${pausado ? 'text-zinc-50 ' : 'text-spotgreen'} font-bold -mb-px text-left line-clamp-1`}>{playing.name}</h1>
                 <span className="text-sm text-start">{playing.artista[0].name}</span>
               </div>
             </div>
@@ -54,7 +58,7 @@ export const MobileReprodutor = ({ playing }: propsMobileReprodutor) => {
 
           <SheetContent side={'bottom'} className=" p-0 ">
             <Gradient color={playing.MusicColor ?? ''} className=' overflow-y-scroll h-screen'>
-              <CardAberto playing={playing} />
+              <CardAberto playing={playing} tempoAtual={tempoAtual} pausado={pausado} setPausado={setPausado} />
             </Gradient>
           </SheetContent>
         </Sheet>
@@ -77,9 +81,9 @@ export const MobileReprodutor = ({ playing }: propsMobileReprodutor) => {
               />
 
           }
-          <div onClick={() => pause ? setPause(false) : setPause(true)}>
+          <div onClick={() => pausado ? setPausado(false) : setPausado(true)}>
             {
-              pause ?
+              pausado ?
                 <IoPlay size={26} color="#FFF" />
                 : <IoPauseSharp size={26} color="#FFF" />
             }
@@ -91,7 +95,7 @@ export const MobileReprodutor = ({ playing }: propsMobileReprodutor) => {
       </div>
       <div className="absolute bottom-0 -mx-2 -my-[6px] px-2 w-full" >
         <InputRange className="slider w-full">
-          <input type="range" max={playing.durationInSecounts} value={5} className="level" readOnly />
+          <input type="range" max={playing.durationInSecounts} value={tempoAtual} className="level" readOnly />
         </InputRange>
       </div>
 

@@ -5,7 +5,7 @@ import { GenericList } from "./GenericList"
 import { MobileCarousel } from "./GenericList/Carousel"
 import { MobileLancamentos } from "./lancamentosMobile"
 import { useState } from "react"
-import { HeaderMobile } from "./headerMobile"
+
 
 const Gradient = styled.div<{ color: string }>`
   width: 100%;
@@ -22,20 +22,17 @@ const Gradient = styled.div<{ color: string }>`
 `;
 export const Main = () => {
   const [background, setBackground] = useState('#121212')
-  const [scrollDown, setScrollDown] = useState(0)
+
 
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  function handleScroll(event: any) {
-    const scrollPosition = event.target.scrollTop;
-    setScrollDown(scrollPosition);
-  }
+
   // referente aos botoes, tudo, musica e podcasts
-  const [ativo, setAtivo] = useState(0)
+
   return (
 
-    <div className=" sm:h-[88vh]  overflow-y-scroll 
-      sm:rounded w-full" onScroll={handleScroll}>
-      <HeaderMobile scrollDown={scrollDown} ativo={ativo} setAtivo={setAtivo} />
+    <div className="sm:h-[90vh] h-screen  overflow-y-scroll 
+      sm:rounded w-full" >
+
       <Gradient color={background} className="flex gap-4 flex-col sm:p-4 sm:px-6 p-2">
         < HeaderMain />
 

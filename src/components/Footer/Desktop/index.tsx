@@ -10,9 +10,14 @@ import { Slider } from "@/components/ui/slider"
 
 interface propsDesktopReprodutor {
   playing: musics
+  tempoAtual: number
+  pausado: boolean
+  setPausado: React.Dispatch<React.SetStateAction<boolean>>
+
 }
-export const DesktopReprodutor = ({ playing }: propsDesktopReprodutor) => {
+export const DesktopReprodutor = ({ playing, tempoAtual, pausado, setPausado }: propsDesktopReprodutor) => {
   const [isLiked, setIsLiked] = useState(false)
+
 
 
   return (
@@ -44,7 +49,7 @@ export const DesktopReprodutor = ({ playing }: propsDesktopReprodutor) => {
 
       </div>
       <div className="flex-1  w-full">
-        <ControlBar time={playing} />
+        <ControlBar playing={playing} tempoAtual={tempoAtual} pausado={pausado} setPausado={setPausado} />
       </div>
       <div className="flex-1 justify-end items-center flex gap-3">
         <PlaySquare size={17} className="hover:text-zinc-50 cursor-pointer" />
