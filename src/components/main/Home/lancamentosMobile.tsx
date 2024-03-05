@@ -18,14 +18,15 @@ export const MobileLancamentos = () => {
     const musicas = extrairMusicas(playlists);
     const indiceAleatorio = Math.floor(Math.random() * musicas.length);
     setRandomMusic([musicas[indiceAleatorio]]);
+
   }, []);
-
-
   return (
     <div className="sm:hidden flex flex-col gap-2 mt-4 p-2 ">
       {randomMusic.map((data, i) => (
         <Fragment key={i}>
-          <header className="flex gap-2 items-center">
+          <header
+
+            className="flex gap-2 items-center">
             <img
               src={data.artista[0].foto}
               className="size-12   rounded-full"

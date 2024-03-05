@@ -5,6 +5,7 @@ import { MobileNavigator } from "./mobile/mobileNavigator"
 import { MobileReprodutor } from "./mobile"
 import PlayingCtx from "@/context/context.Playing.tsx"
 import { musics } from "@/mocks/playlists-albuns.ts"
+import { ReprodutorVazio } from "./Desktop/reprodutorVazio.tsx"
 
 
 
@@ -38,7 +39,10 @@ export const Footer = () => {
 
 
       </footer>
-    )) : null
+    )) : !desktopScreen ? <footer className='sm:h-[8.7vh]  fixed sm:relative w-full bottom-0 flex flex-col sm>gap-2 ' >
+      <MobileNavigator />
+    </footer> : <ReprodutorVazio />
+
 
   )
 }

@@ -18,14 +18,15 @@ export const CardMusic = ({ props, i, hiddenTopics }: propsMsc) => {
   const { setMusicPlaying } = useContext(PlayingCtx)
   const [isLiked, setIsLiked] = useState(props.liked ? true : false)
   const [mouseInside, setMouseInside] = useState(false)
-  let time
-  const convert = () => {
-    const base = props.durationInSecounts / 100
-    time = base.toFixed(2).replace('.', ':')
-    return time
+  function formatarTempoAtual(tempoAtual: number) {
+    const minutos = Math.floor(tempoAtual / 60);
+    const segundos = tempoAtual % 60;
+    const segundosFormatados = segundos < 10 ? '0' + segundos : segundos;
+
+    return `${minutos}:${segundosFormatados}`;
   }
   const hidden = hiddenTopics
-  convert()
+
 
   return (
     <div className="flex items-center justify-between gap-4 sm:py-1 sm:hover:bg-[#ffffff11] sm:-ml-3 sm:p-2 rounded "
@@ -95,9 +96,7 @@ export const CardMusic = ({ props, i, hiddenTopics }: propsMsc) => {
           }
         </div>
 
-        <span className="text-[13px]  hidden sm:block mr-3">{
-          time
-        }</span>
+        <span className="text-[13px]  hidden sm:block mr-3">{formatarTempoAtual(props.durationInSecounts)}</span>
 
         <span className="sm:hidden">
           <MenuMusics music={props} />

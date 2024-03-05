@@ -19,10 +19,10 @@ export const DesktopReprodutor = ({ playing }: propsDesktopReprodutor) => {
     <section className="flex justify-between  h-full items-center px-2">
       <div className="flex gap-4 items-center flex-1">
 
-        <img src={playlists[0].cards[0].musicas[0].capa} className="size-14 rounded" />
+        <img src={playing.capa} className="size-14 rounded" />
         <div className="flex flex-col">
-          <Link to={urlFormater(playlists[0].cards[0].musicas[0].name)} className="text-zinc-50 hover:underline">{playlists[0].cards[0].musicas[0].name}</Link>
-          <Link to={urlFormater(playlists[0].cards[0].musicas[0].artista[0].name)} className="text-xs hover:underline">{playlists[0].cards[0].musicas[0].artista[0].name}
+          <Link to={urlFormater(playing.name)} className="text-zinc-50 hover:underline">{playlists[0].cards[0].musicas[0].name}</Link>
+          <Link to={urlFormater(playing.artista[0].name)} className="text-xs hover:underline">{playing.artista[0].name}
           </Link>
         </div>
         <div className="pl-5" onClick={() => isLiked ? setIsLiked(false) : setIsLiked(true)}>
@@ -43,7 +43,7 @@ export const DesktopReprodutor = ({ playing }: propsDesktopReprodutor) => {
 
 
       </div>
-      <div className="flex-1">
+      <div className="flex-1  w-full">
         <ControlBar time={playing} />
       </div>
       <div className="flex-1 justify-end items-center flex gap-3">
