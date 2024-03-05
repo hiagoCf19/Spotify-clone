@@ -3,13 +3,18 @@ import { Maximize2, Mic2, MonitorSpeaker, PlaySquare } from "lucide-react"
 import { CgMiniPlayer } from "react-icons/cg"
 import { ControlBar } from "../controlador"
 
+interface propsReprodutorVazio {
+  tempoAtual: number
+  pausado: boolean
+  setPausado: React.Dispatch<React.SetStateAction<boolean>>
 
-export const ReprodutorVazio = () => {
+}
+export const ReprodutorVazio = ({ tempoAtual, pausado, setPausado }: propsReprodutorVazio) => {
   return (
     <section className="flex justify-between  h-min items-center px-2  ">
       <div className="flex-1" />
       <div className="flex-1 w-full">
-        <ControlBar />
+        <ControlBar tempoAtual={tempoAtual} pausado={pausado} setPausado={setPausado} />
       </div>
       <div className="flex-1 justify-end items-center flex gap-3">
         <PlaySquare size={17} className="hover:text-zinc-50 cursor-pointer" />

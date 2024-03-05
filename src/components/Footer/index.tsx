@@ -66,7 +66,7 @@ export const Footer = () => {
       <MobileNavigator />
     </footer> :
 
-      <ReprodutorVazio />
+      <ReprodutorVazio tempoAtual={tempoAtual} pausado={pausado} setPausado={setPausado} />
 
 
   )
