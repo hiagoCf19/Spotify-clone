@@ -15,6 +15,7 @@ import { playlists } from "@/mocks/playlists-albuns";
 import { PerfilArtista } from "@/components/main/Home/perfilArtista";
 import '../styles/App.css'
 import { extrairMusicasPorArtista } from "@/scripts/musicasDoArtista";
+import { OpenAlbum } from "@/components/main/Home/perfilArtista/OpenAlbum";
 
 
 
@@ -34,12 +35,19 @@ function App() {
             <Route path={urlFormater('search')} element={<SearchComponent />} />
             {playlists.map((playlist) => (
               playlist.cards.map((card) => (
-
                 card.musicas.map((musica, indexOfMusic) => (
                   <React.Fragment key={`${musica.name}-${indexOfMusic}`}>
-
                     {/* Criar componente para albuns e singles */}
-                    <Route path={urlFormater(musica.album)} element={<div>{musica.album}</div>} />
+                    <Route path={urlFormater(musica.album)} element={
+                      <OpenAlbum
+                        album={musica.album}
+                        gradient={musica.MusicColor}
+                        capa={musica.capa}
+                        foto={musica.artista[0].foto}
+                        artista={musica.artista[0].name}
+                        musica={musica}
+                      />
+                    } />
                     {musica.artista.map((artista, indexOfArtist) => (
                       <Fragment key={`${artista.name}-${indexOfArtist}`}>
                         <Route

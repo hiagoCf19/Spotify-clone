@@ -15,7 +15,7 @@ export interface artista {
   name: string;
   foto: string;
   bannerID: string;
-  thisIs?: string;
+  thisIs: string;
   color?: string;
   genre: string;
 }
@@ -24,7 +24,7 @@ export interface musics {
   MusicColor: string;
   artista: artista[];
   album: string;
-  capa?: string;
+  capa: string;
   addEm: string;
   liked: boolean;
   durationInSecounts: number;
@@ -358,12 +358,14 @@ export const playlists: Pl[] = [
           {
             name: "musica 00",
             MusicColor: "",
+            capa: "",
             artista: [
               {
                 name: "artista X",
                 genre: "outros",
                 bannerID: "",
                 foto: "assets",
+                thisIs: "a",
               },
             ],
             album: "album03",
@@ -420,39 +422,6 @@ export const playlists: Pl[] = [
             durationInSecounts: 131,
             liked: false,
             genre: "Hip-Hop",
-          },
-        ],
-      },
-    ],
-  },
-
-  {
-    name: "Musicas Brasileiras ",
-    exibitionHome: true,
-    classe: "Playlist",
-    cards: [
-      {
-        title: "recomendacoes #2",
-        image: "",
-        description: "recomendados 2",
-        musicas: [
-          {
-            name: "musica teste1",
-            MusicColor: "",
-            artista: [
-              {
-                name: "artista X",
-                genre: "outros",
-                bannerID: "",
-                foto: "assets",
-              },
-            ],
-
-            album: "album03",
-            addEm: "05/02/2024",
-            durationInSecounts: 100,
-            liked: false,
-            genre: "Outros",
           },
         ],
       },

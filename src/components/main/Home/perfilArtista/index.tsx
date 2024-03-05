@@ -206,11 +206,10 @@ export const PerfilArtista = ({ artist }: PropsPerfil) => {
             artist={artist[0]}
             apareceEm
           />
-          <div className=" sm:hidden  w-full" />
+          <div className=" sm:hidden  w-full h-[18vh]" />
         </div>
 
       </div >
-
 
     </section >
 

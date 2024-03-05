@@ -1,5 +1,5 @@
 import { musics } from "@/mocks/playlists-albuns"
-import { Heart, Music } from "lucide-react"
+import { Heart } from "lucide-react"
 import { MenuMusics } from "./MenuMusic"
 import { Fragment, useContext, useState } from "react";
 import { IoMdHeart } from "react-icons/io";
@@ -13,9 +13,10 @@ export interface propsMsc {
   props: musics;
   i: number
   hiddenTopics: boolean
+  mostraCapa?: boolean
 }
 
-export const CardMusic = ({ props, i, hiddenTopics }: propsMsc) => {
+export const CardMusic = ({ props, i, hiddenTopics, mostraCapa }: propsMsc) => {
 
   const { setMusicPlaying } = useContext(PlayingCtx)
   const [isLiked, setIsLiked] = useState(props.liked ? true : false)
@@ -48,12 +49,9 @@ export const CardMusic = ({ props, i, hiddenTopics }: propsMsc) => {
           {!mouseInside ? i : <FaPlay size={15} color="#FFF" />}
 
         </span>}
-        {'capa' in props ? <img src={props.capa} className=" w-12 h-12 rounded-[4px]" /> :
-          <div className="w-[77px] sm:w-14 sm:rounded-[4px] h-12 flex items-center justify-center bg-[#272727] ">
-            <Music />
-          </div>
-        }
-        <div className="flex flex-col  w-[80%] gap-1 ">
+        {mostraCapa ? <img src={props.capa} className=" w-12 h-12 rounded-[4px]" /> : null}
+
+        <div className={`flex flex-col ${mostraCapa ? 'w-[80%]' : 'w-full px-2'} gap-1 `}>
           <div className=" overflow-hidden text-nowrap overflow-ellipsis text-sm sm:flex justify-between">
             <Link to={urlFormater(props.album)} className="font-medium text-sm text-zinc-50 hover:underline">
               {props.name}
