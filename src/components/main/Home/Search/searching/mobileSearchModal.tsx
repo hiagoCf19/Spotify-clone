@@ -13,10 +13,11 @@ interface mobileSearchModelProps {
   filterGenre: InterfaceBrowseAll[]
   musicasUnicas: musics[]
   thisIsUni: MontaThisIs[]
+  albunsUnicos: musics[]
 
 }
 
-export const MobileSearchModal = ({ artistasUnicos, filterGenre, musicasUnicas, thisIsUni }: mobileSearchModelProps) => {
+export const MobileSearchModal = ({ artistasUnicos, filterGenre, musicasUnicas, thisIsUni, albunsUnicos }: mobileSearchModelProps) => {
   const { setMusicPlaying } = useContext(PlayingCtx)
   return (
     <div className=" overflow-y-scroll flex flex-col gap-4 p-2">
@@ -43,7 +44,25 @@ export const MobileSearchModal = ({ artistasUnicos, filterGenre, musicasUnicas, 
           </Link>
         ))}
       </div>
+      {albunsUnicos.map((alb, i) => (
+        <Link to={urlFormater(alb.album)} key={i} >
+          <div className="  flex gap-2">
+            <img src={alb.capa} className=" size-12 rounded-[2px]" />
+            <div className="flex flex-col">
+              <p className="text-md text-zinc-50">{alb.album}</p>
+              <span className="text-[13px] font-normal flex  gap-1 items-center">
+                {alb.album === alb.name ? 'Single' : 'Álbum'}
+                <i className="text-[10px]">• </i>
+                {alb.artista.map((artista) => (
+                  artista.name
+                ))}
+              </span>
+            </div>
 
+          </div>
+
+        </Link>
+      ))}
 
       <div className="flex flex-col gap-4">
         {thisIsUni.slice(0, 3).map((thisis, i) => (

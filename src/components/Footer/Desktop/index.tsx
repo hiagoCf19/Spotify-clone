@@ -1,4 +1,4 @@
-import { musics, playlists } from "@/mocks/playlists-albuns"
+import { musics } from "@/mocks/playlists-albuns"
 import { urlFormater } from "@/scripts/normalize"
 import { Heart, Maximize2, Mic2, MonitorSpeaker, PlaySquare } from "lucide-react"
 import { CgMiniPlayer } from "react-icons/cg";
@@ -26,7 +26,7 @@ export const DesktopReprodutor = ({ playing, tempoAtual, pausado, setPausado }: 
 
         <img src={playing.capa} className="size-14 rounded" />
         <div className="flex flex-col">
-          <Link to={urlFormater(playing.name)} className="text-zinc-50 hover:underline">{playlists[0].cards[0].musicas[0].name}</Link>
+          <Link to={urlFormater(playing.name)} className="text-zinc-50 hover:underline">{playing.name}</Link>
           <Link to={urlFormater(playing.artista[0].name)} className="text-xs hover:underline">{playing.artista[0].name}
           </Link>
         </div>

@@ -30,10 +30,8 @@ export const SearchComponent = () => {
     search.length === 0 && hiddenHeaderMB ? setHiddenModal(true) : setHiddenModal(false)
   }, [hiddenHeaderMB, hiddenModal, search.length])
 
-
-
   return (
-    <div className={`flex-1 sm:rounded-[6px] min-h-[88vh] sm:h-40 overflow-y-scroll gap-1 flex flex-col bg-[#121212] sm:px-6  ${hiddenHeaderMB ? 'p-0' : 'p-2'} `}
+    <div className={`flex-1 sm:rounded-[6px] min-h-[90vh] sm:h-40 overflow-y-scroll gap-1 flex flex-col bg-[#121212] sm:px-6  ${hiddenHeaderMB ? 'p-0' : 'p-2'} `}
 
     >
       <HeaderMain search={searchOpen} handleSearch={handleSearch} />

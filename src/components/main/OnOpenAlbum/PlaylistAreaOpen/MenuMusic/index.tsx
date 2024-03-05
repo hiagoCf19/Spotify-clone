@@ -1,4 +1,4 @@
-import { MoreVertical, Music } from "lucide-react"
+import { MoreVertical } from "lucide-react"
 import {
   Drawer,
   DrawerContent,
@@ -27,11 +27,7 @@ export const MenuMusics = ({ music }: propsMenu) => {
           </DrawerHeader>
           <div className="flex items-center justify-between gap-4 pt-0 p-2 pb-4">
             <div className="flex items-center  overflow-hidden gap-3">
-              {'capa' in music ? <img src={music.capa} className=" w-14 h-14 rounded" /> :
-                <div className="w-[77px] h-14 flex items-center justify-center bg-[#272727] ">
-                  <Music />
-                </div>
-              }
+              <img src={music.capa} className=" w-14 h-14 rounded" />
               <div className="flex flex-col  w-[80%] ">
                 <div className=" font-medium text-sm text-zinc-50">
                   {music.artista.map((artista) => (

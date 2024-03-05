@@ -127,6 +127,7 @@ export const ModalSearch = ({ search }: ModalSearchProps) => {
           filterGenre={filterGenre}
           musicasUnicas={musicas}
           thisIsUni={thisIsFilter}
+          albunsUnicos={albunsUnicos}
 
         />
 

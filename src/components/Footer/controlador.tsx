@@ -58,9 +58,9 @@ interface propsControlBar {
 }
 
 
+
+
 export const ControlBar = ({ playing, tempoAtual, pausado, setPausado }: propsControlBar) => {
-
-
   function formatarTempoAtual(tempoAtual: number) {
     const minutos = Math.floor(tempoAtual / 60);
     const segundos = tempoAtual % 60;

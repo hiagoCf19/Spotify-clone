@@ -107,13 +107,43 @@ export const DesktopSearchmodal = ({ artistasUnicos, filterGenre, musicasUnicas,
               </div> : null}
 
             </div>
-            {/* Albuns e pls */}
+            {/* Albuns */}
+
+            <div className="flex flex-col gap-2">
+              <TitleSpt title="Álbuns" />
+              <div className="flex gap-5  w-full">
+                {albunsUnicos.slice(0, 6).map((album, i) => (
+                  <Link
+                    to={urlFormater(`${album.album}`)}
+                    key={i}
+                    className=" w-[14%]  overflow-hidden"
+                  >
+                    <GridGeneric image={album.capa ?? ""} text={album.album} span={` ${album.artista.map((artista) => artista.name)} • ${extrairAno(album.addEm)}`} />
+                  </Link>
+
+                ))}
+
+              </div>
+            </div>
+            {/* {albunsUnicos.slice(0, 6).map((album, i) => (
+
+
+              <Link
+                to={urlFormater(`${album.album}`)}
+                key={i}
+                className=" w-[14%]  overflow-hidden"
+              >
+                <GridGeneric image={album.capa ?? ""} text={album.album} span={` ${album.artista.map((artista) => artista.name)} • ${extrairAno(album.addEm)}`} />
+              </Link>
+
+            ))} */}
+            {/*pls */}
 
             {thisIsUni.length !== 0 ?
               <div className="flex flex-col gap-2">
-                <TitleSpt title="Álbuns e playlists" />
+                <TitleSpt title="Playlists" />
                 <div className="flex gap-5  w-full">
-                  {thisIsUni.slice(0, 5).map((card, i) => (
+                  {thisIsUni.slice(0, 7).map((card, i) => (
                     <Link
                       to={urlFormater(`${card.title}`)}
                       key={i}
@@ -123,18 +153,7 @@ export const DesktopSearchmodal = ({ artistasUnicos, filterGenre, musicasUnicas,
                     </Link>
 
                   ))}
-                  {albunsUnicos.slice(0, thisIsUni.length > 6 ? 1 : 5).map((album, i) => (
 
-
-                    <Link
-                      to={urlFormater(`${album.name}`)}
-                      key={i}
-                      className=" w-[14%]  overflow-hidden"
-                    >
-                      <GridGeneric image={album.capa ?? ""} text={album.album} span={` ${album.artista.map((artista) => artista.name)} • ${extrairAno(album.addEm)}`} />
-                    </Link>
-
-                  ))}
                 </div>
               </div> : null}
             { /* Artistas */}
@@ -215,7 +234,7 @@ export const DesktopSearchmodal = ({ artistasUnicos, filterGenre, musicasUnicas,
 
                       {albunsUnicos.slice(0, 7).map((album, i) => (
                         <Link
-                          to={urlFormater(`${album.name}`)}
+                          to={urlFormater(`${album.album}`)}
                           key={i}
                           className=" w-[14%]  overflow-hidden"
                         >

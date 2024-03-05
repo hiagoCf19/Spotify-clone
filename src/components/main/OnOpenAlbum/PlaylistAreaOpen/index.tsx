@@ -99,6 +99,7 @@ export const OpenAlbumOrPlaylist = ({ color, image, title, description, classe, 
               <React.Fragment key={i}>
                 <CardMusic
                   hiddenTopics={false}
+
                   props={card}
                   i={i + 1}
                   key={i} />
