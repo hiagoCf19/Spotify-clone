@@ -6,7 +6,8 @@ import { Link } from "react-router-dom"
 import { urlFormater } from "@/scripts/normalize"
 import { Carousel, CarouselContent } from "@/components/ui/carousel"
 import { GenericCarousel } from "./genericCarousel"
-import { MontaThisIs } from "@/scripts/DataConstructor"
+import { MontaMiniCardArtists } from "@/scripts/DataConstructor"
+
 
 
 
@@ -72,7 +73,7 @@ export const GenericSectionsInPerfil = ({ title, artist, apareceEm, desktopScree
     }
   });
 
-  const artistThisIS = [new MontaThisIs(artist.name, artist.thisIs ?? '', artist.name)]
+  const artistThisIS = [new MontaMiniCardArtists(`This Is ${artist.name}`, artist.thisIs ?? '', `This is ${artist.name}. Os maiores sucessos em uma única playlist`)]
 
 
   return (

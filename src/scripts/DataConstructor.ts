@@ -11,14 +11,15 @@ export class Album {
     this.description = data;
   }
 }
-export class MontaThisIs {
+export class MontaMiniCardArtists {
   title: string;
   capa: string;
   span: string;
+
   constructor(nameArtist: string, capa: string, span: string) {
-    this.title = `This Is ${nameArtist}`;
+    this.title = nameArtist;
     this.capa = capa;
-    this.span = `This is ${span}. Todos os maiores hits em uma única playlist`;
+    this.span = span;
   }
 }
 // O parâmetro musicas tem que corresponder extatamente ao array de músicas do nosso objeto

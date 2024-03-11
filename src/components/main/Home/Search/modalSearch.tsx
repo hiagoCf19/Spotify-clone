@@ -5,7 +5,9 @@ import { useEffect, useState } from "react"
 import { DesktopSearchmodal } from "./searching/desktopSearchmodal";
 import { MobileSearchModal } from "./searching/mobileSearchModal";
 import { BrowseAll } from "@/mocks/BrowseAll";
-import { MontaThisIs } from "@/scripts/DataConstructor";
+import { MontaMiniCardArtists } from "@/scripts/DataConstructor";
+import { extrairArtistas } from "@/scripts/desestruturacao";
+
 
 
 interface ModalSearchProps {
@@ -29,16 +31,10 @@ export const ModalSearch = ({ search }: ModalSearchProps) => {
       genre.genre.toLowerCase().includes(search.toLowerCase()))
     :
     BrowseAll
-  const artistas: MontaThisIs[] = [];
-  playlists.forEach(pl => {
-    pl.cards.forEach(cd => {
-      cd.musicas.forEach(ar => {
-        ar.artista.forEach(name => {
-          artistas.push(new MontaThisIs(name.name, name.thisIs ?? '', name.name))
-        });
-      });
-    });
-  });
+  const artistas: MontaMiniCardArtists[] = [];
+  extrairArtistas(playlists).map((name) => {
+    artistas.push(new MontaMiniCardArtists(`This Is ${name.name}`, name.thisIs ?? '', `This is ${name.name}. Os maiores sucessos em uma única playlist`))
+  })
 
   const multiFilter = [...new Set(musics.filter(music =>
     music.name.toLowerCase().includes(search.toLowerCase()) ||

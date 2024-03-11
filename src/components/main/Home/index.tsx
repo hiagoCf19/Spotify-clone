@@ -41,6 +41,7 @@ export const Main = () => {
         <MobileCarousel />
         <div className="mt-2 hidden sm:block ">
           <GenericList />
+
         </div>
 
         <div className="h-[22vh]" />

@@ -9,14 +9,15 @@ import { FaPlay } from "react-icons/fa6"
 import { GridGeneric } from "./gridGeneric"
 import { Link } from "react-router-dom"
 import { urlFormater } from "@/scripts/normalize"
-import { MontaThisIs } from "@/scripts/DataConstructor"
+import { MontaMiniCardArtists } from "@/scripts/DataConstructor"
+
 
 export interface desktopSearchModalProps {
   artistasUnicos: artista[]
   filterGenre: InterfaceBrowseAll[]
   musicasUnicas: musics[]
   albunsUnicos: musics[]
-  thisIsUni: MontaThisIs[]
+  thisIsUni: MontaMiniCardArtists[]
 }
 export const DesktopSearchmodal = ({ artistasUnicos, filterGenre, musicasUnicas, albunsUnicos, thisIsUni }: desktopSearchModalProps) => {
 

@@ -2,7 +2,7 @@
 import PlayingCtx from "@/context/context.Playing"
 import { InterfaceBrowseAll } from "@/mocks/BrowseAll"
 import { artista, musics } from "@/mocks/playlists-albuns"
-import { MontaThisIs } from "@/scripts/DataConstructor"
+import { MontaMiniCardArtists } from "@/scripts/DataConstructor"
 import { urlFormater } from "@/scripts/normalize"
 import { useContext } from "react"
 import { MdVerified } from "react-icons/md"
@@ -12,7 +12,7 @@ interface mobileSearchModelProps {
   artistasUnicos: artista[]
   filterGenre: InterfaceBrowseAll[]
   musicasUnicas: musics[]
-  thisIsUni: MontaThisIs[]
+  thisIsUni: MontaMiniCardArtists[]
   albunsUnicos: musics[]
 
 }

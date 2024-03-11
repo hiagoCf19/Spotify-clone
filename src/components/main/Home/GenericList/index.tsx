@@ -5,9 +5,17 @@ import { urlFormater } from "@/scripts/normalize"
 import { TitleSpt } from "@/components/Recorrentes/Title"
 import { exibidos } from "@/scripts/exibitionControl"
 import { GridGeneric } from "../Search/searching/gridGeneric"
+import { MontaMiniCardArtists } from "@/scripts/DataConstructor"
+import { playlists } from "@/mocks/playlists-albuns"
+import { extrairArtistas } from "@/scripts/desestruturacao"
 
 
 export const GenericList = () => {
+
+  const artistasCatalogados = extrairArtistas(playlists).map((artist) => {
+    return new MontaMiniCardArtists(artist.name, artist.foto, artist.name)
+  })
+
 
   return (
     <div className="flex flex-col gap-2  overflow-hidden mt-2">
@@ -45,9 +53,41 @@ export const GenericList = () => {
 
 
         </section>
-
       ))}
+      <section className="flex flex-col gap-6 w-full mt-3">
+        <div className="flex justify-between items-center">
+          <TitleSpt title="Artistas" />
+          <Link
+            to={urlFormater('Artistas-catalogados')}
+            className="text-sm font-semibold hover:underline">
+            Mostrar tudo
+          </Link>
+
+        </div>
+
+        <div className="flex gap-6">
+
+          {artistasCatalogados.slice(0, 7).map((artista, i) => (
+            <Link
+              to={urlFormater(`${artista.title}`)}
+              key={i}
+              className=" sm:w-[14%]  overflow-hidden"
+            >
+              <GridGeneric
+                image={artista.capa}
+                text={artista.title}
+                imageRoundedFull
+                span={''}
+              />
+            </Link>
+
+          ))}
+        </div>
+
+      </section>
+
 
     </div>
+
   )
 }

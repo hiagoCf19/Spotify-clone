@@ -16,11 +16,17 @@ import { PerfilArtista } from "@/components/main/Home/perfilArtista";
 import '../styles/App.css'
 import { extrairMusicasPorArtista } from "@/scripts/musicasDoArtista";
 import { OpenAlbum } from "@/components/main/Home/perfilArtista/OpenAlbum";
+import { extrairArtistas } from "@/scripts/desestruturacao";
+import { MontaMiniCardArtists } from "@/scripts/DataConstructor";
+import { OpenAll } from "@/components/main/Home/GenericList/openAll";
+
 
 
 
 function App() {
-
+  const artistasCatalogados = extrairArtistas(playlists).map((artist) => {
+    return new MontaMiniCardArtists(artist.name, artist.foto, artist.name)
+  })
   return (
     <BrowserRouter>
 
@@ -91,9 +97,12 @@ function App() {
                       musicas={card.musicas}
                     />} />
                   <Route path={`/${urlFormater(item.name)}`} element={<MostrarTudo item={item} />} />
+
                 </Fragment>
               )) : ''
             ))}
+            <Route path={urlFormater('Artistas-catalogados')} element={<OpenAll base={artistasCatalogados} title="Artistas catalogados" />} />
+
 
           </Routes>
         </div>
