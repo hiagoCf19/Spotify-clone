@@ -20,8 +20,8 @@ export const GenericCarousel = ({ image, title, span, maisDeUmCard, imageRounded
       <Link
         to={urlFormater(`${title}`)}
         className="flex flex-col gap-2 ">
-        <div className={`h-[173px] `}>
-          <img src={image} className={`  ${imageRoundedFull ? 'rounded-full h-[153px]' : 'rounded h-[173px]'}`} />
+        <div className={`h-[163px] `}>
+          <img src={image} className={`  ${imageRoundedFull ? 'rounded-full h-[153px]' : 'rounded h-[160px]'}`} />
         </div>
         <div className={`text-sm font-medium overflow-hidden overflow-ellipsis line-clamp-2 ${imageRoundedFull ? 'text-center' : ''}`}>
           <p className="overflow-hidden overflow-ellipsis line-clamp-1">{title}</p>

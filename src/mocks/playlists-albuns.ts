@@ -105,6 +105,14 @@ const artista = {
       "	https://thisis-images.spotifycdn.com/37i9dQZF1DZ06evO1DbVO5-default.jpg",
     color: "rgb(2, 53, 54, 1) 120%",
   },
+  pericles: {
+    foto: "https://i.scdn.co/image/ab6761610000517457adfef1deb64efe407c2a04",
+    bannerID:
+      "https://i.scdn.co/image/ab67618600001016b366e7a40e6a8d2b49ef499b",
+    thisIs:
+      "https://thisis-images.spotifycdn.com/37i9dQZF1DZ06evO3HnA7C-default.jpg",
+    color: "rgb(79, 19, 14)",
+  },
   radiohead: {
     foto: "https://i.scdn.co/image/ab67616100005174a03696716c9ee605006047fd",
     bannerID:
@@ -144,6 +152,14 @@ const artista = {
     thisIs:
       "https://thisis-images.spotifycdn.com/37i9dQZF1DZ06evO0ti1Ik-default.jpg",
     color: "rgb(60, 13, 8) 100%",
+  },
+  zecaPagodinho: {
+    foto: "https://i.scdn.co/image/ab67616100005174ba8ad8a2315ed9148c7b1cc7",
+    bannerID:
+      "https://i.scdn.co/image/ab67618600001016aaa48c40fa28bbd9b6507cd2",
+    thisIs:
+      "	https://thisis-images.spotifycdn.com/37i9dQZF1DZ06evO1ZFVvO-default.jpg",
+    color: "rgb(48,76,88) 100%",
   },
 };
 
@@ -427,6 +443,7 @@ export const playlists: Pl[] = [
       },
     ],
   },
+
   {
     name: "Musicas",
     exibitionHome: false,
@@ -744,6 +761,66 @@ export const playlists: Pl[] = [
             durationInSecounts: 214,
             liked: false,
             genre: "Rock",
+          },
+          {
+            name: "Graveto - Ao vivo",
+            MusicColor: "rgb(88, 21, 15) 100%",
+            artista: [
+              {
+                name: "Péricles",
+                genre: "Samba e Pagode",
+                bannerID: artista.pericles.bannerID,
+                color: artista.pericles.color,
+                foto: artista.pericles.foto,
+                thisIs: artista.pericles.thisIs,
+              },
+            ],
+            album: "Pagode Do Pericão II",
+            capa: "	https://i.scdn.co/image/ab67616d00001e02141a6a520b196069616fc596",
+            addEm: "28 de jul. de 2022",
+            durationInSecounts: 168,
+            liked: false,
+            genre: "Samba e Pagode",
+          },
+          {
+            name: "Deixa A Vida Me Levar",
+            MusicColor: "rgb(11,47,86) 100%",
+            artista: [
+              {
+                name: "Zeca Pagodinho",
+                genre: "Samba e Pagode",
+                bannerID: artista.zecaPagodinho.bannerID,
+                color: artista.zecaPagodinho.color,
+                foto: artista.zecaPagodinho.foto,
+                thisIs: artista.zecaPagodinho.thisIs,
+              },
+            ],
+            album: "Deixa A Vida Me Levar",
+            capa: "https://i.scdn.co/image/ab67616d00001e02af5507008fc68036ec567597",
+            addEm: "14 de jan. de 2002",
+            durationInSecounts: 277,
+            liked: false,
+            genre: "Samba e Pagode",
+          },
+          {
+            name: "Sexta-Feira",
+            MusicColor: "rgb(113,82,77) 100%",
+            artista: [
+              {
+                name: "Zeca Pagodinho",
+                genre: "Samba e Pagode",
+                bannerID: artista.zecaPagodinho.bannerID,
+                color: artista.zecaPagodinho.color,
+                foto: artista.zecaPagodinho.foto,
+                thisIs: artista.zecaPagodinho.thisIs,
+              },
+            ],
+            album: "Mais Feliz",
+            capa: "https://i.scdn.co/image/ab67616d00001e02d11fb662cf9a63265894a94d",
+            addEm: "17 de set. de 2019",
+            durationInSecounts: 251,
+            liked: false,
+            genre: "Samba e Pagode",
           },
         ],
       },

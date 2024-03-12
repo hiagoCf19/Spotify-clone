@@ -21,12 +21,6 @@ export function filterMusicPorGenre(genre: string): musics[] {
 
 export const BrowseAll: InterfaceBrowseAll[] = [
   {
-    genre: "Podcasts",
-    musics: filterMusicPorGenre("Podcast"),
-    background: "bg-[#906be7]",
-    capa: "assets/capas/podcast.jpeg",
-  },
-  {
     genre: "Rap",
     musics: filterMusicPorGenre("Rap"),
     background: "bg-[#1e3263]",
@@ -56,12 +50,7 @@ export const BrowseAll: InterfaceBrowseAll[] = [
     background: "bg-[#7d4b31]",
     capa: "assets/capas/mpb.jpeg",
   },
-  {
-    genre: "Summer",
-    musics: filterMusicPorGenre("Summer"),
-    background: "bg-[#4f374f]",
-    capa: "assets/capas/summer.jpeg",
-  },
+
   {
     genre: "Pop",
     musics: filterMusicPorGenre("Pop"),
@@ -79,5 +68,11 @@ export const BrowseAll: InterfaceBrowseAll[] = [
     musics: filterMusicPorGenre("Sertanejo"),
     background: "bg-[#2b2045]",
     capa: "assets/capas/sertanejo.jpeg",
+  },
+  {
+    genre: "Samba e Pagode",
+    musics: filterMusicPorGenre("Samba e Pagode"),
+    background: "bg-[#38705A]",
+    capa: "https://t.scdn.co/media/categories/brazilian_274x274.jpg",
   },
 ];

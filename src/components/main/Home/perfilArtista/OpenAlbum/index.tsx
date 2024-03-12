@@ -3,14 +3,14 @@ import { musics } from "@/mocks/playlists-albuns";
 import { extrairMusicasPorArtista } from "@/scripts/musicasDoArtista";
 import { urlFormater } from "@/scripts/normalize";
 import { ArrowDownCircle, Clock, Heart, List, MoreHorizontal, MoreVertical, PlusCircle, Shuffle } from "lucide-react";
-import { FaPlay } from "react-icons/fa6";
+
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 import { GenericCarousel } from "../genericCarousel";
 import { Carousel, CarouselContent } from "@/components/ui/carousel";
 import { HeaderMain } from "../../HeaderMain";
 import { useContext, useEffect, useState } from "react";
-import { IoMdHeart, IoMdPlay } from "react-icons/io";
+import { IoMdHeart } from "react-icons/io";
 import { MenuMusics } from "@/components/main/OnOpenAlbum/PlaylistAreaOpen/MenuMusic";
 import PlayingCtx from "@/context/context.Playing";
 
@@ -41,6 +41,7 @@ interface propsOpenAlbum {
 
 export const OpenAlbum = ({ album, gradient, capa, foto, artista, musica }: propsOpenAlbum) => {
   const [isLiked, setIsLiked] = useState(false)
+  const [pausado, setPausado] = useState(false);
   const [larguraDaTela, setLarguraDaTela] = useState(window.innerWidth)
   const { setMusicPlaying } = useContext(PlayingCtx)
 
@@ -98,7 +99,7 @@ export const OpenAlbum = ({ album, gradient, capa, foto, artista, musica }: prop
             <p className={`text-[5rem] -my-4 font-black text-zinc-50 hidden sm:block sm:-mb-4`}>{album}</p>
             <div className="flex items-center gap-1">
               <img src={foto} className="size-6 rounded-full" />
-              <span className="text-sm">{artista}</span>
+              <Link to={urlFormater(artista)} className="text-sm hover:underline">{artista}</Link>
               <i className="text-[8px]">•</i>
               <span className="text-sm">{extrairAno(musica.addEm)}</span>
 
@@ -110,8 +111,18 @@ export const OpenAlbum = ({ album, gradient, capa, foto, artista, musica }: prop
           <div className="mt-7 flex justify-between">
             <div className="flex items-center gap-5">
               {/* play */}
-              <div className=" flex items-center justify-center rounded-full w-12 h-12 bg-spotgreen mr-[-20px] ">
-                <IoMdPlay color="#000" size={20} />
+              <div className=" flex items-center justify-center rounded-full w-12 h-12 bg-spotgreen mr-[-20px] "
+                onClick={(() => {
+                  pausado ? setPausado(false) : setPausado(true);
+                  setMusicPlaying([filterAlbum[0]])
+                })}
+              >
+                {
+                  !pausado ?
+                    <svg data-encore-id="icon" role="img" aria-hidden="true" viewBox="0 0 16 16" className="size-4 sm:size-4" ><path d="M3 1.713a.7.7 0 0 1 1.05-.607l10.89 6.288a.7.7 0 0 1 0 1.212L4.05 14.894A.7.7 0 0 1 3 14.288V1.713z"></path></svg>
+                    :
+                    <svg data-encore-id="icon" role="img" aria-hidden="true" viewBox="0 0 16 16" className={`size-4 sm:size-4`}><path d="M2.7 1a.7.7 0 0 0-.7.7v12.6a.7.7 0 0 0 .7.7h2.6a.7.7 0 0 0 .7-.7V1.7a.7.7 0 0 0-.7-.7H2.7zm8 0a.7.7 0 0 0-.7.7v12.6a.7.7 0 0 0 .7.7h2.6a.7.7 0 0 0 .7-.7V1.7a.7.7 0 0 0-.7-.7h-2.6z"></path></svg>
+                }
               </div>
               {/* like */}
               <div className="pl-5" onClick={() => isLiked ? setIsLiked(false) : setIsLiked(true)}>
@@ -137,43 +148,50 @@ export const OpenAlbum = ({ album, gradient, capa, foto, artista, musica }: prop
               <span className="font-semibold text-sm hidden sm:block">Lista</span>
               <List className="hidden sm:block" />
             </a>
-          </div> : (
-            <>
+          </div> :
+          <>
 
-              <TitleSpt title={album} />
-              <div className="flex gap-2 items-center">
-                <img src={foto} className="size-6 rounded-full" />
-                <p className="text-sm">{artista}</p>
+            <TitleSpt title={album} />
+            <div className="flex gap-2 items-center">
+              <img src={foto} className="size-6 rounded-full" />
+              <p className="text-sm">{artista}</p>
+            </div>
+            <span className="  flex gap-1 items-center text-sm ">
+              {musica.name !== musica.album ? 'Álbum' : 'Single'}
+              <i className="text-[8px]">•</i>
+              {extrairAno(musica.addEm)}
+            </span>
+            <section className="flex justify-between py-1 items-center ">
+              <div className="flex gap-5 items-center">
+                <div className="border-[2px] border-[#a7a7a7] rounded-xl">
+                  <img src={capa} className="h-10 w-8 rounded-xl p-px" />
+                </div>
+                <PlusCircle size={28} />
+                <ArrowDownCircle size={28} />
+                <MoreVertical size={28} />
+
               </div>
-              <span className="  flex gap-1 items-center text-sm ">
-                {musica.name !== musica.album ? 'Álbum' : 'Single'}
-                <i className="text-[8px]">•</i>
-                {extrairAno(musica.addEm)}
-              </span>
-              <section className="flex justify-between py-1 items-center ">
-                <div className="flex gap-5 items-center">
-                  <div className="border-[2px] border-[#a7a7a7] rounded-xl">
-                    <img src={capa} className="h-10 w-8 rounded-xl p-px" />
-                  </div>
-                  <PlusCircle size={28} />
-                  <ArrowDownCircle size={28} />
-                  <MoreVertical size={28} />
+              <div className="flex items-center gap-4">
+                <Shuffle />
+                <div className="size-10 rounded-full bg-spotgreen flex justify-center items-center "
+                  onClick={(() => {
+                    pausado ? setPausado(false) : setPausado(true);
+                    setMusicPlaying([filterAlbum[0]])
+                  })}
+                >
+                  {
+                    !pausado ?
+                      <svg data-encore-id="icon" role="img" aria-hidden="true" viewBox="0 0 16 16" className="size-4 sm:size-4" ><path d="M3 1.713a.7.7 0 0 1 1.05-.607l10.89 6.288a.7.7 0 0 1 0 1.212L4.05 14.894A.7.7 0 0 1 3 14.288V1.713z"></path></svg>
+                      :
+                      <svg data-encore-id="icon" role="img" aria-hidden="true" viewBox="0 0 16 16" className={`size-4 sm:size-4`}><path d="M2.7 1a.7.7 0 0 0-.7.7v12.6a.7.7 0 0 0 .7.7h2.6a.7.7 0 0 0 .7-.7V1.7a.7.7 0 0 0-.7-.7H2.7zm8 0a.7.7 0 0 0-.7.7v12.6a.7.7 0 0 0 .7.7h2.6a.7.7 0 0 0 .7-.7V1.7a.7.7 0 0 0-.7-.7h-2.6z"></path></svg>
+                  }
 
                 </div>
-                <div className="flex items-center gap-4">
-                  <Shuffle />
-                  <div className="size-10 rounded-full bg-spotgreen flex justify-center items-center"
-                  //   onClick={(() => {
-                  //   setMusicPlaying([data])
-                  // })}
-                  >
-                    <FaPlay color="#000" />
-                  </div>
-                </div>
+              </div>
 
-              </section>
-            </>
-          )}
+            </section>
+          </>
+        }
         {/* CABECALIO DAS MUSICAS */}
         {desktopScreen ? <header className="flex justify-between items-center border-b border-solid border-[#a7a7a74e] pb-4 p-3">
           <div className="flex gap-6 items-center">
@@ -186,7 +204,7 @@ export const OpenAlbum = ({ album, gradient, capa, foto, artista, musica }: prop
       </Gradient>
 
       {/* MUSICAS */}
-      <div className="px-3 flex flex-col gap-2">
+      <div className="px-3 flex flex-col gap-2 mt-4 sm:mt-0">
         {filterAlbum.map((musicasAlb, i) => (
           desktopScreen ?
             <div className="flex px-4 py-1 gap-3 items-center justify-between hover:bg-[#ffffff11] rounded cursor-pointer" key={i} onClick={(() => {
@@ -205,12 +223,13 @@ export const OpenAlbum = ({ album, gradient, capa, foto, artista, musica }: prop
 
             </div>
             :
+
             <div
-              className="flex  justify-between items-center py-1"
+              className="flex  justify-between items-center  "
               key={i}
             >
-              <div className="">
-                <p className="text-zinc-50">{musicasAlb.name}</p>
+              <div >
+                <p className="text-zinc-50" onClick={() => setMusicPlaying([musicasAlb])} >{musicasAlb.name}</p>
                 <span className="text-sm">{artista}</span>
               </div>
               <MenuMusics music={musicasAlb} />
@@ -232,9 +251,10 @@ export const OpenAlbum = ({ album, gradient, capa, foto, artista, musica }: prop
 
         <Carousel>
           <CarouselContent  >
-            {albuns.map((albumMap) => (
+            {albuns.map((albumMap, i) => (
 
               <GenericCarousel
+                key={i}
                 image={albumMap.capa}
                 imageRoundedFull={false}
                 maisDeUmCard={false}
