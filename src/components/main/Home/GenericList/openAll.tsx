@@ -22,7 +22,7 @@ export const OpenAll = ({ title, base }: MostrarTudoProps) => {
             <Link
               to={urlFormater(`${card.title}`)}
               key={i}
-              className=" w-[14%]  overflow-hidden"
+              className=" w-[14%] sm:min-w-[150px] overflow-hidden"
 
             >
               <GridGeneric image={card.capa} text={card.title} imageRoundedFull key={i} span={''} />

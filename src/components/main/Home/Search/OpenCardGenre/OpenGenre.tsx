@@ -67,7 +67,7 @@ export const OpenGenre = ({ music }: propsOpenGenre) => {
                 <Link
                   to={urlFormater(`${card.album}`)}
                   key={card.album}
-                  className=" sm:w-[14%]  overflow-hidden"
+                  className=" sm:w-[14%] sm:min-w-[150px]  overflow-hidden"
                 >
                   <GridGeneric image={card.capa} text={card.name} span={''} />
                 </Link>
@@ -106,7 +106,7 @@ export const OpenGenre = ({ music }: propsOpenGenre) => {
               <Link
                 to={urlFormater(`${card.name}`)}
                 key={card.bannerID}
-                className=" sm:w-[14%]  overflow-hidden"
+                className=" sm:w-[14%] sm:min-w-[150px]  overflow-hidden"
               >
                 <GridGeneric image={card.foto} text={card.name} span={"Artista"} imageRoundedFull />
               </Link>

@@ -23,11 +23,6 @@ const Gradient = styled.div<{ color: string }>`
 export const Main = () => {
   const [background, setBackground] = useState('#121212')
 
-
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-
-  // referente aos botoes, tudo, musica e podcasts
-
   return (
 
     <div className="sm:h-[90vh] h-screen  overflow-y-scroll 

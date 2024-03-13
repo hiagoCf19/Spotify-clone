@@ -41,7 +41,7 @@ export const Discografia = ({ musicas, desktopScreen }:
                 <Link
                   to={urlFormater(`${album.title}`)}
                   key={i}
-                  className=" sm:w-[14%]  overflow-hidden"
+                  className=" sm:w-[14%] sm:min-w-[150px]  overflow-hidden"
                 >
                   <GridGeneric
                     image={album.image}
@@ -87,7 +87,7 @@ export const Discografia = ({ musicas, desktopScreen }:
                 <Link
                   to={urlFormater(`${single.title}`)}
                   key={i}
-                  className=" sm:w-[14%]  overflow-hidden"
+                  className=" sm:w-[14%] sm:min-w-[150px] overflow-hidden"
                 >
                   <GridGeneric
                     image={single.image}

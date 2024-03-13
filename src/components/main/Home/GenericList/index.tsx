@@ -34,7 +34,7 @@ export const GenericList = () => {
               <Link
                 to={urlFormater(`${card.title}`)}
                 key={i}
-                className=" w-[14%]  overflow-hidden"
+                className=" w-[14%] sm:min-w-[150px] overflow-hidden"
 
               >
                 <GridGeneric
@@ -71,7 +71,7 @@ export const GenericList = () => {
             <Link
               to={urlFormater(`${artista.title}`)}
               key={i}
-              className=" sm:w-[14%]  overflow-hidden"
+              className=" sm:w-[14%] sm:min-w-[150px] overflow-hidden"
             >
               <GridGeneric
                 image={artista.capa}

@@ -91,7 +91,7 @@ export const GenericSectionsInPerfil = ({ title, artist, apareceEm, desktopScree
                   <Link
                     to={urlFormater(`${thisIs.title}`)}
                     key={i}
-                    className=" w-[14%]  overflow-hidden"
+                    className=" w-[14%] sm:min-w-[150px]  overflow-hidden"
 
                   >
                     <GridGeneric image={thisIs.capa} text={thisIs.title} span={thisIs.span} imageRoundedFull={false} />
@@ -101,7 +101,7 @@ export const GenericSectionsInPerfil = ({ title, artist, apareceEm, desktopScree
                 {comArtista(artist.name).map((playlists) => (
                   playlists.cards.map((card, i) => (
                     <Link
-                      className=" w-[14%]  overflow-hidden "
+                      className=" w-[14%] sm:min-w-[150px]  overflow-hidden "
                       to={urlFormater(card.title)}
                       key={`${card.title}-${i}`}
                     >
@@ -138,7 +138,7 @@ export const GenericSectionsInPerfil = ({ title, artist, apareceEm, desktopScree
                 <Link
                   to={urlFormater(`${artista.name}`)}
                   key={i}
-                  className=" w-[14%]  overflow-hidden"
+                  className=" w-[14%] sm:min-w-[150px]  overflow-hidden"
 
                 >
                   <GridGeneric
