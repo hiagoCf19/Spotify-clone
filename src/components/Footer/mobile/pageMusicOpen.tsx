@@ -1,13 +1,12 @@
 
 import { musics } from "@/mocks/playlists-albuns"
-import { Heart, MonitorSpeaker, MoreVertical, Share2 } from "lucide-react"
+import { MonitorSpeaker, MoreVertical, Share2 } from "lucide-react"
 import { FiMinusCircle } from "react-icons/fi";
-import { IoMdHeart } from "react-icons/io";
-import { useState } from "react";
 import styled from "styled-components";
 import { SobreOArtista } from "./sobreArtista";
 import { Creditos } from "./creditos";
 import { ControlBar } from "../controlador";
+import { HeartCpn } from "@/components/Recorrentes/heart";
 const Gradient = styled.div<{ color: string }>`
 
     background: rgb(18, 18, 18);
@@ -23,13 +22,10 @@ interface propsCardAberto {
   setPausado: React.Dispatch<React.SetStateAction<boolean>>
 
 }
+
 export const CardAberto = ({ playing, tempoAtual, pausado, setPausado, }: propsCardAberto) => {
 
-  const [isLiked, setIsLiked] = useState(false)
-
   return (
-
-
     <div className={`text-zinc-50  bg-[rgb(18,18,18)]`} >
       <Gradient color={playing.MusicColor ?? ''} className='p-6'>
         <header className="flex justify-between items-center mt-[15%]">
@@ -49,24 +45,7 @@ export const CardAberto = ({ playing, tempoAtual, pausado, setPausado, }: propsC
               {/* icons */}
               <div className="flex items-center gap-5">
                 <FiMinusCircle size={32} />
-                {
-                  isLiked === false ?
-                    <Heart
-                      color="#FFF"
-                      size={32}
-
-                      onClick={() => setIsLiked(true)}
-                    />
-                    :
-                    <IoMdHeart
-                      color="#1DB954"
-                      size={32}
-
-                      onClick={() => setIsLiked(false)}
-                    />
-
-                }
-
+                <HeartCpn sizeIcon={32} mobilehidden={false} base={playing} />
               </div>
             </div>
             <ControlBar playing={playing} tempoAtual={tempoAtual} pausado={pausado} setPausado={setPausado} />

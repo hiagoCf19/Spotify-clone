@@ -54,7 +54,7 @@ export const OpenGenre = ({ music }: propsOpenGenre) => {
 
         <section className="flex flex-col gap-6 w-full mt-3">
           <div className="flex justify-between items-center">
-            <TitleSpt title={`Os melhores sons de ${music[0].genre} do momento`} />
+            <TitleSpt title={`O melhor do ${music[0].genre} no momento`} />
             {desktopScreen ? <a
               className="text-sm font-semibold hover:underline">
               Mostrar tudo
@@ -73,7 +73,7 @@ export const OpenGenre = ({ music }: propsOpenGenre) => {
                 </Link>
               ))
               :
-              <Carousel >
+              <Carousel className=" w-full flex items-center">
                 <CarouselContent>
                   {music.map((card, i) => (
                     <GenericCarousel

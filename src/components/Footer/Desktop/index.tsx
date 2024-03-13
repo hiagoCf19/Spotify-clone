@@ -1,12 +1,12 @@
 import { musics } from "@/mocks/playlists-albuns"
 import { urlFormater } from "@/scripts/normalize"
-import { Heart, Maximize2, Mic2, MonitorSpeaker, PlaySquare } from "lucide-react"
+import { Maximize2, Mic2, MonitorSpeaker, PlaySquare } from "lucide-react"
 import { CgMiniPlayer } from "react-icons/cg";
-import { useState } from "react"
-import { IoMdHeart } from "react-icons/io"
+
 import { Link } from "react-router-dom"
 import { ControlBar } from "../controlador"
 import { Slider } from "@/components/ui/slider"
+import { HeartCpn } from "@/components/Recorrentes/heart";
 
 interface propsDesktopReprodutor {
   playing: musics
@@ -16,7 +16,7 @@ interface propsDesktopReprodutor {
 
 }
 export const DesktopReprodutor = ({ playing, tempoAtual, pausado, setPausado }: propsDesktopReprodutor) => {
-  const [isLiked, setIsLiked] = useState(false)
+
 
 
 
@@ -30,21 +30,7 @@ export const DesktopReprodutor = ({ playing, tempoAtual, pausado, setPausado }: 
           <Link to={urlFormater(playing.artista[0].name)} className="text-xs hover:underline">{playing.artista[0].name}
           </Link>
         </div>
-        <div className="pl-5" onClick={() => isLiked ? setIsLiked(false) : setIsLiked(true)}>
-          {
-            !isLiked ?
-              <Heart
-                color="#FFF"
-                size={18}
-              />
-              :
-              <IoMdHeart
-                color="#1DB954"
-                size={18}
-              />
-
-          }
-        </div>
+        <HeartCpn base={playing} sizeIcon={18} mobilehidden />
 
 
       </div>

@@ -5,7 +5,7 @@ import { Footer } from '@/components/Footer';
 import { Aside } from "@/components/Aside";
 import { urlFormater } from "@/scripts/normalize";
 import { exibidos } from "@/scripts/exibitionControl";
-import { OpenAlbumOrPlaylist } from "@/components/main/OnOpenAlbum/PlaylistAreaOpen";
+
 import { MostrarTudo } from "@/components/main/Home/GenericList/mostrarTudo";
 import { Curtidos } from "@/components/curtidos";
 import { SearchComponent } from "@/components/main/Home/Search";
@@ -15,10 +15,14 @@ import { playlists } from "@/mocks/playlists-albuns";
 import { PerfilArtista } from "@/components/main/Home/perfilArtista";
 import '../styles/App.css'
 import { extrairMusicasPorArtista } from "@/scripts/musicasDoArtista";
-import { OpenAlbum } from "@/components/main/Home/perfilArtista/OpenAlbum";
+
 import { extrairArtistas } from "@/scripts/desestruturacao";
 import { MontaMiniCardArtists } from "@/scripts/DataConstructor";
 import { OpenAll } from "@/components/main/Home/GenericList/openAll";
+
+import { LibraryComponent } from "@/components/main/Library";
+import { CardOpenMain } from "@/components/main/Home/CardOpen";
+import { OpenAlbum } from "@/components/main/Home/CardOpen/openAlbumSemFoto";
 
 
 
@@ -39,6 +43,7 @@ function App() {
             <Route path="/" element={<Main />} />
             <Route path={urlFormater('Musicas-curtidas')} element={<Curtidos />} />
             <Route path={urlFormater('search')} element={<SearchComponent />} />
+            <Route path={urlFormater('Library')} element={<LibraryComponent />} />
             {playlists.map((playlist) => (
               playlist.cards.map((card) => (
                 card.musicas.map((musica, indexOfMusic) => (
@@ -65,7 +70,7 @@ function App() {
                             />
                           } />
                         <Route path={urlFormater(`this-is-${artista.name}`)} element={
-                          <OpenAlbumOrPlaylist
+                          <CardOpenMain
                             color={artista.color ?? ''}
                             image={artista.thisIs ?? ''}
                             title={`This Is ${artista.name}`}
@@ -88,7 +93,7 @@ function App() {
               item.cards != undefined ? item.cards?.map((card, i) => (
                 <Fragment key={i}>
                   <Route path={urlFormater(`${card.title}`)} element={
-                    <OpenAlbumOrPlaylist
+                    <CardOpenMain
                       color={card.color ?? ''}
                       image={card.image ?? ''}
                       title={`${card.title}`}

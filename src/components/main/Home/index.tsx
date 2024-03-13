@@ -35,7 +35,6 @@ export const Main = () => {
 
       <Gradient color={background} className="flex gap-4 flex-col sm:p-4 sm:px-6 p-2">
         < HeaderMain />
-
         <FirstSectionMain background={background} setBackground={setBackground} />
         <MobileLancamentos />
         <MobileCarousel />

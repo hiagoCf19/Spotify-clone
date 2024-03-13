@@ -6,13 +6,14 @@ import { ArrowDownCircle, Clock, Heart, List, MoreHorizontal, MoreVertical, Plus
 
 import { Link } from "react-router-dom";
 import styled from "styled-components";
-import { GenericCarousel } from "../genericCarousel";
+import { GenericCarousel } from "../perfilArtista/genericCarousel";
 import { Carousel, CarouselContent } from "@/components/ui/carousel";
-import { HeaderMain } from "../../HeaderMain";
+import { HeaderMain } from "../HeaderMain";
 import { useContext, useEffect, useState } from "react";
 import { IoMdHeart } from "react-icons/io";
-import { MenuMusics } from "@/components/main/OnOpenAlbum/PlaylistAreaOpen/MenuMusic";
+
 import PlayingCtx from "@/context/context.Playing";
+import { MenuMusics } from "./MenuMusic";
 
 const Gradient = styled.div<{ color: string }>`
     background: rgb(18, 18, 18);
@@ -88,7 +89,7 @@ export const OpenAlbum = ({ album, gradient, capa, foto, artista, musica }: prop
   return (
 
     <div className="h-screen sm:h-[90vh] overflow-y-scroll sm:w-full bg-[#121212]">
-      <Gradient color={gradient} className='h-[50%] sm:h-auto p-4 sm:p-5 flex flex-col  gap-2'>
+      <Gradient color={gradient} className=' p-4 sm:p-5 flex flex-col  gap-2'>
         {desktopScreen ? <HeaderMain /> : null}
         {/* FOTO DO ALBUM, NOME E ARTISTRA */}
         <div className={` ${desktopScreen ? 'flex items-end gap-5' : "flex items-center justify-center"} sm:justify-normal`}>

@@ -2,7 +2,7 @@ import { artista } from "@/mocks/playlists-albuns"
 import { HeaderMain } from "../HeaderMain"
 import { MdVerified } from "react-icons/md";
 import styled from "styled-components";
-import { CardMusic } from "../../OnOpenAlbum/PlaylistAreaOpen/cardMusic";
+
 import { IoMdHeart, IoMdPlay } from "react-icons/io";
 import { TitleSpt } from "@/components/Recorrentes/Title";
 import { useEffect, useState } from "react";
@@ -10,6 +10,7 @@ import { Discografia } from "./discografia";
 import { GenericSectionsInPerfil } from "./genericSections";
 import { ArrowLeft, ChevronRight, MoreVertical, Shuffle } from "lucide-react";
 import { extrairMusicasPorArtista } from "@/scripts/musicasDoArtista";
+import { CardMusic } from "../CardOpen/cardMusic";
 
 
 interface PropsPerfil {
@@ -162,7 +163,7 @@ export const PerfilArtista = ({ artist }: PropsPerfil) => {
                 </div>
                 <div className="flex flex-col justify-center">
                   <p className="text-zinc-50">Musicas Curtidas</p>
-                  <span className="text-sm">X musicas <i className="text-[10px]">•</i> {artist[0].name} </span>
+                  <span className="text-sm">0 musicas <i className="text-[10px]">•</i> {artist[0].name} </span>
                 </div>
 
 

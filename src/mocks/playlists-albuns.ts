@@ -16,7 +16,7 @@ export interface artista {
   foto: string;
   bannerID: string;
   thisIs: string;
-  color?: string;
+  color: string;
   genre: string;
 }
 export interface musics {
@@ -153,6 +153,14 @@ const artista = {
       "https://thisis-images.spotifycdn.com/37i9dQZF1DZ06evO0ti1Ik-default.jpg",
     color: "rgb(60, 13, 8) 100%",
   },
+  kamaitachi: {
+    foto: "https://i.scdn.co/image/ab6761610000517484381ebb9000ce662ce2f141",
+    bannerID:
+      "https://i.scdn.co/image/ab6761860000101692fc0b6117b655f8ded22a8c",
+    thisIs:
+      "	https://thisis-images.spotifycdn.com/37i9dQZF1DZ06evO0XPyus-default.jpg",
+    color: "rgb(78, 62, 24) 120%",
+  },
   zecaPagodinho: {
     foto: "https://i.scdn.co/image/ab67616100005174ba8ad8a2315ed9148c7b1cc7",
     bannerID:
@@ -169,6 +177,137 @@ export const playlists: Pl[] = [
     exibitionHome: true,
     classe: "Álbum",
     cards: [
+      {
+        title: "Descobertas da Semana",
+        color: "rgb(224,139, 176, 1) 120%",
+        image:
+          "https://newjams-images.scdn.co/image/ab676477000033ad/dt/v3/discover-weekly/XutSn0_6ZZetQsoHgk96xg==/dHB0cHRwdHB0cHRwdHB0cA==",
+        description:
+          "Sua mixtape semanal cheia de novas descobertase pérolas musicais só para você.",
+        musicas: [
+          {
+            name: "No Surprises ",
+            MusicColor: "rgb(74, 95, 107, 1) 100%",
+            artista: [
+              {
+                name: "Radiohead",
+                genre: "Rock",
+                bannerID: artista.radiohead.bannerID,
+                color: artista.radiohead.color,
+                foto: artista.radiohead.foto,
+                thisIs: artista.radiohead.thisIs,
+              },
+            ],
+            album: "OK Computer",
+            capa: "https://i.scdn.co/image/ab67616d00001e02c8b444df094279e70d0ed856",
+            addEm: "20 fev. 2024",
+            durationInSecounts: 229,
+            liked: false,
+            genre: "Rock",
+          },
+          {
+            name: "Sexta-Feira",
+            MusicColor: "rgb(113,82,77) 100%",
+            artista: [
+              {
+                name: "Zeca Pagodinho",
+                genre: "Samba e Pagode",
+                bannerID: artista.zecaPagodinho.bannerID,
+                color: artista.zecaPagodinho.color,
+                foto: artista.zecaPagodinho.foto,
+                thisIs: artista.zecaPagodinho.thisIs,
+              },
+            ],
+            album: "Mais Feliz",
+            capa: "https://i.scdn.co/image/ab67616d00001e02d11fb662cf9a63265894a94d",
+            addEm: "17 de set. de 2019",
+            durationInSecounts: 251,
+            liked: false,
+            genre: "Samba e Pagode",
+          },
+          {
+            name: "Young And Beautiful",
+            MusicColor: "rgb(16, 49, 71) 100%",
+            artista: [
+              {
+                name: "Lana Del Rey",
+                genre: "Pop",
+                bannerID: artista.lanaDelRey.bannerID,
+                color: artista.lanaDelRey.color,
+                foto: artista.lanaDelRey.foto,
+                thisIs: artista.lanaDelRey.thisIs,
+              },
+            ],
+            album: "Young And Beautiful",
+            capa: "https://i.scdn.co/image/ab67616d00001e02d7fb3e4c63020039d1cff6b2",
+            addEm: "1 de jan. de 2013",
+            durationInSecounts: 236,
+            liked: false,
+            genre: "Pop",
+          },
+
+          {
+            name: "Radio",
+            MusicColor: "rgb(96, 83, 52) 100%",
+            artista: [
+              {
+                name: "Lana Del Rey",
+                genre: "Pop",
+                bannerID: artista.lanaDelRey.bannerID,
+                color: artista.lanaDelRey.color,
+                foto: artista.lanaDelRey.foto,
+                thisIs: artista.lanaDelRey.thisIs,
+              },
+            ],
+            album: "Born To Die",
+            capa: "	https://i.scdn.co/image/ab67616d00001e02ebc8cfac8b586bc475b04918",
+            addEm: "1 de jan. de 2012",
+            durationInSecounts: 214,
+            liked: false,
+            genre: "Pop",
+          },
+          {
+            name: "Gimme Shelter",
+            MusicColor: "rgb(132, 36, 26) 100%",
+            artista: [
+              {
+                name: "The Rolling Stones",
+                genre: "Rock",
+                bannerID: artista.stones.bannerID,
+                color: artista.stones.color,
+                foto: artista.stones.foto,
+                thisIs: artista.stones.thisIs,
+              },
+            ],
+            album: "Let It Bleed",
+            capa: "	https://i.scdn.co/image/ab67616d00001e022af30c881bb23cfb82a8cf99",
+            addEm: "5 de dez. de 1969",
+            durationInSecounts: 214,
+            liked: false,
+            genre: "Rock",
+          },
+          {
+            name: "Graveto - Ao vivo",
+            MusicColor: "rgb(88, 21, 15) 100%",
+            artista: [
+              {
+                name: "Péricles",
+                genre: "Samba e Pagode",
+                bannerID: artista.pericles.bannerID,
+                color: artista.pericles.color,
+                foto: artista.pericles.foto,
+                thisIs: artista.pericles.thisIs,
+              },
+            ],
+            album: "Pagode Do Pericão II",
+            capa: "	https://i.scdn.co/image/ab67616d00001e02141a6a520b196069616fc596",
+            addEm: "28 de jul. de 2022",
+            durationInSecounts: 168,
+            liked: false,
+            genre: "Samba e Pagode",
+          },
+        ],
+      },
       {
         title: "Moody Mix",
         color: "rgb(223,84,139, 0.600) 190%",
@@ -372,23 +511,44 @@ export const playlists: Pl[] = [
         description: "kamaitachi, LEXY, Vitello e mais",
         musicas: [
           {
-            name: "musica 00",
-            MusicColor: "",
-            capa: "",
+            name: "Lana",
+            MusicColor: "rgb(43, 8, 5)",
+            capa: "https://i.scdn.co/image/ab67616d00001e02b8647c0b52e54b9d36d1b264",
             artista: [
               {
-                name: "artista X",
-                genre: "outros",
-                bannerID: "",
-                foto: "assets",
-                thisIs: "a",
+                name: "Kamaitachi",
+                genre: "Pop",
+                bannerID: artista.kamaitachi.bannerID,
+                foto: artista.kamaitachi.foto,
+                thisIs: artista.kamaitachi.thisIs,
+                color: artista.kamaitachi.color,
               },
             ],
-            album: "album03",
-            addEm: "05/02/2024",
-            durationInSecounts: 100,
+            album: "Lana",
+            addEm: "23 de out. de 2020",
+            durationInSecounts: 171,
             liked: false,
-            genre: "Outros",
+            genre: "Pop",
+          },
+          {
+            name: "6 Balas",
+            MusicColor: "rgb(84,84,84)",
+            capa: "https://i.scdn.co/image/ab67616d00001e02e8b917e248fdbc970d30f885",
+            artista: [
+              {
+                name: "Kamaitachi",
+                genre: "Pop",
+                bannerID: artista.kamaitachi.bannerID,
+                foto: artista.kamaitachi.foto,
+                thisIs: artista.kamaitachi.thisIs,
+                color: artista.kamaitachi.color,
+              },
+            ],
+            album: "Homem Torto",
+            addEm: "17 de nov. de 2017",
+            durationInSecounts: 185,
+            liked: false,
+            genre: "Pop",
           },
         ],
       },
@@ -821,6 +981,46 @@ export const playlists: Pl[] = [
             durationInSecounts: 251,
             liked: false,
             genre: "Samba e Pagode",
+          },
+          {
+            name: "Creep",
+            MusicColor: "rgb(135, 91, 22)",
+            artista: [
+              {
+                name: "Radiohead",
+                genre: "Rock",
+                bannerID: artista.radiohead.bannerID,
+                color: artista.radiohead.color,
+                foto: artista.radiohead.foto,
+                thisIs: artista.radiohead.thisIs,
+              },
+            ],
+            album: "Pablo Honey",
+            capa: "https://i.scdn.co/image/ab67616d00001e02df55e326ed144ab4f5cecf95",
+            addEm: "22 de fev. de 1993",
+            durationInSecounts: 238,
+            liked: false,
+            genre: "Rock",
+          },
+          {
+            name: "Daydreaming",
+            MusicColor: "rgb(73,73,73)",
+            artista: [
+              {
+                name: "Radiohead",
+                genre: "Rock",
+                bannerID: artista.radiohead.bannerID,
+                color: artista.radiohead.color,
+                foto: artista.radiohead.foto,
+                thisIs: artista.radiohead.thisIs,
+              },
+            ],
+            album: "Daydreaming",
+            capa: "https://i.scdn.co/image/ab67616d00001e02faffb14a464b3548703ccdc7",
+            addEm: "6 de mai. de 2016",
+            durationInSecounts: 384,
+            liked: false,
+            genre: "Rock",
           },
         ],
       },

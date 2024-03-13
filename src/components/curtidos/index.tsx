@@ -7,10 +7,12 @@ import { musics } from "@/mocks/playlists-albuns";
 //import { MdPause } from "react-icons/md";
 import { styled } from 'styled-components'
 
-import React from "react";
+import React, { useContext } from "react";
 import { FaSpotify } from "react-icons/fa6";
 import { HeaderMain } from "../main/Home/HeaderMain";
-import { CardMusic } from "../main/OnOpenAlbum/PlaylistAreaOpen/cardMusic";
+import { CardMusic } from "../main/Home/CardOpen/cardMusic";
+import LikedCtx from "@/context/context.Likeds";
+
 
 
 const Gradient = styled.div`
@@ -50,13 +52,17 @@ const Gradient = styled.div`
 
   `
 export const Curtidos = () => {
-  const musicasLiked: musics[] = []
-
-
-
-
+  const { musicLiked } = useContext(LikedCtx)
+  const musicasNomeUnico: Set<string> = new Set();
+  const musicasCurtidas: musics[] = [];
+  musicLiked.forEach((musica: musics) => {
+    if (!musicasNomeUnico.has(musica.name)) {
+      musicasNomeUnico.add(musica.name);
+      musicasCurtidas.push(musica);
+    }
+  })
   return (
-    <div className="flex-1 sm:rounded-[6px] h-[88vh]  overflow-y-scroll gap-1 flex flex-col bg-[#171717] ">
+    <div className="flex-1 sm:rounded-[6px] h-[90vh]  overflow-y-scroll gap-1 flex flex-col bg-[#171717] ">
       <Gradient>
         <div className="fixed py-4 sm:hidden"
           onClick={() => window.history.back()}
@@ -87,7 +93,7 @@ export const Curtidos = () => {
                   </strong>
                 </span>
                 <span >
-                  X músicas
+                  {musicLiked.length} músicas
                 </span>
               </div>
             </div>
@@ -129,7 +135,7 @@ export const Curtidos = () => {
           <div
             className=" my-2  overflow-y-scroll sm:overflow-hidden mr-[-10px] flex flex-col gap-2 sm:px-3 ">
 
-            {musicasLiked.map((card, i) => (
+            {musicasCurtidas.map((card: musics, i: number) => (
               <React.Fragment key={i}>
                 <CardMusic hiddenTopics={false} props={card} key={i} i={i + 1} />
               </React.Fragment>

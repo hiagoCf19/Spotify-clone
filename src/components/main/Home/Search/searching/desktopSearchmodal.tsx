@@ -1,7 +1,7 @@
 
 import { SptBNT } from "@/components/Aside/BottomAside/Button"
 import { TitleSpt } from "@/components/Recorrentes/Title"
-import { CardMusic } from "@/components/main/OnOpenAlbum/PlaylistAreaOpen/cardMusic"
+
 import { InterfaceBrowseAll } from "@/mocks/BrowseAll"
 import { artista, musics } from "@/mocks/playlists-albuns"
 import { Fragment, useState } from "react"
@@ -10,6 +10,7 @@ import { GridGeneric } from "./gridGeneric"
 import { Link } from "react-router-dom"
 import { urlFormater } from "@/scripts/normalize"
 import { MontaMiniCardArtists } from "@/scripts/DataConstructor"
+import { CardMusic } from "../../CardOpen/cardMusic"
 
 
 export interface desktopSearchModalProps {

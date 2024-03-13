@@ -1,6 +1,6 @@
-import { Heart, MonitorSpeaker } from "lucide-react"
-import { useState } from "react";
-import { IoMdHeart } from "react-icons/io";
+import { MonitorSpeaker } from "lucide-react"
+
+
 import { IoPauseSharp } from "react-icons/io5";
 
 import { musics } from "@/mocks/playlists-albuns";
@@ -13,8 +13,7 @@ import {
 import { CardAberto } from "./pageMusicOpen";
 import styled from "styled-components";
 import { InputRange } from "../controlador";
-
-
+import { HeartCpn } from "@/components/Recorrentes/heart";
 
 const Gradient = styled.div<{ color: string }>`
 
@@ -38,8 +37,6 @@ interface propsMobileReprodutor {
 
 }
 export const MobileReprodutor = ({ playing, tempoAtual, pausado, setPausado, }: propsMobileReprodutor) => {
-  // criar contexto para liked
-  const [isLiked, setIsLiked] = useState(false)
 
 
   return (
@@ -64,23 +61,7 @@ export const MobileReprodutor = ({ playing, tempoAtual, pausado, setPausado, }: 
         </Sheet>
         <div className="flex items-center gap-3">
           <MonitorSpeaker size={28} />
-          {
-            !isLiked ?
-              <Heart
-                color="#FFF"
-                size={25}
-
-                onClick={() => setIsLiked(true)}
-              />
-              :
-              <IoMdHeart
-                color="#1DB954"
-                size={25}
-
-                onClick={() => setIsLiked(false)}
-              />
-
-          }
+          <HeartCpn base={playing} sizeIcon={28} mobilehidden={false} />
           <div onClick={() => pausado ? setPausado(false) : setPausado(true)}>
             {
               pausado ?

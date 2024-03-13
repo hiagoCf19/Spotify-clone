@@ -7,8 +7,7 @@ import { List } from "lucide-react";
 import { Tiip } from "@/components/ui/tolltiResume";
 import { useState } from "react";
 import 'animate.css'
-
-import { AsideCardLiked } from "@/components/curtidos/asideCard";
+import { LibraryCards } from "@/components/main/Library/cards.library";
 
 export const BottomAside = () => {
   const [ativo, setAtivo] = useState(3)
@@ -50,7 +49,7 @@ export const BottomAside = () => {
             <List size={19} />
           </div>
         </div>
-        <AsideCardLiked />
+        <LibraryCards />
 
       </div>
 

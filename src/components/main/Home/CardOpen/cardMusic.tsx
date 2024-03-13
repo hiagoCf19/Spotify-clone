@@ -1,12 +1,14 @@
 import { musics } from "@/mocks/playlists-albuns"
-import { Heart, Music } from "lucide-react"
+import { Music } from "lucide-react"
 import { MenuMusics } from "./MenuMusic"
 import { Fragment, useContext, useState } from "react";
-import { IoMdHeart } from "react-icons/io";
+
 import { FaPlay } from "react-icons/fa";
 import PlayingCtx from "@/context/context.Playing";
 import { Link } from "react-router-dom";
 import { urlFormater } from "@/scripts/normalize";
+
+import { HeartCpn } from "@/components/Recorrentes/heart";
 
 
 export interface propsMsc {
@@ -19,7 +21,6 @@ export interface propsMsc {
 export const CardMusic = ({ props, i, hiddenTopics }: propsMsc) => {
 
   const { setMusicPlaying } = useContext(PlayingCtx)
-  const [isLiked, setIsLiked] = useState(props.liked ? true : false)
   const [mouseInside, setMouseInside] = useState(false)
   function formatarTempoAtual(tempoAtual: number) {
     const minutos = Math.floor(tempoAtual / 60);
@@ -29,6 +30,9 @@ export const CardMusic = ({ props, i, hiddenTopics }: propsMsc) => {
     return `${minutos}:${segundosFormatados}`;
   }
   const hidden = hiddenTopics
+
+
+
 
 
   return (
@@ -81,23 +85,7 @@ export const CardMusic = ({ props, i, hiddenTopics }: propsMsc) => {
 
       <div className="sm:flex items-center gap-6">
         <div>
-          {
-            isLiked === false ?
-              <Heart
-                color="#b7b7b7"
-                size={20}
-                className="hidden sm:block"
-                onClick={() => setIsLiked(true)}
-              />
-              :
-              <IoMdHeart
-                color="#1DB954"
-                size={20}
-                className="hidden sm:block"
-                onClick={() => setIsLiked(false)}
-              />
-
-          }
+          <HeartCpn base={props} mobilehidden sizeIcon={20} />
         </div>
 
         <span className="text-[13px]  hidden sm:block mr-3">{formatarTempoAtual(props.durationInSecounts)}</span>

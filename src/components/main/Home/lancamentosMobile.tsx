@@ -1,12 +1,10 @@
 import { TitleSpt } from "@/components/Recorrentes/Title"
+import { HeartCpn } from "@/components/Recorrentes/heart";
 import PlayingCtx from "@/context/context.Playing";
 import { musics, playlists } from "@/mocks/playlists-albuns"
 import { extrairMusicas } from "@/scripts/desestruturacao";
 import { urlFormater } from "@/scripts/normalize";
 import { Fragment, useContext, useEffect, useState } from "react";
-
-
-import { BsPlusCircle } from "react-icons/bs";
 import { FaPlay } from "react-icons/fa6"
 import { Link } from "react-router-dom";
 
@@ -49,7 +47,7 @@ export const MobileLancamentos = () => {
               <div className="flex flex-col gap-1 ">
                 <div className="text-zinc-50  overflow-hidden  flex-col">
                   <Link to={urlFormater(data.album)}>
-                    <h1 className="text-lg line-clamp-1"> {data.name}  </h1>
+                    <h1 className=" line-clamp-1"> {data.name}  </h1>
                   </Link>
 
                   <span className="text-sm text-[#b7b7b7] line-clamp-1">{data.album}</span>
@@ -67,7 +65,7 @@ export const MobileLancamentos = () => {
               </div>
               <div className="absolute bottom-3 p-3 -m-3  w-full">
                 <div className="flex w-full items-center justify-between">
-                  <BsPlusCircle color="#FFF" size={28} />
+                  <HeartCpn sizeIcon={28} mobilehidden={false} base={data} />
                   <div className="size-10 rounded-full bg-spotgreen flex justify-center items-center" onClick={(() => {
                     setMusicPlaying([data])
                   })}>

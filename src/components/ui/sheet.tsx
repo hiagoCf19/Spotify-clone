@@ -3,7 +3,7 @@
 import * as React from "react"
 import * as SheetPrimitive from "@radix-ui/react-dialog"
 import { cva, type VariantProps } from "class-variance-authority"
-import { ChevronDown } from "lucide-react"
+import { X } from "lucide-react"
 
 import { cn } from "@/lib/utils"
 
@@ -67,7 +67,7 @@ const SheetContent = React.forwardRef<
       {children}
 
       <SheetPrimitive.Close className="absolute left-4 top-0 mt-[15%] rounded-sm opacity-1 ring-offset-background transition-opacity hover:opacity-100 focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 disabled:pointer-events-none data-[state=open]:bg-secondary">
-        <ChevronDown size={38} color="#FFF" className="mt-[25%]" />
+        <X size={28} color="#FFF" className="mt-[51%]" />
         <span className="sr-only">Close</span>
       </SheetPrimitive.Close>
     </SheetPrimitive.Content>

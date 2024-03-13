@@ -9,6 +9,7 @@ import { ReprodutorVazio } from "./Desktop/reprodutorVazio.tsx"
 
 
 
+
 export const Footer = () => {
   const [larguraDaTela, setLarguraDaTela] = useState(window.innerWidth)
   useEffect(() => {
@@ -25,6 +26,7 @@ export const Footer = () => {
   }, [larguraDaTela]);
   const desktopScreen = larguraDaTela >= 640
   const { setMusicPlaying, musicPlaying } = useContext(PlayingCtx)
+
 
   const [pausado, setPausado] = useState(true)
   const [tempoAtual, setTempoAtual] = useState(0);
