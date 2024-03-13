@@ -63,7 +63,7 @@ export const OpenGenre = ({ music }: propsOpenGenre) => {
 
           <div className="flex gap-6">
             {desktopScreen ?
-              music.map((card) => (
+              music.slice(0, 7).map((card) => (
                 <Link
                   to={urlFormater(`${card.album}`)}
                   key={card.album}
