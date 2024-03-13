@@ -75,11 +75,11 @@ export const ControlBar = ({ playing, tempoAtual, pausado, setPausado }: propsCo
       <div className="flex flex-col sm:flex-row gap-2  items-center text-sm w-full">
         <span className="hidden sm:block">{formatarTempoAtual(tempoAtual)}</span>
         <Slider max={playing?.durationInSecounts ?? 0} className=" w-full" value={[tempoAtual]} />
-        <span className="hidden sm:block ">{playing?.durationInSecounts != undefined ? formatarTempoAtual(playing?.durationInSecounts) : '-:-'}</span>
+        <span className="hidden sm:block ">{playing?.durationInSecounts != undefined ? formatarTempoAtual(playing?.durationInSecounts) : '0:00'}</span>
 
         <div className={`flex justify-between ${playing?.durationInSecounts != undefined ? 'text-[#b7b7b7]' : '#78787851'} text-sm sm:hidden w-full`}>
-          <span >{playing?.durationInSecounts != undefined ? formatarTempoAtual(tempoAtual) : '-:-'}</span>
-          <span>{playing?.durationInSecounts != undefined ? formatarTempoAtual(playing?.durationInSecounts) : '-:-'}</span>
+          <span>{playing?.durationInSecounts != undefined ? formatarTempoAtual(tempoAtual) : '0:00'}</span>
+          <span>{playing?.durationInSecounts != undefined ? formatarTempoAtual(playing?.durationInSecounts) : '0:00'}</span>
         </div>
 
       </div>
